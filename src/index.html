@@ -1,0 +1,122 @@
+<html>
+<head>
+	<title>BlockID first PoC</title>
+	<script type="text/javascript" src="bower_components/web3/dist/web3.min.js"> </script>
+
+	<script type="text/javascript">
+	var Web3 = require('web3');
+
+	//Check for existing provider (Mist browser or Metamask) 
+	/*
+	if (typeof web3 !== 'undefined') {
+  		web3 = new Web3(web3.currentProvider);
+	} else {
+	*/	
+
+  	// set the provider you want from Web3.providers
+  	web3 = new Web3(new Web3.providers.HttpProvider("http://10.10.96.78:8545"));
+	
+
+    // Solidity code
+    /*
+		The compileSolidity method is not available right now in geth 
+		so we have to hardcode the compiled contract
+    
+    "pragma solidity ^0.4.6;" +
+    "contract MyBlockChainCalculator {\n" +
+    "   function multiply(uint a) constant returns(uint d) {\n" +
+    "       return a * 7;\n" +
+    "   }\n" +
+    "}\n";
+    var compiled = web3.eth.compile.solidity(source);
+    */
+
+    var	myblockchaincalculatorContract;
+    var bytecode = '0x6060604052341561000f57600080fd5b60b18061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c6888fa1146044575b600080fd5b3415604e57600080fd5b606260048080359060200190919050506078565b6040518082815260200191505060405180910390f35b60006007820290509190505600a165627a7a723058207ab9b0c52c1834b271df39c26e82a74d882b1a6d52fb6d5d717fc8e4b586854e0029';
+
+	var abiArray = [
+	   {
+		   "type" : "function",
+		   "constant" : true,
+		   "payable" : false,
+		   "outputs" : [
+		      {
+		         "name" : "d",
+		         "type" : "uint256"
+		      }
+		   ],
+		   "name" : "multiply",
+		   "inputs" : [
+		      {
+		         "name" : "a",
+		         "type" : "uint256"
+		      }
+		   ],
+		   "stateMutability" : "view"
+	   }
+
+	];
+
+    var currentContractAddr = '0x40046f948FB99c061643D48Bb1F68Fa04B2f3661';
+    
+    function createExampleContract() {
+        // hide create button
+        document.getElementById('create').style.visibility = 'hidden'; 
+        document.getElementById('code').innerText = code;
+        // let's assume that coinbase is our account
+        web3.eth.defaultAccount = web3.eth.coinbase;
+
+        let gasEstimate = web3.eth.estimateGas({data: bytecode});
+
+        myblockchaincalculatorContract = web3.eth.contract(abiArray);
+
+        //This parameters were taken from the output of the Remix Solidity IDE
+        //Deploy contract
+	    var myblockchaincalculator = myblockchaincalculatorContract.new({
+          from: web3.eth.accounts[0],
+          data: bytecode,
+          gas: gasEstimate
+        }, function (err, contract) {
+        	console.log("New contract callback Error: ", err);
+        	if (!contract.address) {
+           		console.log(contract.transactionHash); 
+        	}
+          if (typeof contract.address !== 'undefined') {
+            console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+          }
+ 	    });
+
+        document.getElementById('status').innerText = "Transaction sent, waiting for confirmation";
+
+    }
+    function callExampleContract() {
+        var param = parseInt(document.getElementById('value').value);
+
+        if (myblockchaincalculatorContract == null) {
+        	myblockchaincalculatorContract = web3.eth.contract(abiArray);
+        }
+        
+		// instantiate by address
+		var contractInstance = myblockchaincalculatorContract.at(currentContractAddr);
+
+        var res = contractInstance.multiply(param);
+        document.getElementById('result').innerText = res.toString(10);
+    }
+    </script>
+</head>
+<body>
+
+   <h1>BlockID project PoC</h1>
+
+    <div id="code"></div> 
+    <div id="status"></div>
+    <div id='create'>
+        <button type="button" onClick="createExampleContract();">Create example contract</button>
+    </div>
+    <div id='call'>
+        <input type="number" id="value" onkeyup='callExampleContract()'></input>
+    </div>
+    <div id="result"></div>
+
+</body>
+</html>
