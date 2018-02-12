@@ -1,63 +1,61 @@
 <html>
 <head>
 	<title>BlockID first PoC</title>
-	<script type="text/javascript" src="bower_components/web3/dist/web3.min.js"> </script>
+	<script type="text/javascript" src="bower_components/web3/dist/web3.js"> </script>
 
 	<script type="text/javascript">
 	var Web3 = require('web3');
 
-	//Check for existing provider (Mist browser or Metamask) 
-	/*
+	/*Check for existing provider (Mist browser or Metamask) 
 	if (typeof web3 !== 'undefined') {
   		web3 = new Web3(web3.currentProvider);
-	} else {
-	*/	
+	} 
+    else {
+    */
 
-  	// set the provider you want from Web3.providers
-  	web3 = new Web3(new Web3.providers.HttpProvider("http://10.10.96.78:8545"));
+  	    // set the provider you want from Web3.providers
+        //web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io"));
+  	    web3 = new Web3(new Web3.providers.HttpProvider("http://10.10.96.78:8545"));
+    //}
 	
-
     // Solidity code
     /*
 		The compileSolidity method is not available right now in geth 
 		so we have to hardcode the compiled contract
     
-    "pragma solidity ^0.4.6;" +
+    "pragma solidity ^0.4.6;"
+     uint256 result;
     "contract MyBlockChainCalculator {\n" +
     "   function multiply(uint a) constant returns(uint d) {\n" +
-    "       return a * 7;\n" +
+    "       result = a * 7;\n" +
     "   }\n" +
     "}\n";
     var compiled = web3.eth.compile.solidity(source);
     */
 
     var	myblockchaincalculatorContract;
-    var bytecode = '0x6060604052341561000f57600080fd5b60b18061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c6888fa1146044575b600080fd5b3415604e57600080fd5b606260048080359060200190919050506078565b6040518082815260200191505060405180910390f35b60006007820290509190505600a165627a7a723058207ab9b0c52c1834b271df39c26e82a74d882b1a6d52fb6d5d717fc8e4b586854e0029';
 
-	var abiArray = [
-	   {
-		   "type" : "function",
-		   "constant" : true,
-		   "payable" : false,
-		   "outputs" : [
-		      {
-		         "name" : "d",
-		         "type" : "uint256"
-		      }
-		   ],
-		   "name" : "multiply",
-		   "inputs" : [
-		      {
-		         "name" : "a",
-		         "type" : "uint256"
-		      }
-		   ],
-		   "stateMutability" : "view"
-	   }
+    var lastTxHash;
 
-	];
+    var bytecode = '0x60606040523415600e57600080fd5b609d8061001c6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c6888fa1146044575b600080fd5b3415604e57600080fd5b606260048080359060200190919050506064565b005b60078102600081905550505600a165627a7a72305820040790f8525874e4ae7c833f0ff4859f28fff037dddf92ad5e7950453a4d4e840029';
+    //var bytecode = '0x6060604052341561000f57600080fd5b60b18061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c6888fa1146044575b600080fd5b3415604e57600080fd5b606260048080359060200190919050506078565b6040518082815260200191505060405180910390f35b60006007820290509190505600a165627a7a723058207ab9b0c52c1834b271df39c26e82a74d882b1a6d52fb6d5d717fc8e4b586854e0029';
 
-    var currentContractAddr = '0x40046f948FB99c061643D48Bb1F68Fa04B2f3661';
+	var abiArray = [{"constant":false,"inputs":[{"name":"a","type":"uint256"}],"name":"multiply","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}];
+
+    var currentContractAddr = '0x9accc4ac20f4626cb655d44da5d4fc609693ac75';
+
+    /*   Event filter
+         TODO: investigate this but apparently it could be used to read logs
+    web3.eth.filter("latest").watch(
+        function(error,result) {
+            if (!error) {
+                console.log('Tx Hash: ' + result);
+                if (result == lastTxHash)
+                    document.getElementById('status').innerText = 'NEW mined Transaction: '+ result;
+            }
+        }
+    );
+    */
     
     function createExampleContract() {
         // hide create button
@@ -87,10 +85,39 @@
  	    });
 
         document.getElementById('status').innerText = "Transaction sent, waiting for confirmation";
-
     }
+
+    var timeoutID;
+
+    function startMonitoringTx(txID) {
+      timeoutID = window.setInterval(checkTransaction, 5000, txID);
+    }
+
+    function checkTransaction(txID) {
+      var transaction = web3.eth.getTransaction(txID);
+
+      console.log(transaction);
+
+      if (transaction.blockNumber == null)
+      {
+       console.log('Not yet! ...');
+      }
+      else
+      {
+        document.getElementById('status').innerText = "Last Transaction was confirmed!";
+        window.clearInterval(timeoutID);
+      }
+    }
+
     function callExampleContract() {
         var param = parseInt(document.getElementById('value').value);
+        //Clear outputs
+        document.getElementById('status').innerText = '';
+        document.getElementById('result_storage').innerText = '';
+
+
+        // We need an account to spend ether on transactions
+        web3.eth.defaultAccount = web3.eth.coinbase;
 
         if (myblockchaincalculatorContract == null) {
         	myblockchaincalculatorContract = web3.eth.contract(abiArray);
@@ -99,24 +126,53 @@
 		// instantiate by address
 		var contractInstance = myblockchaincalculatorContract.at(currentContractAddr);
 
-        var res = contractInstance.multiply(param);
-        document.getElementById('result').innerText = res.toString(10);
+        lastTxHash = contractInstance.multiply(param);
+        document.getElementById('result').innerText = 'Tx hash: ' + lastTxHash.toString(10) + ' => Waiting for mining...';
+        startMonitoringTx(lastTxHash);
     }
+
+
+    function getCurrentStorage() {
+        var stored = web3.eth.getStorageAt(currentContractAddr, 0);
+        document.getElementById('result_storage').innerText = web3.toDecimal(stored);
+    }
+
+    function getWalletBalance() {
+        web3.eth.getBalance(web3.eth.coinbase, 
+            function (err, balance) {
+              document.getElementById('result_balance').innerText = "Wallet ballance: " + balance.toString(10) + ' wei';
+            }
+            );
+    }
+
     </script>
 </head>
 <body>
-
    <h1>BlockID project PoC</h1>
-
     <div id="code"></div> 
-    <div id="status"></div>
-    <div id='create'>
+    <div id="blank"></div>
+    <div display="block" id='create'>
         <button type="button" onClick="createExampleContract();">Create example contract</button>
     </div>
+
+    Multiply by 7:
     <div id='call'>
-        <input type="number" id="value" onkeyup='callExampleContract()'></input>
+        <input type="number" id="value"></input> 
+        <button type="button" onClick="callExampleContract();"> x 7 = </button>
     </div>
-    <div id="result"></div>
+    <div display="block" id="result">
+        
+    </div>
+    <button type="button" onClick="getCurrentStorage();">Get contract storage</button>
+
+    <div id="result_storage">  </div>
+
+    <div id="status">Status:  
+    </div>
+
+    <button type="button" onClick="getWalletBalance();">Get my wallet balance</button>
+
+    <div id="result_balance">Wallet ballance: </div>
 
 </body>
 </html>
