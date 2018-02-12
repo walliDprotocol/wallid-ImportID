@@ -1,0 +1,11 @@
+# BlockID first PoC
+
+
+Dependencies:
+
+Install web3 with 
+```bash
+bower install web3
+```
+
+
