@@ -18,22 +18,20 @@
 
 	<script type="text/javascript" src="bower_components/web3/dist/web3.js"> </script>
 
-
-
 	<script type="text/javascript">
 	var Web3 = require('web3');
 
-	/*Check for existing provider (Mist browser or Metamask) 
-	if (typeof web3 !== 'undefined') {
+    var USE_METAMASK = false;
+
+	//Check for existing provider (Mist browser or Metamask) 
+	if (USE_METAMASK) {
   		web3 = new Web3(web3.currentProvider);
 	} 
     else {
-    */
-
   	    // set the provider you want from Web3.providers
         //web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io"));
   	    web3 = new Web3(new Web3.providers.HttpProvider("http://10.10.96.78:8545"));
-    //}
+    }
 	
     // Solidity code
     /*
@@ -111,19 +109,22 @@
     }
 
     function checkTransaction(txID) {
-      var transaction = web3.eth.getTransaction(txID);
+      var transaction = web3.eth.getTransaction(txID, 
+        function(err, transaction) {
+        console.log(transaction);
 
-      console.log(transaction);
-
-      if (transaction.blockNumber == null)
-      {
-       console.log('Not yet! ...');
-      }
-      else
-      {
-        document.getElementById('status').innerText = "Last Transaction was confirmed!";
-        window.clearInterval(timeoutID);
-      }
+        if (transaction.blockNumber == null)
+        {
+            console.log('Not yet! ...');
+        }
+        else
+        {
+            document.getElementById('status').innerText = "Last Transaction was confirmed!";
+            window.clearInterval(timeoutID);
+        }
+        }
+    );
+      
     }
 
     function callExampleContract() {
@@ -143,15 +144,22 @@
 		// instantiate by address
 		var contractInstance = myblockchaincalculatorContract.at(currentContractAddr);
 
-        lastTxHash = contractInstance.multiply(param);
-        document.getElementById('result').innerText = 'Tx hash: ' + lastTxHash.toString(10) + ' => Waiting for mining...';
-        startMonitoringTx(lastTxHash);
+        contractInstance.multiply(param, 
+            function(err, lastTxHash) {
+                document.getElementById('result').innerText = 'Tx hash: ' + lastTxHash.toString(10) + ' => Waiting for mining...';
+                startMonitoringTx(lastTxHash);
+            }
+        );
+
     }
 
 
     function getCurrentStorage() {
-        var stored = web3.eth.getStorageAt(currentContractAddr, 0);
-        document.getElementById('result_storage').innerText = web3.toDecimal(stored);
+        web3.eth.getStorageAt(currentContractAddr, 0, 
+            function (err, stored) {
+               document.getElementById('result_storage').innerText = web3.toDecimal(stored);
+            }
+            );
     }
 
     function getWalletBalance() {
@@ -171,8 +179,10 @@
     <div id="code"></div> 
     <div id="blank"></div>
     <div display="block" id='create'>
-        <button type="button" onClick="createExampleContract();">Create example contract</button>
+        <button type="button" onClick="createExampleContract();">Deploy calculator contract</button>
     </div>
+
+    <h2>Smart contract calls</h2>
 
     Multiply by 7:
     <div id='call'>
