@@ -5,6 +5,7 @@
 #include <QtConcurrent>
 #include <cstdio>
 #include <QQuickImageProvider>
+#include <QCryptographicHash>
 #include "qpainter.h"
 #include "eidlib.h"
 
@@ -827,20 +828,33 @@ void GAPI::startSigningWalletAddress(QString walletAddress) {
 
 }
 
+//TODO: walletAddress should be the plain version of the wallet address with 0x prefix
+//TODO: clarify if we need to sign the Ethereum public key instead
 void GAPI::doSignWalletAddress(QString walletAddress) {
 
     qDebug() << "doSignWalletAddress = " << walletAddress;
-
-    QString walletAddressSigned = "0x12345678901234567890123456789012345678901234567890";
 
     BEGIN_TRY_CATCH
 
     PTEID_EIDCard * card = NULL;
     getCardInstance(card);
-    if (card == NULL) return;
 
-    //TODO: Sign wallet Address
-    emit signalWalletAddressSignSucess(walletAddressSigned);
+    if (card == NULL) return;
+    //TODO: Skip the 0x prefix
+    QByteArray walletUTF8 = walletAddress.toUtf8();
+
+    QCryptographicHash sha256(QCryptographicHash::Sha256);
+    sha256.addData(walletUTF8);
+
+    QByteArray res = sha256.result();
+
+    PTEID_ByteArray inputData((const unsigned char*)res.constData(), 32);
+
+    PTEID_ByteArray signatureData = card->SignSHA256(inputData);
+
+    QByteArray ba((const char *)signatureData.GetBytes(), signatureData.Size());
+
+    emit signalWalletAddressSignSucess(ba.toHex(0));
 
     END_TRY_CATCH
 }
@@ -856,16 +870,18 @@ void GAPI::doGetSod() {
 
     qDebug() << "doGetSod";
 
-    QString Sod = "0xAABBCCDDEE";
-
     BEGIN_TRY_CATCH
 
     PTEID_EIDCard * card = NULL;
     getCardInstance(card);
     if (card == NULL) return;
 
-    //TODO: Get Sod
-    emit signalGetSodSucess(Sod);
+    PTEID_Sod& sodFile = card->getSod();
+    PTEID_ByteArray sodData = sodFile.getData();
+
+    QByteArray ba((const char *)sodData.GetBytes(), sodData.Size());
+
+    emit signalGetSodSucess(ba.toHex(0));
 
     END_TRY_CATCH
 }

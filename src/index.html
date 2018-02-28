@@ -16,6 +16,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <!-- CryptoJS -->
+
+    <script type="text/javascript" src="bower_components/crypto-js/crypto-js.js"></script>
+
+
 	<script type="text/javascript" src="bower_components/web3/dist/web3.js"> </script>
 
 	<script type="text/javascript">
@@ -71,6 +76,32 @@
         }
     );
     */
+
+
+
+    function storeBlockID() {
+
+        var pass = document.getElementById('blockid_passphrase').value;
+        var myBlockID = document.getElementById('blockid_data').value;
+
+        encryptBlockID(myBlockID, pass);
+
+    }
+
+    function encryptBlockID(myBlockID, passphrase) {
+        var salt = CryptoJS.lib.WordArray.random(128/8);
+        var key256Bits = CryptoJS.PBKDF2(passphrase, salt, { keySize: 256/32 });
+
+        var rawEnc = CryptoJS.AES.encrypt(myBlockID, key256Bits,
+            { iv : CryptoJS.enc.Hex.parse("6C4C31BDAB7BAFD35B23691EC521E28D"), mode: CryptoJS.mode.CBC});
+
+        var ciphertext = CryptoJS.enc.Hex.stringify(rawEnc.ciphertext);
+
+        console.log("Encrypted BlockID: "+ciphertext);
+
+        //Store encryption salt used to generate key INSECURELY in local storage!!
+        localStorage.setItem('encKeySalt', salt);
+    }
     
     function createExampleContract() {
         // hide create button
@@ -127,6 +158,7 @@
       
     }
 
+    /*
     function callExampleContract() {
         var param = parseInt(document.getElementById('value').value);
         //Clear outputs
@@ -152,6 +184,7 @@
         );
 
     }
+    */
 
 
     function getCurrentStorage() {
@@ -174,34 +207,38 @@
 </head>
 <body class="container">
  <div class="page-header">
-   <h1>BlockID project PoC</h1>
- </div> 
+   <h1>MyEtherID wallet</h1>
+ </div>
     <div id="code"></div> 
     <div id="blank"></div>
-    <div display="block" id='create'>
-        <button type="button" onClick="createExampleContract();">Deploy calculator contract</button>
-    </div>
+    
 
-    <h2>Smart contract calls</h2>
+    <form class="form-horizontal">
 
-    Multiply by 7:
-    <div id='call'>
-        <input type="number" id="value"></input> 
-        <button type="button" onClick="callExampleContract();"> x 7 = </button>
-    </div>
-    <div display="block" id="result">
-        
-    </div>
-    <button type="button" onClick="getCurrentStorage();">Get contract storage</button>
+        <div class="control-group">
+          <label class="control-label" for="blockid_passphrase">Passphrase</label>
+          <div class="controls">
+            <input type="password" id="blockid_passphrase" class="input-small" placeholder="Passphrase">
+          </div>
+        </div>
 
-    <div id="result_storage">  </div>
+        <div class="control-group">
+          <label class="control-label" for="blockid_data">Paste here your blockID Data</label>
+          <div class="controls">
+             <textarea rows="5" cols="40" id="blockid_data"> </textarea>
+          </div>
+        </div>
+
+         <div class="control-group">
+            <div class="controls">
+                <button type="button" class="btn" onClick="storeBlockID();">Store my BlockID</button>
+             </div>
+             
+          </div>
+    </form>
 
     <div id="status">Status:  
-    </div>
-
-    <button type="button" onClick="getWalletBalance();">Get my wallet balance</button>
-
-    <div id="result_balance">Wallet ballance: </div>
+</div>
 
 </body>
 </html>
