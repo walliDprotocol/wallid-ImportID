@@ -826,10 +826,6 @@ void GAPI::buildTree(PTEID_Certificate &cert, bool &bEx, QVariantMap &certificat
     }
 }
 
-void GAPI::startfillCertificateList( void ) {
-    QtConcurrent::run(this, &GAPI::fillCertificateList);
-}
-
 void GAPI::startGetCardActivation( void ) {
 
     connect(this, SIGNAL(getCertificateAuthStatusFinished(int)),
@@ -868,30 +864,3 @@ void GAPI::getCertificateAuthStatus ( void )
     END_TRY_CATCH
 }
 
-void GAPI::fillCertificateList ( void )
-{
-    bool noIssuer = false;
-    QVariantMap certificatesMap;
-
-    qDebug() << "fillCertificateList";
-
-    BEGIN_TRY_CATCH
-
-    PTEID_EIDCard * card = NULL;
-    getCardInstance(card);
-    if (card == NULL) return;
-
-    PTEID_Certificates&	 certificates	= card->getCertificates();
-
-    certificatesMap.clear();
-    buildTree(certificates.getCert(PTEID_Certificate::CITIZEN_AUTH), noIssuer,certificatesMap);
-
-    buildTree(certificates.getCert(PTEID_Certificate::CITIZEN_SIGN), noIssuer,certificatesMap);
-    if (noIssuer)
-    {
-        qDebug() << "fillCertificateList failed because certificate chain couldn't be completed!";
-    }
-
-    emit signalCertificatesChanged(certificatesMap);
-    END_TRY_CATCH
-}

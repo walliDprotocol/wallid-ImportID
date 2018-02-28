@@ -155,7 +155,6 @@ public slots:
     QString getAddressField(GAPI::AddressInfoKey key);
 
     void setEventCallbacks( void );
-    void startfillCertificateList ( void );
     void startGetCardActivation ( void );
     void showCertificateAuthStatus(int certificateStatus);
 

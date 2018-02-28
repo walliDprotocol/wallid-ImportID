@@ -1,0 +1,6 @@
+# Ignore everything at build folder
+build/*
+
+# But not these files...
+!build/*.qm
+!build/*.ts
