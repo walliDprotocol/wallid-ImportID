@@ -1,5 +1,0 @@
-<!DOCTYPE RCC><RCC version="1.0">
-<qresource prefix="/">
-<file alias="qtquickcontrols2.conf">/home/adriano/git/blockid/ImportID/src/qtquickcontrols2.conf</file>
-</qresource>
-</RCC>
