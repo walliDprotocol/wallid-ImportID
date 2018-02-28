@@ -54,6 +54,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     gapi.h \
-    scapsignature.h \
     Settings.h \
     appcontroller.h
