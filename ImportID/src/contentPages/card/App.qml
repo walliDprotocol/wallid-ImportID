@@ -8,6 +8,7 @@ import eidguiV2 1.0
 AppForm {
 
     property string tempImportText: ""
+    property string tempWalletSigned: ""
 
     Connections {
         target: gapi
@@ -66,7 +67,7 @@ AppForm {
                 propertyImportText.text =
                         initImportText()
                         + tempImportText
-                        + "],\nwallet_signature:[" + propertTextFieldWallet.text
+                        + "],\nwallet_signature:[" + tempWalletSigned
                         + closeImportText()
 
                 propertyTextStepDescription.text = "Wallet: "+propertTextFieldWallet.text+"\n
@@ -92,7 +93,7 @@ and then paste this data (CTR-V) into MyEtherID (import section)"
                         + ", Foreignregion: "    + gapi.getAddressField(GAPI.Foreignregion)
                         + ", Foreignlocality: "    + gapi.getAddressField(GAPI.Foreignlocality)
                         + ", Foreignpostalcode: "    + gapi.getAddressField(GAPI.Foreignpostalcode)
-                        + "],\nwallet_signature:[" + propertTextFieldWallet.text
+                        + "],\nwallet_signature:[" + tempWalletSigned
                         + closeImportText()
             }else{
                 propertyImportText.text =
@@ -113,7 +114,7 @@ and then paste this data (CTR-V) into MyEtherID (import section)"
                         + ", Zip4: "    + gapi.getAddressField(GAPI.Zip4)
                         + ", Zip3: "    + gapi.getAddressField(GAPI.Zip3)
                         + ", PostalLocality: "    + gapi.getAddressField(GAPI.PostalLocality)
-                        + "],\nwallet_signature:[" + propertTextFieldWallet.text
+                        + "],\nwallet_signature:[" + tempWalletSigned
                         + closeImportText()
             }
 
@@ -197,6 +198,11 @@ and then paste this data (CTR-V) into MyEtherID (import section)"
             }
             mainFormID.propertyPageLoader.propertyGeneralPopUp.visible = true;
         }
+        onSignalWalletAddressSignSucess: {
+            console.log("Signal Wallet Address Sign Sucess = " + walletAddressSigned)
+            tempWalletSigned = walletAddressSigned
+            gapi.startCardReading()
+        }
     }
 
     propertyComboBoxReader.onActivated:  {
@@ -221,15 +227,19 @@ and then paste this data (CTR-V) into MyEtherID (import section)"
     propertyGenerateButton {
         onClicked: {
             console.log("Generate Button clicked")
-            //propertyComboBoxReader.model = gapi.getRetReaderList()
 
-            propertyBusyIndicator.running = true
-            propertyImportText.text = ""
-            propertyFinishPage.visible = false
-            propertyTextStepDescription.text = ""
-
-            if(propertyCheckBoxIdentity.checked){
-                gapi.startCardReading()
+            if(propertyTextFieldWallet.text != ""){
+                propertyBusyIndicator.running = true
+                propertyImportText.text = ""
+                propertyFinishPage.visible = false
+                propertyTextStepDescription.text = ""
+                gapi.startSigningWalletAddress(propertyTextFieldWallet.text)
+            }else{
+                mainFormID.propertyPageLoader.propertyGeneralTitleText.text =
+                        qsTr("Error")
+                mainFormID.propertyPageLoader.propertyGeneralPopUpLabelText.text =
+                        qsTr("Please Fill the Ethereum Wallet Address")
+                mainFormID.propertyPageLoader.propertyGeneralPopUp.visible = true;
             }
         }
     }

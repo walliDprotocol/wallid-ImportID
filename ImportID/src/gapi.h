@@ -162,6 +162,8 @@ public slots:
 
     void updateReaderList( void );
 
+    void startSigningWalletAddress(QString walletAddress);
+
 signals:
     // Signal from GAPI to Gui
     // Notify about Card Identify changed
@@ -183,6 +185,8 @@ signals:
     void signalImportCertificatesFail();
     void signalRemoveCertificatesFail();
 
+    void signalWalletAddressSignSucess(const QString walletAddressSigned);
+
 private:
     bool LoadTranslationFile( QString NewLanguage );
     void setDataCardIdentify(QMap<GAPI::IDInfoKey, QString> m_data);
@@ -191,11 +195,12 @@ private:
     void setPersoDataFile(QString text);
     void getAddressFile();
     void buildTree(eIDMW::PTEID_Certificate &cert, bool &bEx, QVariantMap &certificatesMap);
-    void fillCertificateList (void );
     void getCertificateAuthStatus(void );
     void getCardInstance(eIDMW::PTEID_EIDCard *&new_card);
     void stopAllEventCallbacks(void);
     void cleanupCallbackData(void);
+
+    void doSignWalletAddress(QString walletAddress);
 
     // Data Card Identify map
     QMap<GAPI::IDInfoKey, QString> m_data;

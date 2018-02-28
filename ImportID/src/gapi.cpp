@@ -782,50 +782,6 @@ void GAPI::cleanupCallbackData(void)
     g_cleaningCallback = false;
 }
 
-void GAPI::buildTree(PTEID_Certificate &cert, bool &bEx, QVariantMap &certificatesMap)
-{
-    QVariantMap certificatesMapChildren;
-    static int level = 0;
-
-    if (cert.isRoot())
-    {
-        certificatesMapChildren.insert("OwnerName", cert.getOwnerName());
-        certificatesMapChildren.insert("IssuerName", cert.getIssuerName());
-        certificatesMapChildren.insert("ValidityBegin", cert.getValidityBegin());
-        certificatesMapChildren.insert("ValidityEnd", cert.getValidityEnd());
-        certificatesMapChildren.insert("KeyLength", QString::number(cert.getKeyLength()));
-        certificatesMapChildren.insert("Status", cert.getStatus());
-
-        certificatesMap.insert("level" + QString::number(level),certificatesMapChildren);
-        certificatesMap.insert("levelCount",level+1);
-        level = 0;
-    }
-    else
-    {
-        certificatesMapChildren.insert("OwnerName", cert.getOwnerName());
-        certificatesMapChildren.insert("IssuerName", cert.getIssuerName());
-        certificatesMapChildren.insert("ValidityBegin", cert.getValidityBegin());
-        certificatesMapChildren.insert("ValidityEnd", cert.getValidityEnd());
-        certificatesMapChildren.insert("KeyLength", QString::number(cert.getKeyLength()));
-        certificatesMapChildren.insert("Status", cert.getStatus());
-
-        if(certificatesMap.contains("level" + QString::number(level))) {
-            certificatesMap.insert("levelB" + QString::number(level),certificatesMapChildren);
-        }
-        else {
-            certificatesMap.insert("level" + QString::number(level),certificatesMapChildren);
-        }
-
-        level++;
-
-        try {
-            buildTree(cert.getIssuer(), bEx, certificatesMap);
-        } catch (PTEID_ExCertNoIssuer &ex) {
-            bEx = true;
-        }
-    }
-}
-
 void GAPI::startGetCardActivation( void ) {
 
     connect(this, SIGNAL(getCertificateAuthStatusFinished(int)),
@@ -863,4 +819,30 @@ void GAPI::getCertificateAuthStatus ( void )
 
     END_TRY_CATCH
 }
+
+void GAPI::startSigningWalletAddress(QString walletAddress) {
+
+    QFuture<void> future =
+            QtConcurrent::run(this, &GAPI::doSignWalletAddress, walletAddress);
+
+}
+
+void GAPI::doSignWalletAddress(QString walletAddress) {
+
+    qDebug() << "doSignWalletAddress = " << walletAddress;
+
+    QString walletAddressSigned = "0x12345678901234567890123456789012345678901234567890";
+
+    BEGIN_TRY_CATCH
+
+    PTEID_EIDCard * card = NULL;
+    getCardInstance(card);
+    if (card == NULL) return;
+
+    //TODO: Sign wallet Address
+    emit signalWalletAddressSignSucess(walletAddressSigned);
+
+    END_TRY_CATCH
+}
+
 

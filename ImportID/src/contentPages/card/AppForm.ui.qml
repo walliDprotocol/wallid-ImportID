@@ -20,7 +20,7 @@ Item {
     property alias propertyCheckBoxAddress: checkBoxAddress
     property alias propertyTextStepDescription: textStepDescription
     property alias propertyImportText: importText
-    property alias propertTextFieldWallet: textFieldWallet
+    property alias propertyTextFieldWallet: textFieldWallet
 
     property alias propertStartButton: startButton
     property alias propertyGenerateButton: generateButton
@@ -199,7 +199,7 @@ Item {
             anchors.topMargin: 10
             width: parent.width - 120
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "0x0778cc2e8bbad3d483e82371606d100cc8604522"
+            text: ""
         }
         Button {
             id: backGenerateButton
