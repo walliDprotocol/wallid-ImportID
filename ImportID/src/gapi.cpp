@@ -845,4 +845,29 @@ void GAPI::doSignWalletAddress(QString walletAddress) {
     END_TRY_CATCH
 }
 
+void GAPI::startGettingSod() {
+
+    QFuture<void> future =
+            QtConcurrent::run(this, &GAPI::doGetSod);
+
+}
+
+void GAPI::doGetSod() {
+
+    qDebug() << "doGetSod";
+
+    QString Sod = "0xAABBCCDDEE";
+
+    BEGIN_TRY_CATCH
+
+    PTEID_EIDCard * card = NULL;
+    getCardInstance(card);
+    if (card == NULL) return;
+
+    //TODO: Get Sod
+    emit signalGetSodSucess(Sod);
+
+    END_TRY_CATCH
+}
+
 
