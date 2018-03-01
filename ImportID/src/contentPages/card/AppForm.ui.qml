@@ -28,6 +28,8 @@ Item {
     property alias propertyBackGenerateButton: backGenerateButton
     property alias propertyGotoButton: gotoButton
 
+    property alias propertyFlickImportText: flickableImportText
+
     BusyIndicator {
         id: busyIndication
         width: 120
@@ -249,19 +251,44 @@ Item {
         Frame {
             id: frame
             width: parent.width - 60
+            height: 250
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: textStepDescription.bottom
             anchors.topMargin: 10
+            spacing: 10
 
-            TextEdit {
-                id: importText
-                text: ""
-                wrapMode: Text.WordWrap
-                width: frame.width - 20
-                anchors.horizontalCenter: parent.horizontalCenter
-                height: frame.height
-                font.pixelSize: 12
-                selectByMouse: true
+            Flickable {
+                id: flickableImportText
+                width: parent.width
+                height: parent.height
+                boundsBehavior: Flickable.StopAtBounds
+                maximumFlickVelocity: 2500
+                flickableDirection: Flickable.VerticalFlick
+                contentWidth: importText.paintedWidth
+                contentHeight: importText.paintedHeight
+                clip: true
+
+                TextEdit {
+                    id: importText
+                    text: ""
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    width: flickableImportText.width - 20
+                    height: flickableImportText.height
+                    focus: true
+                    font.pixelSize: Constants.SIZE_TEXT_LABEL
+                    selectByMouse: true
+                }
+                ScrollBar.vertical: ScrollBar {
+                    active: true
+                    visible: true
+                    policy: ScrollBar.AlwaysOn
+                    width: 10
+
+                    onActiveChanged: {
+                        if (!active)
+                            active = true
+                    }
+                }
             }
         }
         Button {

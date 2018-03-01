@@ -278,6 +278,15 @@ and then paste this data (CTR-V) into MyEtherID (import section)"
         }
     }
 
+    propertyImportText {
+        onTextChanged: {
+            ensureVisible(propertyImportText.cursorRectangle)
+        }
+        onCursorRectangleChanged: {
+            ensureVisible(propertyImportText.cursorRectangle)
+        }
+    }
+
     Component.onCompleted: {
         console.log("Page Card Identify mainWindow Completed")    
     }
@@ -306,5 +315,13 @@ and then paste this data (CTR-V) into MyEtherID (import section)"
         tempImportText = ""
         tempWalletSigned = ""
         tempSod = ""
+    }
+    function ensureVisible(r)
+    {
+        if (propertyFlickImportText.contentY >= r.y){
+            propertyFlickImportText.contentY = r.y
+        }else if (propertyFlickImportText.contentY+propertyFlickImportText.height <= r.y+r.height){
+            propertyFlickImportText.contentY = r.y+r.height-propertyFlickImportText.height;
+        }
     }
 }

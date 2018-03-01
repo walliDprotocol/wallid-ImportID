@@ -20,7 +20,7 @@ var PTEID_CERTIF_STATUS_ERROR = 5       /* Error during validation */
 var PTEID_CERTIF_STATUS_VALID = 6       /* Valid certificate */
 
 // Screen Size
-var SCREEN_MINIMUM_WIDTH = 512
+var SCREEN_MINIMUM_WIDTH = 576
 var SCREEN_MINIMUM_HEIGHT = 576;
 
 // Title bar
