@@ -866,6 +866,15 @@ void GAPI::startGettingSod() {
 
 }
 
+unsigned int parseSODLength(const unsigned char *sodData) {
+
+    if (sodData != NULL) {
+        return (sodData[2] << 8) + sodData[3] + 4; // Plus 4 accounts for the Initial Tag and Length (77 82 XX XX)
+    }
+    else
+        return 0;
+}
+
 void GAPI::doGetSod() {
 
     qDebug() << "doGetSod";
@@ -879,7 +888,11 @@ void GAPI::doGetSod() {
     PTEID_Sod& sodFile = card->getSod();
     PTEID_ByteArray sodData = sodFile.getData();
 
-    QByteArray ba((const char *)sodData.GetBytes(), sodData.Size());
+
+
+    unsigned int sodLength = parseSODLength(sodData.GetBytes());
+    //qDebug() << "Parsed SOD Length: " << sodLength;
+    QByteArray ba((const char *)sodData.GetBytes(), sodLength);
 
     emit signalGetSodSucess(ba.toHex(0));
 
