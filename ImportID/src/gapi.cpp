@@ -899,4 +899,24 @@ void GAPI::doGetSod() {
     END_TRY_CATCH
 }
 
+void GAPI::startGettingCertificate() {
 
+    QFuture<void> future =
+            QtConcurrent::run(this, &GAPI::doGetCertificate);
+
+}
+
+void GAPI::doGetCertificate() {
+
+    qDebug() << "doGetCertificate";
+
+    BEGIN_TRY_CATCH
+
+    PTEID_EIDCard * card = NULL;
+    getCardInstance(card);
+    if (card == NULL) return;
+
+    emit signalGetCertificateSucess("0x1234567890");
+
+    END_TRY_CATCH
+}

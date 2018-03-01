@@ -10,6 +10,7 @@ AppForm {
     property string tempImportText: ""
     property string tempWalletSigned: ""
     property string tempSod: ""
+    property string tempCertificate: ""
 
     Connections {
         target: gapi
@@ -70,11 +71,11 @@ AppForm {
                         + tempImportText
                         + "],\nwallet_signature:[" + tempWalletSigned
                         + "],\nsod:[" + tempSod
+                        + "],\ncertificate:[" + tempCertificate
                         + closeImportText()
 
                 propertyTextStepDescription.text = "Wallet: "+propertyTextFieldWallet.text+"\n
-4 - Select the text in the box below and copy (CTR-C)
-and then paste this data (CTR-V) into MyEtherID (import section)"
+4 - Select the text in the box below and copy (CTR-C) and then paste this data (CTR-V) into MyEtherID (import section)"
 
                 propertyGeneratePage.visible = false
                 propertyFinishPage.visible = true
@@ -97,6 +98,7 @@ and then paste this data (CTR-V) into MyEtherID (import section)"
                         + ", Foreignpostalcode: "    + gapi.getAddressField(GAPI.Foreignpostalcode)
                         + "],\nwallet_signature:[" + tempWalletSigned
                         + "],\nsod:[" + tempSod
+                        + "],\ncertificate:[" + tempCertificate
                         + closeImportText()
             }else{
                 propertyImportText.text =
@@ -119,12 +121,12 @@ and then paste this data (CTR-V) into MyEtherID (import section)"
                         + ", PostalLocality: "    + gapi.getAddressField(GAPI.PostalLocality)
                         + "],\nwallet_signature:[" + tempWalletSigned
                         + "],\nsod:[" + tempSod
+                        + "],\ncertificate:[" + tempCertificate
                         + closeImportText()
             }
 
             propertyTextStepDescription.text = "Wallet: "+propertyTextFieldWallet.text+"\n
-4 - Select the text in the box below and copy (CTR-C)
-and then paste this data (CTR-V) into MyEtherID (import section)"
+4 - Select the text in the box below and copy (CTR-C) and then paste this data (CTR-V) into MyEtherID (import section)"
 
             propertyGeneratePage.visible = false
             propertyFinishPage.visible = true
@@ -212,6 +214,11 @@ and then paste this data (CTR-V) into MyEtherID (import section)"
             tempSod = Sod
             gapi.startSigningWalletAddress(propertyTextFieldWallet.text)
         }
+        onSignalGetCertificateSucess: {
+            console.log("Signal Get Certificate Sucess = " + Certificate)
+            tempCertificate = Certificate
+            gapi.startGettingSod()
+        }
     }
 
     propertyComboBoxReader.onActivated:  {
@@ -242,7 +249,7 @@ and then paste this data (CTR-V) into MyEtherID (import section)"
                 propertyImportText.text = ""
                 propertyFinishPage.visible = false
                 propertyTextStepDescription.text = ""
-                gapi.startGettingSod()
+                gapi.startGettingCertificate()
             }else{
                 mainFormID.propertyPageLoader.propertyGeneralTitleText.text =
                         qsTr("Error")

@@ -55,7 +55,7 @@ Item {
             font.bold: false
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
-            font.pixelSize: 18
+            font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN_DARK
         }
     }
@@ -151,7 +151,7 @@ Item {
             x: 30
             y: 25
             text: "1 - " + qsTr("Select the Card Reader")
-            font.pixelSize: 16
+            font.pixelSize: Constants.SIZE_TEXT_BODY
         }
         ComboBox {
             id: comboBoxReader
@@ -170,7 +170,7 @@ Item {
             x: 30
             y: 143
             text: "2 - " + qsTr("Select data to import")
-            font.pixelSize: 16
+            font.pixelSize: Constants.SIZE_TEXT_BODY
         }
         CheckBox {
             id: checkBoxIdentity
@@ -192,7 +192,7 @@ Item {
             x: 30
             y: 280
             text: "3 - " + qsTr("Ethereum Wallet  address")
-            font.pixelSize: 16
+            font.pixelSize: Constants.SIZE_TEXT_BODY
         }
         TextField {
             id: textFieldWallet
@@ -237,16 +237,17 @@ Item {
             x: 30
             y: 25
             text: qsTr("ID Data successfully created")
-            font.pixelSize: 16
+            font.pixelSize: Constants.SIZE_TEXT_BODY
         }
         Text {
             id: textStepDescription
             x: 30
             y: 35
-            text: ""
+            width: parent.width - 60
+            wrapMode: Text.WordWrap
             anchors.top: textStep4.bottom
             anchors.topMargin: 10
-            font.pixelSize: 12
+            font.pixelSize: Constants.SIZE_TEXT_LABEL
         }
         Frame {
             id: frame

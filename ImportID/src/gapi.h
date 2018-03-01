@@ -164,6 +164,7 @@ public slots:
 
     void startSigningWalletAddress(QString walletAddress);
     void startGettingSod();
+    void startGettingCertificate();
 
 signals:
     // Signal from GAPI to Gui
@@ -188,6 +189,7 @@ signals:
 
     void signalWalletAddressSignSucess(const QString walletAddressSigned);
     void signalGetSodSucess(const QString Sod);
+    void signalGetCertificateSucess(const QString Certificate);
 
 private:
     bool LoadTranslationFile( QString NewLanguage );
@@ -204,6 +206,7 @@ private:
 
     void doSignWalletAddress(QString walletAddress);
     void doGetSod();
+    void doGetCertificate();
 
     // Data Card Identify map
     QMap<GAPI::IDInfoKey, QString> m_data;
