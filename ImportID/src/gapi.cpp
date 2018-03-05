@@ -572,7 +572,8 @@ void GAPI::connectToCard() {
     getCardInstance(card);
     if (card == NULL) return;
 
-    card->doSODCheck(true); //Enable SOD checking
+    //Disable SOD checking, so that we can easily use test cards
+    card->doSODCheck(false);
     PTEID_EId &eid_file = card->getID();
 
     qDebug() << "C++: loading Card Data";
@@ -888,10 +889,9 @@ void GAPI::doGetSod() {
     PTEID_Sod& sodFile = card->getSod();
     PTEID_ByteArray sodData = sodFile.getData();
 
-
-
     unsigned int sodLength = parseSODLength(sodData.GetBytes());
     //qDebug() << "Parsed SOD Length: " << sodLength;
+
     QByteArray ba((const char *)sodData.GetBytes(), sodLength);
 
     emit signalGetSodSucess(ba.toHex(0));
@@ -915,8 +915,14 @@ void GAPI::doGetCertificate() {
     PTEID_EIDCard * card = NULL;
     getCardInstance(card);
     if (card == NULL) return;
+    PTEID_Certificates &certs = card->getCertificates();
+    PTEID_ByteArray certData;
 
-    emit signalGetCertificateSucess("0x1234567890");
+    certs.getCert(PTEID_Certificate::CITIZEN_AUTH).getFormattedData(certData);
+
+    QByteArray ba((const char *)certData.GetBytes(), certData.Size());
+
+    emit signalGetCertificateSucess(ba.toHex(0));
 
     END_TRY_CATCH
 }

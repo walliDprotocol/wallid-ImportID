@@ -75,7 +75,7 @@ AppForm {
                         + closeImportText()
 
                 propertyTextStepDescription.text = "Wallet: "+propertyTextFieldWallet.text+"\n
-4 - Select the text in the box below and copy (CTR-C) and then paste this data (CTR-V) into MyEtherID (import section)"
+4 - Select the text in the box below and copy (CTRL-C) and then paste this data (CTRL-V) into MyEtherID (import section)"
 
                 propertyGeneratePage.visible = false
                 propertyFinishPage.visible = true
@@ -84,7 +84,7 @@ AppForm {
         }
         onSignalAddressLoaded: {
             console.log("Address --> Data Changed")
-            if(m_foreign){
+            if(m_foreign) {
                 propertyImportText.text =
                         initImportText()
                         + tempImportText
@@ -100,7 +100,8 @@ AppForm {
                         + "],\nsod:[" + tempSod
                         + "],\ncertificate:[" + tempCertificate
                         + closeImportText()
-            }else{
+            }
+            else {
                 propertyImportText.text =
                         initImportText()
                         + tempImportText
