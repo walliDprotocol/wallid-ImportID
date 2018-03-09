@@ -84,7 +84,7 @@ AppForm {
         }
         onSignalAddressLoaded: {
             console.log("Address --> Data Changed")
-            if(m_foreign){
+            if(m_foreign) {
                 propertyImportText.text =
                         initImportText()
                         + tempImportText
@@ -100,7 +100,8 @@ AppForm {
                         + "],\nsod:[" + tempSod
                         + "],\ncertificate:[" + tempCertificate
                         + closeImportText()
-            }else{
+            }
+            else {
                 propertyImportText.text =
                         initImportText()
                         + tempImportText
