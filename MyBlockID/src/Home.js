@@ -5,7 +5,7 @@ class Home extends Component {
     return (
       <div>
         <h2>Home</h2>
-        <p>MyBlockID home</p>
+        <p>Off-chain to On-chain Identity Service</p>
       </div>
     );
   }
