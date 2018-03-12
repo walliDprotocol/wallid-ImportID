@@ -282,7 +282,7 @@ AppForm {
     propertyGotoButton {
         onClicked: {
             console.log("Goto Button clicked")
-            Qt.openUrlExternally("http://www.caixamagica.pt/");
+            Qt.openUrlExternally("http://blockid.herokuapp.com//");
         }
     }
 
