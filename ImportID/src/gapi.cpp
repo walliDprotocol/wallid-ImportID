@@ -444,6 +444,8 @@ void GAPI::getCardInstance(PTEID_EIDCard * &new_card) {
 
                     PTEID_EIDCard& Card = readerContext.getEIDCard();
                     new_card = &Card;
+                    //Disable SOD checking, so that we can easily use test cards
+                    Card.doSODCheck(false);
                     break;
                 }
                     
@@ -463,6 +465,8 @@ void GAPI::getCardInstance(PTEID_EIDCard * &new_card) {
 
                             PTEID_EIDCard& Card = readerContext.getEIDCard();
                             new_card = &Card;
+                            //Disable SOD checking, so that we can easily use test cards
+                            Card.doSODCheck(false);
                             break;
                         }
                             
@@ -572,8 +576,6 @@ void GAPI::connectToCard() {
     getCardInstance(card);
     if (card == NULL) return;
 
-    //Disable SOD checking, so that we can easily use test cards
-    card->doSODCheck(false);
     PTEID_EId &eid_file = card->getID();
 
     qDebug() << "C++: loading Card Data";
