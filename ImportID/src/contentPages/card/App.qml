@@ -28,25 +28,25 @@ AppForm {
             console.log("Data Card Identify --> Data Changed")
             propertyComboBoxReader.model = gapi.getRetReaderList()
             tempImportText =
-                    " \"Surname\",\"" + gapi.getDataCardIdentifyValue(GAPI.Surname) + "\""
-                    + ", \"Givenname\",\"" + gapi.getDataCardIdentifyValue(GAPI.Givenname) + "\""
-                    + ", \"Sex\",\"" + gapi.getDataCardIdentifyValue(GAPI.Sex) + "\""
-                    + ", \"Height\",\"" + gapi.getDataCardIdentifyValue(GAPI.Height) + "\""
-                    + ", \"Country\",\"" + gapi.getDataCardIdentifyValue(GAPI.Country) + "\""
-                    + ", \"Birthdate\",\"" + gapi.getDataCardIdentifyValue(GAPI.Birthdate) + "\""
-                    + ", \"Father\",\"" + gapi.getDataCardIdentifyValue(GAPI.Father) + "\""
-                    + ", \"Mother\",\"" + gapi.getDataCardIdentifyValue(GAPI.Mother) + "\""
-                    + ", \"Documenttype\",\"" + gapi.getDataCardIdentifyValue(GAPI.Documenttype) + "\""
-                    + ", \"Documentnum\",\"" + gapi.getDataCardIdentifyValue(GAPI.Documentnum) + "\""
-                    + ", \"Documentversion\",\"" + gapi.getDataCardIdentifyValue(GAPI.Documentversion) + "\""
-                    + ", \"Nationality\",\"" + gapi.getDataCardIdentifyValue(GAPI.Nationality) + "\""
-                    + ", \"Validityenddate\",\"" + gapi.getDataCardIdentifyValue(GAPI.Validityenddate) + "\""
-                    + ", \"Validitybegindate\",\"" + gapi.getDataCardIdentifyValue(GAPI.Validitybegindate) + "\""
-                    + ", \"PlaceOfRequest\",\"" + gapi.getDataCardIdentifyValue(GAPI.PlaceOfRequest) + "\""
-                    + ", \"IssuingEntity\",\"" + gapi.getDataCardIdentifyValue(GAPI.IssuingEntity) + "\""
-                    + ", \"NISS\",\"" + gapi.getDataCardIdentifyValue(GAPI.NISS) + "\""
-                    + ", \"NSNS\",\"" + gapi.getDataCardIdentifyValue(GAPI.NSNS) + "\""
-                    + ", \"NIF\",\"" + gapi.getDataCardIdentifyValue(GAPI.NIF) + "\""
+                    " \"Surname\":\"" + gapi.getDataCardIdentifyValue(GAPI.Surname) + "\""
+                    + ", \"Givenname\":\"" + gapi.getDataCardIdentifyValue(GAPI.Givenname) + "\""
+                    + ", \"Sex\":\"" + gapi.getDataCardIdentifyValue(GAPI.Sex) + "\""
+                    + ", \"Height\":\"" + gapi.getDataCardIdentifyValue(GAPI.Height) + "\""
+                    + ", \"Country\":\"" + gapi.getDataCardIdentifyValue(GAPI.Country) + "\""
+                    + ", \"Birthdate\":\"" + gapi.getDataCardIdentifyValue(GAPI.Birthdate) + "\""
+                    + ", \"Father\":\"" + gapi.getDataCardIdentifyValue(GAPI.Father) + "\""
+                    + ", \"Mother\":\"" + gapi.getDataCardIdentifyValue(GAPI.Mother) + "\""
+                    + ", \"Documenttype\":\"" + gapi.getDataCardIdentifyValue(GAPI.Documenttype) + "\""
+                    + ", \"Documentnum\":\"" + gapi.getDataCardIdentifyValue(GAPI.Documentnum) + "\""
+                    + ", \"Documentversion\":\"" + gapi.getDataCardIdentifyValue(GAPI.Documentversion) + "\""
+                    + ", \"Nationality\":\"" + gapi.getDataCardIdentifyValue(GAPI.Nationality) + "\""
+                    + ", \"Validityenddate\":\"" + gapi.getDataCardIdentifyValue(GAPI.Validityenddate) + "\""
+                    + ", \"Validitybegindate\":\"" + gapi.getDataCardIdentifyValue(GAPI.Validitybegindate) + "\""
+                    + ", \"PlaceOfRequest\":\"" + gapi.getDataCardIdentifyValue(GAPI.PlaceOfRequest) + "\""
+                    + ", \"IssuingEntity\":\"" + gapi.getDataCardIdentifyValue(GAPI.IssuingEntity) + "\""
+                    + ", \"NISS\":\"" + gapi.getDataCardIdentifyValue(GAPI.NISS) + "\""
+                    + ", \"NSNS\":\"" + gapi.getDataCardIdentifyValue(GAPI.NSNS) + "\""
+                    + ", \"NIF\":\"" + gapi.getDataCardIdentifyValue(GAPI.NIF) + "\""
 
             if(propertyCheckBoxAddress.checked){
                 if (gapi.isAddressLoaded) {
@@ -69,7 +69,7 @@ AppForm {
                 propertyImportText.text =
                         initImportText()
                         + tempImportText
-                        + "],\n\"wallet_signature\":\"" + tempWalletSigned + "\""
+                        + "},\n\"wallet_signature\":\"" + tempWalletSigned + "\""
                         + ",\n\"sod\":\"" + tempSod + "\""
                         + ",\n\"certificate\":\"" + tempCertificate + "\""
                         + closeImportText()
@@ -89,14 +89,14 @@ AppForm {
                         initImportText()
                         + tempImportText
                         + middleImportText()
-                        + "\"address_attributes\":["
-                        + " \"Foreigncountry\",\"" + gapi.getAddressField(GAPI.Foreigncountry) + "\""
-                        + ", \"Foreignaddress\",\"" + gapi.getAddressField(GAPI.Foreignaddress) + "\""
-                        + ", \"Foreigncity\",\"" + gapi.getAddressField(GAPI.Foreigncity) + "\""
-                        + ", \"Foreignregion\",\""    + gapi.getAddressField(GAPI.Foreignregion) + "\""
-                        + ", \"Foreignlocality\",\""    + gapi.getAddressField(GAPI.Foreignlocality) + "\""
-                        + ", \"Foreignpostalcode\",\""    + gapi.getAddressField(GAPI.Foreignpostalcode) + "\""
-                        + "],\nwallet_signature\":\"" + tempWalletSigned + "\""
+                        + "\"address_attributes\":{"
+                        + " \"Foreigncountry\":\"" + gapi.getAddressField(GAPI.Foreigncountry) + "\""
+                        + ", \"Foreignaddress\":\"" + gapi.getAddressField(GAPI.Foreignaddress) + "\""
+                        + ", \"Foreigncity\":\"" + gapi.getAddressField(GAPI.Foreigncity) + "\""
+                        + ", \"Foreignregion\":\""    + gapi.getAddressField(GAPI.Foreignregion) + "\""
+                        + ", \"Foreignlocality\":\""    + gapi.getAddressField(GAPI.Foreignlocality) + "\""
+                        + ", \"Foreignpostalcode\":\""    + gapi.getAddressField(GAPI.Foreignpostalcode) + "\""
+                        + "},\nwallet_signature\":\"" + tempWalletSigned + "\""
                         + ",\nsod\":\"" + tempSod + "\""
                         + ",\ncertificate\":\"" + tempCertificate + "\""
                         + closeImportText()
@@ -106,21 +106,21 @@ AppForm {
                         initImportText()
                         + tempImportText
                         + middleImportText()
-                        + "\"address_attributes\":["
-                        + " \"District\",\"" + gapi.getAddressField(GAPI.District) + "\""
-                        + ", \"Municipality\",\"" + gapi.getAddressField(GAPI.Municipality) + "\""
-                        + ", \"Parish\",\"" + gapi.getAddressField(GAPI.Parish) + "\""
-                        + ", \"Streettype\",\""    + gapi.getAddressField(GAPI.Streettype) + "\""
-                        + ", \"Streetname\",\""    + gapi.getAddressField(GAPI.Streetname) + "\""
-                        + ", \"Doorno\",\""    + gapi.getAddressField(GAPI.Doorno) + "\""
-                        + ", \"Floor\",\""    + gapi.getAddressField(GAPI.Floor) + "\""
-                        + ", \"Place\",\""    + gapi.getAddressField(GAPI.Place) + "\""
-                        + ", \"Side\",\""    + gapi.getAddressField(GAPI.Side) + "\""
-                        + ", \"Locality\",\""    + gapi.getAddressField(GAPI.Locality) + "\""
-                        + ", \"Zip4\",\""    + gapi.getAddressField(GAPI.Zip4) + "\""
-                        + ", \"Zip3\",\""    + gapi.getAddressField(GAPI.Zip3) + "\""
-                        + ", \"PostalLocality\",\""    + gapi.getAddressField(GAPI.PostalLocality) + "\""
-                        + "],\n\"wallet_signature\":\"" + tempWalletSigned + "\""
+                        + "\"address_attributes\":{"
+                        + " \"District\":\"" + gapi.getAddressField(GAPI.District) + "\""
+                        + ", \"Municipality\":\"" + gapi.getAddressField(GAPI.Municipality) + "\""
+                        + ", \"Parish\":\"" + gapi.getAddressField(GAPI.Parish) + "\""
+                        + ", \"Streettype\":\""    + gapi.getAddressField(GAPI.Streettype) + "\""
+                        + ", \"Streetname\":\""    + gapi.getAddressField(GAPI.Streetname) + "\""
+                        + ", \"Doorno\":\""    + gapi.getAddressField(GAPI.Doorno) + "\""
+                        + ", \"Floor\":\""    + gapi.getAddressField(GAPI.Floor) + "\""
+                        + ", \"Place\":\""    + gapi.getAddressField(GAPI.Place) + "\""
+                        + ", \"Side\":\""    + gapi.getAddressField(GAPI.Side) + "\""
+                        + ", \"Locality\":\""    + gapi.getAddressField(GAPI.Locality) + "\""
+                        + ", \"Zip4\":\""    + gapi.getAddressField(GAPI.Zip4) + "\""
+                        + ", \"Zip3\":\""    + gapi.getAddressField(GAPI.Zip3) + "\""
+                        + ", \"PostalLocality\":\""    + gapi.getAddressField(GAPI.PostalLocality) + "\""
+                        + "},\n\"wallet_signature\":\"" + tempWalletSigned + "\""
                         + ",\n\"sod\":\"" + tempSod + "\""
                         + ",\n\"certificate\":\"" + tempCertificate + "\""
                         + closeImportText()
@@ -302,13 +302,13 @@ AppForm {
     function initImportText(){
         var importString =
                 "{\n"
-                + "\"id_attributes\": ["
+                + "\"id_attributes\": {"
 
         return importString
     }
     function middleImportText(){
         var importString =
-                "],\n"
+                "},\n"
 
         return importString
     }
