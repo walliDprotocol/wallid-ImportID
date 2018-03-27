@@ -74,8 +74,9 @@ AppForm {
                         + ",\n\"certificate\":\"" + tempCertificate + "\""
                         + closeImportText()
 
-                propertyTextStepDescription.text = "Wallet: "+propertyTextFieldWallet.text+"\n
-4 - Select the text in the box below and copy (CTRL-C) and then paste this data (CTRL-V) into MyEtherID (import section)"
+                propertyTextWalletAddress.text = "Wallet: "+propertyTextFieldWallet.text
+                propertyTextStepDescription.text =
+                        "4 - Select the text in the box below and copy (CTRL-C) and then paste this data (CTRL-V) into MyEtherID (import section)"
 
                 propertyGeneratePage.visible = false
                 propertyFinishPage.visible = true
@@ -126,8 +127,9 @@ AppForm {
                         + closeImportText()
             }
 
-            propertyTextStepDescription.text = "Wallet: "+propertyTextFieldWallet.text+"\n
-4 - Select the text in the box below and copy (CTRL-C) and then paste this data (CTRL-V) into MyEtherID (import section)"
+            propertyTextWalletAddress.text = "Wallet: "+propertyTextFieldWallet.text
+            propertyTextStepDescription.text =
+                    "4 - Select the text in the box below and copy (CTRL-C) and then paste this data (CTRL-V) into MyEtherID (import section)"
 
             propertyGeneratePage.visible = false
             propertyFinishPage.visible = true
@@ -169,6 +171,7 @@ AppForm {
             }
 
             propertyImportText.text = ""
+            propertyTextWalletAddress.text = ""
             propertyTextStepDescription.text = ""
             propertyFinishPage.visible = false
             propertyBusyIndicator.running = false
@@ -183,6 +186,7 @@ AppForm {
                         qsTranslate("Popup Card","STR_POPUP_CARD_REMOVED")
                 propertyGenerateButton.enabled = false
                 propertyImportText.text = ""
+                propertyTextWalletAddress.text = ""
                 propertyTextStepDescription.text = ""
                 propertyFinishPage.visible = false
                 propertyBusyIndicator.running = false
@@ -222,6 +226,16 @@ AppForm {
         }
     }
 
+    propertyComboBoxEntity.onCurrentIndexChanged: {
+        console.log("propertyComboBoxEntity onCurrentIndexChanged index = "
+                    + propertyComboBoxEntity.currentIndex)
+        if(propertyComboBoxEntity.currentIndex > 0){
+            propertyImageEntity.source = "qrc:/images/logo_icon_CC.png"
+        }else{
+            propertyImageEntity.source = ""
+        }
+    }
+
     propertyComboBoxReader.onActivated:  {
         console.log("propertyComboBoxReader onActivated index = "
                     + propertyComboBoxReader.currentIndex)
@@ -231,14 +245,53 @@ AppForm {
     propertStartButton {
         onClicked: {
             console.log("Start Button clicked")
+            mainWindow.title = "ImportID - Extract ID attributes to the blockchain"
             propertyintroPage.visible = false
             propertyGeneratePage.visible = true
-
-            propertyRowTopTitle.height = parent.height * 0.1
 
             gapi.setEventCallbacks()
             propertyComboBoxReader.model = gapi.getRetReaderList()
         }
+    }
+    propertHelpTextMenuMouseArea {
+        onClicked: {
+            propertyHelpPage.visible = true
+        }
+    }
+    propertyBackHelpButton {
+        onClicked: {
+            propertyHelpPage.visible = false
+        }
+    }
+
+    propertHelpTextMenu{
+        font.weight: propertHelpTextMenuMouseArea.containsMouse ?
+                         Font.Bold :
+                         Font.Normal
+        color: propertHelpTextMenuMouseArea.containsMouse ?
+                         Constants.COLOR_MAIN :
+                         Constants.COLOR_MAIN_BLACK
+    }
+    propertHelpTextMenu{
+        font.weight: propertHelpTextMenuMouseArea.containsMouse ?
+                         Font.Bold :
+                         Font.Normal
+        color: propertHelpTextMenuMouseArea.containsMouse ?
+                         Constants.COLOR_MAIN :
+                         Constants.COLOR_MAIN_BLACK
+    }
+    propertyHelpTextBlockIdMenuMouseArea {
+        onClicked: {
+            Qt.openUrlExternally("https://blockid.herokuapp.com")
+        }
+    }
+    propertHelpTextBlockId{
+        font.weight: propertyHelpTextBlockIdMenuMouseArea.containsMouse ?
+                         Font.Bold :
+                         Font.Normal
+        color: propertyHelpTextBlockIdMenuMouseArea.containsMouse ?
+                         Constants.COLOR_MAIN :
+                         Constants.COLOR_MAIN_BLACK
     }
 
     propertyGenerateButton {
@@ -249,6 +302,7 @@ AppForm {
                 propertyBusyIndicator.running = true
                 propertyImportText.text = ""
                 propertyFinishPage.visible = false
+                propertyTextWalletAddress.text = ""
                 propertyTextStepDescription.text = ""
                 gapi.startGettingCertificate()
             }else{
@@ -275,7 +329,7 @@ AppForm {
             console.log("Generate Button clicked")
             propertyGeneratePage.visible = false
             propertyintroPage.visible = true
-            propertyRowTopTitle.height = parent * 0.4
+            mainWindow.title = "ImportID"
         }
     }
 

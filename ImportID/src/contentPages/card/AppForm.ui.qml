@@ -9,24 +9,32 @@ Item {
 
     property alias propertyBusyIndicator: busyIndication
 
-    property alias propertyRowTopTitle: rowTopTitle
-
     property alias propertyintroPage: introBox
     property alias propertyGeneratePage: generatePage
     property alias propertyFinishPage: finishPage
+    property alias propertyHelpPage: helpPage
 
     property alias propertyComboBoxReader: comboBoxReader
+    property alias propertyComboBoxEntity: comboBoxEntity
+    property alias propertyImageEntity: imageEntity
     property alias propertyCheckBoxIdentity: checkBoxIdentity
     property alias propertyCheckBoxAddress: checkBoxAddress
+    property alias propertyTextWalletAddress: textWalletAddress
     property alias propertyTextStepDescription: textStepDescription
     property alias propertyImportText: importText
     property alias propertyTextFieldWallet: textFieldWallet
 
     property alias propertStartButton: startButton
+    property alias propertHelpTextMenuMouseArea: helpTextMenuMouseArea
+    property alias propertHelpTextMenu: helpTextMenu
+    property alias propertyHelpTextBlockIdMenuMouseArea: helpTextBlockIdMenuMouseArea
+    property alias propertHelpTextBlockId: helpTextBlockId
+
     property alias propertyGenerateButton: generateButton
     property alias propertyBackButton: backButton
     property alias propertyBackGenerateButton: backGenerateButton
     property alias propertyGotoButton: gotoButton
+    property alias propertyBackHelpButton: backHelpButton
 
     property alias propertyFlickImportText: flickableImportText
 
@@ -43,28 +51,58 @@ Item {
     }
 
     Rectangle {
-        id: rowTopTitle
-        width: parent.width
-        height: parent.height * 0.1
-        color: Constants.COLOR_MAIN_SOFT_GRAY
-        visible: !introBox.visible
-
-        Text {
-            id: textTopRawTitle
-            text: "Block ID - Off-chain to On-chain Identity Service"
-            font.bold: false
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
-            font.pixelSize: Constants.SIZE_TEXT_BODY
-            color: Constants.COLOR_MAIN_DARK
+        id: rectBotton
+        x: 30
+        width: parent.width - 60
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.bottom
+        height: Constants.RECT_BOTTON_HEIGHT
+        enabled: true
+        Rectangle {
+            id: rectLeft
+            width: parent.width / 2
+            anchors.bottom: parent.bottom
+            height: parent.height
+            enabled: true
+            MouseArea {
+                id: helpTextMenuMouseArea
+                hoverEnabled : true
+                anchors.fill: parent
+            }
+            Text {
+                id: helpTextMenu
+                text: qsTr("How to Use")
+                font.capitalization: Font.MixedCase
+                enabled: true
+            }
+        }
+        Rectangle {
+            id: rectRight
+            width: parent.width / 2
+            anchors.bottom: parent.bottom
+            height: parent.height
+            enabled: true
+            anchors.left: rectLeft.right
+            MouseArea {
+                id: helpTextBlockIdMenuMouseArea
+                hoverEnabled : true
+                anchors.fill: parent
+            }
+            Text {
+                id: helpTextBlockId
+                text: qsTr("Power by BlockID @ 2018")
+                font.capitalization: Font.MixedCase
+                anchors.right: parent.right
+                enabled: true
+            }
         }
     }
+
     Rectangle {
         id: introBox
         x: 0
         width: parent.width
-        height: parent.height - rowTopTitle.height
-        anchors.top: rowTopTitle.bottom
+        height: parent.height - rectBotton.height
         anchors.topMargin: 0
         visible: true
 
@@ -76,65 +114,84 @@ Item {
 
             Text {
                 id: textTopTitle
-                text: "Block ID"
-                anchors.horizontalCenterOffset: 0
-                anchors.verticalCenterOffset: -40
+                text: "ImportID"
+                y: 100
                 font.bold: false
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
                 font.pixelSize: Constants.SIZE_TEXT_TITLE
                 color: Constants.COLOR_MAIN_DARK
             }
             Text {
-                id: textTopSubTitle1
-                text: "Off-chain to On-chain"
-                anchors.verticalCenterOffset: 23
+                id: textAppSlogan
+                text: "Extract ID attributes "
+                y: 180
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
                 font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
-                color: Constants.COLOR_MAIN_DARK
+                color: Constants.COLOR_MAIN_SOFT_GRAY
             }
             Text {
                 id: textTopSubTitle2
-                text: "Identity Service"
-                anchors.verticalCenterOffset: 60
+                text: "to the blockchain"
+                y: 210
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
                 font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
-                color: Constants.COLOR_MAIN_DARK
+                color: Constants.COLOR_MAIN_SOFT_GRAY
             }
         }
 
-        Frame {
-            id: frame1
-            x: 60
-            width: parent.width - 120
+        Rectangle {
+            id: rectSelectEntity
+            width: parent.width - 60
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: rowIntroTitle.bottom
             anchors.topMargin: 80
-            height: 104
+            height: Constants.HEIGHT_BOTTOM_COMPONENT
             enabled: true
 
-            Image {
-                x: 8
-                y: 20
-                antialiasing: true
-                width: Constants.SIZE_IMAGE_LOGO_CC_WIDTH
-                height: Constants.SIZE_IMAGE_LOGO_CC_HEIGHT
-                fillMode: Image.PreserveAspectFit
-                source: "qrc:/images/logo_CC.png"
-            }
-
-            Button {
-                id: startButton
-                y: 20
-                text: qsTr("Import ID")
-                width: Constants.WIDTH_BUTTON
-                height: Constants.HEIGHT_BOTTOM_COMPONENT
-                anchors.horizontalCenterOffset: 92
-                font.capitalization: Font.MixedCase
-                enabled: true
+            Rectangle{
+                id: rectSelectEntityTop
+                width: parent.width
+                height: parent.height
                 anchors.horizontalCenter: parent.horizontalCenter
+                Image {
+                    id: imageEntity
+                    antialiasing: true
+                    height: Constants.HEIGHT_BOTTOM_COMPONENT
+                    fillMode: Image.PreserveAspectFit
+                    //source: "qrc:/images/logo_icon_CC.png"
+                }
+                ComboBox {
+                    id: comboBoxEntity
+                    width: parent.width - imageEntity.width - 20
+                    height: Constants.HEIGHT_BOTTOM_COMPONENT
+                    font.family: lato.name
+                    font.pixelSize: Constants.SIZE_TEXT_FIELD
+                    font.capitalization: Font.MixedCase
+                    visible: true
+                    anchors.left: imageEntity.right
+                    anchors.margins: 20
+                    model: [ "",
+                    "Citizen Card - Portuguese Republic" ,
+                    "Citizen Card - Portuguese Republic" ]
+                }
+            }
+            Rectangle{
+                id: rectSelectEntityBottom
+                width: Constants.WIDTH_BUTTON
+                height: parent.height
+                anchors.top: rectSelectEntityTop.bottom
+                anchors.margins: 10
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Button {
+                    id: startButton
+                    text: qsTr("ImportID")
+                    width: Constants.WIDTH_BUTTON
+                    height: Constants.HEIGHT_BOTTOM_COMPONENT
+                    font.capitalization: Font.MixedCase
+                    enabled: true
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
             }
         }
     }
@@ -142,15 +199,14 @@ Item {
     Rectangle {
         id: generatePage
         width: parent.width
-        height: parent.height - rowTopTitle.height
-        anchors.top: rowTopTitle.bottom
+        height: parent.height - rectBotton.height
         anchors.topMargin: 0
         visible: false
         Text {
             id: textStep1
             x: 30
-            y: 25
-            text: "1 - " + qsTr("Select the Card Reader")
+            y: 50
+            text: "1 " + qsTr("Select the Card Reader")
             font.pixelSize: Constants.SIZE_TEXT_BODY
         }
         ComboBox {
@@ -168,8 +224,8 @@ Item {
         Text {
             id: textStep2
             x: 30
-            y: 143
-            text: "2 - " + qsTr("Select data to import")
+            y: 150
+            text: "2 " + qsTr("Select data to import")
             font.pixelSize: Constants.SIZE_TEXT_BODY
         }
         CheckBox {
@@ -183,15 +239,16 @@ Item {
         }
         CheckBox {
             id: checkBoxAddress
-            x: 60
-            anchors.top: checkBoxIdentity.bottom
+            x: 150
+            anchors.top: textStep2.bottom
+            anchors.topMargin: 10
             text: qsTr("Address")
         }
         Text {
             id: textStep3
             x: 30
-            y: 280
-            text: "3 - " + qsTr("Ethereum Wallet  address")
+            y: 250
+            text: "3 " + qsTr("Ethereum Wallet  address")
             font.pixelSize: Constants.SIZE_TEXT_BODY
         }
         TextField {
@@ -206,7 +263,7 @@ Item {
         Button {
             id: backGenerateButton
             x: 30
-            y: 400
+            y: Constants.BUTTONS_Y_POS
             text: qsTr("Back")
             font.capitalization: Font.MixedCase
             width: Constants.WIDTH_BUTTON
@@ -215,7 +272,7 @@ Item {
         }
         Button {
             id: generateButton
-            y: 400
+            y: Constants.BUTTONS_Y_POS
             x: parent.width - 30 - generateButton.width
             text: qsTr("Generate ID Data")
             font.capitalization: Font.MixedCase
@@ -228,19 +285,19 @@ Item {
     Rectangle {
         id: finishPage
         width: parent.width
-        height: parent.height - rowTopTitle.height
-        anchors.top: rowTopTitle.bottom
+        height: parent.height - rectBotton.height
         visible: false
 
         Text {
             id: textStep4
             x: 30
-            y: 25
+            y: 50
             text: qsTr("ID Data successfully created")
             font.pixelSize: Constants.SIZE_TEXT_BODY
+            color: Constants.COLOR_MAIN
         }
         Text {
-            id: textStepDescription
+            id: textWalletAddress
             x: 30
             y: 35
             width: parent.width - 60
@@ -248,6 +305,18 @@ Item {
             anchors.top: textStep4.bottom
             anchors.topMargin: 10
             font.pixelSize: Constants.SIZE_TEXT_LABEL
+            color: Constants.COLOR_MAIN_BLACK
+        }
+        Text {
+            id: textStepDescription
+            x: 30
+            y: 35
+            width: parent.width - 60
+            wrapMode: Text.WordWrap
+            anchors.top: textWalletAddress.bottom
+            anchors.topMargin: 10
+            font.pixelSize: Constants.SIZE_TEXT_LABEL
+            color: Constants.COLOR_MAIN
         }
         Frame {
             id: frame
@@ -295,7 +364,7 @@ Item {
         Button {
             id: backButton
             x: 30
-            y: 400
+            y: Constants.BUTTONS_Y_POS
             text: qsTr("Back")
             font.capitalization: Font.MixedCase
             width: Constants.WIDTH_BUTTON
@@ -305,8 +374,109 @@ Item {
         Button {
             id: gotoButton
             x: parent.width - 30 - generateButton.width
-            y: 400
+            y: Constants.BUTTONS_Y_POS
             text: qsTr("Goto MyEtherID")
+            font.capitalization: Font.MixedCase
+            width: Constants.WIDTH_BUTTON
+            height: Constants.HEIGHT_BOTTOM_COMPONENT
+            enabled: true
+        }
+    }
+
+    Rectangle {
+        id: helpPage
+        width: parent.width
+        height: parent.height
+        visible: false
+
+        Text {
+            id: textTop1
+            x: 30
+            y: 50
+            text: qsTr("What is BlockID")
+            font.pixelSize: Constants.SIZE_TEXT_BODY
+            color: Constants.COLOR_MAIN
+        }
+        Text {
+            id: subTextTop1
+            x: 30
+            text: qsTr("BlockID is a concept for an ecosystem: secure and reliable loading of validated off-chain \
+identity in the blockchain and consequent use of encrypted and previously authorized form")
+            width: parent.width - 60
+            wrapMode: Text.WordWrap
+            anchors.top: textTop1.bottom
+            anchors.topMargin: 10
+            font.pixelSize: Constants.SIZE_TEXT_LABEL
+            color: Constants.COLOR_MAIN_BLACK
+        }
+        Text {
+            id: textTop2
+            x: 30
+            anchors.top: subTextTop1.bottom
+            anchors.topMargin: 30
+            text: qsTr("What is BlockID")
+            font.pixelSize: Constants.SIZE_TEXT_BODY
+            color: Constants.COLOR_MAIN
+        }
+        Text {
+            id: subTextTop2
+            x: 30
+            text: qsTr("BlockID is a concept for an ecosystem: secure and reliable loading of validated off-chain \
+identity in the blockchain and consequent use of encrypted and previously authorized form")
+            width: parent.width - 60
+            wrapMode: Text.WordWrap
+            anchors.top: textTop2.bottom
+            anchors.topMargin: 10
+            font.pixelSize: Constants.SIZE_TEXT_LABEL
+            color: Constants.COLOR_MAIN_BLACK
+        }
+        Text {
+            id: textTop3
+            x: 30
+            anchors.top: subTextTop2.bottom
+            anchors.topMargin: 30
+            text: qsTr("What is BlockID")
+            font.pixelSize: Constants.SIZE_TEXT_BODY
+            color: Constants.COLOR_MAIN
+        }
+        Text {
+            id: subTextTop3
+            x: 30
+            text: qsTr("BlockID is a concept for an ecosystem: secure and reliable loading of validated off-chain \
+identity in the blockchain and consequent use of encrypted and previously authorized form")
+            width: parent.width - 60
+            wrapMode: Text.WordWrap
+            anchors.top: textTop3.bottom
+            anchors.topMargin: 10
+            font.pixelSize: Constants.SIZE_TEXT_LABEL
+            color: Constants.COLOR_MAIN_BLACK
+        }
+        Text {
+            id: textTop4
+            x: 30
+            anchors.top: subTextTop3.bottom
+            anchors.topMargin: 30
+            text: qsTr("What is BlockID")
+            font.pixelSize: Constants.SIZE_TEXT_BODY
+            color: Constants.COLOR_MAIN
+        }
+        Text {
+            id: subTextTop4
+            x: 30
+            text: qsTr("BlockID is a concept for an ecosystem: secure and reliable loading of validated off-chain \
+identity in the blockchain and consequent use of encrypted and previously authorized form")
+            width: parent.width - 60
+            wrapMode: Text.WordWrap
+            anchors.top: textTop4.bottom
+            anchors.topMargin: 10
+            font.pixelSize: Constants.SIZE_TEXT_LABEL
+            color: Constants.COLOR_MAIN_BLACK
+        }
+        Button {
+            id: backHelpButton
+            x: 30
+            y: Constants.BUTTONS_Y_POS
+            text: qsTr("Back")
             font.capitalization: Font.MixedCase
             width: Constants.WIDTH_BUTTON
             height: Constants.HEIGHT_BOTTOM_COMPONENT

@@ -17,5 +17,6 @@
         <file>components/TitleBar.qml</file>
         <file>contentPages/card/App.qml</file>
         <file>contentPages/card/AppForm.ui.qml</file>
+        <file>images/logo_icon_CC.png</file>
     </qresource>
 </RCC>

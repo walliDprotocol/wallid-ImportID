@@ -55,14 +55,13 @@ Loader{
             color: Constants.COLOR_TEXT_TITLE
         }
         Item {
-            width: generalPopUp.width
-            height: generalPopUp.height
+            width: generalPopUp.availableWidth
+            height: generalPopUp.availableHeight
 
             Item {
                 id: rectLabelText
                 width: parent.width
-                height: 90
-
+                height: 75
                 anchors.horizontalCenter: parent.horizontalCenter
                 Text {
                     id: labelText
