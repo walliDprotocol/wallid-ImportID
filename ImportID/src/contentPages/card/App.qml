@@ -74,9 +74,9 @@ AppForm {
                         + ",\n\"certificate\":\"" + tempCertificate + "\""
                         + closeImportText()
 
-                propertyTextWalletAddress.text = "Wallet: "+propertyTextFieldWallet.text
+                propertyTextWalletAddress.text = "For ether wallet address:: "+propertyTextFieldWallet.text
                 propertyTextStepDescription.text =
-                        "4 - Select the text in the box below and copy (CTRL-C) and then paste this data (CTRL-V) into MyEtherID (import section)"
+                        "4 Copy the text below (COPY button or CTRL + C) and paste it on \"ID Data\" field on <b>MyEtherID.io</b> (CTRL + V)"
 
                 propertyGeneratePage.visible = false
                 propertyFinishPage.visible = true
@@ -127,9 +127,9 @@ AppForm {
                         + closeImportText()
             }
 
-            propertyTextWalletAddress.text = "Wallet: "+propertyTextFieldWallet.text
+            propertyTextWalletAddress.text = "For ether wallet address: "+propertyTextFieldWallet.text
             propertyTextStepDescription.text =
-                    "4 - Select the text in the box below and copy (CTRL-C) and then paste this data (CTRL-V) into MyEtherID (import section)"
+                    "4 - Select the text in the box below and copy (CTRL-C) and then paste this data (CTRL-V) into <b>MyEtherID.io</b> (import section)"
 
             propertyGeneratePage.visible = false
             propertyFinishPage.visible = true

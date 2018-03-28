@@ -56,7 +56,7 @@ Item {
         width: parent.width - 60
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        height: Constants.RECT_BOTTON_HEIGHT
+        height: 30
         enabled: true
         Rectangle {
             id: rectLeft
@@ -158,7 +158,6 @@ Item {
                     antialiasing: true
                     height: Constants.HEIGHT_BOTTOM_COMPONENT
                     fillMode: Image.PreserveAspectFit
-                    //source: "qrc:/images/logo_icon_CC.png"
                 }
                 ComboBox {
                     id: comboBoxEntity
@@ -171,8 +170,7 @@ Item {
                     anchors.left: imageEntity.right
                     anchors.margins: 20
                     model: [ "",
-                    "Citizen Card - Portuguese Republic" ,
-                    "Citizen Card - Portuguese Republic" ]
+                    "Citizen Card - Portuguese Republic"]
                 }
             }
             Rectangle{
@@ -206,8 +204,9 @@ Item {
             id: textStep1
             x: 30
             y: 50
-            text: "1 " + qsTr("Select the Card Reader")
+            text: "1 " + qsTr("Select Card Reader")
             font.pixelSize: Constants.SIZE_TEXT_BODY
+            color: Constants.COLOR_MAIN
         }
         ComboBox {
             id: comboBoxReader
@@ -225,8 +224,9 @@ Item {
             id: textStep2
             x: 30
             y: 150
-            text: "2 " + qsTr("Select data to import")
+            text: "2 " + qsTr("Choose data to import")
             font.pixelSize: Constants.SIZE_TEXT_BODY
+            color: Constants.COLOR_MAIN
         }
         CheckBox {
             id: checkBoxIdentity
@@ -248,8 +248,9 @@ Item {
             id: textStep3
             x: 30
             y: 250
-            text: "3 " + qsTr("Ethereum Wallet  address")
+            text: "3 " + qsTr("Your ether wallet address")
             font.pixelSize: Constants.SIZE_TEXT_BODY
+            color: Constants.COLOR_MAIN
         }
         TextField {
             id: textFieldWallet
@@ -292,7 +293,7 @@ Item {
             id: textStep4
             x: 30
             y: 50
-            text: qsTr("ID Data successfully created")
+            text: qsTr("ID Data Successfully created")
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
@@ -304,7 +305,7 @@ Item {
             wrapMode: Text.WordWrap
             anchors.top: textStep4.bottom
             anchors.topMargin: 10
-            font.pixelSize: Constants.SIZE_TEXT_LABEL
+            font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN_BLACK
         }
         Text {
@@ -315,7 +316,7 @@ Item {
             wrapMode: Text.WordWrap
             anchors.top: textWalletAddress.bottom
             anchors.topMargin: 10
-            font.pixelSize: Constants.SIZE_TEXT_LABEL
+            font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
         Frame {
@@ -375,7 +376,7 @@ Item {
             id: gotoButton
             x: parent.width - 30 - generateButton.width
             y: Constants.BUTTONS_Y_POS
-            text: qsTr("Goto MyEtherID")
+            text: qsTr("Goto MyEtherID.io")
             font.capitalization: Font.MixedCase
             width: Constants.WIDTH_BUTTON
             height: Constants.HEIGHT_BOTTOM_COMPONENT
