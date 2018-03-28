@@ -72,6 +72,7 @@ AppForm {
                         + "},\n\"wallet_signature\":\"" + tempWalletSigned + "\""
                         + ",\n\"sod\":\"" + tempSod + "\""
                         + ",\n\"certificate\":\"" + tempCertificate + "\""
+                        + ",\n\"wallet_address\":\"" + propertyTextFieldWallet.text + "\""
                         + closeImportText()
 
                 propertyTextWalletAddress.text = "For ether wallet address:: "+propertyTextFieldWallet.text
@@ -100,6 +101,7 @@ AppForm {
                         + "},\nwallet_signature\":\"" + tempWalletSigned + "\""
                         + ",\nsod\":\"" + tempSod + "\""
                         + ",\ncertificate\":\"" + tempCertificate + "\""
+                        + ",\n\"wallet_address\":\"" + propertyTextFieldWallet.text + "\""
                         + closeImportText()
             }
             else {
@@ -124,6 +126,7 @@ AppForm {
                         + "},\n\"wallet_signature\":\"" + tempWalletSigned + "\""
                         + ",\n\"sod\":\"" + tempSod + "\""
                         + ",\n\"certificate\":\"" + tempCertificate + "\""
+                        + ",\n\"wallet_address\":\"" + propertyTextFieldWallet.text + "\""
                         + closeImportText()
             }
 
