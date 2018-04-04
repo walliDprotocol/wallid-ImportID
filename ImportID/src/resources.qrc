@@ -7,10 +7,8 @@
         <file>PageLoader.qml</file>
         <file>fonts/lato/Lato-Regular.ttf</file>
         <file>qtquickcontrols2.conf</file>
-        <file>images/titleBar/maximize.png</file>
         <file>images/titleBar/minimize.png</file>
         <file>images/titleBar/quit.png</file>
-        <file>images/titleBar/maximize_hover.png</file>
         <file>images/titleBar/minimize_hover.png</file>
         <file>images/titleBar/quit_hover.png</file>
         <file>images/logo_CC.png</file>
@@ -18,5 +16,7 @@
         <file>contentPages/card/App.qml</file>
         <file>contentPages/card/AppForm.ui.qml</file>
         <file>images/logo_icon_CC.png</file>
+        <file>appicon.icns</file>
+        <file>appicon.ico</file>
     </qresource>
 </RCC>

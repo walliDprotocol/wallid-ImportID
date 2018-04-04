@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     // Set app icon
-    //app.setWindowIcon(QIcon(":/favicon.ico"));
+    app.setWindowIcon(QIcon(":/appicon.ico"));
 
     //QQuickStyle::setStyle("Material");
     QQuickStyle::setStyle("Universal");
