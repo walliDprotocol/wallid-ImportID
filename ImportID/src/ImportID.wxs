@@ -1,0 +1,1974 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+    <?define var.OfficialProductVersion="1.0.0"?>
+	<?define var.PackageCode="*"?>
+	
+    <Product Id="{8BE10A53-2438-44C3-9E08-10AF4BC2C754}"
+	Language="1033" Codepage="1252"
+	Manufacturer="Caixa Magica Software" Name="ImportID" UpgradeCode="{56492230-A339-4A71-91A4-8161792FC50C}" Version="$(var.OfficialProductVersion)">
+	
+        <Package Id="$(var.PackageCode)"
+				 InstallerVersion="405"
+				 Keywords="BlockID ImportID"
+				 Platform="x64"
+			     Comments="ImportID application version $(var.OfficialProductVersion)"
+				 Manufacturer="Caixa Mágica Software"
+				 Compressed="yes"
+				 InstallPrivileges="elevated" />
+				 
+		<Media Id="1" Cabinet="product.cab" EmbedCab="yes" CompressionLevel="high"/>
+		
+		<Icon Id="ImportID.ico" SourceFile="appicon.ico"/>
+		<Property Id="ARPPRODUCTICON" Value="ImportID.ico"/>
+		
+		<Property Id="ARPURLINFOABOUT" Value="https://block-id.io"/>
+
+		<Property Id="ALLUSERS" Value="1" />
+
+        <Directory Id="TARGETDIR" Name="SourceDir">
+			
+		   <Directory Id="ProgramMenuFolder" Name="Menu">
+				<Directory Id="ApplicationProgramsFolder" Name="ImportID">
+				</Directory>
+		   </Directory>
+		
+		  <Directory Id="ProgramFiles64Folder">
+		  
+		    <Directory Id="dirA622272A3642906C114F843D2FDC5552" Name="ImportID">
+				
+				<Component Id="cmp823651B2CB11A42477" Guid="{4fa12033-e2dd-4992-97a1-e095682a2548}">
+					<File Id="fil4fa12033e2dd499297a1e095682a2548" KeyPath="yes" Source="ImportID_en.qm"/>
+				</Component>
+				
+				<Component Id="cmpdcc9d657cfb1" Guid="{dcc9d657-cfb1-491b-be7d-173d1b51222e}">
+					<File Id="filf978b034983645179f57a3ab173b71f9" KeyPath="yes" Source="ImportID_pt.qm"/>
+				</Component>
+				
+                <Component Id="cmp823651B2CB11A4246C3C1F675444DD3A" Guid="{7776A373-5AB6-4FC5-8F71-84D38C647311}">
+                    <File Id="filECE2B9005ECC92C79308E9507EA4D44C" KeyPath="yes" Source="release\D3Dcompiler_47.dll" />
+                </Component>
+                <Component Id="cmp1D4D7D80A21F76406FF0F2CF3746F9E4" Guid="{42B8BA22-71CF-47A6-8767-4C177217018A}">
+                    <File Id="fil4E324E41A619E44FC19C22FBF7DFB280" KeyPath="yes" Source="release\FreeImage.dll" />
+                </Component>
+                <Component Id="cmpBD4C4DE6AAF9AF3994B9AC161965F816" Guid="{6FC23559-D7AB-4186-B82C-21CFD3B6E6A4}">
+                    <File Id="filB2463B2AE00D0296042246CBA1878878" KeyPath="yes" Source="release\ImportID.exe" />
+                </Component>
+                <Component Id="cmp2CAA052760806D2F708F90D0B171D29B" Guid="{A2833863-5F86-4E52-8422-C471293CFCC2}">
+                    <File Id="fil8F908928B067EAD69163F14F9D2C3AC5" KeyPath="yes" Source="release\libcurl.dll" />
+                </Component>
+                <Component Id="cmpA77304AE76FFC6CF58BC6BD095BB8F2D" Guid="{21A73F7A-2595-4E5F-81B4-D2997C1AF413}">
+                    <File Id="fil16B9894236D0D337BB1042E9EB55CB16" KeyPath="yes" Source="release\libeay32.dll" />
+                </Component>
+                <Component Id="cmp82869450B191918687F3375AEC7D9020" Guid="{28CEA7CD-EA44-46C6-8898-5CF623AE9F2E}">
+                    <File Id="fil39238DA0E05A2270781FDC8F7EFA2033" KeyPath="yes" Source="release\libEGL.dll" />
+                </Component>
+                <Component Id="cmp4CEB3452C26ADB3E600F2DF985A3416F" Guid="{E71AF369-DFCB-4724-B954-D3FF770168A9}">
+                    <File Id="fil526841567806D7F8FA688148D789EAD8" KeyPath="yes" Source="release\libGLESV2.dll" />
+                </Component>
+                <Component Id="cmp323D0631F3172F5E87029D9C11B55891" Guid="{0DD00C2E-A8B3-46BA-92F8-55E416F6D351}">
+                    <File Id="fil79ED5EE3FB9B508F8558C52798A1C601" KeyPath="yes" Source="release\opengl32sw.dll" />
+                </Component>
+                <Component Id="cmp1277902682790D98FAAE0786BF4938A9" Guid="{30108C29-D5C6-4337-9585-0918CC77BCE9}">
+                    <File Id="fil8E94A60DCE9F733E78547CA2EC6CE7C0" KeyPath="yes" Source="release\pteid-poppler.dll" />
+                </Component>
+                <Component Id="cmp8B7F1EE2E4090481FB89D78B43447B0B" Guid="{14F55B59-6EC6-453F-9FA0-93A44E5AE245}">
+                    <File Id="fil165F1A01E7A7CC2407B3D2539332B1E7" KeyPath="yes" Source="release\pteidapplayer.dll" />
+                </Component>
+                <Component Id="cmp8797800F13EE870EF01AE0F10884BAB5" Guid="{2768C96E-6C9A-4D89-A1D6-F6DF84C425B9}">
+                    <File Id="fil7D75089A4F1A852A9630AB6AA80543B0" KeyPath="yes" Source="release\pteidcardlayer.dll" />
+                </Component>
+                <Component Id="cmp1CFFEEE1C5914719F6795659EEFBDF6E" Guid="{C3845C30-0038-4BE1-A6CB-16CD4CDCCBB3}">
+                    <File Id="fil3156BB0669270315CFD679DAEDBA0B3C" KeyPath="yes" Source="release\pteidcommon.dll" />
+                </Component>
+                <Component Id="cmpF61742D27F1766AD3740B9FBCA275F06" Guid="{A0E3884A-BDB9-402C-96DE-C8C3E60DB8BB}">
+                    <File Id="filDE62C12B02307F1D7B874F8217752448" KeyPath="yes" Source="release\pteidDlgsWin32.dll" />
+                </Component>
+                <Component Id="cmpC9DB53949DBFCB3BCEC229011D5C5321" Guid="{2331619B-D250-41C1-87F9-0F3B41143D8E}">
+                    <File Id="fil1F824EF2BFC42D38A059E5426FCC6D4E" KeyPath="yes" Source="release\pteidlib.dll" />
+                </Component>
+                <Component Id="cmpB7D6AD70623ADC174B86B4CBE60AB675" Guid="{C176FF64-A45F-4087-9133-2B686B7C1DEB}">
+                    <File Id="fil3D79084D0BC322BC0BB0670B9D150A1C" KeyPath="yes" Source="release\Qt5Core.dll" />
+                </Component>
+                <Component Id="cmpAD0E26840934510BB792A2E892E492D0" Guid="{7896CF81-265A-4899-804E-09106C1D07BB}">
+                    <File Id="filC2FECB07310B45B5FFB5BD9D6DC057C0" KeyPath="yes" Source="release\Qt5Gui.dll" />
+                </Component>
+                <Component Id="cmpF8AA7490669920C677C23C3868497593" Guid="{D3D8A8C3-596C-48A9-B02B-CD10E2612B6F}">
+                    <File Id="fil7AEECD1DB2D4ACCC7CA23EF6CD1D22FF" KeyPath="yes" Source="release\Qt5Network.dll" />
+                </Component>
+                <Component Id="cmpD7A82731FEC891CEA2331051EAF40D38" Guid="{4F921827-919A-4974-9B95-751FA4AAF2B9}">
+                    <File Id="fil00C3D27273D415D99F64A591DCD1D5D7" KeyPath="yes" Source="release\Qt5Qml.dll" />
+                </Component>
+                <Component Id="cmp891FA22A36FB5C679431AE2FDADD107B" Guid="{580D4521-0774-4990-B283-DBE8173067FC}">
+                    <File Id="filEAA958FE62B77E75296FAF744F8881A5" KeyPath="yes" Source="release\Qt5Quick.dll" />
+                </Component>
+                <Component Id="cmpE7E7055404861E904F9841EEA3D1C9F4" Guid="{2D242987-FC36-4F10-886A-620C51EE82F6}">
+                    <File Id="fil69B27CD832F2B340F1DF14FBCA007126" KeyPath="yes" Source="release\Qt5QuickControls2.dll" />
+                </Component>
+                <Component Id="cmp8203E309D47AB4DE077F10888242F6D1" Guid="{05C037DC-462F-468E-96A6-4E1FD36FF521}">
+                    <File Id="filB09F2BFADC70E49741F448957D263A67" KeyPath="yes" Source="release\Qt5QuickTemplates2.dll" />
+                </Component>
+                <Component Id="cmpA10D806C31F50272AC50DE25CECF3707" Guid="{EC57E728-7F52-4A60-926F-B2B8C55F0508}">
+                    <File Id="filD7001F2241745610BF274208D17CCE08" KeyPath="yes" Source="release\Qt5Svg.dll" />
+                </Component>
+                <Component Id="cmpD93D58AF730EFD998306D9E518AECE99" Guid="{5D910D92-DEFC-43B8-B0E5-ADB1789235DB}">
+                    <File Id="filC3F68F9D5074F0B143FDCE26E8F29648" KeyPath="yes" Source="release\Qt5Widgets.dll" />
+                </Component>
+                <Component Id="cmpEB86900F621A3D86D4989B0ADB8BF8EB" Guid="{0D3E7D07-5DC7-4784-908C-B0E7087816D0}">
+                    <File Id="fil15606D8BF3F0114E71F90BD504F5718C" KeyPath="yes" Source="release\ssleay32.dll" />
+                </Component>
+                <Component Id="cmp0E9468CA4E4019EB15F21F7785733751" Guid="{FB3B2CCB-1641-452A-BD2F-DC19AAF1A40B}">
+                    <File Id="fil1E957734F412A43DC31CDF35C82B31E6" KeyPath="yes" Source="release\xerces-c_3_1.dll" />
+                </Component>
+                <Component Id="cmpAB61A44539996823E8A74EB4BCCD573F" Guid="{FDCECBA9-8509-4521-84A1-4E31811A6013}">
+                    <File Id="filE56142C4EB1EF5BFB6FACB65CCFAB43A" KeyPath="yes" Source="release\xsec_1_7.dll" />
+                </Component>
+                <Directory Id="dir3BD24470756379DCCA85CED258FB863B" Name="bearer">
+                    <Component Id="cmpEE24B5C1B664D6195DE7E4F24597CACC" Guid="{5C344B64-BC23-4B96-80F6-80138AF7D59C}">
+                        <File Id="filFCA3E3A32DA096990702EB7C97857CD3" KeyPath="yes" Source="release\bearer\qgenericbearer.dll" />
+                    </Component>
+                    <Component Id="cmpE7232FCC99E6377481E0DF95010FD1FE" Guid="{2DE485DD-1F39-4F81-B62D-DCBC1508C5B1}">
+                        <File Id="filB5161F7E4B7088582BE8F212B55B8F09" KeyPath="yes" Source="release\bearer\qnativewifibearer.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir3DC602AC22A868D6FE35768063A9DC3C" Name="iconengines">
+                    <Component Id="cmpB5643F95FF2C03BEF8CC5BF99E812C3D" Guid="{921BA44D-370D-487D-88BA-BFE001D205B0}">
+                        <File Id="fil2EF5FBBBB9511340CBBBB3DFAAE4BAC2" KeyPath="yes" Source="release\iconengines\qsvgicon.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirAB916A583D40D2FC7225A1DA53B27331" Name="imageformats">
+                    <Component Id="cmp8FA91C4EF7CA8E9DA580F4486263F290" Guid="{FE1240FB-461F-4A9F-96D8-C2921118C61D}">
+                        <File Id="filE929862F00C6E0C80D3132E4162C21C4" KeyPath="yes" Source="release\imageformats\qgif.dll" />
+                    </Component>
+                    <Component Id="cmp214BFAA4A3A5B014B056A1EEF47762AA" Guid="{438724E7-E4AA-4614-BCA9-4408215555FB}">
+                        <File Id="fil65084D133FDB5E9476F3E2B395277769" KeyPath="yes" Source="release\imageformats\qicns.dll" />
+                    </Component>
+                    <Component Id="cmpEF6C6B11C0FB9EDFD04E6F1C51002F6A" Guid="{1B3F5A6D-7D39-42A7-9B07-3A05180B3D9B}">
+                        <File Id="fil7CA88EFEC239A2BE32F75AC5FD4CE125" KeyPath="yes" Source="release\imageformats\qico.dll" />
+                    </Component>
+                    <Component Id="cmpB438891464785FC380AA81CF16AACCE1" Guid="{BE7315DD-93F8-4DFE-9117-F836F46750D7}">
+                        <File Id="fil25D786873B986B064F81C63F537FD8DC" KeyPath="yes" Source="release\imageformats\qjpeg.dll" />
+                    </Component>
+                    <Component Id="cmp2A8F639EF5D3482CBDC692949E814A78" Guid="{80A209A2-D4A4-4C16-A397-0261C23C3ECF}">
+                        <File Id="filA28254B674936A70F47270FCC0CAD806" KeyPath="yes" Source="release\imageformats\qsvg.dll" />
+                    </Component>
+                    <Component Id="cmp79046E7F96C650B3E4EBEE0312E3A5E0" Guid="{46BC4165-FDB6-4C79-82CA-7F55C80F3613}">
+                        <File Id="fil3EFE873940AC01073813E7FFADA9BE2B" KeyPath="yes" Source="release\imageformats\qtga.dll" />
+                    </Component>
+                    <Component Id="cmp435B26BE42E0652B128901102F1C0950" Guid="{C4F73773-B464-400D-A9B3-D7863F9FEC5D}">
+                        <File Id="filCB6FCD3516EF71A8744FC483D7842A69" KeyPath="yes" Source="release\imageformats\qtiff.dll" />
+                    </Component>
+                    <Component Id="cmp25AC1E9DD59BC974F238B20973E78686" Guid="{21297854-4B03-4AE6-BA7B-A84682F96F7D}">
+                        <File Id="filA12776981FD3AD23334FF3CE2212E47B" KeyPath="yes" Source="release\imageformats\qwbmp.dll" />
+                    </Component>
+                    <Component Id="cmpB00AF9726E0A70916DD581043DB3DB60" Guid="{85B8A212-2311-499A-9EA7-6851DC91FBE1}">
+                        <File Id="fil882105124E3C51EF03228900A6933443" KeyPath="yes" Source="release\imageformats\qwebp.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirAA9BB95B10AD1C9C6AA8636F7DCC5BFC" Name="platforms">
+                    <Component Id="cmp4DDF9E60E01A585A13F769D794DB327C" Guid="{CC09F090-6DDF-4555-83F9-D3DCB654011E}">
+                        <File Id="filA294D3A65FFFC48002C4013E17A5C114" KeyPath="yes" Source="release\platforms\qwindows.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirDA91D87FEA3A0B04F8839F50C7C49B9C" Name="qmltooling">
+                    <Component Id="cmp1A8829D8511295C873336021C902F166" Guid="{3EA5F295-DAFF-4075-B8BF-52443AEE40E1}">
+                        <File Id="fil0554849AA5F8125583A012404B976B3C" KeyPath="yes" Source="release\qmltooling\qmldbg_debugger.dll" />
+                    </Component>
+                    <Component Id="cmp6EB314F66F11E9662C6F03B1349A5B15" Guid="{A6D66A9C-BAC3-4458-BBBB-B6CF430D38F8}">
+                        <File Id="fil5607BA9EA26B6F4844F7E41BEDB9E1B0" KeyPath="yes" Source="release\qmltooling\qmldbg_inspector.dll" />
+                    </Component>
+                    <Component Id="cmpEA20311821AF47300141F24EC11129E8" Guid="{4785425B-2937-419A-A735-6CFDADB1C938}">
+                        <File Id="filB5560C3DB55BD08CB6091A2DCFC523E8" KeyPath="yes" Source="release\qmltooling\qmldbg_local.dll" />
+                    </Component>
+                    <Component Id="cmpC8DE5926AD6656373CF3BAE38F7AF0AC" Guid="{67DD980C-3AE6-4088-B7C6-F2044A5D3F45}">
+                        <File Id="filACA8D7782DA96C9F1560E4DD20E36BCB" KeyPath="yes" Source="release\qmltooling\qmldbg_messages.dll" />
+                    </Component>
+                    <Component Id="cmpA249870C6909F8CF8FF3B9E5C6D9C0B1" Guid="{9DFA7FB5-944F-4963-B17C-6E863A943C48}">
+                        <File Id="fil7CC1377AE1C37F2BD3E8DDAD7C67EFFA" KeyPath="yes" Source="release\qmltooling\qmldbg_native.dll" />
+                    </Component>
+                    <Component Id="cmp561DE258675C4EA5DB8284563A8D5DD4" Guid="{D850212D-B356-40E3-9259-BD71BFF14CC6}">
+                        <File Id="fil6526303C013DDEBA0BEC898E7D5EF51D" KeyPath="yes" Source="release\qmltooling\qmldbg_nativedebugger.dll" />
+                    </Component>
+                    <Component Id="cmp0AE9F0593D92C450AB244EDF3E9635D6" Guid="{1487C777-BDE2-4606-AFDC-4F7D182FC913}">
+                        <File Id="filDE0305ECB40637D074C4B7FE1FCBEA1B" KeyPath="yes" Source="release\qmltooling\qmldbg_profiler.dll" />
+                    </Component>
+                    <Component Id="cmp35AD861F1A3C146A4D89BF43767849B1" Guid="{C546C065-63EC-4A8D-A23D-4FD4E85CC52A}">
+                        <File Id="fil7B7F5430D6B3ECD254D76AF84492E0E4" KeyPath="yes" Source="release\qmltooling\qmldbg_quickprofiler.dll" />
+                    </Component>
+                    <Component Id="cmp4E23BFD0CE447356CDB09BEDAEA3A8F3" Guid="{45AF619D-7C74-433A-B1E8-67E3928413F8}">
+                        <File Id="filA1546B0AC3674C672611B552F49C6E35" KeyPath="yes" Source="release\qmltooling\qmldbg_server.dll" />
+                    </Component>
+                    <Component Id="cmp44D999B24A2E26D7512CB7E0C2B258B1" Guid="{E34C4ED4-9B0F-4DC4-9A64-CA156B2E6CF5}">
+                        <File Id="fil352DC747C4D374D60FAF3A7C13A3D6A9" KeyPath="yes" Source="release\qmltooling\qmldbg_tcp.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirF956A05CB58383F6750EFFB4FBFB29C8" Name="QtGraphicalEffects">
+                    <Component Id="cmp80B6A900D0FAAE4726573E23774C4281" Guid="{CF90FF2B-FC24-4116-8B17-E939E3869EEA}">
+                        <File Id="fil845D2480F5C681E1270A25A8970F06C4" KeyPath="yes" Source="release\QtGraphicalEffects\Blend.qml" />
+                    </Component>
+                    <Component Id="cmp8D46C62FDC9533EEB35EA12143FFE8E6" Guid="{1503CF24-C3E4-4846-9E7E-6E3582C55F66}">
+                        <File Id="fil0BB7B09FC69B3A8FE9B8474542345426" KeyPath="yes" Source="release\QtGraphicalEffects\Blend.qmlc" />
+                    </Component>
+                    <Component Id="cmp89A050B4AB0204EEF96AF8E9DE7DC9AB" Guid="{B10B08A8-A115-4DE4-B036-E765181AD6E0}">
+                        <File Id="fil392EE028B0485F387319D8F5DA0644AD" KeyPath="yes" Source="release\QtGraphicalEffects\BrightnessContrast.qml" />
+                    </Component>
+                    <Component Id="cmp1869BC9917123F0841A2D46E9D2F748B" Guid="{7BE5F00B-22AD-4DB8-8C02-F5B720029D9B}">
+                        <File Id="filC5D87AD505834E96EB32B455051D6B25" KeyPath="yes" Source="release\QtGraphicalEffects\BrightnessContrast.qmlc" />
+                    </Component>
+                    <Component Id="cmpD2A5BE52A9269E9D1A04A65AAE0C5018" Guid="{4B720B62-664B-467F-A1AB-07C51B83275C}">
+                        <File Id="filD9EDD24D1D9F776533A6540F61190A3C" KeyPath="yes" Source="release\QtGraphicalEffects\Colorize.qml" />
+                    </Component>
+                    <Component Id="cmp7BB97325E8764988638FF37469CE4468" Guid="{04467E17-9827-4BB3-8EED-1FB1D0410256}">
+                        <File Id="fil3B6A5C236EE81F8277FF9B332008939F" KeyPath="yes" Source="release\QtGraphicalEffects\Colorize.qmlc" />
+                    </Component>
+                    <Component Id="cmpB940C91E630A21A80E72581CC0CCA0E9" Guid="{7CF3156E-2736-4E73-B124-489469BDD59D}">
+                        <File Id="filEE4EC30F821149B83E9A7DD5253C5E4C" KeyPath="yes" Source="release\QtGraphicalEffects\ColorOverlay.qml" />
+                    </Component>
+                    <Component Id="cmpBB1437E0F30B296582A28AC96F16B767" Guid="{B1A9879B-BF35-4BBD-8A83-00DEA555DC18}">
+                        <File Id="filA7CF878EE115A34409E275CD084F6409" KeyPath="yes" Source="release\QtGraphicalEffects\ColorOverlay.qmlc" />
+                    </Component>
+                    <Component Id="cmp6BDC025445FB2CCB5C578497DF7D40FC" Guid="{7560C530-503F-42A6-AC53-F08F1F4A02C7}">
+                        <File Id="fil6615D7C99B2F50C58858B654E7F35153" KeyPath="yes" Source="release\QtGraphicalEffects\ConicalGradient.qml" />
+                    </Component>
+                    <Component Id="cmp5CF56E96DF14EF105B385F53E2B5C409" Guid="{124D03F4-6EA2-42D4-A374-E4D6178AC56C}">
+                        <File Id="filDF937EF3D35B979ED4622098C7637544" KeyPath="yes" Source="release\QtGraphicalEffects\ConicalGradient.qmlc" />
+                    </Component>
+                    <Component Id="cmpFC564BA9133897D7B2BCAE974922A9A8" Guid="{5DB54A54-377E-4EBA-A373-CAC3B433DA5F}">
+                        <File Id="filBDFB2557279CB49915D1CDE2C27F6639" KeyPath="yes" Source="release\QtGraphicalEffects\Desaturate.qml" />
+                    </Component>
+                    <Component Id="cmp1787023F7E60D192689776EC9EC1D0DA" Guid="{0789A1DE-3180-43CD-A664-BFE626505EE1}">
+                        <File Id="fil6E7103B96B62B733899AA0D0F1F49D0F" KeyPath="yes" Source="release\QtGraphicalEffects\Desaturate.qmlc" />
+                    </Component>
+                    <Component Id="cmp5EBD708B1F2F528C5C8A9EFB68686716" Guid="{E8348588-BF35-44DC-B580-748B494AC50D}">
+                        <File Id="filB715FE00CF8BC272A62159DB0ED696D0" KeyPath="yes" Source="release\QtGraphicalEffects\DirectionalBlur.qml" />
+                    </Component>
+                    <Component Id="cmp914A7AD7DC578C573FC43D5EFFE1A14A" Guid="{DCECD2E2-1CBF-42F2-A581-A2C962DAAFD7}">
+                        <File Id="filB8DC9AC046686FEBE81FDF7111101BA6" KeyPath="yes" Source="release\QtGraphicalEffects\DirectionalBlur.qmlc" />
+                    </Component>
+                    <Component Id="cmp6D010D270D98431F33E58ECC50767232" Guid="{387288DF-95C5-4F20-A0C8-34C7EA70C309}">
+                        <File Id="fil97287BFC5C599D299918346A0D55223C" KeyPath="yes" Source="release\QtGraphicalEffects\Displace.qml" />
+                    </Component>
+                    <Component Id="cmp9ED28235ED3D8A0BC275E243487DFCED" Guid="{6491CA99-AFC8-441D-825E-9E3CCF8C9137}">
+                        <File Id="fil55AD9D40C958358292866A41246B6DC9" KeyPath="yes" Source="release\QtGraphicalEffects\Displace.qmlc" />
+                    </Component>
+                    <Component Id="cmp45F942A568F6414C26F0A1B6A19427FE" Guid="{390C32CA-DA5A-40B8-B966-6CD52B826089}">
+                        <File Id="filD7963AA067D47A1C0F39E135CD18879C" KeyPath="yes" Source="release\QtGraphicalEffects\DropShadow.qml" />
+                    </Component>
+                    <Component Id="cmp840711A9405A50EFB5DBB32F9E15ED5D" Guid="{7EFD5D0D-8FEB-4086-BB2C-B4CC9D38EAA1}">
+                        <File Id="filEA99DC9DA79ED54CBB83EBE57C87A7E1" KeyPath="yes" Source="release\QtGraphicalEffects\DropShadow.qmlc" />
+                    </Component>
+                    <Component Id="cmp0545AA37AF0C6EE0948C824048963F47" Guid="{561BDD5A-196A-46F2-987E-DC48D8AC4839}">
+                        <File Id="fil61C5B73D582DAF99366284F4C78849AF" KeyPath="yes" Source="release\QtGraphicalEffects\FastBlur.qml" />
+                    </Component>
+                    <Component Id="cmp6148972D98A371F205D6A15CF864A7DA" Guid="{F30A53F0-F2A0-43C6-8F39-519D3D002F80}">
+                        <File Id="fil569DA915A5EC1D8B0897E78723F2D15D" KeyPath="yes" Source="release\QtGraphicalEffects\FastBlur.qmlc" />
+                    </Component>
+                    <Component Id="cmp968B5289E17C84187CB9196B681959FB" Guid="{91E62A6E-B2F9-41D9-ADBF-BDAA8306B500}">
+                        <File Id="fil864FAC4E3261F533FA6AC2935FF3882B" KeyPath="yes" Source="release\QtGraphicalEffects\GammaAdjust.qml" />
+                    </Component>
+                    <Component Id="cmp8C26CA5674C1FF4D59A6F5640A9E924C" Guid="{AD5974C4-DB68-4D53-B830-6651132A30D5}">
+                        <File Id="fil14493EF087CBED7BB2455A4550339F9A" KeyPath="yes" Source="release\QtGraphicalEffects\GammaAdjust.qmlc" />
+                    </Component>
+                    <Component Id="cmp55A08473D8761DE3F10CFE93311AEEC6" Guid="{17CDB0AC-1C01-4034-BC06-1C4E34C6311B}">
+                        <File Id="fil3FBFE1EDC952377B5650CE118100E5BC" KeyPath="yes" Source="release\QtGraphicalEffects\GaussianBlur.qml" />
+                    </Component>
+                    <Component Id="cmp1EAAE0E29D9EBE87D3DD85547E65F0DF" Guid="{D4A7BF22-6434-4AE8-AC05-A90927799C75}">
+                        <File Id="fil7AC7D7697225B358BB4A0E0FE9F5C77E" KeyPath="yes" Source="release\QtGraphicalEffects\GaussianBlur.qmlc" />
+                    </Component>
+                    <Component Id="cmp3A9575D1A41FEB32D74E2CE65F775C0C" Guid="{557F695B-9ADC-47AB-B281-86BAADDD2B79}">
+                        <File Id="filB096770DBE26307939D661A4D8C63C86" KeyPath="yes" Source="release\QtGraphicalEffects\Glow.qml" />
+                    </Component>
+                    <Component Id="cmp22E6BD3C05228CD4100A16C2FC9A88E0" Guid="{8EAFFC2F-01D8-41FE-BB68-FA272E20ADE4}">
+                        <File Id="filD721E3238A70AA5E7B738FC4C19CA61A" KeyPath="yes" Source="release\QtGraphicalEffects\Glow.qmlc" />
+                    </Component>
+                    <Component Id="cmp26007568C75266135E4CE9CE4FD93D4C" Guid="{780E5016-827C-4583-8AB6-42B4477D29EC}">
+                        <File Id="filAFFC9D1D4F34E7F8FEAF12AA7A939C81" KeyPath="yes" Source="release\QtGraphicalEffects\HueSaturation.qml" />
+                    </Component>
+                    <Component Id="cmp9CC219F3A07D50BBEBBF69F410C98DA7" Guid="{DF208EBE-D151-4B24-ACAF-00A0B508D3B9}">
+                        <File Id="fil3B3297B4ABC8DA3F2926C2FED6FF6700" KeyPath="yes" Source="release\QtGraphicalEffects\HueSaturation.qmlc" />
+                    </Component>
+                    <Component Id="cmpD3F6F490E54DF7B107D27B100C5F2F6D" Guid="{EE5BA283-0F80-4806-B139-CFAB24A165CD}">
+                        <File Id="filAB0A97080C4F605E5ABD633B9A1332FA" KeyPath="yes" Source="release\QtGraphicalEffects\InnerShadow.qml" />
+                    </Component>
+                    <Component Id="cmpC27576D3251172371ABC3921DE426DD1" Guid="{011993C0-50CC-4F78-9A09-060427B1742B}">
+                        <File Id="fil68047C9ABBBAC3136C52BAEC05C3C8D5" KeyPath="yes" Source="release\QtGraphicalEffects\InnerShadow.qmlc" />
+                    </Component>
+                    <Component Id="cmpD1FDE5DF1E2CB408A160D97FF1D2BE6E" Guid="{BDA611F3-306D-43F1-AE28-BE5A880C6603}">
+                        <File Id="filDCFCA35F96EE5E8BE1DB11B75076902A" KeyPath="yes" Source="release\QtGraphicalEffects\LevelAdjust.qml" />
+                    </Component>
+                    <Component Id="cmp669B9EB9714BBF921A73788AE7B17A59" Guid="{E66C3076-B305-4913-A181-BE2C9122E285}">
+                        <File Id="filE93EFB7C9613FD8D221C8E1947593868" KeyPath="yes" Source="release\QtGraphicalEffects\LevelAdjust.qmlc" />
+                    </Component>
+                    <Component Id="cmpD2E2348810FD0CC9B2A5BC0EF1C56805" Guid="{FA13987A-E4A5-47FD-8091-07B495577A19}">
+                        <File Id="filCB434FBAC54220177CF77C790F31FD56" KeyPath="yes" Source="release\QtGraphicalEffects\LinearGradient.qml" />
+                    </Component>
+                    <Component Id="cmp0FD9E2B90CFCB9A4B2AFFC413BB79202" Guid="{BA0B0052-1E18-4BD7-92C6-838A6A25F539}">
+                        <File Id="fil754341E88BBD620A0E376D2416AECA6D" KeyPath="yes" Source="release\QtGraphicalEffects\LinearGradient.qmlc" />
+                    </Component>
+                    <Component Id="cmp2184D94043E7D4EE3365CFC32AD57612" Guid="{B3C51854-1820-4B71-8B12-33C3D36C91BB}">
+                        <File Id="fil10CD31BDF44D63C82E577F6BD37B2492" KeyPath="yes" Source="release\QtGraphicalEffects\MaskedBlur.qml" />
+                    </Component>
+                    <Component Id="cmpAD0975E2F5A8A4B742D9D848AA325748" Guid="{6E155E53-762B-4AED-86D6-0CE100684DAA}">
+                        <File Id="filEB9861F42316D02744D97E747EBF7D07" KeyPath="yes" Source="release\QtGraphicalEffects\MaskedBlur.qmlc" />
+                    </Component>
+                    <Component Id="cmp4D1A0AAD2699676518D014975EE68013" Guid="{FE1DC9E3-6BAB-4BC8-AD0E-9826BE5B8E72}">
+                        <File Id="fil461E0492814E1048DA49888A242CE1C5" KeyPath="yes" Source="release\QtGraphicalEffects\OpacityMask.qml" />
+                    </Component>
+                    <Component Id="cmp0201DC9F026A3DF2C6BBE40623AF4AF1" Guid="{1F15992C-AE79-418B-823E-3701EC03A9BD}">
+                        <File Id="fil5382A377FCD5374C0291BBD5BF5C7AA2" KeyPath="yes" Source="release\QtGraphicalEffects\OpacityMask.qmlc" />
+                    </Component>
+                    <Component Id="cmp82D983BD4463E68D6850EDD8E5BCEF72" Guid="{DE77956B-1575-4F59-A40F-E7AFC7386BAC}">
+                        <File Id="filA0B14E68B6C0A2F95304192A7FAFFED5" KeyPath="yes" Source="release\QtGraphicalEffects\qmldir" />
+                    </Component>
+                    <Component Id="cmp015439694E2A17850070A08CB3967B62" Guid="{2E0454EB-0CF9-42D5-82E1-E4D100354CF0}">
+                        <File Id="fil2830BF75AEC79644D99621483930ECCF" KeyPath="yes" Source="release\QtGraphicalEffects\qtgraphicaleffectsplugin.dll" />
+                    </Component>
+                    <Component Id="cmp277A0951F596C1F018440DACBA86788A" Guid="{15397F84-1D83-41D9-8AF3-911C32B78E8F}">
+                        <File Id="filCB7E5042DAA79D3E57C61C2AF5556297" KeyPath="yes" Source="release\QtGraphicalEffects\RadialBlur.qml" />
+                    </Component>
+                    <Component Id="cmp4649482CC23DD87E1DA4FFB7E0FAFD18" Guid="{2CF8E0C1-B462-46FE-BBB1-E031EF802541}">
+                        <File Id="filD23F66D458024346A92C625F165DD48A" KeyPath="yes" Source="release\QtGraphicalEffects\RadialBlur.qmlc" />
+                    </Component>
+                    <Component Id="cmpBB34EB6D3C2726299B3A7CF8B048CB30" Guid="{F7473750-086D-4C0D-B2B9-47BD5ED08E35}">
+                        <File Id="filA23E1F2B529FBAF4013F3AD8570A9C20" KeyPath="yes" Source="release\QtGraphicalEffects\RadialGradient.qml" />
+                    </Component>
+                    <Component Id="cmp9EC948A33DD50DA077C549A089F61C46" Guid="{E477F1EE-9CAA-409F-B80E-96F94AA80A6F}">
+                        <File Id="fil2BC309F3B6EE307A57FBC241CECD1E4F" KeyPath="yes" Source="release\QtGraphicalEffects\RadialGradient.qmlc" />
+                    </Component>
+                    <Component Id="cmpDEE495B429D49AE0F8611AD18E8B1DF9" Guid="{BA843B27-759B-4842-BD9A-ECC78D36916A}">
+                        <File Id="fil7E65BAD4F70A49F62203125037129345" KeyPath="yes" Source="release\QtGraphicalEffects\RectangularGlow.qml" />
+                    </Component>
+                    <Component Id="cmp6179D0E6553EC8B93B5298CBC340A5F7" Guid="{7F8BBD9C-F834-4BC1-967F-B283EB0A09DB}">
+                        <File Id="fil20FBB77CECD5387CBEB8CEBE10C4B1A0" KeyPath="yes" Source="release\QtGraphicalEffects\RectangularGlow.qmlc" />
+                    </Component>
+                    <Component Id="cmpB3EAAFFB6BD79F63AE1B0914DC14C8CD" Guid="{E2D578F6-5EEE-462A-8305-50BD5CA9BBBD}">
+                        <File Id="filF62315BE7EB066624DE3B0FC80CD23AB" KeyPath="yes" Source="release\QtGraphicalEffects\RecursiveBlur.qml" />
+                    </Component>
+                    <Component Id="cmp20B92939D4D5FB1D0B583CE5082D9F48" Guid="{04E46F76-0331-431D-A281-D0C2FE5F9064}">
+                        <File Id="filD820146085C3B4B09C1C19D5ACE4A16A" KeyPath="yes" Source="release\QtGraphicalEffects\RecursiveBlur.qmlc" />
+                    </Component>
+                    <Component Id="cmpDF8EAA641991684BA0A419F92699C811" Guid="{BF2EDF63-067D-45EB-BA61-F2B0CF8E2426}">
+                        <File Id="fil23C5AC835EA9AA5842AE23C9E03AAAC5" KeyPath="yes" Source="release\QtGraphicalEffects\ThresholdMask.qml" />
+                    </Component>
+                    <Component Id="cmp339D34AA340E44FE6CD59F0951D1FA81" Guid="{8784214E-B68E-48B1-A1B8-F5F2AD25639C}">
+                        <File Id="fil25C213D99788507E9D2065E8562787E5" KeyPath="yes" Source="release\QtGraphicalEffects\ThresholdMask.qmlc" />
+                    </Component>
+                    <Component Id="cmpF809683647F6528B409F844905B09B3D" Guid="{45C80CCD-FB19-4D6C-912A-B05B5EB6E62F}">
+                        <File Id="fil143359105C8A5B58E5565C724A3A373A" KeyPath="yes" Source="release\QtGraphicalEffects\ZoomBlur.qml" />
+                    </Component>
+                    <Component Id="cmpF03E4F05C402B27128FB7E5FADF2227B" Guid="{C012FAEE-F6BE-4C98-AFAF-5F3C8D49EC11}">
+                        <File Id="fil6C36BBD7CDDE6E6162D78D84B7A390FE" KeyPath="yes" Source="release\QtGraphicalEffects\ZoomBlur.qmlc" />
+                    </Component>
+                    <Directory Id="dirCB10483429BDA9BCC5DBA91B3181AF52" Name="private">
+                        <Component Id="cmp0B1DF1649D54D5FE80AE474BFB896ED5" Guid="{0FB170A6-4C4A-434C-83B8-01F8E28D06F3}">
+                            <File Id="fil11371067DCC5E243CD9A9C5CED2181C2" KeyPath="yes" Source="release\QtGraphicalEffects\private\DropShadowBase.qml" />
+                        </Component>
+                        <Component Id="cmpD3CDE4AFAD86E700B5ADCFEC687C989B" Guid="{929FBF56-59E3-4681-BA49-BF56CEBA78BB}">
+                            <File Id="fil97D4029F2A8676421CB74E6F1507534E" KeyPath="yes" Source="release\QtGraphicalEffects\private\DropShadowBase.qmlc" />
+                        </Component>
+                        <Component Id="cmp53EDFF3E16550336E245C07C67D358D9" Guid="{6A7B41B9-5DE4-4200-BA4C-83AB7CAFCDFD}">
+                            <File Id="fil14C8A3E4B798E9FD408A255778384438" KeyPath="yes" Source="release\QtGraphicalEffects\private\FastGlow.qml" />
+                        </Component>
+                        <Component Id="cmpAF0EB5A078A1152EF132205DB4701699" Guid="{E6DFEEC3-6F89-45AD-8194-B835DACB9615}">
+                            <File Id="filBE6F335E7D5DBC9E6A6A4CCBD60DAA8E" KeyPath="yes" Source="release\QtGraphicalEffects\private\FastGlow.qmlc" />
+                        </Component>
+                        <Component Id="cmpE5F75861DFBAF3EA744E32C157D242AA" Guid="{64BACC51-CB87-4E6B-AC42-1D1A9ACB63D0}">
+                            <File Id="fil2039C2AA8543D9E83D31F604EA2E4245" KeyPath="yes" Source="release\QtGraphicalEffects\private\FastInnerShadow.qml" />
+                        </Component>
+                        <Component Id="cmp8F85F25729935CEADAD0255785F30539" Guid="{F90B19DF-30F5-4671-8717-CAA2289B0D09}">
+                            <File Id="fil8F048DF9710B01083EF087C89BA16105" KeyPath="yes" Source="release\QtGraphicalEffects\private\FastInnerShadow.qmlc" />
+                        </Component>
+                        <Component Id="cmpBDC25A3CEE6DB22C952B8A50CB22C2D8" Guid="{D2CF9EB1-1AA0-484A-B8FF-497B626B9BD7}">
+                            <File Id="fil684944D7C8F83EFD4C2D0D2B5978917F" KeyPath="yes" Source="release\QtGraphicalEffects\private\FastMaskedBlur.qml" />
+                        </Component>
+                        <Component Id="cmp0F7D9BD0BFA7A0E627A1E238CFD8879B" Guid="{2CA54D3C-0DCA-4BB2-8F73-50B99D602C9C}">
+                            <File Id="filF4F5B050ECE5AA4010A6C1DDB2B5E589" KeyPath="yes" Source="release\QtGraphicalEffects\private\FastMaskedBlur.qmlc" />
+                        </Component>
+                        <Component Id="cmpED714C19EF65F3E962B5836D4D1BAF11" Guid="{3D5D0476-D021-4134-B469-2E52DCBC59B0}">
+                            <File Id="filDCE891B4E2AF1BF62C7906B03E6C9A0F" KeyPath="yes" Source="release\QtGraphicalEffects\private\GaussianDirectionalBlur.qml" />
+                        </Component>
+                        <Component Id="cmp3F5E7B918506126E44EDE26E1247E140" Guid="{FA6AD802-4849-40A9-8032-8809A4C650F3}">
+                            <File Id="fil2A5A11DB2C8A6C18E0DDAF824165C435" KeyPath="yes" Source="release\QtGraphicalEffects\private\GaussianDirectionalBlur.qmlc" />
+                        </Component>
+                        <Component Id="cmp6173478862BC8BA1A82BD906C1109ACF" Guid="{7F30EA72-853E-4CA5-BF2F-E36465B8462C}">
+                            <File Id="fil2A8621C3BFAA97C532417513C02B9B07" KeyPath="yes" Source="release\QtGraphicalEffects\private\GaussianGlow.qml" />
+                        </Component>
+                        <Component Id="cmp0FF26EB7A0D8455A5988234AC7A16336" Guid="{6767306A-96CD-46FE-B639-BCFB67C61ADE}">
+                            <File Id="fil0E1B2986D266DB13C7384B1396DA6592" KeyPath="yes" Source="release\QtGraphicalEffects\private\GaussianGlow.qmlc" />
+                        </Component>
+                        <Component Id="cmpD0C2BF151A16023CF6C297D6CEE8FE1E" Guid="{4A940994-39B1-4262-8D25-5FCE69D46228}">
+                            <File Id="fil45D5F529083474B9C92D937849C6737F" KeyPath="yes" Source="release\QtGraphicalEffects\private\GaussianInnerShadow.qml" />
+                        </Component>
+                        <Component Id="cmp78E4D68A783AE9D43BC4638DEACBD8CA" Guid="{2824E20C-7FAD-4231-A170-D702B39050E6}">
+                            <File Id="filF5BC9CCB1568AA38A8A8DB6F530FB32F" KeyPath="yes" Source="release\QtGraphicalEffects\private\GaussianInnerShadow.qmlc" />
+                        </Component>
+                        <Component Id="cmpE0618C18C167E5DFA7D14DA8970B32BA" Guid="{23D127BE-1017-446E-AF9A-9EB22C224514}">
+                            <File Id="filC0930F0FBBAEBE1E077BA9EE5E275C11" KeyPath="yes" Source="release\QtGraphicalEffects\private\GaussianMaskedBlur.qml" />
+                        </Component>
+                        <Component Id="cmp456C1E4DF9AD584BA1C3997DECC0F004" Guid="{245A4B0D-820A-4C21-8213-48384614CD44}">
+                            <File Id="filB7FD4BE74045D13AA0FF95012D70B085" KeyPath="yes" Source="release\QtGraphicalEffects\private\GaussianMaskedBlur.qmlc" />
+                        </Component>
+                        <Component Id="cmpC8C7BA7466A9A46346AA8B2FED585A3F" Guid="{F4AC0588-836E-432D-BA05-C3C782C37028}">
+                            <File Id="fil7D10268F143B794E481B89EA0511DB6F" KeyPath="yes" Source="release\QtGraphicalEffects\private\qmldir" />
+                        </Component>
+                        <Component Id="cmpF33B9CADE2E8CA11F8708BB170650841" Guid="{14354FD0-E2AE-414E-A78B-19E72D66C196}">
+                            <File Id="filC96CFCC3C0BA57AE6A48B44C65441DE8" KeyPath="yes" Source="release\QtGraphicalEffects\private\qtgraphicaleffectsprivate.dll" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dirA81B344C307257BC889A766F2FCFAA0D" Name="QtQuick">
+                    <Directory Id="dirD8F8445E56DB4066AFAFC25C3F8BB03A" Name="Controls.2">
+                        <Component Id="cmpE90561000AA603E4E80909D4290CB3DC" Guid="{30136E62-2764-431B-AC92-19FF5EA953FF}">
+                            <File Id="fil376FE0608149925F92EC8145342741D4" KeyPath="yes" Source="release\QtQuick\Controls.2\AbstractButton.qml" />
+                        </Component>
+                        <Component Id="cmpCFF691CA4EC8B1DCB1FB6CA3B3722A1D" Guid="{7AB0EE84-763D-4852-BE10-80DD93E44B60}">
+                            <File Id="fil94B276A5B9C249D93D8A7142983797CA" KeyPath="yes" Source="release\QtQuick\Controls.2\AbstractButton.qmlc" />
+                        </Component>
+                        <Component Id="cmp580B0359CFAEBE3BFDE57590072A2778" Guid="{C21D7EA1-825E-4BAB-9B8C-5F9AF982DA18}">
+                            <File Id="filDA720E2BE6BB5A6E83BB34DD3B09F9CE" KeyPath="yes" Source="release\QtQuick\Controls.2\ApplicationWindow.qml" />
+                        </Component>
+                        <Component Id="cmpC3FDE46024AD8645229720A06BFEF01E" Guid="{F95B396B-8A23-4A9A-AF90-8059D99A3668}">
+                            <File Id="fil291FCA379114127D7B1726C929BE13B7" KeyPath="yes" Source="release\QtQuick\Controls.2\ApplicationWindow.qmlc" />
+                        </Component>
+                        <Component Id="cmp72E5A346840BC4A8A71708E059C4CD92" Guid="{7467E62C-1109-484B-AFCC-D88414F1888E}">
+                            <File Id="fil13D6ED0575AAC43361CC0D111A71ADC9" KeyPath="yes" Source="release\QtQuick\Controls.2\BusyIndicator.qml" />
+                        </Component>
+                        <Component Id="cmp6DD30A8EF6D77F53205D59176991D1AC" Guid="{E01FDA51-E8CB-4935-9812-0675A4B32C31}">
+                            <File Id="fil3D9E4A1EEF93D4926047C0F1A0363BFC" KeyPath="yes" Source="release\QtQuick\Controls.2\BusyIndicator.qmlc" />
+                        </Component>
+                        <Component Id="cmp0F3821F5506F7A6BF052CE18CD94FA3B" Guid="{5D8D5742-3ED2-4713-955F-7C3F9D28C41F}">
+                            <File Id="fil001A98F29507260B805721F101E449EA" KeyPath="yes" Source="release\QtQuick\Controls.2\Button.qml" />
+                        </Component>
+                        <Component Id="cmpDAE3BB6BFC8923CDF9BCDA3759B160F1" Guid="{166EC786-2AC4-417E-83CE-B03ABDF84885}">
+                            <File Id="fil8F34D64D341366060E6E2A550A3A8ACE" KeyPath="yes" Source="release\QtQuick\Controls.2\Button.qmlc" />
+                        </Component>
+                        <Component Id="cmpA854F3964DB9DB28D6E10EDF5842C0A3" Guid="{99DDB166-37AA-40D3-9193-0B92A425F8A9}">
+                            <File Id="fil715AD7979C0CB8CFFB5C0D93FF76E327" KeyPath="yes" Source="release\QtQuick\Controls.2\ButtonGroup.qml" />
+                        </Component>
+                        <Component Id="cmp5E2077602F782B2C1A88B29FEC49CC1A" Guid="{F6EF20B5-A46C-4F3D-A502-5B62CA2916E2}">
+                            <File Id="fil9888EB0ADF765842C084BB387DF7CDD9" KeyPath="yes" Source="release\QtQuick\Controls.2\ButtonGroup.qmlc" />
+                        </Component>
+                        <Component Id="cmp21ABF434D3DA3E8EA5339186176094BC" Guid="{18F17EA2-ECAB-43DE-B83A-ACD9C5E0B64D}">
+                            <File Id="fil4DFD8D6DFDFB10447E36D9FE6C12ABB0" KeyPath="yes" Source="release\QtQuick\Controls.2\CheckBox.qml" />
+                        </Component>
+                        <Component Id="cmp3A4EA0396761C1E14B9D66A20186B890" Guid="{D5ABD676-1D83-4F30-A6B4-9E6492DF8EF5}">
+                            <File Id="fil127E607F51AD90C312DBC4C740B8BB17" KeyPath="yes" Source="release\QtQuick\Controls.2\CheckBox.qmlc" />
+                        </Component>
+                        <Component Id="cmpA840FF63FFDD00C3F6DCB242AE08A249" Guid="{CBD078BB-0467-4BF6-9BA7-2AA1310B3827}">
+                            <File Id="fil9120B8020AE09C58B63D532E4E69AA82" KeyPath="yes" Source="release\QtQuick\Controls.2\CheckDelegate.qml" />
+                        </Component>
+                        <Component Id="cmp2B66B3DAA5D20503F175713B36946308" Guid="{C0F0928F-0574-4C9B-AF99-32F4BED07CAB}">
+                            <File Id="fil9C7A825ABDCE2BE474EACB851FFC671D" KeyPath="yes" Source="release\QtQuick\Controls.2\CheckDelegate.qmlc" />
+                        </Component>
+                        <Component Id="cmpC40A6E7985149D70761F3B7F11723DF6" Guid="{6F343025-AA45-4935-8ABA-FE6C5E37C1D0}">
+                            <File Id="fil2BCF5644542B9BF651189747F85C6FBC" KeyPath="yes" Source="release\QtQuick\Controls.2\CheckIndicator.qml" />
+                        </Component>
+                        <Component Id="cmpA0A9775BAF0BB339FC34E751A7DA2BC9" Guid="{2959EBB9-797A-423D-A6B3-6E775E76EFDE}">
+                            <File Id="fil90CE815830FDF734182B01A4A3245E5C" KeyPath="yes" Source="release\QtQuick\Controls.2\CheckIndicator.qmlc" />
+                        </Component>
+                        <Component Id="cmp54C72544AE59E67432F27153A40CC3A6" Guid="{1BC88998-F935-4F99-9157-6FA943DD85EF}">
+                            <File Id="fil7EBCCF7D370EE86BF83CF44F3172C002" KeyPath="yes" Source="release\QtQuick\Controls.2\ComboBox.qml" />
+                        </Component>
+                        <Component Id="cmp33B4E9DAE22014EE99C1D4734B234078" Guid="{B9402D9F-3937-4329-930F-B0041FDB2260}">
+                            <File Id="fil85E5A46BA2B1D19E04F3877E0A93403B" KeyPath="yes" Source="release\QtQuick\Controls.2\ComboBox.qmlc" />
+                        </Component>
+                        <Component Id="cmp7D1C7E649D27A82B11DA7165C4AE2ACD" Guid="{D042392F-868A-44B2-88AA-0FF7653D1A06}">
+                            <File Id="filCEF35A7B5DC63A758AC219D3818C27D4" KeyPath="yes" Source="release\QtQuick\Controls.2\Container.qml" />
+                        </Component>
+                        <Component Id="cmpB0883BB6B044D1365513B007126B7367" Guid="{645310FC-E235-42F7-9CF5-06A436C595C2}">
+                            <File Id="fil77D64B965696249F16F26B8003359589" KeyPath="yes" Source="release\QtQuick\Controls.2\Container.qmlc" />
+                        </Component>
+                        <Component Id="cmp007BA87DF81A789A07EE868C7A828D59" Guid="{54F2E3C2-92BA-4C50-B43A-425EBFCA7418}">
+                            <File Id="fil1C82BD13493CBBD877F2C9D50F03274A" KeyPath="yes" Source="release\QtQuick\Controls.2\Control.qml" />
+                        </Component>
+                        <Component Id="cmp232F43B6A63483E0F6259C6CF77100FD" Guid="{3CD7D937-9A9E-4D63-8189-088D28CB26F7}">
+                            <File Id="fil5C08834A5B576A8B833D3998CEB59D14" KeyPath="yes" Source="release\QtQuick\Controls.2\Control.qmlc" />
+                        </Component>
+                        <Component Id="cmp6F07DAAD9812BDAE9FB7C0387C96B31A" Guid="{CEDF087D-A738-43D0-889E-2299EDD2567B}">
+                            <File Id="filD3BF4F487CA312014BA5AB7BC70233F2" KeyPath="yes" Source="release\QtQuick\Controls.2\DelayButton.qml" />
+                        </Component>
+                        <Component Id="cmp505A04428C1B6D4D61DF4500D3D119A7" Guid="{25EBFB49-6591-4A57-93F0-B4040FC9076B}">
+                            <File Id="fil19E9C9682CCC5CC6B962920B4CDC5E9D" KeyPath="yes" Source="release\QtQuick\Controls.2\DelayButton.qmlc" />
+                        </Component>
+                        <Component Id="cmpF2D7682D72E5E9F563F2B1F7BB650374" Guid="{3E64AE82-DDF8-4A78-B43D-B9488B5B27EE}">
+                            <File Id="filECED74D1FEB4FFB18A64F214B582827F" KeyPath="yes" Source="release\QtQuick\Controls.2\Dial.qml" />
+                        </Component>
+                        <Component Id="cmp32E38244A8F5BFFC2E9027B1147FB48E" Guid="{79CAB204-04A8-40AF-957D-79E96DFE6E9F}">
+                            <File Id="filA93017D8AEE9B8A7DF0EED88E8B3946C" KeyPath="yes" Source="release\QtQuick\Controls.2\Dial.qmlc" />
+                        </Component>
+                        <Component Id="cmpB173A7B38BD32A36D34C13CD5799ABBE" Guid="{FDEF0C58-BF8B-4B35-A6AB-91263AD34F40}">
+                            <File Id="filEA7F91BD5E39012C9424CF39A02A992C" KeyPath="yes" Source="release\QtQuick\Controls.2\Dialog.qml" />
+                        </Component>
+                        <Component Id="cmpBA253DB1C774F6802490AFE377B8C6B4" Guid="{07F88AAB-D10E-40CD-9AA1-FA7FFC50110A}">
+                            <File Id="filA127CD98ABDA0B16A7C0378BF8D3F54E" KeyPath="yes" Source="release\QtQuick\Controls.2\Dialog.qmlc" />
+                        </Component>
+                        <Component Id="cmpC26DC3711C09FC51DE56FC7925583888" Guid="{D34C320D-9D7C-4433-9922-E23956418BDC}">
+                            <File Id="fil6D2DFBECB87F8AE33F8A552C226649A4" KeyPath="yes" Source="release\QtQuick\Controls.2\DialogButtonBox.qml" />
+                        </Component>
+                        <Component Id="cmpD4B789DE40A0C54AA88CB48480B9549B" Guid="{9AB61BDB-2FDC-460D-A5C3-9A4A70172E0F}">
+                            <File Id="fil91ADC07358248B4B6BE561EBA0203267" KeyPath="yes" Source="release\QtQuick\Controls.2\DialogButtonBox.qmlc" />
+                        </Component>
+                        <Component Id="cmpB765D99D04AFD208DA3B5C87C6AF4C46" Guid="{59A72FC0-1D00-4257-8A13-0DF443CCE54D}">
+                            <File Id="fil74830CC0BDD7B89AB6A6184AB5C52730" KeyPath="yes" Source="release\QtQuick\Controls.2\Drawer.qml" />
+                        </Component>
+                        <Component Id="cmp70110BD2F18B7AA21604BB67D256284F" Guid="{4A32F6E1-6E92-47B8-AF1C-8B9188DDE63F}">
+                            <File Id="fil311EEE1FD2C325A3388CAC63B149535B" KeyPath="yes" Source="release\QtQuick\Controls.2\Drawer.qmlc" />
+                        </Component>
+                        <Component Id="cmp9CD011A0AF4E38E0D643FCCE13B94236" Guid="{E43D6E8A-F7B3-4F0A-B4B6-EAFEEB125D89}">
+                            <File Id="fil7276D7CC9931D62481BCC4687BCF0908" KeyPath="yes" Source="release\QtQuick\Controls.2\Frame.qml" />
+                        </Component>
+                        <Component Id="cmp03A48E393A5F4F5A1C9D3580573980DB" Guid="{D9D8397E-7AFF-4BF0-AFC7-EE06AE70901B}">
+                            <File Id="filBE9BF2B82DF457216FDBAB0DC672867C" KeyPath="yes" Source="release\QtQuick\Controls.2\Frame.qmlc" />
+                        </Component>
+                        <Component Id="cmpC7BEAB1B8E4410BB0414D96FFE6E26D3" Guid="{138126FD-F647-4822-99F6-561BC54DFE8F}">
+                            <File Id="filB55E340356B9622FC4667688FB2B1838" KeyPath="yes" Source="release\QtQuick\Controls.2\GroupBox.qml" />
+                        </Component>
+                        <Component Id="cmp54A82A832DC478C0DA591618FD6587A2" Guid="{44001B25-60AF-4B25-BD6F-1968A9646094}">
+                            <File Id="fil07B9F7C5AF5458DBF3D9F6C941DCB44D" KeyPath="yes" Source="release\QtQuick\Controls.2\GroupBox.qmlc" />
+                        </Component>
+                        <Component Id="cmp56432257E458CB0441D3B99AF036D998" Guid="{34E88D39-65F5-4684-9316-0436FE9E40B4}">
+                            <File Id="fil217245547A27BE3B698BA2E968CC727F" KeyPath="yes" Source="release\QtQuick\Controls.2\ItemDelegate.qml" />
+                        </Component>
+                        <Component Id="cmp58DAFA5BD6F12138D31E7B4EBDF411B8" Guid="{BDC2E629-9FE8-4526-843D-26340E283EC6}">
+                            <File Id="fil4B56AA7FE15FC10DD3B819E2B9258268" KeyPath="yes" Source="release\QtQuick\Controls.2\ItemDelegate.qmlc" />
+                        </Component>
+                        <Component Id="cmpE7E52267A0706820FCEB2E9CE9BCE4D8" Guid="{20C639A4-E277-4ECF-A891-6EE9989A4C7E}">
+                            <File Id="fil2EA98207EADC821BE3D413CF3E23995A" KeyPath="yes" Source="release\QtQuick\Controls.2\Label.qml" />
+                        </Component>
+                        <Component Id="cmp8956344356D2BAA48512A29C7A91C4F0" Guid="{FB28207F-C6DD-479D-8C0E-2B58F220FAD9}">
+                            <File Id="fil059F299BBD439E5F6F469701875F5DD6" KeyPath="yes" Source="release\QtQuick\Controls.2\Label.qmlc" />
+                        </Component>
+                        <Component Id="cmp19C2BBFD1C236D1194E047E7CD84FBF9" Guid="{914FB21A-F5CE-4D0A-B662-B20E78E690E1}">
+                            <File Id="filFBA37ABC71604C9F0CDF342750496491" KeyPath="yes" Source="release\QtQuick\Controls.2\Menu.qml" />
+                        </Component>
+                        <Component Id="cmp769CE63A388B4D7B840312DCADA45C81" Guid="{D11DA16B-AB50-4581-A5AA-C53C669ED06F}">
+                            <File Id="filCEE21E08A612259D17B7C92FEF640E6F" KeyPath="yes" Source="release\QtQuick\Controls.2\Menu.qmlc" />
+                        </Component>
+                        <Component Id="cmp46BF962424953AD23926A0E431A9FC37" Guid="{42485FB2-506A-41F7-843E-5F06ED32A141}">
+                            <File Id="filF0CFB258CEE2ED88438D9647BF011636" KeyPath="yes" Source="release\QtQuick\Controls.2\MenuItem.qml" />
+                        </Component>
+                        <Component Id="cmp2B36A61F7A1C323A495AE06EFF43CEB1" Guid="{B475108D-3DFB-47BA-96E8-9DD8BBF5609E}">
+                            <File Id="fil222440BE4078B9603AF0D9A82D81E41E" KeyPath="yes" Source="release\QtQuick\Controls.2\MenuItem.qmlc" />
+                        </Component>
+                        <Component Id="cmp52F70A882C2A510A5DF7116278FE4E8A" Guid="{82DC6202-006B-46A5-A527-BE34D21321C8}">
+                            <File Id="filD570B3E4EAE5ACBEFE81EB95278C2AC9" KeyPath="yes" Source="release\QtQuick\Controls.2\MenuSeparator.qml" />
+                        </Component>
+                        <Component Id="cmp5192EEAC86AC062BC2AAC6D0CAF5154F" Guid="{20BBD255-CCD1-41D3-B531-33EB0CEE946F}">
+                            <File Id="fil1A155F63BA96053C6D2657467A1A3B75" KeyPath="yes" Source="release\QtQuick\Controls.2\MenuSeparator.qmlc" />
+                        </Component>
+                        <Component Id="cmpAA6DE1FC170002D9C9E1287E87A3E744" Guid="{F6C46C10-56DD-437B-8FBA-017D0A4AED98}">
+                            <File Id="fil02727B974A3AAFFF952BE2512FDA2FBA" KeyPath="yes" Source="release\QtQuick\Controls.2\Page.qml" />
+                        </Component>
+                        <Component Id="cmp8DD565646AB1ED56230E9F746FC52A78" Guid="{C9FE8E44-5277-45FC-92A8-68E1451377F5}">
+                            <File Id="filEC8341C3BDD9718621D49A1C8C01409E" KeyPath="yes" Source="release\QtQuick\Controls.2\Page.qmlc" />
+                        </Component>
+                        <Component Id="cmp9086402DD22F86652EB30626DA093F21" Guid="{12BCCA35-0EC2-4F32-B245-EB26BBBAA175}">
+                            <File Id="fil20262D15835E81AD31671F361DE07B2D" KeyPath="yes" Source="release\QtQuick\Controls.2\PageIndicator.qml" />
+                        </Component>
+                        <Component Id="cmp2F18421CB2D7480AFDB48FC8DE1A14FB" Guid="{99139CEF-76DC-4665-8775-2F6DC6AA0AC5}">
+                            <File Id="fil5D43B466331F83957607938E2CE63807" KeyPath="yes" Source="release\QtQuick\Controls.2\PageIndicator.qmlc" />
+                        </Component>
+                        <Component Id="cmp67CA5FC8D1470688F0883EC12655198A" Guid="{AD4CB142-B181-4445-A9F0-B9C95076B521}">
+                            <File Id="fil5BEEE8E685F2ED982F5D56E40A5FD033" KeyPath="yes" Source="release\QtQuick\Controls.2\Pane.qml" />
+                        </Component>
+                        <Component Id="cmp8D14D637F222021F7AD99992BF979369" Guid="{3D245DE4-FC83-4548-9B6D-E57D22D7B2D7}">
+                            <File Id="fil7F6A38517847631A008CC307FD6B1817" KeyPath="yes" Source="release\QtQuick\Controls.2\Pane.qmlc" />
+                        </Component>
+                        <Component Id="cmpE3C5AC5B6DEDA117CDA8AE8619431581" Guid="{F5551071-C9E2-41A5-8F7E-5DDDBE20DE75}">
+                            <File Id="fil46663722717A0CAF543E9B7324DE0FA4" KeyPath="yes" Source="release\QtQuick\Controls.2\plugins.qmltypes" />
+                        </Component>
+                        <Component Id="cmpBF7E459CC88E99E4498B68A134DBEDB2" Guid="{637A5457-8C9A-415B-A7D9-EB2EB5AD6FDF}">
+                            <File Id="filF1ED17D7492E2DC851530902E36349E5" KeyPath="yes" Source="release\QtQuick\Controls.2\Popup.qml" />
+                        </Component>
+                        <Component Id="cmp11B372E7C00DA5B4E112D2C1F6926E44" Guid="{B17264B8-DC35-4920-9DA6-90F516323BE8}">
+                            <File Id="fil539DCC9D741361312FB9D5F082B2B95B" KeyPath="yes" Source="release\QtQuick\Controls.2\Popup.qmlc" />
+                        </Component>
+                        <Component Id="cmp4B298F7FB674BE207BFD34C807B95140" Guid="{4C359C92-6ACD-4268-9B09-D5B9F8CFE96A}">
+                            <File Id="fil29CE97C64B4E2008DE16379BD6E141BA" KeyPath="yes" Source="release\QtQuick\Controls.2\ProgressBar.qml" />
+                        </Component>
+                        <Component Id="cmpDF7F2F1E6249D4D13A791460BFFDC616" Guid="{3853D316-9BB8-4698-9AF2-110C2B9474FD}">
+                            <File Id="filE205CC0528A1D2446D7E91708858D870" KeyPath="yes" Source="release\QtQuick\Controls.2\ProgressBar.qmlc" />
+                        </Component>
+                        <Component Id="cmpD6094230F4DCF356D2430830C7E0D600" Guid="{9601E747-1853-49E2-BF39-663736C68FF4}">
+                            <File Id="filB84E1EAE8B7EAF6477CDF78D4439079F" KeyPath="yes" Source="release\QtQuick\Controls.2\qmldir" />
+                        </Component>
+                        <Component Id="cmp39FA1C544AAE9D67025AF090F2654349" Guid="{3C834153-C0C7-46C8-8EB6-D7E6E15F2F5F}">
+                            <File Id="filC93D3D7E978609EF923564EE24C1B042" KeyPath="yes" Source="release\QtQuick\Controls.2\qtquickcontrols2plugin.dll" />
+                        </Component>
+                        <Component Id="cmp4EF70E90C5895F0D654B671E5CF5D7BE" Guid="{A9194D27-7E5D-42E0-961C-BAA463CECC5D}">
+                            <File Id="fil1196397500A2A40D4F160C592FD97755" KeyPath="yes" Source="release\QtQuick\Controls.2\RadioButton.qml" />
+                        </Component>
+                        <Component Id="cmpADABB35263CC2967D5E3D0C91E24D11B" Guid="{A8B567E6-B931-445F-A09A-664445931C23}">
+                            <File Id="fil48C0F5BE0A29A8C4D0FC48CFBF7118CC" KeyPath="yes" Source="release\QtQuick\Controls.2\RadioButton.qmlc" />
+                        </Component>
+                        <Component Id="cmp6FD460C8F7544D4C515A3B4C866A6F6E" Guid="{EFE0E414-96D5-493A-B850-DAD6D3E933B4}">
+                            <File Id="fil3CC4913A146D2AA79F385537202F7974" KeyPath="yes" Source="release\QtQuick\Controls.2\RadioDelegate.qml" />
+                        </Component>
+                        <Component Id="cmpF6E1567741BDFDBF8F8B9822D9A0AFE4" Guid="{101FED67-3576-493D-8D9C-851FB9B3DEB1}">
+                            <File Id="fil3DC618B1C40A269E2C7A26C076B8D10E" KeyPath="yes" Source="release\QtQuick\Controls.2\RadioDelegate.qmlc" />
+                        </Component>
+                        <Component Id="cmp8A3C04D3F173418C83E42EBF85769062" Guid="{B115CB97-25C8-4FDF-A696-111A2C77E5FD}">
+                            <File Id="fil1CEE15418B807F1695CBD91954D8EA61" KeyPath="yes" Source="release\QtQuick\Controls.2\RadioIndicator.qml" />
+                        </Component>
+                        <Component Id="cmpE9AA0B1D90AD85CABD244B13808FDC04" Guid="{DF0B9904-0975-4215-A507-27E4B146EB24}">
+                            <File Id="fil2A4237DE4122D6629BF976A4F9F0E5D4" KeyPath="yes" Source="release\QtQuick\Controls.2\RadioIndicator.qmlc" />
+                        </Component>
+                        <Component Id="cmp1D8520B5084841B5768B82DC5776588D" Guid="{2F043058-0F6D-4DC7-A304-4B0292002535}">
+                            <File Id="fil6A01003F7D8B253AF78E76819371624A" KeyPath="yes" Source="release\QtQuick\Controls.2\RangeSlider.qml" />
+                        </Component>
+                        <Component Id="cmp988099E3608C3691999B74FD3E492AFF" Guid="{EE830E1E-4ABA-4740-A41D-D0423DAEBBCC}">
+                            <File Id="fil61A5759E6632FE3AE74F7413551D2A59" KeyPath="yes" Source="release\QtQuick\Controls.2\RangeSlider.qmlc" />
+                        </Component>
+                        <Component Id="cmpDC05F59CD5FA5BDBD2C7EE868ECF90C0" Guid="{3260965B-B5E7-4F00-9A13-EC9063FB1197}">
+                            <File Id="fil1B7042C847F9966D4BCA335D6F921AC2" KeyPath="yes" Source="release\QtQuick\Controls.2\RoundButton.qml" />
+                        </Component>
+                        <Component Id="cmpA3F72DB8A93C74761709AE53EE825521" Guid="{14050895-2612-4D59-962F-9FE0A82D684B}">
+                            <File Id="fil7FF26E14EFEA516F9C8339E2FC607EF1" KeyPath="yes" Source="release\QtQuick\Controls.2\RoundButton.qmlc" />
+                        </Component>
+                        <Component Id="cmpEB919E6591EF55239A6BB6C5C3FF9DF9" Guid="{F654E1B5-9BE5-459D-BEB5-AB32D056EAED}">
+                            <File Id="fil1639DF001123C49F1D1E4ABFC65D9D02" KeyPath="yes" Source="release\QtQuick\Controls.2\ScrollBar.qml" />
+                        </Component>
+                        <Component Id="cmpE8E84A2363FA664FF1257D7504E79778" Guid="{BD7E53E4-0852-4BA7-961C-4E342DBE8B10}">
+                            <File Id="filB7B30EE523D6CE418A1505B441ED75C5" KeyPath="yes" Source="release\QtQuick\Controls.2\ScrollBar.qmlc" />
+                        </Component>
+                        <Component Id="cmp12C7AB1E58A4CA152148DE4688499ADC" Guid="{4146D2E7-7FB4-4471-8CC2-01CE9E0CF1C2}">
+                            <File Id="fil163C84FDA52961B459E24E62563B16B4" KeyPath="yes" Source="release\QtQuick\Controls.2\ScrollIndicator.qml" />
+                        </Component>
+                        <Component Id="cmpEF6F222E98B29549C550B1AE9962C6D1" Guid="{476C0072-F152-4C68-939F-83E85C5872BE}">
+                            <File Id="fil21A4B1462B83A6F37386DF67B4FC927F" KeyPath="yes" Source="release\QtQuick\Controls.2\ScrollIndicator.qmlc" />
+                        </Component>
+                        <Component Id="cmp0EF2B4E8EA2663924F6DD13B7565EB63" Guid="{BCDD54C8-4A0B-4282-9D21-03E3562365D8}">
+                            <File Id="fil92A998DD398230B559374FF3D85C76A8" KeyPath="yes" Source="release\QtQuick\Controls.2\ScrollView.qml" />
+                        </Component>
+                        <Component Id="cmpC8A9BDD1CD04CC174AF795B87C4A8DFA" Guid="{C18741AF-8068-4FAF-995F-42ED099D7179}">
+                            <File Id="fil400EABF10839F3E8C0FDA30AD14415B6" KeyPath="yes" Source="release\QtQuick\Controls.2\ScrollView.qmlc" />
+                        </Component>
+                        <Component Id="cmpF4BA8C9CCC1685247D4928F5FFE13A83" Guid="{8A2BB5F8-D631-428A-9E93-F9E0F37A5DC0}">
+                            <File Id="fil74D25DA4E52AF554FDDF0DBBF5B475D6" KeyPath="yes" Source="release\QtQuick\Controls.2\Slider.qml" />
+                        </Component>
+                        <Component Id="cmp67D25513F686CC8149172986780B15F4" Guid="{D1458325-A7D9-4B78-8F39-EB7955E43661}">
+                            <File Id="filD2533A6C2B1AC054C230642C68BB69FC" KeyPath="yes" Source="release\QtQuick\Controls.2\Slider.qmlc" />
+                        </Component>
+                        <Component Id="cmpA38E84DB5C90557D10A355A682C03FDE" Guid="{BE3D3B8D-CAF6-46B6-92EC-89F42184D76F}">
+                            <File Id="filDB9F26599A1D714B062E0B230298B2A8" KeyPath="yes" Source="release\QtQuick\Controls.2\SpinBox.qml" />
+                        </Component>
+                        <Component Id="cmpAE252D280F82EBA7825947FCB5C11A97" Guid="{5FF6CECB-E828-47EA-8758-A1508C04420F}">
+                            <File Id="fil8A3B174AC6BFAFBC19CF926E963E7FF2" KeyPath="yes" Source="release\QtQuick\Controls.2\SpinBox.qmlc" />
+                        </Component>
+                        <Component Id="cmp7E84ED8BDBE3178019B43EFB085B69A7" Guid="{A0897CA1-7D8A-405C-8052-982F126E1912}">
+                            <File Id="filF370191A7B216E98998CE6C38DB134E6" KeyPath="yes" Source="release\QtQuick\Controls.2\StackView.qml" />
+                        </Component>
+                        <Component Id="cmp48D6E9E91B22B99C6B3F72CAF01CF6DF" Guid="{29516FF0-5D46-4A01-8403-96ACBBD9E567}">
+                            <File Id="fil26A4CB1DC238865122EB83843ADC59E3" KeyPath="yes" Source="release\QtQuick\Controls.2\StackView.qmlc" />
+                        </Component>
+                        <Component Id="cmp5C1AB794CD65CC6E0DA75986D9843927" Guid="{9B4F7EC5-DA46-4F44-BF7C-7F974024A8E2}">
+                            <File Id="filEB59DCE81BA660B37FBAE272D0275086" KeyPath="yes" Source="release\QtQuick\Controls.2\SwipeDelegate.qml" />
+                        </Component>
+                        <Component Id="cmpED3B66907F7985F089DE5B01D9EECC32" Guid="{EEA75A27-CEF3-40B5-A319-3D7EEAAB0EBD}">
+                            <File Id="fil5CA850C10796315333D166DA5429571F" KeyPath="yes" Source="release\QtQuick\Controls.2\SwipeDelegate.qmlc" />
+                        </Component>
+                        <Component Id="cmp9699DD4BA944C0F4C120E2668B734FE3" Guid="{9445B75F-77AE-45D9-8D8E-4A735ACA46CE}">
+                            <File Id="filE6DD5ED12403AB0BF5F02555E948B799" KeyPath="yes" Source="release\QtQuick\Controls.2\SwipeView.qml" />
+                        </Component>
+                        <Component Id="cmpD5432AC074AAB65FF6BAA19D28CD8C4C" Guid="{D9E3841F-5F2B-4CFD-81BF-CB78096D6BA3}">
+                            <File Id="fil100ADE64F1163776F82F0F4A65BA44C3" KeyPath="yes" Source="release\QtQuick\Controls.2\SwipeView.qmlc" />
+                        </Component>
+                        <Component Id="cmpDD17FEFA62E841BA8FB5FD95B5B7ADA2" Guid="{D87545DC-37A0-41AA-8706-16C45D4C432D}">
+                            <File Id="fil8D677755BC30813C617059CCBD95548F" KeyPath="yes" Source="release\QtQuick\Controls.2\Switch.qml" />
+                        </Component>
+                        <Component Id="cmpC672D678C04A7DAD5E0AB64F020F57DB" Guid="{584BCF82-7AE9-4978-B067-8EC9034E1E4D}">
+                            <File Id="fil835AFB79A4E01D90811AB3ACBA5A218C" KeyPath="yes" Source="release\QtQuick\Controls.2\Switch.qmlc" />
+                        </Component>
+                        <Component Id="cmpBE48394A62B986BAC7D1017BC8761FD6" Guid="{D9707D95-4B09-407A-B725-15E6A3EB9CD1}">
+                            <File Id="filC48A718FB560F6AFA89E00E47EC07958" KeyPath="yes" Source="release\QtQuick\Controls.2\SwitchDelegate.qml" />
+                        </Component>
+                        <Component Id="cmpCB433166BDB47886933F2EA4144AEC3C" Guid="{5E4CAAEC-1378-45A4-8368-C6FD9ECE0FB1}">
+                            <File Id="fil816513800F95FB01861AE517E6AD290E" KeyPath="yes" Source="release\QtQuick\Controls.2\SwitchDelegate.qmlc" />
+                        </Component>
+                        <Component Id="cmp682AD471F63D1776E9010BAF5F501E54" Guid="{CD82AB0E-4DD7-4ED2-A580-442F8F2A129C}">
+                            <File Id="fil285F61E2E68866570B0446B26511E9BA" KeyPath="yes" Source="release\QtQuick\Controls.2\SwitchIndicator.qml" />
+                        </Component>
+                        <Component Id="cmp8C442418D31ED2409E60FE8157B3FFBC" Guid="{5579A66E-7D0C-48DB-B930-CB1EF0B9D930}">
+                            <File Id="fil7CBEA1503D25CD2565CCFC98D2FAADE2" KeyPath="yes" Source="release\QtQuick\Controls.2\SwitchIndicator.qmlc" />
+                        </Component>
+                        <Component Id="cmp878E4962FC6BA954555708152D53CBAD" Guid="{04F0CE0B-03D3-443A-9147-25A696165223}">
+                            <File Id="filB0E5E59528EC8B1C4688EDF1B7472A08" KeyPath="yes" Source="release\QtQuick\Controls.2\TabBar.qml" />
+                        </Component>
+                        <Component Id="cmpB25C354ECCD6015BFCA300E3B9318DBC" Guid="{5CFD0D46-49AC-4BBB-9759-5729DA4572E4}">
+                            <File Id="filC4EFB78BC6280766B81A2A3E940D091F" KeyPath="yes" Source="release\QtQuick\Controls.2\TabBar.qmlc" />
+                        </Component>
+                        <Component Id="cmp1E48D58C1FDBF70DDF3024C5295DAE20" Guid="{A79B6675-83EA-4BBA-A9AD-4C9A969F763A}">
+                            <File Id="filA6F65CE443AFC1AA56A8C625DE5CD14D" KeyPath="yes" Source="release\QtQuick\Controls.2\TabButton.qml" />
+                        </Component>
+                        <Component Id="cmp0D6F7FE98099B30B5CC553C69859F736" Guid="{6089BB23-0323-4E25-8FFF-5A3F742C85A6}">
+                            <File Id="fil3F92C51C73E409B6A81DCC276F18E210" KeyPath="yes" Source="release\QtQuick\Controls.2\TabButton.qmlc" />
+                        </Component>
+                        <Component Id="cmpCDA9F8ED19363C38824B69A0744C3537" Guid="{4EFAB339-74D1-4067-A539-A805E3595444}">
+                            <File Id="fil3D89120010420C3276E79E93CAD99086" KeyPath="yes" Source="release\QtQuick\Controls.2\TextArea.qml" />
+                        </Component>
+                        <Component Id="cmpBD0FCDC3332901394145379C1A05F612" Guid="{B45A3466-48FD-40B3-AD25-05B19D9929AB}">
+                            <File Id="fil7E32F9E2E750333CD2E4A05B142BA471" KeyPath="yes" Source="release\QtQuick\Controls.2\TextArea.qmlc" />
+                        </Component>
+                        <Component Id="cmp6732C836B9BE0BA97CE74918F0A379F3" Guid="{FA0E6A19-32FF-48E4-BA7A-655489FFFF45}">
+                            <File Id="fil645079E1BB5C3882E5309CB4340633D0" KeyPath="yes" Source="release\QtQuick\Controls.2\TextField.qml" />
+                        </Component>
+                        <Component Id="cmp6FDC21712D027CABE3AA5503DA700361" Guid="{73B64604-EC7A-48FE-AED2-0F378E2F7AA4}">
+                            <File Id="fil10C88073EF722D0F4F52CEF59207C833" KeyPath="yes" Source="release\QtQuick\Controls.2\TextField.qmlc" />
+                        </Component>
+                        <Component Id="cmp7D6DA979F4E6856D9BFA6DC246BA0045" Guid="{CABD9638-E3AC-4A70-9A54-D6046E407684}">
+                            <File Id="filE5F6F99239168A530C3AFF14621D3204" KeyPath="yes" Source="release\QtQuick\Controls.2\ToolBar.qml" />
+                        </Component>
+                        <Component Id="cmpE2166E5FE68CE8842981981A9AAF9006" Guid="{962321E3-483B-4B26-BC5E-7F165AEA709C}">
+                            <File Id="filC194B106F4E4F5F51B26D29287E5B157" KeyPath="yes" Source="release\QtQuick\Controls.2\ToolBar.qmlc" />
+                        </Component>
+                        <Component Id="cmpE33C6E6E6DD9E35DA10B54B00551F440" Guid="{AD782460-21BB-4D00-B251-E809823B9170}">
+                            <File Id="fil50ADECA889A3D950FCD9CCB341B8B8FA" KeyPath="yes" Source="release\QtQuick\Controls.2\ToolButton.qml" />
+                        </Component>
+                        <Component Id="cmp9B040AD74F3D6B57E8DB520E993EEC56" Guid="{D2E09A11-ABC2-4D03-846E-983B88AE5B0D}">
+                            <File Id="fil06709B796A6147042DE6BBB4C2014672" KeyPath="yes" Source="release\QtQuick\Controls.2\ToolButton.qmlc" />
+                        </Component>
+                        <Component Id="cmp84CD772E24BE5CEE348680A25B6072A9" Guid="{F98E5CB7-0B37-4DAE-95FF-9816381E451C}">
+                            <File Id="fil0334A48D1FBC9BAE462EEB93E0962F32" KeyPath="yes" Source="release\QtQuick\Controls.2\ToolSeparator.qml" />
+                        </Component>
+                        <Component Id="cmpCED419B6641E5E6C34FAC77BFF5AD8F8" Guid="{319B2E9A-1AA8-4AD9-84DF-998A300327B2}">
+                            <File Id="fil44782D6A46AA898D2420B78064B1F016" KeyPath="yes" Source="release\QtQuick\Controls.2\ToolSeparator.qmlc" />
+                        </Component>
+                        <Component Id="cmp51E4521E19E4606FA49F00FE175C3E9F" Guid="{178DB7FE-524B-4A17-AA18-148026F38BB5}">
+                            <File Id="fil7B1F8660A4B902EC402772F8439BAAB7" KeyPath="yes" Source="release\QtQuick\Controls.2\ToolTip.qml" />
+                        </Component>
+                        <Component Id="cmpC7172C427B41BB867B9B155541BD9F8D" Guid="{A1D89139-84A1-44AA-A319-DAD0F4C2129F}">
+                            <File Id="fil52612E5B8DA9AF0FB1F8CC933046221D" KeyPath="yes" Source="release\QtQuick\Controls.2\ToolTip.qmlc" />
+                        </Component>
+                        <Component Id="cmp1566EBD0A78169A7867F65E084B18091" Guid="{FD3525CA-4D40-498C-940C-B95A5242801E}">
+                            <File Id="fil2541B28A0C51815CC709B9229E184868" KeyPath="yes" Source="release\QtQuick\Controls.2\Tumbler.qml" />
+                        </Component>
+                        <Component Id="cmp5BE45911B5C4B7493FB4506BAC25E50A" Guid="{8936D746-275A-46CE-A6CC-5DBCDE0EEF04}">
+                            <File Id="fil52D446AAF5AA59D4362BE6BD21C71787" KeyPath="yes" Source="release\QtQuick\Controls.2\Tumbler.qmlc" />
+                        </Component>
+                        <Directory Id="dir6BE8524217EB1961F387A98D176F17F3" Name="Material">
+                            <Component Id="cmp5FA4A9DF9CEAE2EA977DB1B495CCCA53" Guid="{94520EFA-91FB-44E3-A28F-A8CE83DCA20C}">
+                                <File Id="filD679A306B69EF48C54325E06AB24D000" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ApplicationWindow.qml" />
+                            </Component>
+                            <Component Id="cmp86416EFB0E9D8826B120B7109D9915B5" Guid="{EB0C6E2B-E53A-4242-A740-1D9ABB3A8A28}">
+                                <File Id="filD28FD476020749F08D1247B71809CC85" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ApplicationWindow.qmlc" />
+                            </Component>
+                            <Component Id="cmpEBC61E102606E0BEC6D25D8AA3333596" Guid="{C420B8C1-8230-4AD9-B8F1-95A6D00DC88A}">
+                                <File Id="fil2AB1B242822D20E7F62F71E1516B7CE5" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\BoxShadow.qml" />
+                            </Component>
+                            <Component Id="cmpEA9D1011AB8A792758FAC8F2B5621154" Guid="{593D2B93-28DE-42DA-8E31-D57C7C51C3D9}">
+                                <File Id="fil918F938658F9384ABFEA0193DBCED62C" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\BoxShadow.qmlc" />
+                            </Component>
+                            <Component Id="cmpCC866EB04F85F2812426B2E576B97D30" Guid="{2D54E975-0585-435B-BA92-7BE067AA8719}">
+                                <File Id="filF23347CAA56D55964B01A6DCD5EAABB6" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\BusyIndicator.qml" />
+                            </Component>
+                            <Component Id="cmp63CCC235C86F680A70C2FA64E21E7236" Guid="{4814B398-BC72-4590-9C77-61C404F2EA7A}">
+                                <File Id="fil078492BB3FC4AB1AA68FDBF6D78355FD" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\BusyIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmpEE882C9764FEF1B94C0382A74E33C131" Guid="{96DF2B3A-18E6-4923-AD92-B84943B8CFC2}">
+                                <File Id="filB7B1C2FAEDBFB931BD84627904BF2120" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Button.qml" />
+                            </Component>
+                            <Component Id="cmpC1850883833D67D52D169AC43FA5024A" Guid="{A7D20A97-0B7B-4519-B32C-0C244C6DE550}">
+                                <File Id="filBEF6A0361E9C6C5017D1D2E8D87E3127" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Button.qmlc" />
+                            </Component>
+                            <Component Id="cmpC9F962B07D73D1F65E56AF3622D61460" Guid="{8A898322-D498-4551-BE88-AFFC5F0D7B0D}">
+                                <File Id="fil43D57EDF7275355E2D94FA1DCE0E227C" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\CheckBox.qml" />
+                            </Component>
+                            <Component Id="cmp074513539274476C42114F7A718BE7F2" Guid="{48D1136B-6503-4B83-BAEB-87878F1E56E0}">
+                                <File Id="filD753C4B881E3245EA99E8CCCAB8FCC71" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\CheckBox.qmlc" />
+                            </Component>
+                            <Component Id="cmpC82C897C131B68BD945BB13AF9733C58" Guid="{3553E53D-7A2B-43AC-BFD1-F332A3C1BA0B}">
+                                <File Id="filDA568CACF8F627B23B74A2830655FCB9" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\CheckDelegate.qml" />
+                            </Component>
+                            <Component Id="cmp271AEEA8E40DB37361C3189B0DA51756" Guid="{2B6FC922-CA44-45F6-B51F-2C4AFB3170DE}">
+                                <File Id="fil169B5D8E452618C7806BBC744FB7B998" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\CheckDelegate.qmlc" />
+                            </Component>
+                            <Component Id="cmpA5CF3412CFD44DCA36320954F8C3F0D8" Guid="{66F79EFB-11E6-4848-83A0-80EB0E8F27FF}">
+                                <File Id="fil1D834C636592673549D0C86AACCDF3A6" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\CheckIndicator.qml" />
+                            </Component>
+                            <Component Id="cmp34A3DE000C8A29FA5D06B30A1479A709" Guid="{1592F2AF-C64B-49A4-8740-B32196F5D7F9}">
+                                <File Id="fil61A12D91739D714009A3246DDBAB5F49" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\CheckIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmp79EE8CE8D05D8136CD9591C41B6878F0" Guid="{5A24CEC2-9139-443E-B1B5-08AD748385DA}">
+                                <File Id="fil3AF2EC33825114D13BF089375958DCBA" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ComboBox.qml" />
+                            </Component>
+                            <Component Id="cmp2BD937B9F77A7C0BA34C842C7626891A" Guid="{4F35D6D6-9FF7-4F4C-BEE9-806671BF4F23}">
+                                <File Id="fil26E256289C0D9D27E1779617256EA3B3" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ComboBox.qmlc" />
+                            </Component>
+                            <Component Id="cmp7F2C098811F7CFB1229F78074DAA5C12" Guid="{B5157C16-3383-436C-A342-31D3653C14B5}">
+                                <File Id="filAC7503DCBB3F7CEB45B16847F7CF06F9" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\CursorDelegate.qml" />
+                            </Component>
+                            <Component Id="cmpDDE24DCF551EC45F521C01FC2ACC206E" Guid="{A2DED3AE-8B82-41EC-A558-18E78659D69A}">
+                                <File Id="fil052FDEA9E3AFE4758110C4688998A201" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\CursorDelegate.qmlc" />
+                            </Component>
+                            <Component Id="cmp0FD1A235B43D1C53EC8909066D416158" Guid="{C840A1C4-3BDE-4F97-A20A-D86A5BDB9638}">
+                                <File Id="fil166AC7DFA40FC2D1519268F399F45FDB" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\DelayButton.qml" />
+                            </Component>
+                            <Component Id="cmp483E7B76906D2BA3E85F8C77B3A3D7F6" Guid="{1AEB0B05-BA00-44B9-AC48-7513166942DB}">
+                                <File Id="filACF2AFCAF33AADADC9811C11073B5E8E" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\DelayButton.qmlc" />
+                            </Component>
+                            <Component Id="cmpC3415F20C9D6E9A814044D6EF97D27ED" Guid="{F3016329-B62F-4BF9-9666-653B2E15D7D2}">
+                                <File Id="filCCF4A713E91938F6C86E3AA3487D922D" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Dial.qml" />
+                            </Component>
+                            <Component Id="cmp6DCF1FD93F714B2BA2EACA7A804B0B97" Guid="{93A7905F-0CA6-4C40-8A15-44A128BF7DFD}">
+                                <File Id="filBF4E4957307433B327F47472A4418BC0" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Dial.qmlc" />
+                            </Component>
+                            <Component Id="cmp15B4F9FF3944154E33C4B360AFEDDDB0" Guid="{4C142748-9449-458A-BC49-2C3113BD8C2D}">
+                                <File Id="fil01E9AD8339F4CAE664F9B67E1FE77570" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Dialog.qml" />
+                            </Component>
+                            <Component Id="cmpF3BC55CF5A2C81AD1CC04316BD415109" Guid="{A2D9D894-3237-46CC-9D09-A99F7A26C04D}">
+                                <File Id="fil3E0A8DB201710A65AFF74A07ADED7E9F" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Dialog.qmlc" />
+                            </Component>
+                            <Component Id="cmpA186E4F463101242680197F3B08ABD39" Guid="{DDE813C3-2244-400A-9369-92CEF64B8096}">
+                                <File Id="filA1467C755255446761B71C2A724F45B4" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\DialogButtonBox.qml" />
+                            </Component>
+                            <Component Id="cmp9E9967A14B5DCEFB64AB4D39AFF005BC" Guid="{246572B6-038C-4FFF-9969-B240D6D7E7D7}">
+                                <File Id="fil6974D63A6E3D4D1632D4ABFFD87FEE68" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\DialogButtonBox.qmlc" />
+                            </Component>
+                            <Component Id="cmpE41C94973A845AFE3CE564EA81D86C3E" Guid="{D5C98F41-C816-464F-96B7-0855F9610B8D}">
+                                <File Id="filBF74B4984A0F729DCAF2DD71FFB1F974" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Drawer.qml" />
+                            </Component>
+                            <Component Id="cmp3C56CAE91B200418FCA6FE3B23810644" Guid="{14F31410-871E-46DA-AA43-DBE0E2AEC138}">
+                                <File Id="filB1DC44DC0D0E57AF3ECC917740188E97" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Drawer.qmlc" />
+                            </Component>
+                            <Component Id="cmp99DF8AC70589935BA9386DC7A506E060" Guid="{9CD8E50F-2EB2-4003-A888-44FFD74FB1E0}">
+                                <File Id="filD67DCA8AFDC1959CAE55DA5E978E4343" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ElevationEffect.qml" />
+                            </Component>
+                            <Component Id="cmpE92CCCF14D6C2FB6F4389E2F36EAC9B6" Guid="{AAD0BF68-3B3F-4105-919C-819F4F59C9FA}">
+                                <File Id="filD956C139C47741206EDC8DA8FC17CF39" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ElevationEffect.qmlc" />
+                            </Component>
+                            <Component Id="cmp1FC5B40B31B21A6C06B97A33BA79B63D" Guid="{4C7B4B72-F6D7-4F04-8FEA-8ABF861FB82B}">
+                                <File Id="fil4526A31657BCF66E1E787C8CC7239E26" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Frame.qml" />
+                            </Component>
+                            <Component Id="cmpB124F7AFBCD9DBE562C4FE13EAA047CC" Guid="{2E9E5AC8-8D17-45BC-B4C7-4F0FAB00F646}">
+                                <File Id="filA2DE968BE869FF3C2A423FE771FF1378" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Frame.qmlc" />
+                            </Component>
+                            <Component Id="cmpB4085FCDA5986670DE18F43B2ECFFD44" Guid="{A5EB8377-40A6-4804-B323-B6B46C277F23}">
+                                <File Id="fil08DEDC49E4BC669DE7AAE5EF3C881AE7" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\GroupBox.qml" />
+                            </Component>
+                            <Component Id="cmpC4C97F9001865BD8FE3460D06D9BDE9E" Guid="{841E80F5-5978-4B50-AE86-0FCD4B7C1AD3}">
+                                <File Id="fil27E0A017B8765E08F17C79A2F37CE86F" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\GroupBox.qmlc" />
+                            </Component>
+                            <Component Id="cmpCAB2AD0B50649C7742960469FF7C9CD0" Guid="{62CC0C34-FAD4-40CF-BE16-2ADDA8F46A23}">
+                                <File Id="fil5B70487E0DF221CAC9E91BF45EB38DFF" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ItemDelegate.qml" />
+                            </Component>
+                            <Component Id="cmpA399A7FE8F0C30523C64A14E097416FF" Guid="{BFE1AFC6-1DB7-4F3F-B47B-4AE5ED643C28}">
+                                <File Id="fil6719EF39939B4E508BF33717A5349BFB" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ItemDelegate.qmlc" />
+                            </Component>
+                            <Component Id="cmp31E98A28348ACB6EDEEBA3BA0F07D408" Guid="{BF9783AD-D26C-4BA9-B7C3-25B5CCCAB02C}">
+                                <File Id="fil6C656AF3F70502ECC1E9FB83E3967C25" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Label.qml" />
+                            </Component>
+                            <Component Id="cmpEAC0C5CBDFEED337465C64DE351C322A" Guid="{1793BEE1-6A2B-4371-8B5C-AE4FDD9E19BD}">
+                                <File Id="fil3965A722B172B6B454A6B358794A4BA1" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Label.qmlc" />
+                            </Component>
+                            <Component Id="cmp39918FD5126DC0F9798BFD9C59409AFD" Guid="{C006A84D-E9E2-4730-BF12-A6B1B12A85AB}">
+                                <File Id="fil44D4EF7DDD184707841521D963DDDC45" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Menu.qml" />
+                            </Component>
+                            <Component Id="cmp9F35F33A71F56BD3495B375E680D7C03" Guid="{FDB66BBB-1CEB-40A6-B509-9BA5ED39FEEE}">
+                                <File Id="fil933C740833883774C8ACFF6EBCCF15F6" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Menu.qmlc" />
+                            </Component>
+                            <Component Id="cmp671FBF7E4339865616095FBF2FA15DD6" Guid="{A467802F-D0E6-4749-9176-516870367AAB}">
+                                <File Id="fil7D7A72F9436AAE697CAC1B41B06A3494" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\MenuItem.qml" />
+                            </Component>
+                            <Component Id="cmp8F051FDA41A3B6308BA985A091CDB2D2" Guid="{02FC165A-408F-4140-99CB-6064F0C09122}">
+                                <File Id="fil6D29BBB6D4D81AA75F07A760364F9D1D" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\MenuItem.qmlc" />
+                            </Component>
+                            <Component Id="cmp1B79E91E600DF1927ED45FE93C013CD6" Guid="{8DCBE487-2756-4071-AD9C-2D623596D171}">
+                                <File Id="filC7AA8D3867E0F44E6E74A1E7752D2256" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\MenuSeparator.qml" />
+                            </Component>
+                            <Component Id="cmpF7753A3BA3B184B269685660B7B9F839" Guid="{1598B7BB-250E-4062-A873-1F534BC2E951}">
+                                <File Id="fil2D8597A42EE403A7C5D63CC2357072C0" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\MenuSeparator.qmlc" />
+                            </Component>
+                            <Component Id="cmp714A3B974F0DD969146A3930AA7C087E" Guid="{0546062F-F1E6-41EE-9A14-C02687EFB266}">
+                                <File Id="fil805F43EEF948F1D91628EB2FF20C6390" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Page.qml" />
+                            </Component>
+                            <Component Id="cmpA4CBF3637D6D404C349B76F1F793C389" Guid="{B22DDCA6-D383-40F5-93FF-AEE5306F8614}">
+                                <File Id="filDBC2DA37C5ECC69BAAF24C9B3DF9D3FA" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Page.qmlc" />
+                            </Component>
+                            <Component Id="cmpF701DB15C4F224EC3FF7E9B42D048B9C" Guid="{D37ABA44-E8E6-45B0-95F5-44BB6725D114}">
+                                <File Id="filEA6713BFE967A25969BB3D6ABB1FFE14" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\PageIndicator.qml" />
+                            </Component>
+                            <Component Id="cmp778D3CFB5D766AB67BFFCEA51B35E9BD" Guid="{F269E79A-5FF4-44E4-BA35-59FE677689C9}">
+                                <File Id="filC3E982F4B6EC8D2C5AFD89A2611F35CF" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\PageIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmp5820449B4DA93FE1B0A78174E42FE36A" Guid="{507FD93A-8900-42D5-8C38-ECAC5E5A57EE}">
+                                <File Id="fil764176EAE5DCD0F8AA0F306DC6E727A2" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Pane.qml" />
+                            </Component>
+                            <Component Id="cmpCE0AF1AD1A64F6578C45F4877BA5E324" Guid="{30A62CA6-303C-4DB1-A8CE-31709F4FDD06}">
+                                <File Id="filA465EFDC73B74E617FF8FFAC4BC9351B" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Pane.qmlc" />
+                            </Component>
+                            <Component Id="cmp6BBFD4896AEAF6B708AE9509E9927672" Guid="{B8B1702F-DEA5-4C3D-8A6A-F86235B565A4}">
+                                <File Id="filE5EEA498B50C0A75CBB4A96F78A7C5A1" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\plugins.qmltypes" />
+                            </Component>
+                            <Component Id="cmp59A5867129873F9351F7AA19C7EB6F73" Guid="{007EEF64-99D7-437B-87E0-00BEDBD41771}">
+                                <File Id="filED1F69DEF1A89968CE830760AF681A1B" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Popup.qml" />
+                            </Component>
+                            <Component Id="cmpBEFDB213E75973E67BA799C2C2D236F9" Guid="{8433595A-13F6-420B-9F2D-D3F75FAB45E3}">
+                                <File Id="fil944F6C7DB8923F05BF9F980AFB444675" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Popup.qmlc" />
+                            </Component>
+                            <Component Id="cmpD4FF0C92D9F75469CA6CAD5878756145" Guid="{A744FED4-E3EE-4503-A31D-7151BF036128}">
+                                <File Id="filFFF4C96D5C7C62D05AC15AFD386A93F8" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ProgressBar.qml" />
+                            </Component>
+                            <Component Id="cmpE5D6A434B0A0DD8E71B839948E045D17" Guid="{557C9704-577E-4657-B32B-5305E950F9E5}">
+                                <File Id="fil7B62924736ED00C24BF964BADD319920" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ProgressBar.qmlc" />
+                            </Component>
+                            <Component Id="cmpCA65FC1674EE9B90DB4DEAEFECF71EA2" Guid="{C2A59443-6B36-49DF-A452-4BAE78A798ED}">
+                                <File Id="fil08B8586B6B9D6FFE3A98B174AC6FD811" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\qmldir" />
+                            </Component>
+                            <Component Id="cmp96AA621EBD2B0DDE7CF1964E2E3AF6C6" Guid="{10888512-268D-45CB-94CE-D1E83A34D1CB}">
+                                <File Id="filDA6E6020D47036160C5BB8EFC0FB401F" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\qtquickcontrols2materialstyleplugin.dll" />
+                            </Component>
+                            <Component Id="cmp9411DAB14FA1CE8317268EC5A2D594F6" Guid="{E88F83CE-75B9-475F-B8C9-C44E1AFDE2CB}">
+                                <File Id="filA23102BB5F48DF008CA2CB7864954240" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RadioButton.qml" />
+                            </Component>
+                            <Component Id="cmp55863270AC303871A790D62F6A3BFF59" Guid="{F76C01A9-2C3C-4C46-B990-AADDADC825CE}">
+                                <File Id="filF594C5673069D7B72E2CB1650C8DF1A6" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RadioButton.qmlc" />
+                            </Component>
+                            <Component Id="cmpE8D53F1948F2C0F8F19587B78CC9BB93" Guid="{D8B25ABA-18BF-4C24-B2D1-949EE4DAD24E}">
+                                <File Id="filB401BE85C60D7EE6FD6F394408E4EAAA" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RadioDelegate.qml" />
+                            </Component>
+                            <Component Id="cmpA5CAF73C74268D9B9394B8B8E655F6AB" Guid="{2D58D007-8841-47AC-9C72-296C6A4A65E3}">
+                                <File Id="filBCAA6BC88459791EFEA54C38E15F0F75" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RadioDelegate.qmlc" />
+                            </Component>
+                            <Component Id="cmp9770EA67757D5AAA0563C3D7353EF9D8" Guid="{6589FD26-0FDB-4896-9A4A-FB1B5E5F09B4}">
+                                <File Id="fil2F28FACDBD9F947F4B05A4C9FCA9D79E" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RadioIndicator.qml" />
+                            </Component>
+                            <Component Id="cmpC0CEF7104BD6123C897FCD42BA90AFAA" Guid="{8061C402-6959-4DC7-B99F-0FF77CEC6F74}">
+                                <File Id="fil4926098278C306707E2B6B5B52E5D68A" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RadioIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmp7E54074E604A2AE5921B3E751D8093C0" Guid="{CFD10032-5D2D-4057-A52F-46456E6744D4}">
+                                <File Id="fil75136C8C8A6247755DACC110A6D77D04" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RangeSlider.qml" />
+                            </Component>
+                            <Component Id="cmp659CBBC344690920A59287674E6B094B" Guid="{124C2B23-0FFC-4A0A-9AAA-83C9DFB088DA}">
+                                <File Id="filEA03CB4F357D7F271123E2596C0BBC6F" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RangeSlider.qmlc" />
+                            </Component>
+                            <Component Id="cmpB32EC163AACC8E2F0B40D06704B34C82" Guid="{92B37C0E-C4C7-4E93-8EFD-53EDAF72EB3D}">
+                                <File Id="fil7FE747F572206D494DB914549C0B69BB" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RectangularGlow.qml" />
+                            </Component>
+                            <Component Id="cmp4218BFB827B8C91DBB7FE2ED483E83FF" Guid="{6B955232-61F9-4264-A269-0877B9A65E0A}">
+                                <File Id="fil0A600755EB92D960C14BAC0C94592540" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RectangularGlow.qmlc" />
+                            </Component>
+                            <Component Id="cmp06DE85609C1571BC194AABD41DD3A088" Guid="{6A112475-B065-4628-8DF8-BC2DA7DC8B6D}">
+                                <File Id="filF23273A849E68BABC2DB61B3700C66D2" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RoundButton.qml" />
+                            </Component>
+                            <Component Id="cmpED93052FE2B4E3A3E676BC17072D0E60" Guid="{2DC5A607-4095-48BE-A814-B5F0301BB65F}">
+                                <File Id="fil5AA6FC2D8A38252710D9AF5D3B0BBC28" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\RoundButton.qmlc" />
+                            </Component>
+                            <Component Id="cmpBDAABFB24B87EE46F31F29C1BE420CB5" Guid="{3EA680BC-8D2C-45EF-83B0-AA5221432245}">
+                                <File Id="fil4B3D1D44C5A1F63AA078CFCA523B73E0" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ScrollBar.qml" />
+                            </Component>
+                            <Component Id="cmp8D9931891D9BE0D256D1C8AE948B8BB0" Guid="{8C5E9E4D-F5EC-45AE-A2F8-56CD3DCB1908}">
+                                <File Id="filEB172AC2EE9B4E6D366D74C0F3F06D87" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ScrollBar.qmlc" />
+                            </Component>
+                            <Component Id="cmp9E38F7D48DD2AEB62469956D6ED719A6" Guid="{7C9DD543-D75C-49A4-B21E-8A6BC0A6622A}">
+                                <File Id="fil7B9C3DBBB4830E3ED520AC8EFCDA4188" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ScrollIndicator.qml" />
+                            </Component>
+                            <Component Id="cmp31E98F6E373E3C5B904FD9BC73265050" Guid="{6150D760-0774-4885-9113-FC64CA8C8DA0}">
+                                <File Id="fil2573DBFB6F77FD6A460C376B67C61BD9" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ScrollIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmp177DEA7E236913681AA3D021A60ADD90" Guid="{68E36E1B-F3AB-498C-B80F-2CB6E5BE2B99}">
+                                <File Id="filDBF602296CE91F75BAF45DED0034D694" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Slider.qml" />
+                            </Component>
+                            <Component Id="cmp903C7BE37D626CD31DB16259C67DCE24" Guid="{B16DBEFC-A6C7-425E-ACA5-5026941B6ADD}">
+                                <File Id="fil227A341F3C7CA154EC8EB9030092B268" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Slider.qmlc" />
+                            </Component>
+                            <Component Id="cmp67F6DABA71CEA47D94A75684501836C4" Guid="{CE89244E-ABE3-44A2-AC59-1B4C81526B04}">
+                                <File Id="filF43EDB4117F7B7A6B6E9CDF9846C4133" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SliderHandle.qml" />
+                            </Component>
+                            <Component Id="cmp72F6C3A1932D7DF259016FFBCBD8F08F" Guid="{59871992-C746-4035-9B08-BB6D75A89F5C}">
+                                <File Id="fil34208353D533F781C60DDDC43E45A749" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SliderHandle.qmlc" />
+                            </Component>
+                            <Component Id="cmp3D53C5C05B990BD05D2B8250F9223962" Guid="{1AAEF4B6-DE94-49EB-A23F-5FDAA2325003}">
+                                <File Id="filAD3B76A09A50BB3E15AFED7A144387FB" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SpinBox.qml" />
+                            </Component>
+                            <Component Id="cmpBEADA585ED575E0E71A370A569612E47" Guid="{5771044D-1466-4B02-8AB7-A3879DE30A5B}">
+                                <File Id="fil08B598B9600BAAD1B53B5CB5D9A60E13" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SpinBox.qmlc" />
+                            </Component>
+                            <Component Id="cmpA69A83CBD032919871D53A19BFE1F1E8" Guid="{09F1CD9B-3A0D-4D79-A70D-957C0633480E}">
+                                <File Id="fil8622CC3387DEDFA7E00D09C889FA9C4B" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\StackView.qml" />
+                            </Component>
+                            <Component Id="cmp9828DE96593810CF05BB9BE04A58A0F6" Guid="{9D6E98A0-6983-47B7-9578-1CDD5ED9CA47}">
+                                <File Id="filBDD5FC8B3C41E09526AD7D8506AC1EA0" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\StackView.qmlc" />
+                            </Component>
+                            <Component Id="cmpFECF0EEB37A9A7AD54239433CCE5F487" Guid="{75E3E914-C50D-41BB-AF69-7937CB370C5F}">
+                                <File Id="fil3CF345E1332CA0391CDA453788CE9B63" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SwipeDelegate.qml" />
+                            </Component>
+                            <Component Id="cmpE9C8A6C8DEB811EAAE564B91142D2A70" Guid="{A9D412DD-61EA-420E-9618-CBF5E42BCF83}">
+                                <File Id="fil2A5981505682E76667DAAFE0E98E20D7" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SwipeDelegate.qmlc" />
+                            </Component>
+                            <Component Id="cmpAE9E0956DE43B53012C34059353BE76C" Guid="{9244CB09-FF87-41B0-8235-E834739B9D19}">
+                                <File Id="filEF6E9390B4E50E369B7CB17BF94E34BA" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SwipeView.qml" />
+                            </Component>
+                            <Component Id="cmp7F53B82AC1BEFC9ECD9532BC8B9BFCDC" Guid="{D7591A84-B5D5-41D4-BC9A-6DFEDA4160DF}">
+                                <File Id="fil9261FFA1F7785FD43BD63BDC462A05B2" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SwipeView.qmlc" />
+                            </Component>
+                            <Component Id="cmpBA079FB2671FBB8E5D88EBCFBC4FBF25" Guid="{6A83B6A4-1257-4BDD-BDD5-6F6959A142E2}">
+                                <File Id="filCD1885011B323462EA4FAC78B442421A" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Switch.qml" />
+                            </Component>
+                            <Component Id="cmp2C53190AC249D3F5A88C3294E0697839" Guid="{61B4C463-9A59-4C4E-BD76-A7F1511E325D}">
+                                <File Id="fil9B40C10D48492BCAD57838D1132DFC95" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Switch.qmlc" />
+                            </Component>
+                            <Component Id="cmpF9FFE9173C44FA09E843CCC5FC7DDD2F" Guid="{2B8A52DE-CEAB-44CF-9F45-570168E510FE}">
+                                <File Id="fil0CC5078AF16DE7B3F387B29F857E9194" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SwitchDelegate.qml" />
+                            </Component>
+                            <Component Id="cmp0286CA7E5277004871A1832BBA1B6D54" Guid="{F454C5A1-589C-45E4-AA01-63FECD7B10A2}">
+                                <File Id="fil1358C62DBA18FE93458362C5CC4392A7" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SwitchDelegate.qmlc" />
+                            </Component>
+                            <Component Id="cmpEF24746802C6660C36834AA2388591E7" Guid="{DFEF0AD0-420D-4544-83C3-55CEB3B4F6D8}">
+                                <File Id="filCE5741EB9A809C72F4C7BEF119A600B6" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SwitchIndicator.qml" />
+                            </Component>
+                            <Component Id="cmp8ECA51F09E496BEB24299379D28B6D39" Guid="{879C918B-70CB-4C07-B23A-B648F59EA5E8}">
+                                <File Id="fil6693312965258ED221CA370E99EE084A" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\SwitchIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmp7E7A98E3848C81AA8F7F95481E17C7BB" Guid="{E4F393E2-61C0-449E-9E4A-AECD59129606}">
+                                <File Id="fil0E17B81804ACF9230EA73E6110478C7A" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\TabBar.qml" />
+                            </Component>
+                            <Component Id="cmp9667190CDD723AEA85288097066A8E98" Guid="{60017C5F-DC0B-428D-A5B1-80EC35695614}">
+                                <File Id="fil1B8BF044ADCD9C2CDE44BC3EBB4E291A" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\TabBar.qmlc" />
+                            </Component>
+                            <Component Id="cmp33454AFD0CFFAD2FB67D45B410CB0CCC" Guid="{AD66EAC7-7F5F-4C6A-A20D-29125057E062}">
+                                <File Id="fil3EBF27B6CC126676289B68DB75C38867" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\TabButton.qml" />
+                            </Component>
+                            <Component Id="cmpBFB1265D4DD86896C6E73AA34B23EE18" Guid="{D8CA5E00-CDD1-43B1-AF5B-F247C8DC4637}">
+                                <File Id="filA598DDEED4691FCEF95C6009316469F2" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\TabButton.qmlc" />
+                            </Component>
+                            <Component Id="cmpBECDADB22D101029C6BB7FE50E3D7C25" Guid="{CCA44B4D-E9B2-4356-9735-75492A553D67}">
+                                <File Id="filC4EE58E0BC35B51316C60B2297372DCA" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\TextArea.qml" />
+                            </Component>
+                            <Component Id="cmpAAF51E33C0CB501C4EDAE404794E4511" Guid="{A8B01668-D0B3-4519-9EA5-9ED4E1AE2A76}">
+                                <File Id="filD6A6742C8B1DB71B28AF4BA463721E85" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\TextArea.qmlc" />
+                            </Component>
+                            <Component Id="cmpAFA955A551333E31124644C972246F0B" Guid="{7478E8E4-27AE-4319-999A-D5C06D3F22DB}">
+                                <File Id="fil353D4128E2BA36BC2C66FA32CF7638C3" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\TextField.qml" />
+                            </Component>
+                            <Component Id="cmp64125808012B8EF8742976D05286EB07" Guid="{36F8CB80-C1A9-4095-858D-A76575843D79}">
+                                <File Id="filC1812CCBC348401821D3DA6A1DCE440D" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\TextField.qmlc" />
+                            </Component>
+                            <Component Id="cmp567B0F5D76A0F270693E5694B9439F2A" Guid="{002A56CF-14C3-4761-838B-090F57C1D669}">
+                                <File Id="fil6E0110B2E481CCAF341327B830AA26A0" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ToolBar.qml" />
+                            </Component>
+                            <Component Id="cmp0D6D4F77A242433A1B142DE6AA501021" Guid="{609CCD55-0ACB-400E-B103-68FFA8481BF1}">
+                                <File Id="fil597D1662AE89BBB45ABDE534637FAA4E" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ToolBar.qmlc" />
+                            </Component>
+                            <Component Id="cmpE355828F75C04E458072E5C2D1BA28ED" Guid="{3A82E92E-34EB-4507-B171-4C3D59F846E0}">
+                                <File Id="fil6C98A356DB39B3D601171FD5A9BB1690" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ToolButton.qml" />
+                            </Component>
+                            <Component Id="cmpBB27B51CB4CA1C0EA5E61DB4548C769A" Guid="{850D3213-97E7-472B-A75A-17ACD76A8C10}">
+                                <File Id="filD5EE5B9B88F3942D0F91DD78845ECD91" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ToolButton.qmlc" />
+                            </Component>
+                            <Component Id="cmpC75E842B34AE22086F7A1CD888B9EF4E" Guid="{325A3AC8-6C21-4ABC-BC2B-24D2264B4BEE}">
+                                <File Id="filBB6067FAD49DF84E9F217B6B79B23A9B" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ToolSeparator.qml" />
+                            </Component>
+                            <Component Id="cmpB1C48A7AE247F0C1332D3367C1B40605" Guid="{77C0AA5D-8238-4BB4-9274-8F8DF8C31DE2}">
+                                <File Id="fil73D9EA8CB19156B469A9F456D97C1B48" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ToolSeparator.qmlc" />
+                            </Component>
+                            <Component Id="cmp1940B8772249457B89DEDA2FD242A647" Guid="{83ACE116-A5D5-48FA-BE82-E0FBAD5A70D2}">
+                                <File Id="fil3B8634AFF16130FA848A588ED8C5E77A" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ToolTip.qml" />
+                            </Component>
+                            <Component Id="cmp9A0AF9D445CB3AE9454FF801DFB8F77D" Guid="{F25267FE-F089-444B-99CF-2BC06AF6CA89}">
+                                <File Id="fil22C9C18B9A2FCC01230ADA0D081B81F5" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\ToolTip.qmlc" />
+                            </Component>
+                            <Component Id="cmp714F74E2DD1B04FAE5CBC6EA84348935" Guid="{70010EA2-9F84-4A2E-A900-1CA1BB115185}">
+                                <File Id="fil058F09ABE4F9522091877DCADAFEF981" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Tumbler.qml" />
+                            </Component>
+                            <Component Id="cmp1C153E9C1AE0EDF4D345C46A9AA89E93" Guid="{87E2A45E-67DB-445C-8DB7-C83033A9294A}">
+                                <File Id="fil96AFB8DA71E038E88BBF22B7A1140005" KeyPath="yes" Source="release\QtQuick\Controls.2\Material\Tumbler.qmlc" />
+                            </Component>
+                        </Directory>
+                        <Directory Id="dir4F32C6833EBD7FB41B730CB0F1EC8D93" Name="Universal">
+                            <Component Id="cmpED11C740D446DBD76778FBAA93FDAA64" Guid="{11A2C66D-6707-44BE-BBC2-525BF991363F}">
+                                <File Id="fil8FB7D6180339F1DFF6C673597FC9F1BA" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ApplicationWindow.qml" />
+                            </Component>
+                            <Component Id="cmp313E9838DD8E8F5ADB34286B16721CF3" Guid="{969C43A7-2DB4-4AFD-8A33-BB16FB9308D0}">
+                                <File Id="fil8BEE475A01704FB480B072324C200D0E" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ApplicationWindow.qmlc" />
+                            </Component>
+                            <Component Id="cmp043C9C955EE6101BCFCA4E0FA21BDB78" Guid="{C3E77C1E-885C-409D-BC1C-CC16284C48D5}">
+                                <File Id="filD85DCD056C04F69096B8F7F6896B0AFE" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\BusyIndicator.qml" />
+                            </Component>
+                            <Component Id="cmpA6949E738B4AC637AF102488BDBED11B" Guid="{3D84F5F5-CF5C-4D92-9CE7-B5618E5F0293}">
+                                <File Id="fil2696D62628E85B6D28180F0A7295AB35" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\BusyIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmp4B9715217476DFC578E7C07260073B13" Guid="{485913EE-183F-4A9E-99BE-FCD6DAEAA72F}">
+                                <File Id="fil7AE19FF397E1005506779409E168BA52" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Button.qml" />
+                            </Component>
+                            <Component Id="cmp9897A3FE2B19B8680057E018F8CDB039" Guid="{1337A616-24C9-427C-A2CE-D06103306633}">
+                                <File Id="fil8A174A32CC46DB13DA84DF4B3B2C140D" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Button.qmlc" />
+                            </Component>
+                            <Component Id="cmp9486C444D8C49A9470BE7B32F2ADCD6A" Guid="{3713821C-678C-4C49-9E61-A7E2FC043AFC}">
+                                <File Id="fil49F46C7EB9E1FEB99CF86D31A693EBC1" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\CheckBox.qml" />
+                            </Component>
+                            <Component Id="cmpA2B21EF8098A09238F6F6264C221AE4F" Guid="{3EB408A3-C340-4739-AB84-2810F4AF9DFC}">
+                                <File Id="fil98CBF5958023C8E2AFF90E315F3D1961" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\CheckBox.qmlc" />
+                            </Component>
+                            <Component Id="cmp7F5B4A326E81F6D185806AA38199EB5A" Guid="{ABD90264-7062-46B6-A23A-1E2EDC5A0B96}">
+                                <File Id="fil50C3F37DC63E7E42CCF2A044467896D3" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\CheckDelegate.qml" />
+                            </Component>
+                            <Component Id="cmp2958436608D4D836F11D5968ACC44924" Guid="{E6053D27-ADB5-4736-9373-D5931F3C65BD}">
+                                <File Id="fil8B065440F61F8F455442B69F9B05126E" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\CheckDelegate.qmlc" />
+                            </Component>
+                            <Component Id="cmpB255CEE7690052B9CE906D1EA3BD22D9" Guid="{D0BA63F7-FB58-4E50-8639-D09BDB1FDC8D}">
+                                <File Id="fil0FCC848A63D2B4F710E930BD15C8021D" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\CheckIndicator.qml" />
+                            </Component>
+                            <Component Id="cmp8844C11D2F0084CA770678509DEFE793" Guid="{CCEB3091-CBBE-4C2B-AEEC-8CE519B0932B}">
+                                <File Id="fil3B96BB628258F2C1C3BD5F51906FBE3A" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\CheckIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmpDAC01903016CF17B96B8E3F4A8A83AF0" Guid="{AC34DB9D-5E3A-476B-AA1E-383BB932191E}">
+                                <File Id="fil4A08E719DBB60EB274F04B38FAAB3337" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ComboBox.qml" />
+                            </Component>
+                            <Component Id="cmp70A183ADA28FCEF80AFDD3912AF25B8A" Guid="{B0A174D1-FBFD-4F89-A4AA-B5BCA964C82F}">
+                                <File Id="filABBA322993366B14B68D76F4969D6924" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ComboBox.qmlc" />
+                            </Component>
+                            <Component Id="cmpF22F2688E08BC5CCA4F5DF0607186B5A" Guid="{D9542D28-953A-472A-8A5D-6799B104791E}">
+                                <File Id="filABD26FEF040BCE512F6868E66B277CD6" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\DelayButton.qml" />
+                            </Component>
+                            <Component Id="cmp9820145C26481BDB85F10C45D816BE6C" Guid="{7543DE46-B60A-42D9-8192-C0C64E2A4A15}">
+                                <File Id="fil61D31320EC4FC91D8AEF6656979445BE" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\DelayButton.qmlc" />
+                            </Component>
+                            <Component Id="cmp86BAECBF4F569C5D7C0210B2BED94733" Guid="{DA0A88BC-9B2F-49FA-8117-9CBEED5EBE1E}">
+                                <File Id="fil57EDA38160984C01C90F6741B3ADBDF6" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Dial.qml" />
+                            </Component>
+                            <Component Id="cmpD77BE458B398D873B393066A5B5ACE3A" Guid="{532261EF-1F2E-4120-9F35-141C24212232}">
+                                <File Id="filC880F96B6CDB2A1BFE409A61513F299B" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Dial.qmlc" />
+                            </Component>
+                            <Component Id="cmp479F2BB5BF63B7C7E68377752E51174D" Guid="{F717CB32-57B2-4FAF-8DD6-8A36F76DAA75}">
+                                <File Id="fil53BD9207F049F95B685063871DB0D514" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Dialog.qml" />
+                            </Component>
+                            <Component Id="cmpFB6D15321EB1A41B1277B2337B743B20" Guid="{483CEDA9-150F-4F20-A328-4FF6DA08412D}">
+                                <File Id="fil5EA5F861A9C33BDF9A9DCDB6CD0E5AFC" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Dialog.qmlc" />
+                            </Component>
+                            <Component Id="cmp34618C10F78A36A6218E322753196E4F" Guid="{4F8130DC-B24D-4443-B494-638015DA3D8A}">
+                                <File Id="fil7006905128735E512586CE30A969D279" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\DialogButtonBox.qml" />
+                            </Component>
+                            <Component Id="cmpC0031C4E414991EA22FE65EA92F501ED" Guid="{84C4517A-55D4-4475-8937-DCB3A491E6E3}">
+                                <File Id="fil09B5EAF49DBE8CA69B9BDF5C80B39EF9" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\DialogButtonBox.qmlc" />
+                            </Component>
+                            <Component Id="cmpCD2D93DC7CC6424927BEB477A9100672" Guid="{41D21B8B-1D7F-45B0-A488-04CE28779ADC}">
+                                <File Id="fil406F6D0A965DCCABEA1DEA6335CF8BA6" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Drawer.qml" />
+                            </Component>
+                            <Component Id="cmpABAE3B42A373AC07C12E212E06C1F369" Guid="{205FC30C-1429-4A10-BD55-93E1C9D77385}">
+                                <File Id="filEBEC4E04508FE5F6EB9FB9C836B94A8F" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Drawer.qmlc" />
+                            </Component>
+                            <Component Id="cmp71D30C4C0B4ACF1125294F9BC841B8ED" Guid="{04C08436-D0A2-4B52-AA70-ACBD0803FE33}">
+                                <File Id="fil44FBAA4342FF305606A7A7E1BC3CAF00" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Frame.qml" />
+                            </Component>
+                            <Component Id="cmpFA1665D01347A35A835F6C7DB1299AD5" Guid="{1F86A364-3DA1-476D-82C8-185D132A4006}">
+                                <File Id="filAF2E65B066194AAE61C789A08EBDB5E3" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Frame.qmlc" />
+                            </Component>
+                            <Component Id="cmp7D3EDD55BDA430BB7BE39A1FB794F843" Guid="{B1BA6AA6-218C-49BC-BF26-FD61E4E1F971}">
+                                <File Id="fil5F562B67845EEF9347E8F12B93114439" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\GroupBox.qml" />
+                            </Component>
+                            <Component Id="cmpFB14CF6AEDC9A0FEEFB882BD71C3BAC1" Guid="{15F38968-0753-465F-8AA6-884225E0263E}">
+                                <File Id="filC747C08735337F345A09E0FFC11736C2" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\GroupBox.qmlc" />
+                            </Component>
+                            <Component Id="cmp064A35DEF775D05274C8F3A72033A3DB" Guid="{0CB2835B-7752-400A-A7F5-45909862AFC7}">
+                                <File Id="fil1B30377596E9CD4C098CF1876377B770" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ItemDelegate.qml" />
+                            </Component>
+                            <Component Id="cmpD00E183CE494CCD0C72A12ACFA741345" Guid="{764237E5-C412-4CDE-9C56-CF7E54CBBB4E}">
+                                <File Id="fil8815C2AC0BF835F031686CD0143F8439" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ItemDelegate.qmlc" />
+                            </Component>
+                            <Component Id="cmp92B25CC849BF7126DCB7833583A2D5D9" Guid="{229F42C8-A08F-4F58-8A3D-C3F0F7525CEE}">
+                                <File Id="fil37BDDA95FCFEB2F040720CA399722609" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Label.qml" />
+                            </Component>
+                            <Component Id="cmpF24603DD266BCFF913B9FEC869186152" Guid="{65728861-E889-4428-9288-E23530136B09}">
+                                <File Id="fil2003CB42C4BC4DA1046477990C1471DC" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Label.qmlc" />
+                            </Component>
+                            <Component Id="cmp0F301A12E3D5F479D640D0818AE4CB58" Guid="{8705D912-3D4C-4ED9-BAE4-4EEF65F132D5}">
+                                <File Id="fil734CB5F449F9917AD05597BE4B5F4485" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Menu.qml" />
+                            </Component>
+                            <Component Id="cmp5BA166FC4EDE107B0C6B8CDFEFE6B380" Guid="{E69D2D1F-8E50-452D-BAF9-C004C613F2E2}">
+                                <File Id="fil9CA7859CA658B37C0F0C9B46F2531D65" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Menu.qmlc" />
+                            </Component>
+                            <Component Id="cmpA978E15AD3758B6C0753B6785F0672E6" Guid="{F15B21C9-1C4C-4165-A030-FEDB84CD666E}">
+                                <File Id="fil8549F7AFE0B3C3BA5C31FBEA9787789D" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\MenuItem.qml" />
+                            </Component>
+                            <Component Id="cmp226869DDAE7B8017CAC6B6CA6A2F0E18" Guid="{B2EBD3C7-0B7A-4AB7-BCE2-310E3C693F1E}">
+                                <File Id="fil9EC83BD3C5C82A4D363706C5CB343F7E" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\MenuItem.qmlc" />
+                            </Component>
+                            <Component Id="cmpCBBCA3B0BD0B775AB2FA9A3FD2851168" Guid="{3C1317D4-61EB-4818-B306-1E175C6D3386}">
+                                <File Id="filDE0A6C910E360141F4DD933D6F920880" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\MenuSeparator.qml" />
+                            </Component>
+                            <Component Id="cmp4C7B3D07DD795B0650EF9EE7EB52AE57" Guid="{6B73FDBD-8F15-4E62-93CC-9047E3A8EC60}">
+                                <File Id="fil1FD406304747D1C7B1ED8105C3E48C5D" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\MenuSeparator.qmlc" />
+                            </Component>
+                            <Component Id="cmp189A2A72265835EF7EB245FC16DEF1D2" Guid="{A7A13063-C9A2-442E-A7C9-F95637CBD1BB}">
+                                <File Id="fil5D2689B3F93C03B2008BC2945B3C3D65" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Page.qml" />
+                            </Component>
+                            <Component Id="cmp743846DFBF567AD29C70AD47A2E8B762" Guid="{8C20AB00-55F6-4098-8F8A-D0B81A77162C}">
+                                <File Id="fil4730DA2C2685A206EB965349A64C34C9" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Page.qmlc" />
+                            </Component>
+                            <Component Id="cmpCBA1C4581F95CE8C7148B861773679A6" Guid="{A2A327A6-1AC8-4DD1-A631-B78760BAADE6}">
+                                <File Id="filC93DA4A4661A0825C135082232F9C9A5" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\PageIndicator.qml" />
+                            </Component>
+                            <Component Id="cmpA05B96EFAFEB966E5B7E15B4F0245BAE" Guid="{E5205B6A-81FC-4F39-859D-0BA3BF55F119}">
+                                <File Id="fil8690C783B32A2F23C0CF74AD806F64E7" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\PageIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmpE3560D86A9A3B2BBC1CA6E2C7A195192" Guid="{F1A713F8-B117-489D-9959-7A44E06C4439}">
+                                <File Id="fil6C51D14545211784ADFB259C581A91DC" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Pane.qml" />
+                            </Component>
+                            <Component Id="cmp478AFE8478AC4FD4066FBD5903018EFC" Guid="{7C24533A-1758-4A4E-B76E-615F81818B44}">
+                                <File Id="filA8E2165494B5E58969D18444BFFB2D59" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Pane.qmlc" />
+                            </Component>
+                            <Component Id="cmp853B9E11367E5B41290794A745E2C5A2" Guid="{E7F96993-7C24-4505-B497-0661BFBA7493}">
+                                <File Id="filD6BAE7C9B897FDA74657762F5F9D48C1" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\plugins.qmltypes" />
+                            </Component>
+                            <Component Id="cmp6621A6DC5AC4F1D5CDC09D523EE7915B" Guid="{171EFFFE-5B40-4548-BD7A-64CA2D5EC83C}">
+                                <File Id="filFE0B379078A3554DE5C655F4086CE6F5" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Popup.qml" />
+                            </Component>
+                            <Component Id="cmp92F0149AF45DB5BA67A0C0533DA4DCC6" Guid="{CFD743CD-29C5-49CB-9A84-1AD8C835A351}">
+                                <File Id="fil277BC19E7969821148EECE5BF997A87C" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Popup.qmlc" />
+                            </Component>
+                            <Component Id="cmpBA73C7944D9969941AF6FBBD17D3F916" Guid="{27130E26-B405-410E-8E14-BCE7AA348B4C}">
+                                <File Id="fil14DB06D2E958EC473027859456B16459" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ProgressBar.qml" />
+                            </Component>
+                            <Component Id="cmpF60CE3588F0F982D90A0AD8A4BC1EB9F" Guid="{9866C456-FDA3-4D33-A490-C012EFEF5F2D}">
+                                <File Id="fil3B2703A130E384C5B56D176822F64705" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ProgressBar.qmlc" />
+                            </Component>
+                            <Component Id="cmpDA45BED4AAC33F6759B43A8B1FCDE03B" Guid="{383FFB1A-2E18-4A59-AA7F-087F246527EC}">
+                                <File Id="filDA73AF069DF0F763FAB76A8123C2DD28" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\qmldir" />
+                            </Component>
+                            <Component Id="cmpD59A7A12002704CE1C29965C584F28D2" Guid="{4B086DA6-07B0-4BFC-AD98-43978DBB1E4D}">
+                                <File Id="fil2CC013261940D2A197CB26C67ADAC6A9" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\qtquickcontrols2universalstyleplugin.dll" />
+                            </Component>
+                            <Component Id="cmp125A9C3D61556117989B6B67BD3D1A8F" Guid="{6D3B0DE2-67C5-424C-A7A2-AC8122392A5E}">
+                                <File Id="filA2A8016D863B36CAA9E5BB53D6EE1F2E" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\RadioButton.qml" />
+                            </Component>
+                            <Component Id="cmp27EAE1E96C8CE17612DDD2573FD46DDE" Guid="{1697A286-7D3F-40C8-9E00-0247451B6849}">
+                                <File Id="fil5FEB78985753945DAAD681AFFD0082FA" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\RadioButton.qmlc" />
+                            </Component>
+                            <Component Id="cmp086CC293FE3CC4E8BEB2A856FB09901D" Guid="{EEB5A84C-3280-473A-AE82-0F4F896AC1E0}">
+                                <File Id="fil75B8CBA400A99686B75659F9B2AC7E59" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\RadioDelegate.qml" />
+                            </Component>
+                            <Component Id="cmp322EDF45B6B8F44E3D6400DA0EA57E9D" Guid="{5BB8C41D-00FF-4499-B136-5531169D33DA}">
+                                <File Id="fil5B0D201590501E46D0CAECF3D5BB5157" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\RadioDelegate.qmlc" />
+                            </Component>
+                            <Component Id="cmpD7585C0B3A4F923AAEBA73926562CAFF" Guid="{56201D3A-274A-411C-997F-22D93B968F2F}">
+                                <File Id="filB3508F6E426DF1914B3E8E4BE684650E" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\RadioIndicator.qml" />
+                            </Component>
+                            <Component Id="cmp096B43AB925C2FEA5BAA681E4CFF75CA" Guid="{5F420186-6752-408C-B323-91A6E53EA0BC}">
+                                <File Id="fil7D41C965FC1962E17A810FD7CDB91ED9" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\RadioIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmp02989678FB116E7879A69670CA68BF46" Guid="{5511BF85-E485-46A6-ACC6-6F09B84D1659}">
+                                <File Id="fil8D147157B9D9D629EA4C0B6FFDAC50C6" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\RangeSlider.qml" />
+                            </Component>
+                            <Component Id="cmpFD230083914F408381C9572660AB308E" Guid="{09C1E182-B897-4A6D-AD3D-99569FE4B93F}">
+                                <File Id="fil57540FF2720BB194B6686421967A5B2D" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\RangeSlider.qmlc" />
+                            </Component>
+                            <Component Id="cmp9B6B07DBFF6C7AC5B2E2CF7446C5D799" Guid="{77B0F043-D70D-4364-93B4-4416CE1CBD3F}">
+                                <File Id="fil9E3FE6D984D7022BAB4194CB80003204" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\RoundButton.qml" />
+                            </Component>
+                            <Component Id="cmpF0BA8ED8E448B9ED006D6BE2481ACEBB" Guid="{8F5ECFE1-01AF-4D1F-86F1-654C4E4425BA}">
+                                <File Id="fil5E5C83606AC4CFC27175990EAB92F6B8" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\RoundButton.qmlc" />
+                            </Component>
+                            <Component Id="cmpE9BEFF37EFBA752030F194A01137B9D5" Guid="{614C86A8-5767-48CD-98CE-B7D87EC9D37C}">
+                                <File Id="fil895A81854B5B196F5D797DF612E10639" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ScrollBar.qml" />
+                            </Component>
+                            <Component Id="cmp3FDF5889EFF549F7FD3FD347A6402EDD" Guid="{76CD6E9B-ADB8-4252-A980-F2EDC71AF7B7}">
+                                <File Id="fil2BF2D534A00A9B8614C9FFCCCB33E09E" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ScrollBar.qmlc" />
+                            </Component>
+                            <Component Id="cmpB728BEF49C115436CF3FED075C043B74" Guid="{03F65147-B791-404E-89FC-2161F5172C5C}">
+                                <File Id="filD8E04E9ABB478B5FD1976471FE9EDAAA" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ScrollIndicator.qml" />
+                            </Component>
+                            <Component Id="cmpA5F9A4D25694BFAEC36DF1614468B09A" Guid="{31C3C6A7-DBF8-4DD6-8B88-A36F4504287A}">
+                                <File Id="fil695F9C485D4BF671B2D6397A000043EC" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ScrollIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmp015F52B165A4AD74AB209BF32DA91D51" Guid="{44705A75-2558-4D73-946A-8F51ACEC2E7A}">
+                                <File Id="filE2402D60C5796174558C3F2807988EBF" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Slider.qml" />
+                            </Component>
+                            <Component Id="cmpFFDDA284FDFE4680D9B27CEF72EED119" Guid="{50CB9853-7810-42BC-8FED-F0247799022B}">
+                                <File Id="fil0E974404884C7961DEDD985A650C80C2" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Slider.qmlc" />
+                            </Component>
+                            <Component Id="cmp6C76990CF671DF68FF226AD09358D648" Guid="{1607565C-6FA2-44A3-9785-E539674D9378}">
+                                <File Id="fil17257C6FC1A62DA17E1A56975F179BDB" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\SpinBox.qml" />
+                            </Component>
+                            <Component Id="cmpB389CEA10A8A9291D33D6C86E61D2B32" Guid="{CD8F85B1-FE13-42B0-8B29-1C7333B4ED03}">
+                                <File Id="fil3EE80CD4D4F9AF6BA2202B62EF7150EE" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\SpinBox.qmlc" />
+                            </Component>
+                            <Component Id="cmp4DDF99242458856737F39F475DC651E1" Guid="{C1B1D0E7-663D-46E5-A5FE-76DAC20293E0}">
+                                <File Id="filF6E37B9F0F258249F075D88AAF3CCE5D" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\StackView.qml" />
+                            </Component>
+                            <Component Id="cmp367BA1370CB34B3481ECF017DF2A3B1A" Guid="{5BBCA248-D290-4F6C-A985-CFFC044B21BB}">
+                                <File Id="fil37F163E16FC0A078B3B359A99C903FEB" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\StackView.qmlc" />
+                            </Component>
+                            <Component Id="cmpEE9151AA1FCC0E0E534C2E981684D63F" Guid="{0253E44C-60E8-45CA-8774-602C1B387BA1}">
+                                <File Id="fil1436E4D3BF5BAB6D942233D1F358FB75" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\SwipeDelegate.qml" />
+                            </Component>
+                            <Component Id="cmp1E34A4386D6D6F5345DE9278190AB4F0" Guid="{0630DB24-519E-452F-B5B7-A513EA566B12}">
+                                <File Id="fil1172B92C231B6C7D674BB3C1DC30A8AE" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\SwipeDelegate.qmlc" />
+                            </Component>
+                            <Component Id="cmpDDEC36178D34634ADD09A0F28641E7D4" Guid="{5A1E94B9-26EA-4E65-8822-3EDE75BDB2D8}">
+                                <File Id="fil54FF8F53678A4AEBDBEE6D80A0BBACCE" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Switch.qml" />
+                            </Component>
+                            <Component Id="cmp1C46AB9BF5D787DA0A61C298CC3914D1" Guid="{1140E921-F6E1-4EC5-BB2E-B52D50EC54C5}">
+                                <File Id="fil8E916E8B96286448DCABFA9D1C33C052" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Switch.qmlc" />
+                            </Component>
+                            <Component Id="cmp31059F3EE1318B95FA83EAC7F8C11666" Guid="{E9E31D3C-D512-4FAF-A712-22903AEA6A1D}">
+                                <File Id="fil48705DD99326E1F7F2869E9AE5E8F475" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\SwitchDelegate.qml" />
+                            </Component>
+                            <Component Id="cmp1EBA97D0252A9CDEC6CF238436EFD8EB" Guid="{4EA6CE66-F59A-47D8-8A4F-D602AAFA72C0}">
+                                <File Id="filC510A1FEA9F87AD135B6344892AE0B8B" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\SwitchDelegate.qmlc" />
+                            </Component>
+                            <Component Id="cmp0ED7AC3D77BF02D8338234CA7C1797D5" Guid="{AE2A8A57-8D7B-44C5-91A7-42312D8116EB}">
+                                <File Id="fil6173246DEE03B31C172D9AA1110B9E6C" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\SwitchIndicator.qml" />
+                            </Component>
+                            <Component Id="cmpB60438B35FBD8C94D0792778E426C574" Guid="{FA45F5E7-CAF2-4DE3-8B59-6BE2C4599D03}">
+                                <File Id="filE8BB0A0D41124BC2454A82A8D58C3D0E" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\SwitchIndicator.qmlc" />
+                            </Component>
+                            <Component Id="cmp687218E243FDEE91E96630CBEF1E932D" Guid="{9FF60203-6CF1-4C40-8F01-53F5CE59EB47}">
+                                <File Id="filE43065DC6984D594AE776107E800DEF0" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\TabBar.qml" />
+                            </Component>
+                            <Component Id="cmp9EDDD38BF05AED3657778CD21A61A52E" Guid="{65870343-7823-400C-B7EC-6660B3A7676D}">
+                                <File Id="fil8A2F5E8060A0874F68C72CF75719F115" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\TabBar.qmlc" />
+                            </Component>
+                            <Component Id="cmpB1440655398B99F73BA0AC3E261D9408" Guid="{2D230E1D-EB7C-4204-8CAD-63A086B6A4F5}">
+                                <File Id="filAA5062A95E80C3BDB7A5C390C6DDA1B7" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\TabButton.qml" />
+                            </Component>
+                            <Component Id="cmpFAE8EB635093F1078B6260A5E5B0C6B7" Guid="{8AD6670C-FD15-4123-8E97-2F3FFF05863B}">
+                                <File Id="fil80EBEEAC6FA02BD155ACAB9E5B417053" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\TabButton.qmlc" />
+                            </Component>
+                            <Component Id="cmp2EC9DED68078D23E1CAE7343969B1CB4" Guid="{7FB2A468-84D8-47F7-8859-F992B2B1DE55}">
+                                <File Id="fil2A344FBA0C0AC65072705D5EB3CA91FE" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\TextArea.qml" />
+                            </Component>
+                            <Component Id="cmp81689FE4F8DF62ADD1E3979952337D4B" Guid="{CADA75AE-AA5A-4185-9875-1F130E1B97E7}">
+                                <File Id="fil42E661F8C24A33A230A8664A2A8B420A" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\TextArea.qmlc" />
+                            </Component>
+                            <Component Id="cmp242DF11956559DA32BE6CB0AF4B6C732" Guid="{901E33F7-AFDC-4E2F-9B11-6298F1C4A317}">
+                                <File Id="fil4D0C66AABCC7B52CB3D998726ED4F38A" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\TextField.qml" />
+                            </Component>
+                            <Component Id="cmpC454E764183ED3580CDCFBC32318E09C" Guid="{6E5BABE5-C85A-430E-AFDA-0A1E0E31486C}">
+                                <File Id="fil1645DE73BE12FF51442A8713DE55620D" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\TextField.qmlc" />
+                            </Component>
+                            <Component Id="cmpA678F66D6812A01C217422AEFE9860FC" Guid="{2FBE46D3-C3A1-48D2-A728-8E824FF7D75A}">
+                                <File Id="filF5DC939601DDEB1B26D9BFE8D857266C" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ToolBar.qml" />
+                            </Component>
+                            <Component Id="cmp2276A6C758FFB1812F24D9F2073FE4B7" Guid="{AE5832EB-C23A-4C2C-A97A-D305AE7938E8}">
+                                <File Id="filD8C993C5BEC3EB42C237BC466117FD54" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ToolBar.qmlc" />
+                            </Component>
+                            <Component Id="cmp1DA718A324603F5F91210CD41B01BF9B" Guid="{5F1DB6F9-8137-43FB-B743-243B7B39ED77}">
+                                <File Id="fil904724A6F6B915344108F3ABC680B1E1" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ToolButton.qml" />
+                            </Component>
+                            <Component Id="cmp527A0DC8DC30772C68396B73ED428C5F" Guid="{C3D51443-9893-4239-AF84-34AD07F5CC5A}">
+                                <File Id="filD36E8340B266C171D7137872A633D72D" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ToolButton.qmlc" />
+                            </Component>
+                            <Component Id="cmp678660EC4B365119617E9F23E689C4B3" Guid="{7627242A-DCFE-4CA0-BB85-E29102AE53B8}">
+                                <File Id="fil03E01F8134B7B5A1F48C3996BA51A933" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ToolSeparator.qml" />
+                            </Component>
+                            <Component Id="cmpE945B4CD8C6CD8F1A4C34C6A78E9C083" Guid="{9B22C8BB-6DA9-4EE1-B618-CF2C009615F1}">
+                                <File Id="fil320B3720822526E31A0543913A64DC44" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ToolSeparator.qmlc" />
+                            </Component>
+                            <Component Id="cmpCF85F7D8BDC309FE76900DA903279D9C" Guid="{1672A4CA-F274-487B-9E11-C75845B8707D}">
+                                <File Id="filBEC223E47272CBC608AC8F00A87F8148" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ToolTip.qml" />
+                            </Component>
+                            <Component Id="cmpC4D063B9A7B59766F5105CF8B34723A6" Guid="{B1B0B8D5-DDE6-4F04-ADF1-5BDAC818B9A1}">
+                                <File Id="filFFE360E4A11155CA8D6EEF810FA68902" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\ToolTip.qmlc" />
+                            </Component>
+                            <Component Id="cmp8EF095BA041AE1C0427F2CEE83B10217" Guid="{7C12C0BF-AE53-4D27-8CC2-6AC4FB94A85A}">
+                                <File Id="filEB3B2CA97F1A79028905ACD992D89BD6" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Tumbler.qml" />
+                            </Component>
+                            <Component Id="cmp3A24CC75B9A4FEFBBFA2E590F92279F4" Guid="{98E64653-FEE8-44FE-A6EE-9F78190E8B87}">
+                                <File Id="fil237BD0C016D1F66DD291B6CB9D83723E" KeyPath="yes" Source="release\QtQuick\Controls.2\Universal\Tumbler.qmlc" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="dir3ABA39AA1392A2C4A286E866D066857A" Name="PrivateWidgets">
+                        <Component Id="cmpF137421F99E91B1261289E46D5C6F8B7" Guid="{1F06CECD-2BED-4C6C-A7E2-B9700A2D87F7}">
+                            <File Id="fil28D8E78E2D3B3D0F148B47AD52B8CD77" KeyPath="yes" Source="release\QtQuick\PrivateWidgets\plugins.qmltypes" />
+                        </Component>
+                        <Component Id="cmpD356C8A9625D8CAFADC377BEE2BB98BF" Guid="{C15FDD9F-6C0B-482C-BFD4-49D1340359F0}">
+                            <File Id="fil4104AB14C434081BFCE545CD1805BCC6" KeyPath="yes" Source="release\QtQuick\PrivateWidgets\qmldir" />
+                        </Component>
+                        <Component Id="cmp0EB7D7DEA38037BF7029B8F61C511156" Guid="{2B167586-C75D-4627-AD8B-2BA36E7144D0}">
+                            <File Id="fil82E4CB9CCA60CA78E41FD389101AED8B" KeyPath="yes" Source="release\QtQuick\PrivateWidgets\widgetsplugin.dll" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="dir00C2433CFFCC88F73D50F94094169715" Name="Templates.2">
+                        <Component Id="cmp2410E1AACD1E7B3F92636CB1EB2E3190" Guid="{05F3AD5C-F07A-4A02-912F-6988AC058A2D}">
+                            <File Id="fil8EED364633E927EA64107C68DE0A92BA" KeyPath="yes" Source="release\QtQuick\Templates.2\plugins.qmltypes" />
+                        </Component>
+                        <Component Id="cmp19841081D2844CD5CEE5FD9DD94D4ACA" Guid="{AF271C1A-7D30-411F-AC4C-D58B6003B0A2}">
+                            <File Id="fil6478BDC92AEB0FE8C53F89E159A07460" KeyPath="yes" Source="release\QtQuick\Templates.2\qmldir" />
+                        </Component>
+                        <Component Id="cmp760A511F85A499527C740CACF5A3A525" Guid="{29A939AA-44FA-4B97-BA06-5CB777B56FAB}">
+                            <File Id="filE96CCC1E9435901A39E9F7B8E1110A78" KeyPath="yes" Source="release\QtQuick\Templates.2\qtquicktemplates2plugin.dll" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="dir3F0383CE62378E0F9644F5C6EBCC484F" Name="Window.2">
+                        <Component Id="cmp217E78139F84148CB2980C9C25FF8354" Guid="{2D67B25E-8473-4E6B-918B-EFD98095F3EB}">
+                            <File Id="filC7FA00B0C9185B411BFB8878297876B9" KeyPath="yes" Source="release\QtQuick\Window.2\plugins.qmltypes" />
+                        </Component>
+                        <Component Id="cmp344967636F031DCAF97E9AC44CA29163" Guid="{FB9DE5BE-FC45-4D14-9574-0A6D758EF635}">
+                            <File Id="filB378D3F831D667884C14151BC1A4D186" KeyPath="yes" Source="release\QtQuick\Window.2\qmldir" />
+                        </Component>
+                        <Component Id="cmp735A37056F388EA0A6D3E62504EE7566" Guid="{EB864E53-6218-404D-B4BD-0D04C5F21F3F}">
+                            <File Id="filF5CE45F4B280FBE73C7A90EB923EB624" KeyPath="yes" Source="release\QtQuick\Window.2\windowplugin.dll" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dirA885F5896FFBB25865E1B1CF63BD2891" Name="QtQuick.2">
+                    <Component Id="cmpB15C3C8B013B8699C4B4EFA0A3610914" Guid="{43DB9BA6-0DDB-48F3-BFBC-3C83C70E654E}">
+                        <File Id="fil954DE8606B6478BC7CC3195C55DD51B6" KeyPath="yes" Source="release\QtQuick.2\plugins.qmltypes" />
+                    </Component>
+                    <Component Id="cmpB39F599398635BB50D756727EE0CDFD5" Guid="{4184D436-82F0-45D1-8004-571E5EEEAD51}">
+                        <File Id="fil82966819E103F462A336E845F6C2DC9D" KeyPath="yes" Source="release\QtQuick.2\qmldir" />
+                    </Component>
+                    <Component Id="cmp014EAFAB1A19F2846F32C535FFF29A44" Guid="{77A5012F-281F-4990-903A-D371D6BC8A9B}">
+                        <File Id="filACBF8D2BEEA6C977B1B1779D556164FA" KeyPath="yes" Source="release\QtQuick.2\qtquick2plugin.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirF1199DC6D854A3BF77E21EE4AA8839C8" Name="translations">
+                    <Component Id="cmpE5323884D31159392218E4A65B362AC2" Guid="{02F6ED08-E8CE-4749-ACE8-1BC35239EA04}">
+                        <File Id="filF4992A56B85ECF4811C66BD8DF5FD9A5" KeyPath="yes" Source="release\translations\qt_bg.qm" />
+                    </Component>
+                    <Component Id="cmp2ECD915BA87C036E542E86859D67C468" Guid="{EBE72707-2F6F-4290-87DE-7586452A4601}">
+                        <File Id="fil50857143B4D8AD1227B6FD4A9F2FD09B" KeyPath="yes" Source="release\translations\qt_ca.qm" />
+                    </Component>
+                    <Component Id="cmp317D41DF7ECCFDCE0B53066E6300F985" Guid="{4FB09C5B-C4B3-47CC-86CC-0B147BCF66E0}">
+                        <File Id="fil53E7B8B822E142B3E7D022F5465E0ED9" KeyPath="yes" Source="release\translations\qt_cs.qm" />
+                    </Component>
+                    <Component Id="cmp2F566A946394BDBBD940B0FD8A018357" Guid="{84495679-BDD8-4551-9474-4A390C72F703}">
+                        <File Id="filD0DDC3579AF4DAD15024BD5B2CE96F48" KeyPath="yes" Source="release\translations\qt_da.qm" />
+                    </Component>
+                    <Component Id="cmp44D6AC4204E087B036AD9D6676518409" Guid="{91D35483-5048-4806-83C0-6797577A9271}">
+                        <File Id="fil71AED8FFA2AE6A87610ECEFA79E3BB55" KeyPath="yes" Source="release\translations\qt_de.qm" />
+                    </Component>
+                    <Component Id="cmpA83EDBFA9C022E937E5482534458D1F2" Guid="{56A9B8B6-172E-40CD-82B3-C5DCEE391312}">
+                        <File Id="fil024D0E7D1208CA45B04F1353F725DB68" KeyPath="yes" Source="release\translations\qt_en.qm" />
+                    </Component>
+                    <Component Id="cmp8E191B7C836A41345427191764031AB2" Guid="{A380BA37-8CBD-4DC6-BFAB-09DAD2EA0599}">
+                        <File Id="filF84CD185D3EFE6692D864E4BC045530C" KeyPath="yes" Source="release\translations\qt_es.qm" />
+                    </Component>
+                    <Component Id="cmpAF61F0A6EC6CAC8463732DFC6A73587E" Guid="{1E91F811-D7D7-402C-A9D5-B46893ECE3DC}">
+                        <File Id="filC8267BD80AEA991D595D73383DB97B15" KeyPath="yes" Source="release\translations\qt_fi.qm" />
+                    </Component>
+                    <Component Id="cmp72056BAA26A4F04B5B0A1E6838F2E182" Guid="{2B8C4B86-262F-46AE-837A-0C9263B69B39}">
+                        <File Id="fil0C6339761995E0237602E3CD514AD9D3" KeyPath="yes" Source="release\translations\qt_fr.qm" />
+                    </Component>
+                    <Component Id="cmp52C37DBBC9F5C4CD8CB640D3A92D71CA" Guid="{1DC4186C-BFD0-4ED0-BCE3-7DBD8DEBED4B}">
+                        <File Id="fil3DE10429F9030D47572A2F4E127B0A29" KeyPath="yes" Source="release\translations\qt_gd.qm" />
+                    </Component>
+                    <Component Id="cmp8FB969799FBBECD30385849F076861C8" Guid="{E7FF4769-8C06-4338-9749-19C989310FC5}">
+                        <File Id="fil3B7B59679639FDC2DF210A8ECFB8D3F9" KeyPath="yes" Source="release\translations\qt_he.qm" />
+                    </Component>
+                    <Component Id="cmpFEF6DE06EEEF5AE7CBAD7E74DF898AF0" Guid="{A2793CC1-0E17-4A9C-A660-EA8F9EFADD45}">
+                        <File Id="fil5BD04AC9A1E504FC557CA71286D8CDE7" KeyPath="yes" Source="release\translations\qt_hu.qm" />
+                    </Component>
+                    <Component Id="cmp4A1BDDC26EFF6FCB6E7C7E7DFB17E043" Guid="{D76FAAB5-9256-4FA2-B771-6C34993FE404}">
+                        <File Id="filE1450E1CF4A7A1C13864C5405FC52064" KeyPath="yes" Source="release\translations\qt_it.qm" />
+                    </Component>
+                    <Component Id="cmpE1DA83DFB5CE60BE18D5772FE23E1240" Guid="{2C80531B-78C1-4AF6-B384-1231EC330A53}">
+                        <File Id="fil1CA8C34D973D24F8F6FC2ADA41226FB7" KeyPath="yes" Source="release\translations\qt_ja.qm" />
+                    </Component>
+                    <Component Id="cmpE4D0F730595C9EE9A25A74EA56752299" Guid="{B8D69573-7FC8-44E9-A354-96727618B1C3}">
+                        <File Id="filDDD931BA4AA0AE9F60975BB5C643D94B" KeyPath="yes" Source="release\translations\qt_ko.qm" />
+                    </Component>
+                    <Component Id="cmp0153D011817D7D772DF68B9D3E1C0699" Guid="{4521EDD1-A5FE-4C75-BD2D-240B7AFB9EFA}">
+                        <File Id="fil8B7ACCCD877FC0CA7ABA5F77446229EA" KeyPath="yes" Source="release\translations\qt_lv.qm" />
+                    </Component>
+                    <Component Id="cmpC9FF33B114F615A50D73803E69C3009F" Guid="{4C6230FF-4237-40A8-B1BF-13382CE870B4}">
+                        <File Id="fil2498BC083D8756B3CA5604BD27A29916" KeyPath="yes" Source="release\translations\qt_pl.qm" />
+                    </Component>
+                    <Component Id="cmp780A1DA59BF2F4D4036AE6CC4CAB4F41" Guid="{B7050E6F-181D-4D74-AD88-DBEBB9EB387E}">
+                        <File Id="fil4DB0800804D7BBCD547E93DD57216079" KeyPath="yes" Source="release\translations\qt_ru.qm" />
+                    </Component>
+                    <Component Id="cmpAD788D7F03D0A4565E10CA646D302C1C" Guid="{1732E55A-B6FB-40B3-BB06-9CEED27BE7F0}">
+                        <File Id="filDAA36094EE13BEEE06BA89F61EAA3E69" KeyPath="yes" Source="release\translations\qt_sk.qm" />
+                    </Component>
+                    <Component Id="cmp741B363B9BDAD441E8BDDF35CDA8CDFC" Guid="{346ACDDD-58B0-450F-ACFA-5581DCF2E04A}">
+                        <File Id="fil018E098E2A8D8BEFDF12B813BAD10E35" KeyPath="yes" Source="release\translations\qt_uk.qm" />
+                    </Component>
+                </Directory>
+            </Directory>
+			
+		
+		</Directory>
+		</Directory>
+		
+		<DirectoryRef Id="ApplicationProgramsFolder">
+			<Component Id="ImportIDShortcut" Guid="{CAB0F388-EAE5-4FA1-8C38-EC223928FF13}">
+          
+			<Shortcut Id="ImportIDStartMenuShortcut"
+							  Name="ImportID"
+							  Target="[dirA622272A3642906C114F843D2FDC5552]ImportID.exe"
+							  WorkingDirectory="dirA622272A3642906C114F843D2FDC5552"/>
+							  
+			<RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>				  
+			<RegistryValue Root="HKCU" Key="SOFTWARE\ImportID" Name="ImportIDShortcut" Type="integer" Value="1" KeyPath="yes" />				  
+			</Component>
+		</DirectoryRef>
+		
+		<ComponentGroup Id="CG01">
+			<ComponentRef Id="ImportIDShortcut" />
+			<ComponentRef Id="cmp823651B2CB11A42477" />
+			<ComponentRef Id="cmpdcc9d657cfb1" />
+            <ComponentRef Id="cmp823651B2CB11A4246C3C1F675444DD3A" />
+            <ComponentRef Id="cmp1D4D7D80A21F76406FF0F2CF3746F9E4" />
+            <ComponentRef Id="cmpBD4C4DE6AAF9AF3994B9AC161965F816" />
+            <ComponentRef Id="cmp2CAA052760806D2F708F90D0B171D29B" />
+            <ComponentRef Id="cmpA77304AE76FFC6CF58BC6BD095BB8F2D" />
+            <ComponentRef Id="cmp82869450B191918687F3375AEC7D9020" />
+            <ComponentRef Id="cmp4CEB3452C26ADB3E600F2DF985A3416F" />
+            <ComponentRef Id="cmp323D0631F3172F5E87029D9C11B55891" />
+            <ComponentRef Id="cmp1277902682790D98FAAE0786BF4938A9" />
+            <ComponentRef Id="cmp8B7F1EE2E4090481FB89D78B43447B0B" />
+            <ComponentRef Id="cmp8797800F13EE870EF01AE0F10884BAB5" />
+            <ComponentRef Id="cmp1CFFEEE1C5914719F6795659EEFBDF6E" />
+            <ComponentRef Id="cmpF61742D27F1766AD3740B9FBCA275F06" />
+            <ComponentRef Id="cmpC9DB53949DBFCB3BCEC229011D5C5321" />
+            <ComponentRef Id="cmpB7D6AD70623ADC174B86B4CBE60AB675" />
+            <ComponentRef Id="cmpAD0E26840934510BB792A2E892E492D0" />
+            <ComponentRef Id="cmpF8AA7490669920C677C23C3868497593" />
+            <ComponentRef Id="cmpD7A82731FEC891CEA2331051EAF40D38" />
+            <ComponentRef Id="cmp891FA22A36FB5C679431AE2FDADD107B" />
+            <ComponentRef Id="cmpE7E7055404861E904F9841EEA3D1C9F4" />
+            <ComponentRef Id="cmp8203E309D47AB4DE077F10888242F6D1" />
+            <ComponentRef Id="cmpA10D806C31F50272AC50DE25CECF3707" />
+            <ComponentRef Id="cmpD93D58AF730EFD998306D9E518AECE99" />
+            <ComponentRef Id="cmpEB86900F621A3D86D4989B0ADB8BF8EB" />
+            <ComponentRef Id="cmp0E9468CA4E4019EB15F21F7785733751" />
+            <ComponentRef Id="cmpAB61A44539996823E8A74EB4BCCD573F" />
+            <ComponentRef Id="cmpEE24B5C1B664D6195DE7E4F24597CACC" />
+            <ComponentRef Id="cmpE7232FCC99E6377481E0DF95010FD1FE" />
+            <ComponentRef Id="cmpB5643F95FF2C03BEF8CC5BF99E812C3D" />
+            <ComponentRef Id="cmp8FA91C4EF7CA8E9DA580F4486263F290" />
+            <ComponentRef Id="cmp214BFAA4A3A5B014B056A1EEF47762AA" />
+            <ComponentRef Id="cmpEF6C6B11C0FB9EDFD04E6F1C51002F6A" />
+            <ComponentRef Id="cmpB438891464785FC380AA81CF16AACCE1" />
+            <ComponentRef Id="cmp2A8F639EF5D3482CBDC692949E814A78" />
+            <ComponentRef Id="cmp79046E7F96C650B3E4EBEE0312E3A5E0" />
+            <ComponentRef Id="cmp435B26BE42E0652B128901102F1C0950" />
+            <ComponentRef Id="cmp25AC1E9DD59BC974F238B20973E78686" />
+            <ComponentRef Id="cmpB00AF9726E0A70916DD581043DB3DB60" />
+            <ComponentRef Id="cmp4DDF9E60E01A585A13F769D794DB327C" />
+            <ComponentRef Id="cmp1A8829D8511295C873336021C902F166" />
+            <ComponentRef Id="cmp6EB314F66F11E9662C6F03B1349A5B15" />
+            <ComponentRef Id="cmpEA20311821AF47300141F24EC11129E8" />
+            <ComponentRef Id="cmpC8DE5926AD6656373CF3BAE38F7AF0AC" />
+            <ComponentRef Id="cmpA249870C6909F8CF8FF3B9E5C6D9C0B1" />
+            <ComponentRef Id="cmp561DE258675C4EA5DB8284563A8D5DD4" />
+            <ComponentRef Id="cmp0AE9F0593D92C450AB244EDF3E9635D6" />
+            <ComponentRef Id="cmp35AD861F1A3C146A4D89BF43767849B1" />
+            <ComponentRef Id="cmp4E23BFD0CE447356CDB09BEDAEA3A8F3" />
+            <ComponentRef Id="cmp44D999B24A2E26D7512CB7E0C2B258B1" />
+            <ComponentRef Id="cmp80B6A900D0FAAE4726573E23774C4281" />
+            <ComponentRef Id="cmp8D46C62FDC9533EEB35EA12143FFE8E6" />
+            <ComponentRef Id="cmp89A050B4AB0204EEF96AF8E9DE7DC9AB" />
+            <ComponentRef Id="cmp1869BC9917123F0841A2D46E9D2F748B" />
+            <ComponentRef Id="cmpD2A5BE52A9269E9D1A04A65AAE0C5018" />
+            <ComponentRef Id="cmp7BB97325E8764988638FF37469CE4468" />
+            <ComponentRef Id="cmpB940C91E630A21A80E72581CC0CCA0E9" />
+            <ComponentRef Id="cmpBB1437E0F30B296582A28AC96F16B767" />
+            <ComponentRef Id="cmp6BDC025445FB2CCB5C578497DF7D40FC" />
+            <ComponentRef Id="cmp5CF56E96DF14EF105B385F53E2B5C409" />
+            <ComponentRef Id="cmpFC564BA9133897D7B2BCAE974922A9A8" />
+            <ComponentRef Id="cmp1787023F7E60D192689776EC9EC1D0DA" />
+            <ComponentRef Id="cmp5EBD708B1F2F528C5C8A9EFB68686716" />
+            <ComponentRef Id="cmp914A7AD7DC578C573FC43D5EFFE1A14A" />
+            <ComponentRef Id="cmp6D010D270D98431F33E58ECC50767232" />
+            <ComponentRef Id="cmp9ED28235ED3D8A0BC275E243487DFCED" />
+            <ComponentRef Id="cmp45F942A568F6414C26F0A1B6A19427FE" />
+            <ComponentRef Id="cmp840711A9405A50EFB5DBB32F9E15ED5D" />
+            <ComponentRef Id="cmp0545AA37AF0C6EE0948C824048963F47" />
+            <ComponentRef Id="cmp6148972D98A371F205D6A15CF864A7DA" />
+            <ComponentRef Id="cmp968B5289E17C84187CB9196B681959FB" />
+            <ComponentRef Id="cmp8C26CA5674C1FF4D59A6F5640A9E924C" />
+            <ComponentRef Id="cmp55A08473D8761DE3F10CFE93311AEEC6" />
+            <ComponentRef Id="cmp1EAAE0E29D9EBE87D3DD85547E65F0DF" />
+            <ComponentRef Id="cmp3A9575D1A41FEB32D74E2CE65F775C0C" />
+            <ComponentRef Id="cmp22E6BD3C05228CD4100A16C2FC9A88E0" />
+            <ComponentRef Id="cmp26007568C75266135E4CE9CE4FD93D4C" />
+            <ComponentRef Id="cmp9CC219F3A07D50BBEBBF69F410C98DA7" />
+            <ComponentRef Id="cmpD3F6F490E54DF7B107D27B100C5F2F6D" />
+            <ComponentRef Id="cmpC27576D3251172371ABC3921DE426DD1" />
+            <ComponentRef Id="cmpD1FDE5DF1E2CB408A160D97FF1D2BE6E" />
+            <ComponentRef Id="cmp669B9EB9714BBF921A73788AE7B17A59" />
+            <ComponentRef Id="cmpD2E2348810FD0CC9B2A5BC0EF1C56805" />
+            <ComponentRef Id="cmp0FD9E2B90CFCB9A4B2AFFC413BB79202" />
+            <ComponentRef Id="cmp2184D94043E7D4EE3365CFC32AD57612" />
+            <ComponentRef Id="cmpAD0975E2F5A8A4B742D9D848AA325748" />
+            <ComponentRef Id="cmp4D1A0AAD2699676518D014975EE68013" />
+            <ComponentRef Id="cmp0201DC9F026A3DF2C6BBE40623AF4AF1" />
+            <ComponentRef Id="cmp82D983BD4463E68D6850EDD8E5BCEF72" />
+            <ComponentRef Id="cmp015439694E2A17850070A08CB3967B62" />
+            <ComponentRef Id="cmp277A0951F596C1F018440DACBA86788A" />
+            <ComponentRef Id="cmp4649482CC23DD87E1DA4FFB7E0FAFD18" />
+            <ComponentRef Id="cmpBB34EB6D3C2726299B3A7CF8B048CB30" />
+            <ComponentRef Id="cmp9EC948A33DD50DA077C549A089F61C46" />
+            <ComponentRef Id="cmpDEE495B429D49AE0F8611AD18E8B1DF9" />
+            <ComponentRef Id="cmp6179D0E6553EC8B93B5298CBC340A5F7" />
+            <ComponentRef Id="cmpB3EAAFFB6BD79F63AE1B0914DC14C8CD" />
+            <ComponentRef Id="cmp20B92939D4D5FB1D0B583CE5082D9F48" />
+            <ComponentRef Id="cmpDF8EAA641991684BA0A419F92699C811" />
+            <ComponentRef Id="cmp339D34AA340E44FE6CD59F0951D1FA81" />
+            <ComponentRef Id="cmpF809683647F6528B409F844905B09B3D" />
+            <ComponentRef Id="cmpF03E4F05C402B27128FB7E5FADF2227B" />
+            <ComponentRef Id="cmp0B1DF1649D54D5FE80AE474BFB896ED5" />
+            <ComponentRef Id="cmpD3CDE4AFAD86E700B5ADCFEC687C989B" />
+            <ComponentRef Id="cmp53EDFF3E16550336E245C07C67D358D9" />
+            <ComponentRef Id="cmpAF0EB5A078A1152EF132205DB4701699" />
+            <ComponentRef Id="cmpE5F75861DFBAF3EA744E32C157D242AA" />
+            <ComponentRef Id="cmp8F85F25729935CEADAD0255785F30539" />
+            <ComponentRef Id="cmpBDC25A3CEE6DB22C952B8A50CB22C2D8" />
+            <ComponentRef Id="cmp0F7D9BD0BFA7A0E627A1E238CFD8879B" />
+            <ComponentRef Id="cmpED714C19EF65F3E962B5836D4D1BAF11" />
+            <ComponentRef Id="cmp3F5E7B918506126E44EDE26E1247E140" />
+            <ComponentRef Id="cmp6173478862BC8BA1A82BD906C1109ACF" />
+            <ComponentRef Id="cmp0FF26EB7A0D8455A5988234AC7A16336" />
+            <ComponentRef Id="cmpD0C2BF151A16023CF6C297D6CEE8FE1E" />
+            <ComponentRef Id="cmp78E4D68A783AE9D43BC4638DEACBD8CA" />
+            <ComponentRef Id="cmpE0618C18C167E5DFA7D14DA8970B32BA" />
+            <ComponentRef Id="cmp456C1E4DF9AD584BA1C3997DECC0F004" />
+            <ComponentRef Id="cmpC8C7BA7466A9A46346AA8B2FED585A3F" />
+            <ComponentRef Id="cmpF33B9CADE2E8CA11F8708BB170650841" />
+            <ComponentRef Id="cmpE90561000AA603E4E80909D4290CB3DC" />
+            <ComponentRef Id="cmpCFF691CA4EC8B1DCB1FB6CA3B3722A1D" />
+            <ComponentRef Id="cmp580B0359CFAEBE3BFDE57590072A2778" />
+            <ComponentRef Id="cmpC3FDE46024AD8645229720A06BFEF01E" />
+            <ComponentRef Id="cmp72E5A346840BC4A8A71708E059C4CD92" />
+            <ComponentRef Id="cmp6DD30A8EF6D77F53205D59176991D1AC" />
+            <ComponentRef Id="cmp0F3821F5506F7A6BF052CE18CD94FA3B" />
+            <ComponentRef Id="cmpDAE3BB6BFC8923CDF9BCDA3759B160F1" />
+            <ComponentRef Id="cmpA854F3964DB9DB28D6E10EDF5842C0A3" />
+            <ComponentRef Id="cmp5E2077602F782B2C1A88B29FEC49CC1A" />
+            <ComponentRef Id="cmp21ABF434D3DA3E8EA5339186176094BC" />
+            <ComponentRef Id="cmp3A4EA0396761C1E14B9D66A20186B890" />
+            <ComponentRef Id="cmpA840FF63FFDD00C3F6DCB242AE08A249" />
+            <ComponentRef Id="cmp2B66B3DAA5D20503F175713B36946308" />
+            <ComponentRef Id="cmpC40A6E7985149D70761F3B7F11723DF6" />
+            <ComponentRef Id="cmpA0A9775BAF0BB339FC34E751A7DA2BC9" />
+            <ComponentRef Id="cmp54C72544AE59E67432F27153A40CC3A6" />
+            <ComponentRef Id="cmp33B4E9DAE22014EE99C1D4734B234078" />
+            <ComponentRef Id="cmp7D1C7E649D27A82B11DA7165C4AE2ACD" />
+            <ComponentRef Id="cmpB0883BB6B044D1365513B007126B7367" />
+            <ComponentRef Id="cmp007BA87DF81A789A07EE868C7A828D59" />
+            <ComponentRef Id="cmp232F43B6A63483E0F6259C6CF77100FD" />
+            <ComponentRef Id="cmp6F07DAAD9812BDAE9FB7C0387C96B31A" />
+            <ComponentRef Id="cmp505A04428C1B6D4D61DF4500D3D119A7" />
+            <ComponentRef Id="cmpF2D7682D72E5E9F563F2B1F7BB650374" />
+            <ComponentRef Id="cmp32E38244A8F5BFFC2E9027B1147FB48E" />
+            <ComponentRef Id="cmpB173A7B38BD32A36D34C13CD5799ABBE" />
+            <ComponentRef Id="cmpBA253DB1C774F6802490AFE377B8C6B4" />
+            <ComponentRef Id="cmpC26DC3711C09FC51DE56FC7925583888" />
+            <ComponentRef Id="cmpD4B789DE40A0C54AA88CB48480B9549B" />
+            <ComponentRef Id="cmpB765D99D04AFD208DA3B5C87C6AF4C46" />
+            <ComponentRef Id="cmp70110BD2F18B7AA21604BB67D256284F" />
+            <ComponentRef Id="cmp9CD011A0AF4E38E0D643FCCE13B94236" />
+            <ComponentRef Id="cmp03A48E393A5F4F5A1C9D3580573980DB" />
+            <ComponentRef Id="cmpC7BEAB1B8E4410BB0414D96FFE6E26D3" />
+            <ComponentRef Id="cmp54A82A832DC478C0DA591618FD6587A2" />
+            <ComponentRef Id="cmp56432257E458CB0441D3B99AF036D998" />
+            <ComponentRef Id="cmp58DAFA5BD6F12138D31E7B4EBDF411B8" />
+            <ComponentRef Id="cmpE7E52267A0706820FCEB2E9CE9BCE4D8" />
+            <ComponentRef Id="cmp8956344356D2BAA48512A29C7A91C4F0" />
+            <ComponentRef Id="cmp19C2BBFD1C236D1194E047E7CD84FBF9" />
+            <ComponentRef Id="cmp769CE63A388B4D7B840312DCADA45C81" />
+            <ComponentRef Id="cmp46BF962424953AD23926A0E431A9FC37" />
+            <ComponentRef Id="cmp2B36A61F7A1C323A495AE06EFF43CEB1" />
+            <ComponentRef Id="cmp52F70A882C2A510A5DF7116278FE4E8A" />
+            <ComponentRef Id="cmp5192EEAC86AC062BC2AAC6D0CAF5154F" />
+            <ComponentRef Id="cmpAA6DE1FC170002D9C9E1287E87A3E744" />
+            <ComponentRef Id="cmp8DD565646AB1ED56230E9F746FC52A78" />
+            <ComponentRef Id="cmp9086402DD22F86652EB30626DA093F21" />
+            <ComponentRef Id="cmp2F18421CB2D7480AFDB48FC8DE1A14FB" />
+            <ComponentRef Id="cmp67CA5FC8D1470688F0883EC12655198A" />
+            <ComponentRef Id="cmp8D14D637F222021F7AD99992BF979369" />
+            <ComponentRef Id="cmpE3C5AC5B6DEDA117CDA8AE8619431581" />
+            <ComponentRef Id="cmpBF7E459CC88E99E4498B68A134DBEDB2" />
+            <ComponentRef Id="cmp11B372E7C00DA5B4E112D2C1F6926E44" />
+            <ComponentRef Id="cmp4B298F7FB674BE207BFD34C807B95140" />
+            <ComponentRef Id="cmpDF7F2F1E6249D4D13A791460BFFDC616" />
+            <ComponentRef Id="cmpD6094230F4DCF356D2430830C7E0D600" />
+            <ComponentRef Id="cmp39FA1C544AAE9D67025AF090F2654349" />
+            <ComponentRef Id="cmp4EF70E90C5895F0D654B671E5CF5D7BE" />
+            <ComponentRef Id="cmpADABB35263CC2967D5E3D0C91E24D11B" />
+            <ComponentRef Id="cmp6FD460C8F7544D4C515A3B4C866A6F6E" />
+            <ComponentRef Id="cmpF6E1567741BDFDBF8F8B9822D9A0AFE4" />
+            <ComponentRef Id="cmp8A3C04D3F173418C83E42EBF85769062" />
+            <ComponentRef Id="cmpE9AA0B1D90AD85CABD244B13808FDC04" />
+            <ComponentRef Id="cmp1D8520B5084841B5768B82DC5776588D" />
+            <ComponentRef Id="cmp988099E3608C3691999B74FD3E492AFF" />
+            <ComponentRef Id="cmpDC05F59CD5FA5BDBD2C7EE868ECF90C0" />
+            <ComponentRef Id="cmpA3F72DB8A93C74761709AE53EE825521" />
+            <ComponentRef Id="cmpEB919E6591EF55239A6BB6C5C3FF9DF9" />
+            <ComponentRef Id="cmpE8E84A2363FA664FF1257D7504E79778" />
+            <ComponentRef Id="cmp12C7AB1E58A4CA152148DE4688499ADC" />
+            <ComponentRef Id="cmpEF6F222E98B29549C550B1AE9962C6D1" />
+            <ComponentRef Id="cmp0EF2B4E8EA2663924F6DD13B7565EB63" />
+            <ComponentRef Id="cmpC8A9BDD1CD04CC174AF795B87C4A8DFA" />
+            <ComponentRef Id="cmpF4BA8C9CCC1685247D4928F5FFE13A83" />
+            <ComponentRef Id="cmp67D25513F686CC8149172986780B15F4" />
+            <ComponentRef Id="cmpA38E84DB5C90557D10A355A682C03FDE" />
+            <ComponentRef Id="cmpAE252D280F82EBA7825947FCB5C11A97" />
+            <ComponentRef Id="cmp7E84ED8BDBE3178019B43EFB085B69A7" />
+            <ComponentRef Id="cmp48D6E9E91B22B99C6B3F72CAF01CF6DF" />
+            <ComponentRef Id="cmp5C1AB794CD65CC6E0DA75986D9843927" />
+            <ComponentRef Id="cmpED3B66907F7985F089DE5B01D9EECC32" />
+            <ComponentRef Id="cmp9699DD4BA944C0F4C120E2668B734FE3" />
+            <ComponentRef Id="cmpD5432AC074AAB65FF6BAA19D28CD8C4C" />
+            <ComponentRef Id="cmpDD17FEFA62E841BA8FB5FD95B5B7ADA2" />
+            <ComponentRef Id="cmpC672D678C04A7DAD5E0AB64F020F57DB" />
+            <ComponentRef Id="cmpBE48394A62B986BAC7D1017BC8761FD6" />
+            <ComponentRef Id="cmpCB433166BDB47886933F2EA4144AEC3C" />
+            <ComponentRef Id="cmp682AD471F63D1776E9010BAF5F501E54" />
+            <ComponentRef Id="cmp8C442418D31ED2409E60FE8157B3FFBC" />
+            <ComponentRef Id="cmp878E4962FC6BA954555708152D53CBAD" />
+            <ComponentRef Id="cmpB25C354ECCD6015BFCA300E3B9318DBC" />
+            <ComponentRef Id="cmp1E48D58C1FDBF70DDF3024C5295DAE20" />
+            <ComponentRef Id="cmp0D6F7FE98099B30B5CC553C69859F736" />
+            <ComponentRef Id="cmpCDA9F8ED19363C38824B69A0744C3537" />
+            <ComponentRef Id="cmpBD0FCDC3332901394145379C1A05F612" />
+            <ComponentRef Id="cmp6732C836B9BE0BA97CE74918F0A379F3" />
+            <ComponentRef Id="cmp6FDC21712D027CABE3AA5503DA700361" />
+            <ComponentRef Id="cmp7D6DA979F4E6856D9BFA6DC246BA0045" />
+            <ComponentRef Id="cmpE2166E5FE68CE8842981981A9AAF9006" />
+            <ComponentRef Id="cmpE33C6E6E6DD9E35DA10B54B00551F440" />
+            <ComponentRef Id="cmp9B040AD74F3D6B57E8DB520E993EEC56" />
+            <ComponentRef Id="cmp84CD772E24BE5CEE348680A25B6072A9" />
+            <ComponentRef Id="cmpCED419B6641E5E6C34FAC77BFF5AD8F8" />
+            <ComponentRef Id="cmp51E4521E19E4606FA49F00FE175C3E9F" />
+            <ComponentRef Id="cmpC7172C427B41BB867B9B155541BD9F8D" />
+            <ComponentRef Id="cmp1566EBD0A78169A7867F65E084B18091" />
+            <ComponentRef Id="cmp5BE45911B5C4B7493FB4506BAC25E50A" />
+            <ComponentRef Id="cmp5FA4A9DF9CEAE2EA977DB1B495CCCA53" />
+            <ComponentRef Id="cmp86416EFB0E9D8826B120B7109D9915B5" />
+            <ComponentRef Id="cmpEBC61E102606E0BEC6D25D8AA3333596" />
+            <ComponentRef Id="cmpEA9D1011AB8A792758FAC8F2B5621154" />
+            <ComponentRef Id="cmpCC866EB04F85F2812426B2E576B97D30" />
+            <ComponentRef Id="cmp63CCC235C86F680A70C2FA64E21E7236" />
+            <ComponentRef Id="cmpEE882C9764FEF1B94C0382A74E33C131" />
+            <ComponentRef Id="cmpC1850883833D67D52D169AC43FA5024A" />
+            <ComponentRef Id="cmpC9F962B07D73D1F65E56AF3622D61460" />
+            <ComponentRef Id="cmp074513539274476C42114F7A718BE7F2" />
+            <ComponentRef Id="cmpC82C897C131B68BD945BB13AF9733C58" />
+            <ComponentRef Id="cmp271AEEA8E40DB37361C3189B0DA51756" />
+            <ComponentRef Id="cmpA5CF3412CFD44DCA36320954F8C3F0D8" />
+            <ComponentRef Id="cmp34A3DE000C8A29FA5D06B30A1479A709" />
+            <ComponentRef Id="cmp79EE8CE8D05D8136CD9591C41B6878F0" />
+            <ComponentRef Id="cmp2BD937B9F77A7C0BA34C842C7626891A" />
+            <ComponentRef Id="cmp7F2C098811F7CFB1229F78074DAA5C12" />
+            <ComponentRef Id="cmpDDE24DCF551EC45F521C01FC2ACC206E" />
+            <ComponentRef Id="cmp0FD1A235B43D1C53EC8909066D416158" />
+            <ComponentRef Id="cmp483E7B76906D2BA3E85F8C77B3A3D7F6" />
+            <ComponentRef Id="cmpC3415F20C9D6E9A814044D6EF97D27ED" />
+            <ComponentRef Id="cmp6DCF1FD93F714B2BA2EACA7A804B0B97" />
+            <ComponentRef Id="cmp15B4F9FF3944154E33C4B360AFEDDDB0" />
+            <ComponentRef Id="cmpF3BC55CF5A2C81AD1CC04316BD415109" />
+            <ComponentRef Id="cmpA186E4F463101242680197F3B08ABD39" />
+            <ComponentRef Id="cmp9E9967A14B5DCEFB64AB4D39AFF005BC" />
+            <ComponentRef Id="cmpE41C94973A845AFE3CE564EA81D86C3E" />
+            <ComponentRef Id="cmp3C56CAE91B200418FCA6FE3B23810644" />
+            <ComponentRef Id="cmp99DF8AC70589935BA9386DC7A506E060" />
+            <ComponentRef Id="cmpE92CCCF14D6C2FB6F4389E2F36EAC9B6" />
+            <ComponentRef Id="cmp1FC5B40B31B21A6C06B97A33BA79B63D" />
+            <ComponentRef Id="cmpB124F7AFBCD9DBE562C4FE13EAA047CC" />
+            <ComponentRef Id="cmpB4085FCDA5986670DE18F43B2ECFFD44" />
+            <ComponentRef Id="cmpC4C97F9001865BD8FE3460D06D9BDE9E" />
+            <ComponentRef Id="cmpCAB2AD0B50649C7742960469FF7C9CD0" />
+            <ComponentRef Id="cmpA399A7FE8F0C30523C64A14E097416FF" />
+            <ComponentRef Id="cmp31E98A28348ACB6EDEEBA3BA0F07D408" />
+            <ComponentRef Id="cmpEAC0C5CBDFEED337465C64DE351C322A" />
+            <ComponentRef Id="cmp39918FD5126DC0F9798BFD9C59409AFD" />
+            <ComponentRef Id="cmp9F35F33A71F56BD3495B375E680D7C03" />
+            <ComponentRef Id="cmp671FBF7E4339865616095FBF2FA15DD6" />
+            <ComponentRef Id="cmp8F051FDA41A3B6308BA985A091CDB2D2" />
+            <ComponentRef Id="cmp1B79E91E600DF1927ED45FE93C013CD6" />
+            <ComponentRef Id="cmpF7753A3BA3B184B269685660B7B9F839" />
+            <ComponentRef Id="cmp714A3B974F0DD969146A3930AA7C087E" />
+            <ComponentRef Id="cmpA4CBF3637D6D404C349B76F1F793C389" />
+            <ComponentRef Id="cmpF701DB15C4F224EC3FF7E9B42D048B9C" />
+            <ComponentRef Id="cmp778D3CFB5D766AB67BFFCEA51B35E9BD" />
+            <ComponentRef Id="cmp5820449B4DA93FE1B0A78174E42FE36A" />
+            <ComponentRef Id="cmpCE0AF1AD1A64F6578C45F4877BA5E324" />
+            <ComponentRef Id="cmp6BBFD4896AEAF6B708AE9509E9927672" />
+            <ComponentRef Id="cmp59A5867129873F9351F7AA19C7EB6F73" />
+            <ComponentRef Id="cmpBEFDB213E75973E67BA799C2C2D236F9" />
+            <ComponentRef Id="cmpD4FF0C92D9F75469CA6CAD5878756145" />
+            <ComponentRef Id="cmpE5D6A434B0A0DD8E71B839948E045D17" />
+            <ComponentRef Id="cmpCA65FC1674EE9B90DB4DEAEFECF71EA2" />
+            <ComponentRef Id="cmp96AA621EBD2B0DDE7CF1964E2E3AF6C6" />
+            <ComponentRef Id="cmp9411DAB14FA1CE8317268EC5A2D594F6" />
+            <ComponentRef Id="cmp55863270AC303871A790D62F6A3BFF59" />
+            <ComponentRef Id="cmpE8D53F1948F2C0F8F19587B78CC9BB93" />
+            <ComponentRef Id="cmpA5CAF73C74268D9B9394B8B8E655F6AB" />
+            <ComponentRef Id="cmp9770EA67757D5AAA0563C3D7353EF9D8" />
+            <ComponentRef Id="cmpC0CEF7104BD6123C897FCD42BA90AFAA" />
+            <ComponentRef Id="cmp7E54074E604A2AE5921B3E751D8093C0" />
+            <ComponentRef Id="cmp659CBBC344690920A59287674E6B094B" />
+            <ComponentRef Id="cmpB32EC163AACC8E2F0B40D06704B34C82" />
+            <ComponentRef Id="cmp4218BFB827B8C91DBB7FE2ED483E83FF" />
+            <ComponentRef Id="cmp06DE85609C1571BC194AABD41DD3A088" />
+            <ComponentRef Id="cmpED93052FE2B4E3A3E676BC17072D0E60" />
+            <ComponentRef Id="cmpBDAABFB24B87EE46F31F29C1BE420CB5" />
+            <ComponentRef Id="cmp8D9931891D9BE0D256D1C8AE948B8BB0" />
+            <ComponentRef Id="cmp9E38F7D48DD2AEB62469956D6ED719A6" />
+            <ComponentRef Id="cmp31E98F6E373E3C5B904FD9BC73265050" />
+            <ComponentRef Id="cmp177DEA7E236913681AA3D021A60ADD90" />
+            <ComponentRef Id="cmp903C7BE37D626CD31DB16259C67DCE24" />
+            <ComponentRef Id="cmp67F6DABA71CEA47D94A75684501836C4" />
+            <ComponentRef Id="cmp72F6C3A1932D7DF259016FFBCBD8F08F" />
+            <ComponentRef Id="cmp3D53C5C05B990BD05D2B8250F9223962" />
+            <ComponentRef Id="cmpBEADA585ED575E0E71A370A569612E47" />
+            <ComponentRef Id="cmpA69A83CBD032919871D53A19BFE1F1E8" />
+            <ComponentRef Id="cmp9828DE96593810CF05BB9BE04A58A0F6" />
+            <ComponentRef Id="cmpFECF0EEB37A9A7AD54239433CCE5F487" />
+            <ComponentRef Id="cmpE9C8A6C8DEB811EAAE564B91142D2A70" />
+            <ComponentRef Id="cmpAE9E0956DE43B53012C34059353BE76C" />
+            <ComponentRef Id="cmp7F53B82AC1BEFC9ECD9532BC8B9BFCDC" />
+            <ComponentRef Id="cmpBA079FB2671FBB8E5D88EBCFBC4FBF25" />
+            <ComponentRef Id="cmp2C53190AC249D3F5A88C3294E0697839" />
+            <ComponentRef Id="cmpF9FFE9173C44FA09E843CCC5FC7DDD2F" />
+            <ComponentRef Id="cmp0286CA7E5277004871A1832BBA1B6D54" />
+            <ComponentRef Id="cmpEF24746802C6660C36834AA2388591E7" />
+            <ComponentRef Id="cmp8ECA51F09E496BEB24299379D28B6D39" />
+            <ComponentRef Id="cmp7E7A98E3848C81AA8F7F95481E17C7BB" />
+            <ComponentRef Id="cmp9667190CDD723AEA85288097066A8E98" />
+            <ComponentRef Id="cmp33454AFD0CFFAD2FB67D45B410CB0CCC" />
+            <ComponentRef Id="cmpBFB1265D4DD86896C6E73AA34B23EE18" />
+            <ComponentRef Id="cmpBECDADB22D101029C6BB7FE50E3D7C25" />
+            <ComponentRef Id="cmpAAF51E33C0CB501C4EDAE404794E4511" />
+            <ComponentRef Id="cmpAFA955A551333E31124644C972246F0B" />
+            <ComponentRef Id="cmp64125808012B8EF8742976D05286EB07" />
+            <ComponentRef Id="cmp567B0F5D76A0F270693E5694B9439F2A" />
+            <ComponentRef Id="cmp0D6D4F77A242433A1B142DE6AA501021" />
+            <ComponentRef Id="cmpE355828F75C04E458072E5C2D1BA28ED" />
+            <ComponentRef Id="cmpBB27B51CB4CA1C0EA5E61DB4548C769A" />
+            <ComponentRef Id="cmpC75E842B34AE22086F7A1CD888B9EF4E" />
+            <ComponentRef Id="cmpB1C48A7AE247F0C1332D3367C1B40605" />
+            <ComponentRef Id="cmp1940B8772249457B89DEDA2FD242A647" />
+            <ComponentRef Id="cmp9A0AF9D445CB3AE9454FF801DFB8F77D" />
+            <ComponentRef Id="cmp714F74E2DD1B04FAE5CBC6EA84348935" />
+            <ComponentRef Id="cmp1C153E9C1AE0EDF4D345C46A9AA89E93" />
+            <ComponentRef Id="cmpED11C740D446DBD76778FBAA93FDAA64" />
+            <ComponentRef Id="cmp313E9838DD8E8F5ADB34286B16721CF3" />
+            <ComponentRef Id="cmp043C9C955EE6101BCFCA4E0FA21BDB78" />
+            <ComponentRef Id="cmpA6949E738B4AC637AF102488BDBED11B" />
+            <ComponentRef Id="cmp4B9715217476DFC578E7C07260073B13" />
+            <ComponentRef Id="cmp9897A3FE2B19B8680057E018F8CDB039" />
+            <ComponentRef Id="cmp9486C444D8C49A9470BE7B32F2ADCD6A" />
+            <ComponentRef Id="cmpA2B21EF8098A09238F6F6264C221AE4F" />
+            <ComponentRef Id="cmp7F5B4A326E81F6D185806AA38199EB5A" />
+            <ComponentRef Id="cmp2958436608D4D836F11D5968ACC44924" />
+            <ComponentRef Id="cmpB255CEE7690052B9CE906D1EA3BD22D9" />
+            <ComponentRef Id="cmp8844C11D2F0084CA770678509DEFE793" />
+            <ComponentRef Id="cmpDAC01903016CF17B96B8E3F4A8A83AF0" />
+            <ComponentRef Id="cmp70A183ADA28FCEF80AFDD3912AF25B8A" />
+            <ComponentRef Id="cmpF22F2688E08BC5CCA4F5DF0607186B5A" />
+            <ComponentRef Id="cmp9820145C26481BDB85F10C45D816BE6C" />
+            <ComponentRef Id="cmp86BAECBF4F569C5D7C0210B2BED94733" />
+            <ComponentRef Id="cmpD77BE458B398D873B393066A5B5ACE3A" />
+            <ComponentRef Id="cmp479F2BB5BF63B7C7E68377752E51174D" />
+            <ComponentRef Id="cmpFB6D15321EB1A41B1277B2337B743B20" />
+            <ComponentRef Id="cmp34618C10F78A36A6218E322753196E4F" />
+            <ComponentRef Id="cmpC0031C4E414991EA22FE65EA92F501ED" />
+            <ComponentRef Id="cmpCD2D93DC7CC6424927BEB477A9100672" />
+            <ComponentRef Id="cmpABAE3B42A373AC07C12E212E06C1F369" />
+            <ComponentRef Id="cmp71D30C4C0B4ACF1125294F9BC841B8ED" />
+            <ComponentRef Id="cmpFA1665D01347A35A835F6C7DB1299AD5" />
+            <ComponentRef Id="cmp7D3EDD55BDA430BB7BE39A1FB794F843" />
+            <ComponentRef Id="cmpFB14CF6AEDC9A0FEEFB882BD71C3BAC1" />
+            <ComponentRef Id="cmp064A35DEF775D05274C8F3A72033A3DB" />
+            <ComponentRef Id="cmpD00E183CE494CCD0C72A12ACFA741345" />
+            <ComponentRef Id="cmp92B25CC849BF7126DCB7833583A2D5D9" />
+            <ComponentRef Id="cmpF24603DD266BCFF913B9FEC869186152" />
+            <ComponentRef Id="cmp0F301A12E3D5F479D640D0818AE4CB58" />
+            <ComponentRef Id="cmp5BA166FC4EDE107B0C6B8CDFEFE6B380" />
+            <ComponentRef Id="cmpA978E15AD3758B6C0753B6785F0672E6" />
+            <ComponentRef Id="cmp226869DDAE7B8017CAC6B6CA6A2F0E18" />
+            <ComponentRef Id="cmpCBBCA3B0BD0B775AB2FA9A3FD2851168" />
+            <ComponentRef Id="cmp4C7B3D07DD795B0650EF9EE7EB52AE57" />
+            <ComponentRef Id="cmp189A2A72265835EF7EB245FC16DEF1D2" />
+            <ComponentRef Id="cmp743846DFBF567AD29C70AD47A2E8B762" />
+            <ComponentRef Id="cmpCBA1C4581F95CE8C7148B861773679A6" />
+            <ComponentRef Id="cmpA05B96EFAFEB966E5B7E15B4F0245BAE" />
+            <ComponentRef Id="cmpE3560D86A9A3B2BBC1CA6E2C7A195192" />
+            <ComponentRef Id="cmp478AFE8478AC4FD4066FBD5903018EFC" />
+            <ComponentRef Id="cmp853B9E11367E5B41290794A745E2C5A2" />
+            <ComponentRef Id="cmp6621A6DC5AC4F1D5CDC09D523EE7915B" />
+            <ComponentRef Id="cmp92F0149AF45DB5BA67A0C0533DA4DCC6" />
+            <ComponentRef Id="cmpBA73C7944D9969941AF6FBBD17D3F916" />
+            <ComponentRef Id="cmpF60CE3588F0F982D90A0AD8A4BC1EB9F" />
+            <ComponentRef Id="cmpDA45BED4AAC33F6759B43A8B1FCDE03B" />
+            <ComponentRef Id="cmpD59A7A12002704CE1C29965C584F28D2" />
+            <ComponentRef Id="cmp125A9C3D61556117989B6B67BD3D1A8F" />
+            <ComponentRef Id="cmp27EAE1E96C8CE17612DDD2573FD46DDE" />
+            <ComponentRef Id="cmp086CC293FE3CC4E8BEB2A856FB09901D" />
+            <ComponentRef Id="cmp322EDF45B6B8F44E3D6400DA0EA57E9D" />
+            <ComponentRef Id="cmpD7585C0B3A4F923AAEBA73926562CAFF" />
+            <ComponentRef Id="cmp096B43AB925C2FEA5BAA681E4CFF75CA" />
+            <ComponentRef Id="cmp02989678FB116E7879A69670CA68BF46" />
+            <ComponentRef Id="cmpFD230083914F408381C9572660AB308E" />
+            <ComponentRef Id="cmp9B6B07DBFF6C7AC5B2E2CF7446C5D799" />
+            <ComponentRef Id="cmpF0BA8ED8E448B9ED006D6BE2481ACEBB" />
+            <ComponentRef Id="cmpE9BEFF37EFBA752030F194A01137B9D5" />
+            <ComponentRef Id="cmp3FDF5889EFF549F7FD3FD347A6402EDD" />
+            <ComponentRef Id="cmpB728BEF49C115436CF3FED075C043B74" />
+            <ComponentRef Id="cmpA5F9A4D25694BFAEC36DF1614468B09A" />
+            <ComponentRef Id="cmp015F52B165A4AD74AB209BF32DA91D51" />
+            <ComponentRef Id="cmpFFDDA284FDFE4680D9B27CEF72EED119" />
+            <ComponentRef Id="cmp6C76990CF671DF68FF226AD09358D648" />
+            <ComponentRef Id="cmpB389CEA10A8A9291D33D6C86E61D2B32" />
+            <ComponentRef Id="cmp4DDF99242458856737F39F475DC651E1" />
+            <ComponentRef Id="cmp367BA1370CB34B3481ECF017DF2A3B1A" />
+            <ComponentRef Id="cmpEE9151AA1FCC0E0E534C2E981684D63F" />
+            <ComponentRef Id="cmp1E34A4386D6D6F5345DE9278190AB4F0" />
+            <ComponentRef Id="cmpDDEC36178D34634ADD09A0F28641E7D4" />
+            <ComponentRef Id="cmp1C46AB9BF5D787DA0A61C298CC3914D1" />
+            <ComponentRef Id="cmp31059F3EE1318B95FA83EAC7F8C11666" />
+            <ComponentRef Id="cmp1EBA97D0252A9CDEC6CF238436EFD8EB" />
+            <ComponentRef Id="cmp0ED7AC3D77BF02D8338234CA7C1797D5" />
+            <ComponentRef Id="cmpB60438B35FBD8C94D0792778E426C574" />
+            <ComponentRef Id="cmp687218E243FDEE91E96630CBEF1E932D" />
+            <ComponentRef Id="cmp9EDDD38BF05AED3657778CD21A61A52E" />
+            <ComponentRef Id="cmpB1440655398B99F73BA0AC3E261D9408" />
+            <ComponentRef Id="cmpFAE8EB635093F1078B6260A5E5B0C6B7" />
+            <ComponentRef Id="cmp2EC9DED68078D23E1CAE7343969B1CB4" />
+            <ComponentRef Id="cmp81689FE4F8DF62ADD1E3979952337D4B" />
+            <ComponentRef Id="cmp242DF11956559DA32BE6CB0AF4B6C732" />
+            <ComponentRef Id="cmpC454E764183ED3580CDCFBC32318E09C" />
+            <ComponentRef Id="cmpA678F66D6812A01C217422AEFE9860FC" />
+            <ComponentRef Id="cmp2276A6C758FFB1812F24D9F2073FE4B7" />
+            <ComponentRef Id="cmp1DA718A324603F5F91210CD41B01BF9B" />
+            <ComponentRef Id="cmp527A0DC8DC30772C68396B73ED428C5F" />
+            <ComponentRef Id="cmp678660EC4B365119617E9F23E689C4B3" />
+            <ComponentRef Id="cmpE945B4CD8C6CD8F1A4C34C6A78E9C083" />
+            <ComponentRef Id="cmpCF85F7D8BDC309FE76900DA903279D9C" />
+            <ComponentRef Id="cmpC4D063B9A7B59766F5105CF8B34723A6" />
+            <ComponentRef Id="cmp8EF095BA041AE1C0427F2CEE83B10217" />
+            <ComponentRef Id="cmp3A24CC75B9A4FEFBBFA2E590F92279F4" />
+            <ComponentRef Id="cmpF137421F99E91B1261289E46D5C6F8B7" />
+            <ComponentRef Id="cmpD356C8A9625D8CAFADC377BEE2BB98BF" />
+            <ComponentRef Id="cmp0EB7D7DEA38037BF7029B8F61C511156" />
+            <ComponentRef Id="cmp2410E1AACD1E7B3F92636CB1EB2E3190" />
+            <ComponentRef Id="cmp19841081D2844CD5CEE5FD9DD94D4ACA" />
+            <ComponentRef Id="cmp760A511F85A499527C740CACF5A3A525" />
+            <ComponentRef Id="cmp217E78139F84148CB2980C9C25FF8354" />
+            <ComponentRef Id="cmp344967636F031DCAF97E9AC44CA29163" />
+            <ComponentRef Id="cmp735A37056F388EA0A6D3E62504EE7566" />
+            <ComponentRef Id="cmpB15C3C8B013B8699C4B4EFA0A3610914" />
+            <ComponentRef Id="cmpB39F599398635BB50D756727EE0CDFD5" />
+            <ComponentRef Id="cmp014EAFAB1A19F2846F32C535FFF29A44" />
+            <ComponentRef Id="cmpE5323884D31159392218E4A65B362AC2" />
+            <ComponentRef Id="cmp2ECD915BA87C036E542E86859D67C468" />
+            <ComponentRef Id="cmp317D41DF7ECCFDCE0B53066E6300F985" />
+            <ComponentRef Id="cmp2F566A946394BDBBD940B0FD8A018357" />
+            <ComponentRef Id="cmp44D6AC4204E087B036AD9D6676518409" />
+            <ComponentRef Id="cmpA83EDBFA9C022E937E5482534458D1F2" />
+            <ComponentRef Id="cmp8E191B7C836A41345427191764031AB2" />
+            <ComponentRef Id="cmpAF61F0A6EC6CAC8463732DFC6A73587E" />
+            <ComponentRef Id="cmp72056BAA26A4F04B5B0A1E6838F2E182" />
+            <ComponentRef Id="cmp52C37DBBC9F5C4CD8CB640D3A92D71CA" />
+            <ComponentRef Id="cmp8FB969799FBBECD30385849F076861C8" />
+            <ComponentRef Id="cmpFEF6DE06EEEF5AE7CBAD7E74DF898AF0" />
+            <ComponentRef Id="cmp4A1BDDC26EFF6FCB6E7C7E7DFB17E043" />
+            <ComponentRef Id="cmpE1DA83DFB5CE60BE18D5772FE23E1240" />
+            <ComponentRef Id="cmpE4D0F730595C9EE9A25A74EA56752299" />
+            <ComponentRef Id="cmp0153D011817D7D772DF68B9D3E1C0699" />
+            <ComponentRef Id="cmpC9FF33B114F615A50D73803E69C3009F" />
+            <ComponentRef Id="cmp780A1DA59BF2F4D4036AE6CC4CAB4F41" />
+            <ComponentRef Id="cmpAD788D7F03D0A4565E10CA646D302C1C" />
+            <ComponentRef Id="cmp741B363B9BDAD441E8BDDF35CDA8CDFC" />
+        </ComponentGroup>
+		
+        <Feature Id="ProductFeature" Level="1" Title="ImportID-App">
+		   <ComponentGroupRef Id="CG01" />
+		</Feature>
+        
+    </Product>
+</Wix>
