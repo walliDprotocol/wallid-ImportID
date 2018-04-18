@@ -843,6 +843,7 @@ void GAPI::startSigningWalletAddress(QString walletAddress) {
 //TODO: walletAddress should be the plain version of the wallet address with 0x prefix
 //TODO: clarify if we need to sign the Ethereum public key instead
 void GAPI::doSignWalletAddress(QString walletAddress) {
+    const int ETH_WALLET_ADDR_SIZE = 40;
 
     qDebug() << "doSignWalletAddress = " << walletAddress;
 
@@ -852,11 +853,19 @@ void GAPI::doSignWalletAddress(QString walletAddress) {
     getCardInstance(card);
 
     if (card == NULL) return;
-    //TODO: Skip the 0x prefix
-    QByteArray walletUTF8 = walletAddress.toUtf8();
+
+    if (walletAddress.size() != ETH_WALLET_ADDR_SIZE && 
+        walletAddress.size() != ETH_WALLET_ADDR_SIZE+2) {
+        qDebug() << "Invalid walletAddress!";
+        return;
+    }
+    
+    //Skip the 0x prefix if present.
+    QByteArray signatureInput = walletAddress.size() == ETH_WALLET_ADDR_SIZE ? QByteArray::fromHex(walletAddress.toUtf8()) :
+                                   QByteArray::fromHex(walletAddress.right(ETH_WALLET_ADDR_SIZE).toUtf8());
 
     QCryptographicHash sha256(QCryptographicHash::Sha256);
-    sha256.addData(walletUTF8);
+    sha256.addData(signatureInput);
 
     QByteArray res = sha256.result();
 
