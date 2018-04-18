@@ -44,7 +44,7 @@
 #define STR_REMOVECERT			"remove_certificate"
 #define STR_CARDREADER			"cardreader"
 
-#define STR_DEF_GUILANGUAGE		"EN"
+#define STR_DEF_GUILANGUAGE		"en"
 
 #define PIN_MAX_LENGHT 8
 #define PIN_MIN_LENGHT 4
@@ -180,6 +180,20 @@ public:
         , m_test_mode(false)
 
     {
+        //----------------------------------------------------------
+        // Check always what is set in the registry
+        //----------------------------------------------------------
+
+        //----------------------------------------------------------
+        // check the GUI language
+        //----------------------------------------------------------
+        {
+            eIDMW::PTEID_Config config(eIDMW::PTEID_PARAM_GENERAL_LANGUAGE);
+            QString lng = config.getString();
+
+            setGuiLanguage(lng);
+        }
+
         //----------------------------------------------------------
         // check start minimized
         //----------------------------------------------------------
@@ -377,6 +391,12 @@ public:
     void setGuiLanguage( QString const& GuiLanguage=STR_DEF_GUILANGUAGE )
     {
         m_GuiLanguage = GuiLanguage;
+    }
+    void setLanguage( QString const& language )
+    {
+        m_GuiLanguage = language;
+        eIDMW::PTEID_Config config(eIDMW::PTEID_PARAM_GENERAL_LANGUAGE);
+        config.setString(m_GuiLanguage.toLatin1());
     }
     bool getStartMinimized( void ) const
     {

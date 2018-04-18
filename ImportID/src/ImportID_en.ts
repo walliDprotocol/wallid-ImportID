@@ -2,135 +2,183 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
+    <name>App</name>
+    <message>
+        <location filename="contentPages/card/App.qml" line="313"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/App.qml" line="315"/>
+        <source>Please Fill the Ethereum Wallet Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AppForm.ui</name>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="130"/>
         <source>Import ID</source>
-        <translation>Import ID</translation>
+        <translation type="vanished">Import ID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="152"/>
         <source>Select the Card Reader</source>
         <oldsource>1 - Select the Card Reader</oldsource>
-        <translation>Select the Card Reader</translation>
+        <translation type="vanished">Select the Card Reader</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="171"/>
         <source>Select data to import</source>
         <oldsource>2 - Select data to import</oldsource>
-        <translation>Select data to import</translation>
+        <translation type="vanished">Select data to import</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="181"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="74"/>
+        <source>How to Use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="93"/>
+        <source>Power by BlockID @ 2018</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="186"/>
+        <source>ImportID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="207"/>
+        <source>Select Card Reader</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="227"/>
+        <source>Choose data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="238"/>
         <source>Identity</source>
         <translation>Identity</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="187"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="245"/>
         <source>Address</source>
         <translation>Address</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="193"/>
-        <source>Ethereum Wallet  address</source>
-        <oldsource>3 - Ethereum Wallet  address</oldsource>
-        <translation>Ethereum Wallet  address</translation>
+        <location filename="contentPages/card/AppForm.ui.qml" line="251"/>
+        <source>Your ether wallet address</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="209"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="272"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="296"/>
+        <source>ID Data Successfully created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="379"/>
+        <source>Goto MyEtherID.io</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="397"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="418"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="439"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="460"/>
+        <source>What is BlockID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="404"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="425"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="446"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="467"/>
+        <source>BlockID is a concept for an ecosystem: secure and reliable loading of validated off-chain identity in the blockchain and consequent use of encrypted and previously authorized form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ethereum Wallet  address</source>
+        <oldsource>3 - Ethereum Wallet  address</oldsource>
+        <translation type="vanished">Ethereum Wallet  address</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="268"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="369"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="480"/>
         <source>Back</source>
         <translation>Back</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="219"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="278"/>
         <source>Generate ID Data</source>
         <translation>Generate ID Data</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="238"/>
         <source>ID Data successfully created</source>
-        <translation>ID Data successfully created</translation>
+        <translation type="vanished">ID Data successfully created</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="282"/>
         <source>Goto MyEtherID</source>
-        <translation>Goto MyEtherID</translation>
+        <translation type="vanished">Goto MyEtherID</translation>
     </message>
 </context>
 <context>
     <name>GAPI</name>
     <message>
-        <location filename="gapi.cpp" line="248"/>
         <source>STR_POPUP_SUCESS</source>
-        <translation>Success</translation>
+        <translation type="vanished">Success</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="248"/>
         <source>STR_PERSONAL_NOTES_SUCESS</source>
-        <translation>Personal notes successfully written!</translation>
+        <translation type="vanished">Personal notes successfully written!</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="252"/>
         <source>STR_POPUP_ERROR</source>
-        <translation>Error</translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="472"/>
         <source>STR_ERROR_CODE</source>
-        <translation>Error code = </translation>
+        <translation type="vanished">Error code = </translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="252"/>
         <source>STR_PERSONAL_NOTES_ERROR</source>
-        <translation>Error writing personal notes!</translation>
+        <translation type="vanished">Error writing personal notes!</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="436"/>
         <source>STR_CHANGE_ADDRESS_ERROR_MSG</source>
-        <translation>Please try again. If this error persists, please have your process number and error code ready, and contact the Citizen Card support line at telephone number +351 211 950 500 or e-mail cartaodecidadao@irn.mj.pt.</translation>
+        <translation type="vanished">Please try again. If this error persists, please have your process number and error code ready, and contact the Citizen Card support line at telephone number +351 211 950 500 or e-mail cartaodecidadao@irn.mj.pt.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="443"/>
         <source>STR_CHANGE_ADDRESS_SUCESS</source>
-        <translation>Address Confirmed successfully.</translation>
+        <translation type="vanished">Address Confirmed successfully.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="447"/>
         <source>STR_CONNECTION ERROR</source>
-        <translation>Connection Error</translation>
+        <translation type="vanished">Connection Error</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="448"/>
         <source>STR_VERIFY_INTERNET</source>
-        <translation>Please make sure you are connected to the Internet</translation>
+        <translation type="vanished">Please make sure you are connected to the Internet</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="453"/>
-        <location filename="gapi.cpp" line="460"/>
-        <location filename="gapi.cpp" line="466"/>
         <source>STR_CHANGE_ADDRESS_ERROR</source>
-        <translation>Error in the Address Change operation!</translation>
+        <translation type="vanished">Error in the Address Change operation!</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="453"/>
         <source>STR_CHANGE_ADDRESS_CHECK_PROCESS_NUMBER</source>
-        <translation>Please make sure you typed the correct process number and confirmation code</translation>
+        <translation type="vanished">Please make sure you typed the correct process number and confirmation code</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="457"/>
         <source>STR_CHANGE_ADDRESS_ERROR_INCOMPLETE</source>
-        <translation>Address change process is incomplete!</translation>
+        <translation type="vanished">Address change process is incomplete!</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="457"/>
         <source>STR_CHANGE_ADDRESS_NOT_CONFIRMED</source>
-        <translation>The address is changed in the card but not confirmed by the State central services</translation>
+        <translation type="vanished">The address is changed in the card but not confirmed by the State central services</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="460"/>
         <source>STR_CHANGE_ADDRESS_CHECK_AUTHENTICATION_CERTIFICATE</source>
-        <translation>Please make sure you have a valid authentication certificate</translation>
+        <translation type="vanished">Please make sure you have a valid authentication certificate</translation>
     </message>
     <message>
         <source>STR_CMD_ERROR_MSG</source>
@@ -145,9 +193,8 @@
         <translation type="vanished">Error in the Chave Móvel Digital Login operation!</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="545"/>
         <source>STR_CHANGING_ADDRESS</source>
-        <translation>Changing Address in card...</translation>
+        <translation type="vanished">Changing Address in card...</translation>
     </message>
     <message>
         <source>STR_CMD_LOGIN_SUCESS</source>
@@ -162,27 +209,27 @@
         <translation type="vanished">Sending confirmation code to the server</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="574"/>
+        <location filename="gapi.cpp" line="350"/>
         <source>STR_CARD_ACTIVE_AND_VALID</source>
         <translation>Citizen card active and valid.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="581"/>
+        <location filename="gapi.cpp" line="357"/>
         <source>STR_CARD_CONNECTION_ERROR</source>
         <translation>Citizen Card status could not be verified. Please check your Internet connection.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="587"/>
+        <location filename="gapi.cpp" line="363"/>
         <source>STR_CARD_CANCELED</source>
         <translation>Citizen card canceled. Please contact a competent Citizen Card issuing service.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="592"/>
+        <location filename="gapi.cpp" line="368"/>
         <source>STR_CARD_EXPIRED</source>
         <translation>Expired Citizen Card. Please contact a competent Citizen Card issuing service.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="597"/>
+        <location filename="gapi.cpp" line="373"/>
         <source>STR_CARD_NOT_ACTIVE</source>
         <translation>The Citizen Card was not activated.</translation>
     </message>
@@ -191,255 +238,208 @@
         <translation type="vanished">The Citizen Card has been activated</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="877"/>
         <source>STR_BASIC_INFORMATION</source>
-        <translation>BASIC INFORMATION</translation>
+        <translation type="vanished">BASIC INFORMATION</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="896"/>
         <source>STR_GIVEN_NAME</source>
-        <translation>Given Name(s)</translation>
+        <translation type="vanished">Given Name(s)</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="900"/>
         <source>STR_SURNAME</source>
-        <translation>Surname(s)</translation>
+        <translation type="vanished">Surname(s)</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="904"/>
         <source>STR_GENDER</source>
-        <translation>Gender</translation>
+        <translation type="vanished">Gender</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="905"/>
         <source>STR_HEIGHT</source>
-        <translation>Height</translation>
+        <translation type="vanished">Height</translation>
     </message>
     <message>
         <source>STR_NATIONALITY</source>
         <translation type="vanished">Nationality</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="906"/>
         <source>STR_DATE_OF_BIRTH</source>
-        <translation>Date of birth</translation>
+        <translation type="vanished">Date of birth</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="911"/>
         <source>STR_DOCUMENT_NUMBER</source>
-        <translation>Document Number</translation>
+        <translation type="vanished">Document Number</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="912"/>
         <source>STR_VALIDITY_DATE</source>
-        <translation>Validity Date</translation>
+        <translation type="vanished">Validity Date</translation>
     </message>
     <message>
         <source>STR_AFFILIATION</source>
         <translation type="vanished">Affiliation</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="917"/>
         <source>STR_FATHER</source>
-        <translation>Father</translation>
+        <translation type="vanished">Father</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="921"/>
         <source>STR_MOTHER</source>
-        <translation>Mother</translation>
+        <translation type="vanished">Mother</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="925"/>
         <source>STR_NOTES</source>
-        <translation>Notes</translation>
+        <translation type="vanished">Notes</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="933"/>
         <source>STR_ADDITIONAL_INFORMATION</source>
-        <translation>ADDITIONAL INFORMATION</translation>
+        <translation type="vanished">ADDITIONAL INFORMATION</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="937"/>
         <source>STR_VAT_NUM</source>
-        <translation>VAT identification no.</translation>
+        <translation type="vanished">VAT identification no.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="938"/>
         <source>STR_SOCIAL_SECURITY_NUM</source>
-        <translation>Social Security no.</translation>
+        <translation type="vanished">Social Security no.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="940"/>
         <source>STR_NATIONAL_HEALTH_NUM</source>
-        <translation>National Health System no.</translation>
+        <translation type="vanished">National Health System no.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="944"/>
         <source>STR_CARD_VERSION</source>
-        <translation>Card Version</translation>
+        <translation type="vanished">Card Version</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="945"/>
         <source>STR_DELIVERY_DATE</source>
-        <translation>Delivery Date</translation>
+        <translation type="vanished">Delivery Date</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="947"/>
         <source>STR_DELIVERY_ENTITY</source>
-        <translation>Delivery Entity</translation>
+        <translation type="vanished">Delivery Entity</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="955"/>
         <source>STR_CARD_STATE</source>
-        <translation>Card State</translation>
+        <translation type="vanished">Card State</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="950"/>
         <source>STR_DOCUMENT_TYPE</source>
-        <translation>Document type</translation>
+        <translation type="vanished">Document type</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="952"/>
         <source>STR_DELIVERY_LOCATION</source>
-        <translation>Delivery Location</translation>
+        <translation type="vanished">Delivery Location</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="962"/>
         <source>STR_ADDRESS</source>
-        <translation>ADDRESS</translation>
+        <translation type="vanished">ADDRESS</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="1016"/>
         <source>STR_FOREIGN_COUNTRY</source>
-        <translation>Country</translation>
+        <translation type="vanished">Country</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="1032"/>
         <source>STR_FOREIGN_ADDRESS</source>
-        <translation>Address</translation>
+        <translation type="vanished">Address</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="1020"/>
         <source>STR_FOREIGN_CITY</source>
-        <translation>City</translation>
+        <translation type="vanished">City</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="1018"/>
         <source>STR_FOREIGN_REGION</source>
-        <translation>Region</translation>
+        <translation type="vanished">Region</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="1025"/>
         <source>STR_FOREIGN_LOCALITY</source>
-        <translation>Locality</translation>
+        <translation type="vanished">Locality</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="1027"/>
         <source>STR_FOREIGN_POSTAL_CODE</source>
-        <translation>ZIP</translation>
+        <translation type="vanished">ZIP</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="969"/>
         <source>STR_DISTRICT</source>
-        <translation>District</translation>
+        <translation type="vanished">District</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="971"/>
         <source>STR_MUNICIPALY</source>
-        <translation>Municipality</translation>
+        <translation type="vanished">Municipality</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="973"/>
         <source>STR_CICIL_PARISH</source>
-        <translation>Civil Parish</translation>
+        <translation type="vanished">Civil Parish</translation>
     </message>
     <message>
         <source>STR_ZIP_CODE</source>
         <translation type="vanished">Zip Code</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="978"/>
         <source>STR_AB_STREET_TYPE</source>
-        <translation>Ab. street type</translation>
+        <translation type="vanished">Ab. street type</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="980"/>
         <source>STR_STREET_TYPE</source>
-        <translation>Street type</translation>
+        <translation type="vanished">Street type</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="987"/>
         <source>STR_AB_BUILDING_TYPE</source>
-        <translation>Ab. Building Type</translation>
+        <translation type="vanished">Ab. Building Type</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="989"/>
         <source>STR_BUILDING_TYPE</source>
-        <translation>Building Type</translation>
+        <translation type="vanished">Building Type</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="995"/>
         <source>STR_FLOOR</source>
-        <translation>Floor</translation>
+        <translation type="vanished">Floor</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="997"/>
         <source>STR_SIDE</source>
-        <translation>Side</translation>
+        <translation type="vanished">Side</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="999"/>
         <source>STR_PLACE</source>
-        <translation>Place</translation>
+        <translation type="vanished">Place</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="1003"/>
         <source>STR_ZIP_CODE_4</source>
-        <translation>Zip Code 4</translation>
+        <translation type="vanished">Zip Code 4</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="1005"/>
         <source>STR_ZIP_CODE_3</source>
-        <translation>Zip Code 3</translation>
+        <translation type="vanished">Zip Code 3</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="1007"/>
         <source>STR_POSTAL_LOCALITY</source>
-        <translation>Postal Locality</translation>
+        <translation type="vanished">Postal Locality</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="1012"/>
         <source>STR_LOCALITY</source>
-        <translation>Postal Locality</translation>
+        <translation type="vanished">Postal Locality</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="1054"/>
         <source>STR_PERSONAL_NOTES</source>
-        <translation>PERSONAL NOTES</translation>
+        <translation type="vanished">PERSONAL NOTES</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="854"/>
         <source>STR_PERSONAL_DATA</source>
         <oldsource>PERSONAL DATA</oldsource>
-        <translation>PERSONAL DATA</translation>
+        <translation type="vanished">PERSONAL DATA</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="914"/>
         <source>STR_COUNTRY</source>
         <oldsource>Country</oldsource>
-        <translation>Country</translation>
+        <translation type="vanished">Country</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="982"/>
         <source>STR_STREET_NAME</source>
         <oldsource>Ab. street type</oldsource>
-        <translation>Street Name</translation>
+        <translation type="vanished">Street Name</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="991"/>
         <source>STR_HOUSE_BUILDING_NUM</source>
         <oldsource>Ab. Building Type</oldsource>
-        <translation>House/building no.</translation>
+        <translation type="vanished">House/building no.</translation>
     </message>
     <message>
         <source>STR_BASIC_INFORMATION_UPPERCASE</source>
@@ -1279,75 +1279,75 @@
 <context>
     <name>Popup Card</name>
     <message>
-        <location filename="contentPages/card/App.qml" line="142"/>
-        <location filename="contentPages/card/App.qml" line="148"/>
-        <location filename="contentPages/card/App.qml" line="154"/>
-        <location filename="contentPages/card/App.qml" line="160"/>
-        <location filename="main.qml" line="44"/>
-        <location filename="main.qml" line="53"/>
-        <location filename="main.qml" line="61"/>
+        <location filename="contentPages/card/App.qml" line="151"/>
+        <location filename="contentPages/card/App.qml" line="157"/>
+        <location filename="contentPages/card/App.qml" line="163"/>
+        <location filename="contentPages/card/App.qml" line="169"/>
+        <location filename="main.qml" line="50"/>
+        <location filename="main.qml" line="59"/>
+        <location filename="main.qml" line="67"/>
         <source>STR_POPUP_ERROR</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="144"/>
+        <location filename="contentPages/card/App.qml" line="153"/>
         <source>STR_POPUP_NO_CARD_READER</source>
         <translation>No card readers are detected.</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="150"/>
+        <location filename="contentPages/card/App.qml" line="159"/>
         <source>STR_POPUP_NO_CARD</source>
         <translation>No card present</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="156"/>
+        <location filename="contentPages/card/App.qml" line="165"/>
         <source>STR_SOD_VALIDATION_ERROR</source>
         <translation>SOD validation failed: card data consistency is compromised!</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="162"/>
+        <location filename="contentPages/card/App.qml" line="171"/>
         <source>STR_POPUP_CARD_ACCESS_ERROR</source>
         <translation>A problem has occurred while trying to read card. Please, try again.</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="177"/>
-        <location filename="contentPages/card/App.qml" line="188"/>
-        <location filename="contentPages/card/App.qml" line="198"/>
+        <location filename="contentPages/card/App.qml" line="187"/>
+        <location filename="contentPages/card/App.qml" line="199"/>
+        <location filename="contentPages/card/App.qml" line="209"/>
         <source>STR_POPUP_CARD_READ</source>
         <translation>Reading card data</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="179"/>
+        <location filename="contentPages/card/App.qml" line="189"/>
         <source>STR_POPUP_CARD_REMOVED</source>
         <translation>Citizen card removed</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="190"/>
+        <location filename="contentPages/card/App.qml" line="201"/>
         <source>STR_POPUP_CARD_CHANGED</source>
         <translation>Citizen card inserted</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="200"/>
+        <location filename="contentPages/card/App.qml" line="211"/>
         <source>STR_POPUP_CARD_READ_UNKNOWN</source>
         <translation>Application error! Please reinstall the application</translation>
     </message>
     <message>
-        <location filename="main.qml" line="46"/>
+        <location filename="main.qml" line="52"/>
         <source>STR_GENERIC_ERROR_MSG</source>
         <translation>Please try again. If this error persists, contact the Citizen Card support line at telephone number +351 211 950 500 or e-mail cartaodecidadao@irn.mj.pt.</translation>
     </message>
     <message>
-        <location filename="main.qml" line="47"/>
+        <location filename="main.qml" line="53"/>
         <source>STR_ERROR_CODE</source>
         <translation>Error code = </translation>
     </message>
     <message>
-        <location filename="main.qml" line="55"/>
+        <location filename="main.qml" line="61"/>
         <source>STR_CERTIFICATES_IMPORT_ERROR_MSG</source>
         <translation>Error importing certificates</translation>
     </message>
     <message>
-        <location filename="main.qml" line="63"/>
+        <location filename="main.qml" line="69"/>
         <source>STR_CERTIFICATES_REMOVE_ERROR_MSG</source>
         <translation>Error removing certificates</translation>
     </message>

@@ -42,7 +42,9 @@ void AppController::initTranslation(){
 
     QString     appPath = QCoreApplication::applicationDirPath();
     m_Settings.setExePath(appPath);
-    if (LoadTranslationFile("en")==false){
+    QString CurrLng   = m_Settings.getGuiLanguageString();
+
+    if (LoadTranslationFile(CurrLng)==false){
         emit signalLanguageChangedError();
     }
 }
@@ -58,8 +60,16 @@ bool AppController::LoadTranslationFile(QString NewLanguage)
     if (!m_translator.load(strTranslationFile,m_Settings.getExePath()+"/"))
     {
         // this should not happen, since we've built the menu with the translation filenames
-        qDebug() << "C++: AppController LoadTranslationFile Error";
-        return false;
+        strTranslationFile = QString("ImportID_") + STR_DEF_GUILANGUAGE;
+        //try load default translation file
+        qDebug() << "C++: AppController LoadTranslationFile" << strTranslationFile << m_Settings.getExePath();
+        if (!m_translator.load(strTranslationFile,m_Settings.getExePath()+"/"))
+        {
+            // this should not happen too, since we've built the menu with the translation filenames
+            qDebug() << "C++: AppController Load Default Translation File Error";
+            return false;
+        }
+        qDebug() << "C++: AppController Loaded Default Translation File";
     }
     //------------------------------------
     // install the translator object and load the .qm file for

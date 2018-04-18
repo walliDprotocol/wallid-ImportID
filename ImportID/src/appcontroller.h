@@ -39,7 +39,7 @@ public slots:
 
 private:
     GUISettings&    m_Settings;
-    bool LoadTranslationFile( QString NewLanguage );
+    bool LoadTranslationFile(QString NewLanguage);
 
 protected:
     QTranslator m_translator;

@@ -24,6 +24,12 @@ Window {
 
     FontLoader { id: lato; source: "qrc:/fonts/lato/Lato-Regular.ttf" }
 
+    onMinimumWidthChanged: {
+        console.log("Window Loaded")
+        controler.initTranslation()
+        gapi.initTranslation()
+    }
+
     Connections {
         target: controler
         onSignalLanguageChangedError: {
