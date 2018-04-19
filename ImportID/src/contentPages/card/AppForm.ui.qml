@@ -29,8 +29,8 @@ Item {
     property alias propertStartButton: startButton
     property alias propertHelpTextMenuMouseArea: helpTextMenuMouseArea
     property alias propertHelpTextMenu: helpTextMenu
-    property alias propertyHelpTextBlockIdMenuMouseArea: helpTextBlockIdMenuMouseArea
-    property alias propertHelpTextBlockId: helpTextBlockId
+    property alias propertyAboutTextBlockIdMenuMouseArea: aboutTextBlockIdMenuMouseArea
+    property alias propertAboutTextBlockId: aboutTextBlockId
 
     property alias propertyGenerateButton: generateButton
     property alias propertyBackButton: backButton
@@ -60,10 +60,32 @@ Item {
         anchors.bottom: parent.bottom
         height: 30
         enabled: true
+
         Rectangle {
-            id: rectLeft
-            width: parent.width / 2
+            id: rectAboutUs
+            width: 100
             anchors.bottom: parent.bottom
+            height: parent.height
+            enabled: true
+            anchors.right: rectBotton.right
+            MouseArea {
+                id: aboutTextBlockIdMenuMouseArea
+                hoverEnabled: true
+                anchors.fill: parent
+            }
+            Text {
+                id: aboutTextBlockId
+                text: qsTr("STR_ABOUT_US") + controler.autoTr
+                font.capitalization: Font.MixedCase
+                anchors.right: parent.right
+                enabled: true
+            }
+        }
+        Rectangle {
+            id: rectHowTouse
+            width: 100
+            anchors.bottom: parent.bottom
+            anchors.right: rectAboutUs.left
             height: parent.height
             enabled: true
             MouseArea {
@@ -78,26 +100,7 @@ Item {
                 enabled: true
             }
         }
-        Rectangle {
-            id: rectRight
-            width: parent.width / 2
-            anchors.bottom: parent.bottom
-            height: parent.height
-            enabled: true
-            anchors.left: rectLeft.right
-            MouseArea {
-                id: helpTextBlockIdMenuMouseArea
-                hoverEnabled: true
-                anchors.fill: parent
-            }
-            Text {
-                id: helpTextBlockId
-                text: qsTr("STR_POWER_BY") + controler.autoTr
-                font.capitalization: Font.MixedCase
-                anchors.right: parent.right
-                enabled: true
-            }
-        }
+
     }
 
     Rectangle {
@@ -144,20 +147,19 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: rectSelectLanguage.bottom
 
-            Text {
-                id: textTopTitle
-                text: qsTr("STR_TEXT_TITLE") + controler.autoTr
-                y: 100
-                font.bold: false
+            Image {
+                id: imageIcon
+                antialiasing: true
+                height: 160
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: Constants.SIZE_TEXT_TITLE
-                color: Constants.COLOR_MAIN_DARK
+                fillMode: Image.PreserveAspectFit
+                source : "qrc:/images/icon.png"
             }
             Text {
                 id: textAppSlogan
                 text: qsTr("STR_TEXT_SUB_TITLE") + controler.autoTr
-                y: 180
                 anchors.horizontalCenter: parent.horizontalCenter
+                y: imageIcon.height
                 font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
                 color: Constants.COLOR_MAIN_SOFT_GRAY
             }
@@ -210,11 +212,25 @@ Item {
                 Button {
                     id: startButton
                     text: qsTr("STR_IMPORT_BUTTON") + controler.autoTr
+                    font.capitalization: Font.MixedCase
+                    font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
+                    contentItem: Text {
+                        text: startButton.text
+                        font: startButton.font
+                        color: startButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
+                        opacity: enabled ? 1.0 : 0.3
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        elide: Text.ElideRight
+                    }
                     width: Constants.WIDTH_BUTTON
                     height: Constants.HEIGHT_BOTTOM_COMPONENT
-                    font.capitalization: Font.MixedCase
                     enabled: true
                     anchors.horizontalCenter: parent.horizontalCenter
+                    background: Rectangle {
+                        color: Constants.COLOR_MAIN_DARK
+                        radius : 10
+                    }
                 }
             }
         }
@@ -229,7 +245,7 @@ Item {
         Text {
             id: textStep1
             x: 30
-            y: 50
+            y: Constants.PAGE_Y_POS
             text: "1 " + qsTr("STR_SELECT_CARD_READER") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
@@ -290,12 +306,25 @@ Item {
         Button {
             id: backGenerateButton
             x: 30
-            y: Constants.BUTTONS_Y_POS
-            text: qsTr("STR_BACK_BUTTON") + controler.autoTr
+            y: Constants.BUTTONS_BACK_Y_POS
+            text: "<-"
             font.capitalization: Font.MixedCase
-            width: Constants.WIDTH_BUTTON
-            height: Constants.HEIGHT_BOTTOM_COMPONENT
+            width: 40
+            height: 40
             enabled: true
+            contentItem: Text {
+                text: backGenerateButton.text
+                font: backGenerateButton.font
+                color: backGenerateButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
+                opacity: enabled ? 1.0 : 0.3
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                elide: Text.ElideRight
+            }
+            background: Rectangle {
+                color: Constants.COLOR_MAIN_DARK
+                radius : 10
+            }
         }
         Button {
             id: generateButton
@@ -303,9 +332,24 @@ Item {
             x: parent.width - 30 - generateButton.width
             text: qsTr("STR_GENERATE") + controler.autoTr
             font.capitalization: Font.MixedCase
-            width: Constants.WIDTH_BUTTON
+            font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
+            contentItem: Text {
+                text: generateButton.text
+                font: generateButton.font
+                color: generateButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
+                opacity: enabled ? 1.0 : 0.3
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                elide: Text.ElideRight
+            }
+            width: 2 * Constants.WIDTH_BUTTON
             height: Constants.HEIGHT_BOTTOM_COMPONENT
             enabled: false
+            anchors.horizontalCenter: parent.horizontalCenter
+            background: Rectangle {
+                color: Constants.COLOR_MAIN_DARK
+                radius : 10
+            }
         }
     }
 
@@ -318,7 +362,7 @@ Item {
         Text {
             id: textStep4
             x: 30
-            y: 50
+            y: Constants.PAGE_Y_POS
             text: qsTr("STR_DATA_CREATED") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
@@ -331,7 +375,7 @@ Item {
             wrapMode: Text.WordWrap
             anchors.top: textStep4.bottom
             anchors.topMargin: 10
-            font.pixelSize: Constants.SIZE_TEXT_BODY
+            font.pixelSize: Constants.SIZE_TEXT_LABEL
             color: Constants.COLOR_MAIN_BLACK
         }
         Text {
@@ -391,12 +435,25 @@ Item {
         Button {
             id: backButton
             x: 30
-            y: Constants.BUTTONS_Y_POS
-            text: qsTr("STR_BACK_BUTTON") + controler.autoTr
+            y: Constants.BUTTONS_BACK_Y_POS
+            text: "<-"
             font.capitalization: Font.MixedCase
-            width: Constants.WIDTH_BUTTON
-            height: Constants.HEIGHT_BOTTOM_COMPONENT
+            width: 40
+            height: 40
             enabled: true
+            contentItem: Text {
+                text: backButton.text
+                font: backButton.font
+                color: backButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
+                opacity: enabled ? 1.0 : 0.3
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                elide: Text.ElideRight
+            }
+            background: Rectangle {
+                color: Constants.COLOR_MAIN_DARK
+                radius : 10
+            }
         }
         Button {
             id: gotoButton
@@ -404,9 +461,24 @@ Item {
             y: Constants.BUTTONS_Y_POS
             text: qsTr("STR_GOTO_MYETHERID_IO") + controler.autoTr
             font.capitalization: Font.MixedCase
-            width: Constants.WIDTH_BUTTON
+            font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
+            contentItem: Text {
+                text: gotoButton.text
+                font: gotoButton.font
+                color: gotoButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
+                opacity: enabled ? 1.0 : 0.3
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                elide: Text.ElideRight
+            }
+            width: 2 * Constants.WIDTH_BUTTON
             height: Constants.HEIGHT_BOTTOM_COMPONENT
             enabled: true
+            anchors.horizontalCenter: parent.horizontalCenter
+            background: Rectangle {
+                color: Constants.COLOR_MAIN_DARK
+                radius : 10
+            }
         }
     }
 
@@ -419,7 +491,7 @@ Item {
         Text {
             id: textTop1
             x: 30
-            y: 50
+            y: Constants.PAGE_Y_POS
             text: qsTr("STR_WHAT_IS_BLOCKID") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
@@ -498,12 +570,25 @@ Item {
         Button {
             id: backHelpButton
             x: 30
-            y: Constants.BUTTONS_Y_POS
-            text: qsTr("STR_BACK_BUTTON") + controler.autoTr
+            y: Constants.BUTTONS_BACK_Y_POS
+            text: "<-"
             font.capitalization: Font.MixedCase
-            width: Constants.WIDTH_BUTTON
-            height: Constants.HEIGHT_BOTTOM_COMPONENT
+            width: 40
+            height: 40
             enabled: true
+            contentItem: Text {
+                text: backGenerateButton.text
+                font: backGenerateButton.font
+                color: backGenerateButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
+                opacity: enabled ? 1.0 : 0.3
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                elide: Text.ElideRight
+            }
+            background: Rectangle {
+                color: Constants.COLOR_MAIN_DARK
+                radius : 10
+            }
         }
     }
 }

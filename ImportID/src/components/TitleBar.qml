@@ -58,8 +58,8 @@ Item {
                 id: categoryText
                 anchors {
                     verticalCenter: parent.verticalCenter
-                    horizontalCenter: parent.horizontalCenter
                 }
+                x: 10
                 text: mainWindow.title
                 font.pixelSize: Constants.SIZE_TEXT_BODY
                 font.family: lato.name
@@ -79,8 +79,8 @@ Item {
                 verticalCenter: parent.verticalCenter
             }
             source: mouseAreaMinimizeButton.containsMouse ?
-                        "../images/titleBar/minimize_hover.png" :
-                        "../images/titleBar/minimize.png"
+                        "../images/titleBar/minimize_hover.svg" :
+                        "../images/titleBar/minimize.svg"
             MouseArea {
                 id: mouseAreaMinimizeButton
                 anchors.fill: parent
@@ -100,8 +100,8 @@ Item {
                 verticalCenter: parent.verticalCenter
             }
             source: mouseAreaQuitButton.containsMouse ?
-                        "../images/titleBar/quit_hover.png" :
-                        "../images/titleBar/quit.png"
+                        "../images/titleBar/quit_hover.svg" :
+                        "../images/titleBar/quit.svg"
             MouseArea {
                 id: mouseAreaQuitButton
                 anchors.fill: parent

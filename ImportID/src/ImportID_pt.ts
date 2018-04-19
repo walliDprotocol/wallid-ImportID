@@ -4,34 +4,34 @@
 <context>
     <name>App</name>
     <message>
-        <location filename="contentPages/card/App.qml" line="78"/>
-        <location filename="contentPages/card/App.qml" line="131"/>
+        <location filename="contentPages/card/App.qml" line="79"/>
+        <location filename="contentPages/card/App.qml" line="132"/>
         <source>STR_WALLET</source>
         <translation>Carteira:</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="79"/>
-        <location filename="contentPages/card/App.qml" line="132"/>
+        <location filename="contentPages/card/App.qml" line="80"/>
+        <location filename="contentPages/card/App.qml" line="133"/>
         <source>STR_COPY_DATAID</source>
         <translation>Selecione o texto na caixa abaixo e copie e cole esses dados no MyEtherID (Import Section)</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="269"/>
+        <location filename="contentPages/card/App.qml" line="272"/>
         <source>STR_APP_TITLE_TEXT</source>
         <translation>ImportID - Off-Chain to On-Chain Identity Service</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="331"/>
+        <location filename="contentPages/card/App.qml" line="334"/>
         <source>STR_ERROR</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="333"/>
+        <location filename="contentPages/card/App.qml" line="336"/>
         <source>STR_ERROR_FILL_WALLET</source>
         <translation>Por favor, preencha o endereço da Carteira Ethereum</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="353"/>
+        <location filename="contentPages/card/App.qml" line="356"/>
         <source>STR_APP_TITLE</source>
         <translation>ImportID</translation>
     </message>
@@ -39,110 +39,112 @@
 <context>
     <name>AppForm.ui</name>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="76"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="119"/>
         <source>STR_HOW_TO_USE</source>
         <translation>Como usar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="95"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="79"/>
         <source>STR_POWER_BY</source>
         <translation>Desenvolvido por Block ID @ 2018</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="134"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="158"/>
         <source>STR_LANG_EN</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="135"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="159"/>
         <source>STR_LANG_PT</source>
         <translation>Português</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="149"/>
         <source>STR_TEXT_TITLE</source>
-        <translation>ImportID</translation>
+        <translation type="vanished">ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="158"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="181"/>
         <source>STR_TEXT_SUB_TITLE</source>
         <translation>Importar atributos de ID de documentos de identificação certificados</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="197"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="220"/>
         <source>STR_CHOOSE_ID_TYPE</source>
         <translation>Escolha o tipo de ID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="198"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="221"/>
         <source>STR_CC_PORTUGUESE</source>
         <translation>Cartão de Cidadão - República Portuguesa</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="212"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="235"/>
         <source>STR_IMPORT_BUTTON</source>
         <translation>ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="233"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="270"/>
         <source>STR_SELECT_CARD_READER</source>
         <translation>Selecione o leitor de cartão</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="253"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="290"/>
         <source>STR_CHOOSE_DATA_TO_IMPORT</source>
         <translation>Escolher dados para importar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="264"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="301"/>
         <source>STR_CHECKBOX_IDENTITY</source>
         <translation>Identidade</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="271"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="308"/>
         <source>STR_CHECKBOX_ADDRESS</source>
         <translation>Endereço</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="277"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="314"/>
         <source>STR_ENTER_WALLET</source>
         <translation>Seu endereço de carteira eletrônica</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="294"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="395"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="502"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="580"/>
         <source>STR_BACK_BUTTON</source>
         <translation>Voltar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="304"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="354"/>
         <source>STR_GENERATE</source>
         <translation>Gerar dados de ID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="322"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="99"/>
+        <source>STR_ABOUT_US</source>
+        <translation>Sobre nós</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="387"/>
         <source>STR_DATA_CREATED</source>
         <translation>ID Data Criado com sucesso!</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="405"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="483"/>
         <source>STR_GOTO_MYETHERID_IO</source>
         <translation>Ir para MyEtherWallet.io</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="423"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="443"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="463"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="483"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="501"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="521"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="541"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="561"/>
         <source>STR_WHAT_IS_BLOCKID</source>
         <translation>O que é o BlockID?</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="430"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="450"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="470"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="490"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="508"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="528"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="548"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="568"/>
         <source>STR_WHAT_IS_BLOCKID_TEXT</source>
         <translation>What is BlockID  Text</translation>
     </message>
@@ -178,12 +180,12 @@
 <context>
     <name>Popup</name>
     <message>
-        <location filename="contentPages/card/App.qml" line="221"/>
+        <location filename="contentPages/card/App.qml" line="222"/>
         <source>STR_POPUP_ERROR</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="223"/>
+        <location filename="contentPages/card/App.qml" line="224"/>
         <source>STR_SIGN_WALLET_ERROR</source>
         <translation>Endereço de carteira inválido</translation>
     </message>
@@ -191,10 +193,10 @@
 <context>
     <name>Popup Card</name>
     <message>
-        <location filename="contentPages/card/App.qml" line="148"/>
-        <location filename="contentPages/card/App.qml" line="154"/>
-        <location filename="contentPages/card/App.qml" line="160"/>
-        <location filename="contentPages/card/App.qml" line="166"/>
+        <location filename="contentPages/card/App.qml" line="149"/>
+        <location filename="contentPages/card/App.qml" line="155"/>
+        <location filename="contentPages/card/App.qml" line="161"/>
+        <location filename="contentPages/card/App.qml" line="167"/>
         <location filename="main.qml" line="50"/>
         <location filename="main.qml" line="59"/>
         <location filename="main.qml" line="67"/>
@@ -202,44 +204,44 @@
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="150"/>
+        <location filename="contentPages/card/App.qml" line="151"/>
         <source>STR_POPUP_NO_CARD_READER</source>
         <translation>Leitor de cartões não detectado.</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="156"/>
+        <location filename="contentPages/card/App.qml" line="157"/>
         <source>STR_POPUP_NO_CARD</source>
         <translation>Cartão não encontrado</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="162"/>
+        <location filename="contentPages/card/App.qml" line="163"/>
         <source>STR_SOD_VALIDATION_ERROR</source>
         <translation>Consistência da informação do cartão está comprometida!</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="168"/>
+        <location filename="contentPages/card/App.qml" line="169"/>
         <source>STR_POPUP_CARD_ACCESS_ERROR</source>
         <translation>Ocorreu um erro ao tentar ler o cartão. Tente novamente por favor.</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="184"/>
-        <location filename="contentPages/card/App.qml" line="196"/>
-        <location filename="contentPages/card/App.qml" line="206"/>
+        <location filename="contentPages/card/App.qml" line="185"/>
+        <location filename="contentPages/card/App.qml" line="197"/>
+        <location filename="contentPages/card/App.qml" line="207"/>
         <source>STR_POPUP_CARD_READ</source>
         <translation>A ler o cartão</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="186"/>
+        <location filename="contentPages/card/App.qml" line="187"/>
         <source>STR_POPUP_CARD_REMOVED</source>
         <translation>Cartão de Cidadão removido</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="198"/>
+        <location filename="contentPages/card/App.qml" line="199"/>
         <source>STR_POPUP_CARD_CHANGED</source>
         <translation>Cartão de Cidadão inserido</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="208"/>
+        <location filename="contentPages/card/App.qml" line="209"/>
         <source>STR_POPUP_CARD_READ_UNKNOWN</source>
         <translation>Erro da aplicação! Por favor reinstale a aplicação</translation>
     </message>

@@ -77,7 +77,7 @@ AppForm {
                         + closeImportText()
 
                 propertyTextWalletAddress.text = qsTr("STR_WALLET") + " " + controler.autoTr + propertyTextFieldWallet.text
-                propertyTextStepDescription.text = qsTr("STR_COPY_DATAID") + controler.autoTr
+                propertyTextStepDescription.text = "4 " + qsTr("STR_COPY_DATAID") + controler.autoTr
                 propertyGeneratePage.visible = false
                 propertyFinishPage.visible = true
                 propertyBusyIndicator.running = false
@@ -130,7 +130,7 @@ AppForm {
             }
 
             propertyTextWalletAddress.text = qsTr("STR_WALLET") + " " + controler.autoTr + propertyTextFieldWallet.text
-            propertyTextStepDescription.text = qsTr("STR_COPY_DATAID") + controler.autoTr
+            propertyTextStepDescription.text = "4 " + qsTr("STR_COPY_DATAID") + controler.autoTr
 
             propertyGeneratePage.visible = false
             propertyFinishPage.visible = true
@@ -294,28 +294,15 @@ AppForm {
                          Font.Normal
         color: propertHelpTextMenuMouseArea.containsMouse ?
                          Constants.COLOR_MAIN :
-                         Constants.COLOR_MAIN_BLACK
+                         Constants.COLOR_MAIN_SOFT_GRAY
     }
-    propertHelpTextMenu{
-        font.weight: propertHelpTextMenuMouseArea.containsMouse ?
+    propertAboutTextBlockId{
+        font.weight: propertyAboutTextBlockIdMenuMouseArea.containsMouse ?
                          Font.Bold :
                          Font.Normal
-        color: propertHelpTextMenuMouseArea.containsMouse ?
+        color: propertyAboutTextBlockIdMenuMouseArea.containsMouse ?
                          Constants.COLOR_MAIN :
-                         Constants.COLOR_MAIN_BLACK
-    }
-    propertyHelpTextBlockIdMenuMouseArea {
-        onClicked: {
-            Qt.openUrlExternally("https://blockid.herokuapp.com")
-        }
-    }
-    propertHelpTextBlockId{
-        font.weight: propertyHelpTextBlockIdMenuMouseArea.containsMouse ?
-                         Font.Bold :
-                         Font.Normal
-        color: propertyHelpTextBlockIdMenuMouseArea.containsMouse ?
-                         Constants.COLOR_MAIN :
-                         Constants.COLOR_MAIN_BLACK
+                         Constants.COLOR_MAIN_SOFT_GRAY
     }
 
     propertyGenerateButton {
