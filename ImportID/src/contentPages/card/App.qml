@@ -209,10 +209,19 @@ AppForm {
             }
             mainFormID.propertyPageLoader.propertyGeneralPopUp.visible = true;
         }
-        onSignalWalletAddressSignSucess: {
-            console.log("Signal Wallet Address Sign Sucess = " + walletAddressSigned)
+        onSignalWalletAddressSignSuccess: {
+            console.log("Signal Wallet Address Sign Success = " + walletAddressSigned)
             tempWalletSigned = walletAddressSigned
             gapi.startCardReading()
+        }
+        onSignalWalletAddressSignFail: {
+            console.log("Signal Wallet Address Sign Fail")
+            propertyBusyIndicator.running = false
+            mainFormID.propertyPageLoader.propertyGeneralTitleText.text =
+                    qsTranslate("Popup","STR_POPUP_ERROR")
+            mainFormID.propertyPageLoader.propertyGeneralPopUpLabelText.text =
+                    qsTranslate("Popup","STR_SIGN_WALLET_ERROR")
+            mainFormID.propertyPageLoader.propertyGeneralPopUp.visible = true;
         }
         onSignalGetSodSucess: {
             console.log("Signal Get Sod Sucess = " + Sod)

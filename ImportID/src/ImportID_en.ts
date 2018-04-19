@@ -16,22 +16,22 @@
         <translation>Select the text in the box below and copy and then paste this data into MyEthered ID ( Import Section )</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="260"/>
+        <location filename="contentPages/card/App.qml" line="269"/>
         <source>STR_APP_TITLE_TEXT</source>
         <translation>ImportID - Off-Chain to On-Chain Identity Service</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="322"/>
+        <location filename="contentPages/card/App.qml" line="331"/>
         <source>STR_ERROR</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="324"/>
+        <location filename="contentPages/card/App.qml" line="333"/>
         <source>STR_ERROR_FILL_WALLET</source>
         <translation>Please Fill the Ethereum Wallet Address</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="344"/>
+        <location filename="contentPages/card/App.qml" line="353"/>
         <source>STR_APP_TITLE</source>
         <translation>ImportID</translation>
     </message>
@@ -67,6 +67,11 @@
         <location filename="contentPages/card/AppForm.ui.qml" line="158"/>
         <source>STR_TEXT_SUB_TITLE</source>
         <translation>Import ID attributes from certified ID documents</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="197"/>
+        <source>STR_CHOOSE_ID_TYPE</source>
+        <translation>Choose the ID Type</translation>
     </message>
     <message>
         <location filename="contentPages/card/AppForm.ui.qml" line="198"/>
@@ -168,6 +173,19 @@
         <location filename="gapi.cpp" line="383"/>
         <source>STR_CARD_NOT_ACTIVE</source>
         <translation>The Citizen Card was not activated.</translation>
+    </message>
+</context>
+<context>
+    <name>Popup</name>
+    <message>
+        <location filename="contentPages/card/App.qml" line="221"/>
+        <source>STR_POPUP_ERROR</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/App.qml" line="223"/>
+        <source>STR_SIGN_WALLET_ERROR</source>
+        <translation>Invalid wallet address</translation>
     </message>
 </context>
 <context>

@@ -16,22 +16,22 @@
         <translation>Selecione o texto na caixa abaixo e copie e cole esses dados no MyEtherID (Import Section)</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="260"/>
+        <location filename="contentPages/card/App.qml" line="269"/>
         <source>STR_APP_TITLE_TEXT</source>
         <translation>ImportID - Off-Chain to On-Chain Identity Service</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="322"/>
+        <location filename="contentPages/card/App.qml" line="331"/>
         <source>STR_ERROR</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="324"/>
+        <location filename="contentPages/card/App.qml" line="333"/>
         <source>STR_ERROR_FILL_WALLET</source>
         <translation>Por favor, preencha o endereço da Carteira Ethereum</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="344"/>
+        <location filename="contentPages/card/App.qml" line="353"/>
         <source>STR_APP_TITLE</source>
         <translation>ImportID</translation>
     </message>
@@ -67,6 +67,11 @@
         <location filename="contentPages/card/AppForm.ui.qml" line="158"/>
         <source>STR_TEXT_SUB_TITLE</source>
         <translation>Importar atributos de ID de documentos de identificação certificados</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="197"/>
+        <source>STR_CHOOSE_ID_TYPE</source>
+        <translation>Escolha o tipo de ID</translation>
     </message>
     <message>
         <location filename="contentPages/card/AppForm.ui.qml" line="198"/>
@@ -168,6 +173,19 @@
         <location filename="gapi.cpp" line="383"/>
         <source>STR_CARD_NOT_ACTIVE</source>
         <translation>O Cartão de Cidadão não foi ativado.</translation>
+    </message>
+</context>
+<context>
+    <name>Popup</name>
+    <message>
+        <location filename="contentPages/card/App.qml" line="221"/>
+        <source>STR_POPUP_ERROR</source>
+        <translation>Erro</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/App.qml" line="223"/>
+        <source>STR_SIGN_WALLET_ERROR</source>
+        <translation>Endereço de carteira inválido</translation>
     </message>
 </context>
 <context>

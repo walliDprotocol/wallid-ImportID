@@ -194,7 +194,7 @@ Item {
                     anchors.left: imageEntity.right
                     anchors.margins: 20
                     model: [
-                        "",
+                        qsTr("STR_CHOOSE_ID_TYPE") + controler.autoTr,
                         qsTr("STR_CC_PORTUGUESE") + controler.autoTr
                     ]
                 }

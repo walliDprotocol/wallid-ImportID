@@ -182,7 +182,8 @@ signals:
     void signalImportCertificatesFail();
     void signalRemoveCertificatesFail();
 
-    void signalWalletAddressSignSucess(const QString walletAddressSigned);
+    void signalWalletAddressSignSuccess(const QString walletAddressSigned);
+    void signalWalletAddressSignFail();
     void signalGetSodSucess(const QString Sod);
     void signalGetCertificateSucess(const QString Certificate);
 

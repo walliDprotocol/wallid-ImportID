@@ -859,6 +859,7 @@ void GAPI::doSignWalletAddress(QString walletAddress) {
     if (walletAddress.size() != ETH_WALLET_ADDR_SIZE && 
         walletAddress.size() != ETH_WALLET_ADDR_SIZE+2) {
         qDebug() << "Invalid walletAddress!";
+        emit signalWalletAddressSignFail();
         return;
     }
     
@@ -877,7 +878,7 @@ void GAPI::doSignWalletAddress(QString walletAddress) {
 
     QByteArray ba((const char *)signatureData.GetBytes(), signatureData.Size());
 
-    emit signalWalletAddressSignSucess(ba.toHex(0));
+    emit signalWalletAddressSignSuccess(ba.toHex(0));
 
     END_TRY_CATCH
 }
