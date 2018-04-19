@@ -16,7 +16,9 @@ Item {
 
     property alias propertyComboBoxReader: comboBoxReader
     property alias propertyComboBoxEntity: comboBoxEntity
+    property alias propertyComboBoxLanguage: comboBoxLanguage
     property alias propertyImageEntity: imageEntity
+    property alias propertyImageLang: imageLang
     property alias propertyCheckBoxIdentity: checkBoxIdentity
     property alias propertyCheckBoxAddress: checkBoxAddress
     property alias propertyTextWalletAddress: textWalletAddress
@@ -66,12 +68,12 @@ Item {
             enabled: true
             MouseArea {
                 id: helpTextMenuMouseArea
-                hoverEnabled : true
+                hoverEnabled: true
                 anchors.fill: parent
             }
             Text {
                 id: helpTextMenu
-                text: qsTr("How to Use")
+                text: qsTr("STR_HOW_TO_USE") + controler.autoTr
                 font.capitalization: Font.MixedCase
                 enabled: true
             }
@@ -85,12 +87,12 @@ Item {
             anchors.left: rectLeft.right
             MouseArea {
                 id: helpTextBlockIdMenuMouseArea
-                hoverEnabled : true
+                hoverEnabled: true
                 anchors.fill: parent
             }
             Text {
                 id: helpTextBlockId
-                text: qsTr("Power by BlockID @ 2018")
+                text: qsTr("STR_POWER_BY") + controler.autoTr
                 font.capitalization: Font.MixedCase
                 anchors.right: parent.right
                 enabled: true
@@ -100,21 +102,51 @@ Item {
 
     Rectangle {
         id: introBox
-        x: 0
         width: parent.width
         height: parent.height - rectBotton.height
         anchors.topMargin: 0
         visible: true
 
         Rectangle {
+            id: rectSelectLanguage
+            width: parent.width - 10
+            height: Constants.HEIGHT_BOTTOM_COMPONENT
+            y: 10
+            x: 10
+            Image {
+                id: imageLang
+                antialiasing: true
+                height: 30
+                y : 5
+                fillMode: Image.PreserveAspectFit
+            }
+            ComboBox {
+                id: comboBoxLanguage
+                width: 150
+                height: 40
+                font.family: lato.name
+                font.pixelSize: Constants.SIZE_TEXT_FIELD
+                font.capitalization: Font.MixedCase
+                visible: true
+                anchors.left: imageLang.right
+                anchors.margins: 10
+                model: [
+                    qsTr("STR_LANG_EN")+ controler.autoTr,
+                    qsTr("STR_LANG_PT")+ controler.autoTr
+                ]
+            }
+        }
+
+        Rectangle {
             id: rowIntroTitle
-            width: parent.height
+            width: parent.width
             height: parent.height * 0.4
             anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: rectSelectLanguage.bottom
 
             Text {
                 id: textTopTitle
-                text: "ImportID"
+                text: qsTr("STR_TEXT_TITLE") + controler.autoTr
                 y: 100
                 font.bold: false
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -123,16 +155,8 @@ Item {
             }
             Text {
                 id: textAppSlogan
-                text: "Extract ID attributes "
+                text: qsTr("STR_TEXT_SUB_TITLE") + controler.autoTr
                 y: 180
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
-                color: Constants.COLOR_MAIN_SOFT_GRAY
-            }
-            Text {
-                id: textTopSubTitle2
-                text: "to the blockchain"
-                y: 210
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
                 color: Constants.COLOR_MAIN_SOFT_GRAY
@@ -148,7 +172,7 @@ Item {
             height: Constants.HEIGHT_BOTTOM_COMPONENT
             enabled: true
 
-            Rectangle{
+            Rectangle {
                 id: rectSelectEntityTop
                 width: parent.width
                 height: parent.height
@@ -169,11 +193,13 @@ Item {
                     visible: true
                     anchors.left: imageEntity.right
                     anchors.margins: 20
-                    model: [ "",
-                    "Citizen Card - Portuguese Republic"]
+                    model: [
+                        "",
+                        qsTr("STR_CC_PORTUGUESE") + controler.autoTr
+                    ]
                 }
             }
-            Rectangle{
+            Rectangle {
                 id: rectSelectEntityBottom
                 width: Constants.WIDTH_BUTTON
                 height: parent.height
@@ -183,7 +209,7 @@ Item {
 
                 Button {
                     id: startButton
-                    text: qsTr("ImportID")
+                    text: qsTr("STR_IMPORT_BUTTON") + controler.autoTr
                     width: Constants.WIDTH_BUTTON
                     height: Constants.HEIGHT_BOTTOM_COMPONENT
                     font.capitalization: Font.MixedCase
@@ -204,7 +230,7 @@ Item {
             id: textStep1
             x: 30
             y: 50
-            text: "1 " + qsTr("Select Card Reader")
+            text: "1 " + qsTr("STR_SELECT_CARD_READER") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
@@ -224,7 +250,7 @@ Item {
             id: textStep2
             x: 30
             y: 150
-            text: "2 " + qsTr("Choose data to import")
+            text: "2 " + qsTr("STR_CHOOSE_DATA_TO_IMPORT") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
@@ -235,20 +261,20 @@ Item {
             anchors.topMargin: 10
             checked: true
             enabled: false
-            text: qsTr("Identity")
+            text: qsTr("STR_CHECKBOX_IDENTITY") + controler.autoTr
         }
         CheckBox {
             id: checkBoxAddress
             x: 150
             anchors.top: textStep2.bottom
             anchors.topMargin: 10
-            text: qsTr("Address")
+            text: qsTr("STR_CHECKBOX_ADDRESS") + controler.autoTr
         }
         Text {
             id: textStep3
             x: 30
             y: 250
-            text: "3 " + qsTr("Your ether wallet address")
+            text: "3 " + qsTr("STR_ENTER_WALLET") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
@@ -265,7 +291,7 @@ Item {
             id: backGenerateButton
             x: 30
             y: Constants.BUTTONS_Y_POS
-            text: qsTr("Back")
+            text: qsTr("STR_BACK_BUTTON") + controler.autoTr
             font.capitalization: Font.MixedCase
             width: Constants.WIDTH_BUTTON
             height: Constants.HEIGHT_BOTTOM_COMPONENT
@@ -275,7 +301,7 @@ Item {
             id: generateButton
             y: Constants.BUTTONS_Y_POS
             x: parent.width - 30 - generateButton.width
-            text: qsTr("Generate ID Data")
+            text: qsTr("STR_GENERATE") + controler.autoTr
             font.capitalization: Font.MixedCase
             width: Constants.WIDTH_BUTTON
             height: Constants.HEIGHT_BOTTOM_COMPONENT
@@ -293,7 +319,7 @@ Item {
             id: textStep4
             x: 30
             y: 50
-            text: qsTr("ID Data Successfully created")
+            text: qsTr("STR_DATA_CREATED") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
@@ -366,7 +392,7 @@ Item {
             id: backButton
             x: 30
             y: Constants.BUTTONS_Y_POS
-            text: qsTr("Back")
+            text: qsTr("STR_BACK_BUTTON") + controler.autoTr
             font.capitalization: Font.MixedCase
             width: Constants.WIDTH_BUTTON
             height: Constants.HEIGHT_BOTTOM_COMPONENT
@@ -376,7 +402,7 @@ Item {
             id: gotoButton
             x: parent.width - 30 - generateButton.width
             y: Constants.BUTTONS_Y_POS
-            text: qsTr("Goto MyEtherID.io")
+            text: qsTr("STR_GOTO_MYETHERID_IO") + controler.autoTr
             font.capitalization: Font.MixedCase
             width: Constants.WIDTH_BUTTON
             height: Constants.HEIGHT_BOTTOM_COMPONENT
@@ -394,15 +420,14 @@ Item {
             id: textTop1
             x: 30
             y: 50
-            text: qsTr("What is BlockID")
+            text: qsTr("STR_WHAT_IS_BLOCKID") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
         Text {
             id: subTextTop1
             x: 30
-            text: qsTr("BlockID is a concept for an ecosystem: secure and reliable loading of validated off-chain \
-identity in the blockchain and consequent use of encrypted and previously authorized form")
+            text: qsTr("STR_WHAT_IS_BLOCKID_TEXT") + controler.autoTr
             width: parent.width - 60
             wrapMode: Text.WordWrap
             anchors.top: textTop1.bottom
@@ -415,15 +440,14 @@ identity in the blockchain and consequent use of encrypted and previously author
             x: 30
             anchors.top: subTextTop1.bottom
             anchors.topMargin: 30
-            text: qsTr("What is BlockID")
+            text: qsTr("STR_WHAT_IS_BLOCKID") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
         Text {
             id: subTextTop2
             x: 30
-            text: qsTr("BlockID is a concept for an ecosystem: secure and reliable loading of validated off-chain \
-identity in the blockchain and consequent use of encrypted and previously authorized form")
+            text: qsTr("STR_WHAT_IS_BLOCKID_TEXT") + controler.autoTr
             width: parent.width - 60
             wrapMode: Text.WordWrap
             anchors.top: textTop2.bottom
@@ -436,15 +460,14 @@ identity in the blockchain and consequent use of encrypted and previously author
             x: 30
             anchors.top: subTextTop2.bottom
             anchors.topMargin: 30
-            text: qsTr("What is BlockID")
+            text: qsTr("STR_WHAT_IS_BLOCKID") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
         Text {
             id: subTextTop3
             x: 30
-            text: qsTr("BlockID is a concept for an ecosystem: secure and reliable loading of validated off-chain \
-identity in the blockchain and consequent use of encrypted and previously authorized form")
+            text: qsTr("STR_WHAT_IS_BLOCKID_TEXT") + controler.autoTr
             width: parent.width - 60
             wrapMode: Text.WordWrap
             anchors.top: textTop3.bottom
@@ -457,15 +480,14 @@ identity in the blockchain and consequent use of encrypted and previously author
             x: 30
             anchors.top: subTextTop3.bottom
             anchors.topMargin: 30
-            text: qsTr("What is BlockID")
+            text: qsTr("STR_WHAT_IS_BLOCKID") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
         Text {
             id: subTextTop4
             x: 30
-            text: qsTr("BlockID is a concept for an ecosystem: secure and reliable loading of validated off-chain \
-identity in the blockchain and consequent use of encrypted and previously authorized form")
+            text: qsTr("STR_WHAT_IS_BLOCKID_TEXT") + controler.autoTr
             width: parent.width - 60
             wrapMode: Text.WordWrap
             anchors.top: textTop4.bottom
@@ -477,7 +499,7 @@ identity in the blockchain and consequent use of encrypted and previously author
             id: backHelpButton
             x: 30
             y: Constants.BUTTONS_Y_POS
-            text: qsTr("Back")
+            text: qsTr("STR_BACK_BUTTON") + controler.autoTr
             font.capitalization: Font.MixedCase
             width: Constants.WIDTH_BUTTON
             height: Constants.HEIGHT_BOTTOM_COMPONENT

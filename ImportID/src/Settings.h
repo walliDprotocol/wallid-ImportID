@@ -191,7 +191,11 @@ public:
             eIDMW::PTEID_Config config(eIDMW::PTEID_PARAM_GENERAL_LANGUAGE);
             QString lng = config.getString();
 
-            setGuiLanguage(lng);
+            if(lng == "en" || lng == "pt"){
+                setGuiLanguage(lng);
+            }else{
+                setGuiLanguage(STR_DEF_GUILANGUAGE);
+            }
         }
 
         //----------------------------------------------------------

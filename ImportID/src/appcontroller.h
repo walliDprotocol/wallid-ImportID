@@ -37,6 +37,9 @@ public slots:
     void setRegCertValue(bool bRegCert);
     void setRemoveCertValue(bool bRemoveCert);
 
+    QString getGuiLanguageString(void);
+    void setGuiLanguageString (QString language);
+
 private:
     GUISettings&    m_Settings;
     bool LoadTranslationFile(QString NewLanguage);

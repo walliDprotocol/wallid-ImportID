@@ -70,6 +70,8 @@ bool AppController::LoadTranslationFile(QString NewLanguage)
             return false;
         }
         qDebug() << "C++: AppController Loaded Default Translation File";
+        qApp->installTranslator(&m_translator);
+        return false;
     }
     //------------------------------------
     // install the translator object and load the .qm file for
@@ -77,6 +79,20 @@ bool AppController::LoadTranslationFile(QString NewLanguage)
     //------------------------------------
     qApp->installTranslator(&m_translator);
     return true;
+}
+
+QString AppController::getGuiLanguageString (void){
+
+    return m_Settings.getGuiLanguageString();
+}
+void AppController::setGuiLanguageString (QString language){
+
+    if (LoadTranslationFile(language)){
+        m_Settings.setLanguage(language);
+        emit languageChanged();
+    }else{
+        emit signalLanguageChangedError();
+    }
 }
 
 QVariant AppController::getCursorPos()

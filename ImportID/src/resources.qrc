@@ -18,5 +18,8 @@
         <file>images/logo_icon_CC.png</file>
         <file>appicon.icns</file>
         <file>appicon.ico</file>
+        <file>images/flag/GB.png</file>
+        <file>images/flag/PT.png</file>
+        <file>images/icon.jpg</file>
     </qresource>
 </RCC>

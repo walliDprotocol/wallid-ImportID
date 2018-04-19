@@ -75,10 +75,8 @@ AppForm {
                         + ",\n\"wallet_address\":\"" + propertyTextFieldWallet.text + "\""
                         + closeImportText()
 
-                propertyTextWalletAddress.text = "For ether wallet address:: "+propertyTextFieldWallet.text
-                propertyTextStepDescription.text =
-                        "4 Copy the text below (COPY button or CTRL + C) and paste it on \"ID Data\" field on <b>MyEtherID.io</b> (CTRL + V)"
-
+                propertyTextWalletAddress.text = qsTr("STR_WALLET") + " " + controler.autoTr + propertyTextFieldWallet.text
+                propertyTextStepDescription.text = qsTr("STR_COPY_DATAID") + controler.autoTr
                 propertyGeneratePage.visible = false
                 propertyFinishPage.visible = true
                 propertyBusyIndicator.running = false
@@ -130,9 +128,8 @@ AppForm {
                         + closeImportText()
             }
 
-            propertyTextWalletAddress.text = "For ether wallet address: "+propertyTextFieldWallet.text
-            propertyTextStepDescription.text =
-                    "4 - Select the text in the box below and copy (CTRL-C) and then paste this data (CTRL-V) into <b>MyEtherID.io</b> (import section)"
+            propertyTextWalletAddress.text = qsTr("STR_WALLET") + " " + controler.autoTr + propertyTextFieldWallet.text
+            propertyTextStepDescription.text = qsTr("STR_COPY_DATAID") + controler.autoTr
 
             propertyGeneratePage.visible = false
             propertyFinishPage.visible = true
@@ -239,6 +236,18 @@ AppForm {
         }
     }
 
+    propertyComboBoxLanguage.onCurrentIndexChanged: {
+        console.log("propertyComboBoxLanguage onCurrentIndexChanged index = "
+                    + propertyComboBoxLanguage.currentIndex)
+        if(propertyComboBoxLanguage.currentIndex === 0){
+            propertyImageLang.source = "qrc:/images/flag/GB.png"
+            controler.setGuiLanguageString("en")
+        }else{
+            propertyImageLang.source = "qrc:/images/flag/PT.png"
+            controler.setGuiLanguageString("pt")
+        }
+    }
+
     propertyComboBoxReader.onActivated:  {
         console.log("propertyComboBoxReader onActivated index = "
                     + propertyComboBoxReader.currentIndex)
@@ -248,7 +257,7 @@ AppForm {
     propertStartButton {
         onClicked: {
             console.log("Start Button clicked")
-            mainWindow.title = "ImportID - Extract ID attributes to the blockchain"
+            mainWindow.title = qsTr("STR_APP_TITLE_TEXT") + controler.autoTr
             propertyintroPage.visible = false
             propertyGeneratePage.visible = true
 
@@ -310,9 +319,9 @@ AppForm {
                 gapi.startGettingCertificate()
             }else{
                 mainFormID.propertyPageLoader.propertyGeneralTitleText.text =
-                        qsTr("Error")
+                        qsTr("STR_ERROR") + controler.autoTr
                 mainFormID.propertyPageLoader.propertyGeneralPopUpLabelText.text =
-                        qsTr("Please Fill the Ethereum Wallet Address")
+                        qsTr("STR_ERROR_FILL_WALLET") + controler.autoTr
                 mainFormID.propertyPageLoader.propertyGeneralPopUp.visible = true;
             }
         }
@@ -332,7 +341,7 @@ AppForm {
             console.log("Generate Button clicked")
             propertyGeneratePage.visible = false
             propertyintroPage.visible = true
-            mainWindow.title = "ImportID"
+            mainWindow.title = qsTr("STR_APP_TITLE") + controler.autoTr
         }
     }
 
@@ -353,7 +362,14 @@ AppForm {
     }
 
     Component.onCompleted: {
-        console.log("Page Card Identify mainWindow Completed")    
+        console.log("Page mainWindow Completed")
+        console.log("Load Language = " + controler.getGuiLanguageString())
+
+        if(controler.getGuiLanguageString()==="en"){
+            propertyComboBoxLanguage.currentIndex = 0
+        }else{
+            propertyComboBoxLanguage.currentIndex = 1
+        }
     }
 
     function initImportText(){
