@@ -11,6 +11,7 @@ AppForm {
     property string tempWalletSigned: ""
     property string tempSod: ""
     property string tempCertificate: ""
+    property bool appFormLoaded: false
 
     Connections {
         target: gapi
@@ -248,12 +249,14 @@ AppForm {
     propertyComboBoxLanguage.onCurrentIndexChanged: {
         console.log("propertyComboBoxLanguage onCurrentIndexChanged index = "
                     + propertyComboBoxLanguage.currentIndex)
-        if(propertyComboBoxLanguage.currentIndex === 0){
-            propertyImageLang.source = "qrc:/images/flag/GB.png"
-            controler.setGuiLanguageString("en")
-        }else{
-            propertyImageLang.source = "qrc:/images/flag/PT.png"
-            controler.setGuiLanguageString("pt")
+        if(appFormLoaded === true){
+            if(propertyComboBoxLanguage.currentIndex === 0){
+                propertyImageLang.source = "qrc:/images/flag/GB.png"
+                controler.setGuiLanguageString("en")
+            }else{
+                propertyImageLang.source = "qrc:/images/flag/PT.png"
+                controler.setGuiLanguageString("pt")
+            }
         }
     }
 
@@ -372,13 +375,14 @@ AppForm {
 
     Component.onCompleted: {
         console.log("Page mainWindow Completed")
-        console.log("Load Language = " + controler.getGuiLanguageString())
-
         if(controler.getGuiLanguageString()==="en"){
             propertyComboBoxLanguage.currentIndex = 0
+            propertyImageLang.source = "qrc:/images/flag/GB.png"
         }else{
             propertyComboBoxLanguage.currentIndex = 1
+            propertyImageLang.source = "qrc:/images/flag/PT.png"
         }
+        appFormLoaded = true
     }
 
     function initImportText(){

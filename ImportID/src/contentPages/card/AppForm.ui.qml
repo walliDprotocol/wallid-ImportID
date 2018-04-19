@@ -117,7 +117,7 @@ Item {
                 id: imageLang
                 antialiasing: true
                 height: 30
-                y : 5
+                y: 5
                 fillMode: Image.PreserveAspectFit
             }
             ComboBox {
@@ -131,8 +131,8 @@ Item {
                 anchors.left: imageLang.right
                 anchors.margins: 10
                 model: [
-                    qsTr("STR_LANG_EN")+ controler.autoTr,
-                    qsTr("STR_LANG_PT")+ controler.autoTr
+                    qsTr("STR_LANG_EN") + controler.autoTr,
+                    qsTr("STR_LANG_PT") + controler.autoTr
                 ]
             }
         }
