@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
+    <name>AboutUsForm.ui</name>
+    <message>
+        <location filename="contentPages/card/AboutUsForm.ui.qml" line="33"/>
+        <source>STR_ABOUT_US</source>
+        <translation>About us</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AboutUsForm.ui.qml" line="40"/>
+        <source>STR_ABOUT_US_TEXT</source>
+        <translation>ImportID is an open source desktop app available for Windows and Linux that allows you to extract your ID attributes from your Citizen Card or other supported Identity certified document. </translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AboutUsForm.ui.qml" line="53"/>
+        <source>STR_VERSION</source>
+        <translation>Version:</translation>
+    </message>
+</context>
+<context>
     <name>App</name>
     <message>
         <location filename="contentPages/card/App.qml" line="79"/>
@@ -133,20 +151,12 @@
         <translation>Go to MyEtherWallet.io</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="607"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="627"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="647"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="667"/>
         <source>STR_WHAT_IS_BLOCKID</source>
-        <translation>What is BlockID?</translation>
+        <translation type="vanished">What is BlockID?</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="614"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="634"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="654"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="674"/>
         <source>STR_WHAT_IS_BLOCKID_TEXT</source>
-        <translation>What is BlockID  Text</translation>
+        <translation type="vanished">What is BlockID  Text</translation>
     </message>
 </context>
 <context>
@@ -187,6 +197,25 @@
         <location filename="gapi.cpp" line="383"/>
         <source>STR_CARD_NOT_ACTIVE</source>
         <translation>The Citizen Card was not activated.</translation>
+    </message>
+</context>
+<context>
+    <name>HowToUseForm.ui</name>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="23"/>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="43"/>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="63"/>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="83"/>
+        <source>STR_WHAT_IS_BLOCKID</source>
+        <translation>What is BlockID?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="30"/>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="50"/>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="70"/>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="90"/>
+        <source>STR_WHAT_IS_BLOCKID_TEXT</source>
+        <translation>What is BlockID  Text</translation>
     </message>
 </context>
 <context>
@@ -276,6 +305,25 @@
         <location filename="main.qml" line="69"/>
         <source>STR_CERTIFICATES_REMOVE_ERROR_MSG</source>
         <translation>Error removing certificates</translation>
+    </message>
+</context>
+<context>
+    <name>howtoUse</name>
+    <message>
+        <location filename="howtoUse.qml" line="13"/>
+        <location filename="howtoUse.qml" line="33"/>
+        <location filename="howtoUse.qml" line="53"/>
+        <location filename="howtoUse.qml" line="73"/>
+        <source>STR_WHAT_IS_BLOCKID</source>
+        <translation>What is BlockID?</translation>
+    </message>
+    <message>
+        <location filename="howtoUse.qml" line="20"/>
+        <location filename="howtoUse.qml" line="40"/>
+        <location filename="howtoUse.qml" line="60"/>
+        <location filename="howtoUse.qml" line="80"/>
+        <source>STR_WHAT_IS_BLOCKID_TEXT</source>
+        <translation>What is BlockID  Text</translation>
     </message>
 </context>
 </TS>

@@ -32,6 +32,6 @@ ItemDelegate {
         console.log(index)
         indicatorIcon.source = propertyListViewTemp.model.get(index).icon
         indicatorText.text = qsTranslate("EntitiesModel", propertyListViewTemp.model.get(index).name)
-        propertStartButton.checkable = true
+        propertStartButton.enabled = true
     }
 }

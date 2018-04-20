@@ -77,7 +77,7 @@ AppForm {
                         + closeImportText()
 
                 propertyTextWalletAddress.text = qsTr("STR_WALLET") + " " + controler.autoTr + propertyTextFieldWallet.text
-                propertyTextStepDescription.text = "4 " + qsTr("STR_COPY_DATAID") + controler.autoTr
+                propertyTextStepDescription.text = "4  " + qsTr("STR_COPY_DATAID") + controler.autoTr
                 propertyGeneratePage.visible = false
                 propertyFinishPage.visible = true
                 propertyBusyIndicator.running = false
@@ -130,7 +130,7 @@ AppForm {
             }
 
             propertyTextWalletAddress.text = qsTr("STR_WALLET") + " " + controler.autoTr + propertyTextFieldWallet.text
-            propertyTextStepDescription.text = "4 " + qsTr("STR_COPY_DATAID") + controler.autoTr
+            propertyTextStepDescription.text = "4  " + qsTr("STR_COPY_DATAID") + controler.autoTr
 
             propertyGeneratePage.visible = false
             propertyFinishPage.visible = true
@@ -250,7 +250,7 @@ AppForm {
             propertyComboBoxEntity.model.clear();
             propertyIndicatorText = qsTr("STR_CHOOSE_ID_TYPE")  + controler.autoTr
             propertyIndicatorImage = ""
-            propertStartButton.checkable = false
+            propertStartButton.enabled = false
             for(var i = 0; i < propertyListViewTemp.model.count; ++i) {
                 console.log("Sub Menu indice " + i + " - " + propertyListViewTemp.model.get(i).name)
                 propertyComboBoxEntity.model.
@@ -271,7 +271,7 @@ AppForm {
     propertStartButton {
         onClicked: {
             console.log("Start Button clicked")
-            if(propertStartButton.checkable){
+            if(propertStartButton.enabled){
                 mainWindow.title = qsTr("STR_APP_TITLE_TEXT") + controler.autoTr
                 propertyintroPage.visible = false
                 propertyGeneratePage.visible = true
@@ -282,12 +282,12 @@ AppForm {
     }
     propertHelpTextMenuMouseArea {
         onClicked: {
-            propertyHelpPage.visible = true
+            mainFormID.propertyPageLoader.source = "HowToUse.qml"
         }
     }
-    propertyBackHelpButton {
+    propertAboutUsTextMenuMouseArea {
         onClicked: {
-            propertyHelpPage.visible = false
+            mainFormID.propertyPageLoader.source = "AboutUs.qml"
         }
     }
 
@@ -300,10 +300,10 @@ AppForm {
                    Constants.COLOR_MAIN_SOFT_GRAY
     }
     propertAboutTextBlockId{
-        font.weight: propertyAboutTextBlockIdMenuMouseArea.containsMouse ?
+        font.weight: propertAboutUsTextMenuMouseArea.containsMouse ?
                          Font.Bold :
                          Font.Normal
-        color: propertyAboutTextBlockIdMenuMouseArea.containsMouse ?
+        color: propertAboutUsTextMenuMouseArea.containsMouse ?
                    Constants.COLOR_MAIN :
                    Constants.COLOR_MAIN_SOFT_GRAY
     }

@@ -12,7 +12,6 @@ Item {
     property alias propertyintroPage: introBox
     property alias propertyGeneratePage: generatePage
     property alias propertyFinishPage: finishPage
-    property alias propertyHelpPage: helpPage
 
     property alias propertyComboBoxReader: comboBoxReader
     property alias propertyComboBoxEntity: comboBoxEntity
@@ -29,15 +28,15 @@ Item {
 
     property alias propertStartButton: startButton
     property alias propertHelpTextMenuMouseArea: helpTextMenuMouseArea
+    property alias propertAboutUsTextMenuMouseArea: aboutUsTextMenuMouseArea
     property alias propertHelpTextMenu: helpTextMenu
-    property alias propertyAboutTextBlockIdMenuMouseArea: aboutTextBlockIdMenuMouseArea
     property alias propertAboutTextBlockId: aboutTextBlockId
 
     property alias propertyGenerateButton: generateButton
     property alias propertyBackButton: backButton
     property alias propertyBackGenerateButton: backGenerateButton
     property alias propertyGotoButton: gotoButton
-    property alias propertyBackHelpButton: backHelpButton
+
 
     property alias propertyFlickImportText: flickableImportText
 
@@ -73,7 +72,7 @@ Item {
             enabled: true
             anchors.right: rectBotton.right
             MouseArea {
-                id: aboutTextBlockIdMenuMouseArea
+                id: aboutUsTextMenuMouseArea
                 hoverEnabled: true
                 anchors.fill: parent
             }
@@ -104,7 +103,6 @@ Item {
                 enabled: true
             }
         }
-
     }
 
     Rectangle {
@@ -337,10 +335,10 @@ Item {
                     }
                     width: Constants.WIDTH_BUTTON
                     height: Constants.HEIGHT_BOTTOM_COMPONENT
-                    checkable: false
+                    enabled: false
                     anchors.horizontalCenter: parent.horizontalCenter
                     background: Rectangle {
-                        color: startButton.checkable ? Constants.COLOR_MAIN_DARK : Constants.COLOR_MAIN_SOFT_GRAY
+                        color: startButton.enabled ? Constants.COLOR_MAIN_DARK : Constants.COLOR_MAIN_SOFT_GRAY
                         radius : 10
                     }
                 }
@@ -358,7 +356,7 @@ Item {
             id: textStep1
             x: 30
             y: Constants.PAGE_Y_POS
-            text: "1 " + qsTr("STR_SELECT_CARD_READER") + controler.autoTr
+            text: "1  " + qsTr("STR_SELECT_CARD_READER") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
@@ -378,7 +376,7 @@ Item {
             id: textStep2
             x: 30
             y: 150
-            text: "2 " + qsTr("STR_CHOOSE_DATA_TO_IMPORT") + controler.autoTr
+            text: "2  " + qsTr("STR_CHOOSE_DATA_TO_IMPORT") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
@@ -402,7 +400,7 @@ Item {
             id: textStep3
             x: 30
             y: 250
-            text: "3 " + qsTr("STR_ENTER_WALLET") + controler.autoTr
+            text: "3  " + qsTr("STR_ENTER_WALLET") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
@@ -434,10 +432,13 @@ Item {
                 elide: Text.ElideRight
             }
             background: Rectangle {
-                color: Constants.COLOR_MAIN_DARK
+                color: backGenerateButton.enabled ? Constants.COLOR_MAIN_DARK : Constants.COLOR_MAIN_SOFT_GRAY
                 radius : 10
             }
         }
+
+
+
         Button {
             id: generateButton
             y: Constants.BUTTONS_Y_POS
@@ -459,7 +460,7 @@ Item {
             enabled: false
             anchors.horizontalCenter: parent.horizontalCenter
             background: Rectangle {
-                color: Constants.COLOR_MAIN_DARK
+                color: generateButton.enabled ? Constants.COLOR_MAIN_DARK : Constants.COLOR_MAIN_SOFT_GRAY
                 radius : 10
             }
         }
@@ -587,116 +588,6 @@ Item {
             height: Constants.HEIGHT_BOTTOM_COMPONENT
             enabled: true
             anchors.horizontalCenter: parent.horizontalCenter
-            background: Rectangle {
-                color: Constants.COLOR_MAIN_DARK
-                radius : 10
-            }
-        }
-    }
-
-    Rectangle {
-        id: helpPage
-        width: parent.width
-        height: parent.height
-        visible: false
-
-        Text {
-            id: textTop1
-            x: 30
-            y: Constants.PAGE_Y_POS
-            text: qsTr("STR_WHAT_IS_BLOCKID") + controler.autoTr
-            font.pixelSize: Constants.SIZE_TEXT_BODY
-            color: Constants.COLOR_MAIN
-        }
-        Text {
-            id: subTextTop1
-            x: 30
-            text: qsTr("STR_WHAT_IS_BLOCKID_TEXT") + controler.autoTr
-            width: parent.width - 60
-            wrapMode: Text.WordWrap
-            anchors.top: textTop1.bottom
-            anchors.topMargin: 10
-            font.pixelSize: Constants.SIZE_TEXT_LABEL
-            color: Constants.COLOR_MAIN_BLACK
-        }
-        Text {
-            id: textTop2
-            x: 30
-            anchors.top: subTextTop1.bottom
-            anchors.topMargin: 30
-            text: qsTr("STR_WHAT_IS_BLOCKID") + controler.autoTr
-            font.pixelSize: Constants.SIZE_TEXT_BODY
-            color: Constants.COLOR_MAIN
-        }
-        Text {
-            id: subTextTop2
-            x: 30
-            text: qsTr("STR_WHAT_IS_BLOCKID_TEXT") + controler.autoTr
-            width: parent.width - 60
-            wrapMode: Text.WordWrap
-            anchors.top: textTop2.bottom
-            anchors.topMargin: 10
-            font.pixelSize: Constants.SIZE_TEXT_LABEL
-            color: Constants.COLOR_MAIN_BLACK
-        }
-        Text {
-            id: textTop3
-            x: 30
-            anchors.top: subTextTop2.bottom
-            anchors.topMargin: 30
-            text: qsTr("STR_WHAT_IS_BLOCKID") + controler.autoTr
-            font.pixelSize: Constants.SIZE_TEXT_BODY
-            color: Constants.COLOR_MAIN
-        }
-        Text {
-            id: subTextTop3
-            x: 30
-            text: qsTr("STR_WHAT_IS_BLOCKID_TEXT") + controler.autoTr
-            width: parent.width - 60
-            wrapMode: Text.WordWrap
-            anchors.top: textTop3.bottom
-            anchors.topMargin: 10
-            font.pixelSize: Constants.SIZE_TEXT_LABEL
-            color: Constants.COLOR_MAIN_BLACK
-        }
-        Text {
-            id: textTop4
-            x: 30
-            anchors.top: subTextTop3.bottom
-            anchors.topMargin: 30
-            text: qsTr("STR_WHAT_IS_BLOCKID") + controler.autoTr
-            font.pixelSize: Constants.SIZE_TEXT_BODY
-            color: Constants.COLOR_MAIN
-        }
-        Text {
-            id: subTextTop4
-            x: 30
-            text: qsTr("STR_WHAT_IS_BLOCKID_TEXT") + controler.autoTr
-            width: parent.width - 60
-            wrapMode: Text.WordWrap
-            anchors.top: textTop4.bottom
-            anchors.topMargin: 10
-            font.pixelSize: Constants.SIZE_TEXT_LABEL
-            color: Constants.COLOR_MAIN_BLACK
-        }
-        Button {
-            id: backHelpButton
-            x: 30
-            y: Constants.BUTTONS_BACK_Y_POS
-            text: "<-"
-            font.capitalization: Font.MixedCase
-            width: 40
-            height: 40
-            enabled: true
-            contentItem: Text {
-                text: backGenerateButton.text
-                font: backGenerateButton.font
-                color: backGenerateButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
             background: Rectangle {
                 color: Constants.COLOR_MAIN_DARK
                 radius : 10

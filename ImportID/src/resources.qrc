@@ -27,9 +27,12 @@
         <file>images/titleBar/quit_hover.svg</file>
         <file>contentPages/card/EntitiesModel.qml</file>
         <file>contentPages/card/EntitiesDelegate.qml</file>
-        <file>contentPages/card/AsdasForm.ui.qml</file>
         <file>contentPages/card/LanguageDelegate.qml</file>
         <file>contentPages/card/LanguageModel.qml</file>
         <file>images/arrow-down.png</file>
+        <file>contentPages/card/HowToUse.qml</file>
+        <file>contentPages/card/HowToUseForm.ui.qml</file>
+        <file>contentPages/card/AboutUs.qml</file>
+        <file>contentPages/card/AboutUsForm.ui.qml</file>
     </qresource>
 </RCC>
