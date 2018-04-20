@@ -16,9 +16,10 @@ Item {
 
     property alias propertyComboBoxReader: comboBoxReader
     property alias propertyComboBoxEntity: comboBoxEntity
+    property alias propertyListViewTemp: listViewTemp
     property alias propertyComboBoxLanguage: comboBoxLanguage
     property alias propertyImageEntity: imageEntity
-    property alias propertyImageLang: imageLang
+    property alias propertyImageLang: indicatorIconLanguage
     property alias propertyCheckBoxIdentity: checkBoxIdentity
     property alias propertyCheckBoxAddress: checkBoxAddress
     property alias propertyTextWalletAddress: textWalletAddress
@@ -39,6 +40,9 @@ Item {
     property alias propertyBackHelpButton: backHelpButton
 
     property alias propertyFlickImportText: flickableImportText
+
+    property alias propertyIndicatorText: indicatorText.text
+    property alias propertyIndicatorImage: indicatorIcon.source
 
     BusyIndicator {
         id: busyIndication
@@ -112,31 +116,71 @@ Item {
 
         Rectangle {
             id: rectSelectLanguage
-            width: parent.width - 10
-            height: Constants.HEIGHT_BOTTOM_COMPONENT
-            y: 10
-            x: 10
-            Image {
-                id: imageLang
-                antialiasing: true
-                height: 30
-                y: 5
-                fillMode: Image.PreserveAspectFit
-            }
+            width: parent.width - 20
+            anchors.horizontalCenter: parent.horizontalCenter
+            height: Constants.HEIGHT_LANGUAGE_COMPONENT
+            y: 5
+
             ComboBox {
                 id: comboBoxLanguage
-                width: 150
-                height: 40
-                font.family: lato.name
-                font.pixelSize: Constants.SIZE_TEXT_FIELD
-                font.capitalization: Font.MixedCase
+                width: 60
+                height: Constants.HEIGHT_LANGUAGE_COMPONENT
                 visible: true
-                anchors.left: imageLang.right
-                anchors.margins: 10
-                model: [
-                    qsTr("STR_LANG_EN") + controler.autoTr,
-                    qsTr("STR_LANG_PT") + controler.autoTr
-                ]
+                //the background of the combobox
+                background: Rectangle {
+                    border.width: 1
+                    border.color: Constants.COLOR_MAIN
+                    radius: 5
+                }
+                model: LanguageModel{}
+                delegate: LanguageDelegate{}
+                //the arrow on the right in the combobox
+                indicator:Item{
+
+                    width: parent.width;
+                    height: 40
+                    anchors.verticalCenter: parent.verticalCenter
+                    id: itemDlgtLanguage
+                    Image {
+                        id: indicatorIconLanguage
+                        antialiasing: true
+                        height: 18
+                        x: 10
+                        anchors.verticalCenter: parent.verticalCenter
+                        fillMode: Image.PreserveAspectFit
+                    }
+                    Image {
+                        id: indicatorIconLanguageArrow
+                        antialiasing: true
+                        width: Constants.HEIGHT_LANGUAGE_COMPONENT
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.left: indicatorIconLanguage.right
+                        fillMode: Image.PreserveAspectFit
+                        source: "qrc:/images/arrow-down.png"
+                    }
+                }
+                //the list of elements and their style when the combobox is open
+                popup: Popup {
+                    id:comboPopupLanguage
+                    y: comboBoxLanguage.height - 1
+                    width: comboBoxLanguage.width
+                    height:contentItem.implicitHeigh
+                    padding: 1
+
+                    contentItem:
+                        ListView {
+                        id:listViewLanguage
+                        implicitHeight: contentHeight
+                        model: comboBoxLanguage.popup.visible ? comboBoxLanguage.delegateModel : null
+                        ScrollIndicator.vertical: ScrollIndicator { }
+                    }
+
+                    background: Rectangle {
+                        radius: 0
+                        border.width: 1
+                        border.color: Constants.COLOR_MAIN
+                    }
+                }
             }
         }
 
@@ -167,12 +211,13 @@ Item {
 
         Rectangle {
             id: rectSelectEntity
-            width: parent.width - 60
+            width: parent.width * 0.5
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: rowIntroTitle.bottom
             anchors.topMargin: 80
             height: Constants.HEIGHT_BOTTOM_COMPONENT
             enabled: true
+            color: "blue"
 
             Rectangle {
                 id: rectSelectEntityTop
@@ -182,23 +227,90 @@ Item {
                 Image {
                     id: imageEntity
                     antialiasing: true
+                    width: 80
                     height: Constants.HEIGHT_BOTTOM_COMPONENT
                     fillMode: Image.PreserveAspectFit
+                    anchors.right: comboBoxEntity.left
                 }
                 ComboBox {
                     id: comboBoxEntity
-                    width: parent.width - imageEntity.width - 20
+                    width: parent.width
                     height: Constants.HEIGHT_BOTTOM_COMPONENT
-                    font.family: lato.name
-                    font.pixelSize: Constants.SIZE_TEXT_FIELD
-                    font.capitalization: Font.MixedCase
+                    Text {
+                        font.family: lato.name
+                        font.capitalization: Font.MixedCase
+                    }
                     visible: true
-                    anchors.left: imageEntity.right
-                    anchors.margins: 20
-                    model: [
-                        qsTr("STR_CHOOSE_ID_TYPE") + controler.autoTr,
-                        qsTr("STR_CC_PORTUGUESE") + controler.autoTr
-                    ]
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    //the background of the combobox
+                    background: Rectangle {
+                        border.width: 1
+                        border.color: Constants.COLOR_MAIN
+                        radius: 10
+                    }
+                    model: EntitiesModel{}
+                    delegate: EntitiesDelegate{}
+                    //the arrow on the right in the combobox
+                    indicator:Item{
+
+                        width: parent.width;
+                        height: 40
+                        anchors.verticalCenter: parent.verticalCenter
+                        id: itemDlgt
+                        Image {
+                            id: indicatorIcon
+                            antialiasing: true
+                            width: Constants.SIZE_IMAGE_LOGO_CC_WIDTH
+                            height: Constants.SIZE_IMAGE_LOGO_CC_HEIGHT
+                            x: 10
+                            anchors.verticalCenter: parent.verticalCenter
+                            fillMode: Image.PreserveAspectFit
+                        }
+                        Text {
+                            id: indicatorText
+                            anchors.left: indicatorIcon.right
+                            anchors.leftMargin: 20
+                            anchors.verticalCenter: parent.verticalCenter
+                            text: qsTr("STR_CHOOSE_ID_TYPE")  + controler.autoTr
+                        }
+                        Image {
+                            id: indicatorIconArrow
+                            antialiasing: true
+                            width: Constants.HEIGHT_BOTTOM_COMPONENT
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.right: parent.right
+                            fillMode: Image.PreserveAspectFit
+                            source: "qrc:/images/arrow-down.png"
+                        }
+                    }
+                    //the list of elements and their style when the combobox is open
+                    popup: Popup {
+                        id:comboPopup
+                        y: comboBoxEntity.height - 1
+                        width: comboBoxEntity.width
+                        height:contentItem.implicitHeigh
+                        padding: 1
+
+                        contentItem:
+                            ListView {
+                            id:listView
+                            implicitHeight: contentHeight
+                            model: comboBoxEntity.popup.visible ? comboBoxEntity.delegateModel : null
+                            ScrollIndicator.vertical: ScrollIndicator { }
+                        }
+
+                        background: Rectangle {
+                            radius: 0
+                            border.width: 1
+                            border.color: Constants.COLOR_MAIN
+                        }
+                    }
+                }
+                ListView {
+                    // Temp model used to update comboBoxEntity model
+                    // After change language
+                    id: listViewTemp
+                    model: EntitiesModel{}
                 }
             }
             Rectangle {
@@ -225,10 +337,10 @@ Item {
                     }
                     width: Constants.WIDTH_BUTTON
                     height: Constants.HEIGHT_BOTTOM_COMPONENT
-                    enabled: true
+                    checkable: false
                     anchors.horizontalCenter: parent.horizontalCenter
                     background: Rectangle {
-                        color: Constants.COLOR_MAIN_DARK
+                        color: startButton.checkable ? Constants.COLOR_MAIN_DARK : Constants.COLOR_MAIN_SOFT_GRAY
                         radius : 10
                     }
                 }

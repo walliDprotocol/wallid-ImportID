@@ -16,22 +16,27 @@
         <translation>Selecione o texto na caixa abaixo e copie e cole esses dados no MyEtherID (Import Section)</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="272"/>
+        <location filename="contentPages/card/App.qml" line="251"/>
+        <source>STR_CHOOSE_ID_TYPE</source>
+        <translation>Escolha o tipo de ID</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/App.qml" line="275"/>
         <source>STR_APP_TITLE_TEXT</source>
         <translation>ImportID - Off-Chain to On-Chain Identity Service</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="334"/>
+        <location filename="contentPages/card/App.qml" line="324"/>
         <source>STR_ERROR</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="336"/>
+        <location filename="contentPages/card/App.qml" line="326"/>
         <source>STR_ERROR_FILL_WALLET</source>
         <translation>Por favor, preencha o endereço da Carteira Ethereum</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="356"/>
+        <location filename="contentPages/card/App.qml" line="346"/>
         <source>STR_APP_TITLE</source>
         <translation>ImportID</translation>
     </message>
@@ -39,114 +44,121 @@
 <context>
     <name>AppForm.ui</name>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="119"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="102"/>
         <source>STR_HOW_TO_USE</source>
         <translation>Como usar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="79"/>
         <source>STR_POWER_BY</source>
-        <translation>Desenvolvido por Block ID @ 2018</translation>
+        <translation type="vanished">Desenvolvido por Block ID @ 2018</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="158"/>
         <source>STR_LANG_EN</source>
-        <translation>English</translation>
+        <translation type="vanished">English</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="159"/>
         <source>STR_LANG_PT</source>
-        <translation>Português</translation>
+        <translation type="vanished">Português</translation>
     </message>
     <message>
         <source>STR_TEXT_TITLE</source>
         <translation type="vanished">ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="181"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="204"/>
         <source>STR_TEXT_SUB_TITLE</source>
         <translation>Importar atributos de ID de documentos de identificação certificados</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="220"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="274"/>
         <source>STR_CHOOSE_ID_TYPE</source>
         <translation>Escolha o tipo de ID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="221"/>
         <source>STR_CC_PORTUGUESE</source>
-        <translation>Cartão de Cidadão - República Portuguesa</translation>
+        <translation type="vanished">Cartão de Cidadão - República Portuguesa</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="235"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="326"/>
         <source>STR_IMPORT_BUTTON</source>
         <translation>ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="270"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="361"/>
         <source>STR_SELECT_CARD_READER</source>
         <translation>Selecione o leitor de cartão</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="290"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="381"/>
         <source>STR_CHOOSE_DATA_TO_IMPORT</source>
         <translation>Escolher dados para importar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="301"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="392"/>
         <source>STR_CHECKBOX_IDENTITY</source>
         <translation>Identidade</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="308"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="399"/>
         <source>STR_CHECKBOX_ADDRESS</source>
         <translation>Endereço</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="314"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="405"/>
         <source>STR_ENTER_WALLET</source>
         <translation>Seu endereço de carteira eletrônica</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="580"/>
         <source>STR_BACK_BUTTON</source>
-        <translation>Voltar</translation>
+        <translation type="vanished">Voltar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="354"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="445"/>
         <source>STR_GENERATE</source>
         <translation>Gerar dados de ID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="99"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="82"/>
         <source>STR_ABOUT_US</source>
         <translation>Sobre nós</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="387"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="478"/>
         <source>STR_DATA_CREATED</source>
         <translation>ID Data Criado com sucesso!</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="483"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="574"/>
         <source>STR_GOTO_MYETHERID_IO</source>
         <translation>Ir para MyEtherWallet.io</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="501"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="521"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="541"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="561"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="607"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="627"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="647"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="667"/>
         <source>STR_WHAT_IS_BLOCKID</source>
         <translation>O que é o BlockID?</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="508"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="528"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="548"/>
-        <location filename="contentPages/card/AppForm.ui.qml" line="568"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="614"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="634"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="654"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="674"/>
         <source>STR_WHAT_IS_BLOCKID_TEXT</source>
         <translation>What is BlockID  Text</translation>
+    </message>
+</context>
+<context>
+    <name>EntitiesModel</name>
+    <message>
+        <source>STR_CHOOSE_ID_TYPE</source>
+        <translation type="vanished">Escolha o tipo de ID</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/EntitiesModel.qml" line="7"/>
+        <source>STR_CC_PORTUGUESE</source>
+        <translation>Cartão de Cidadão - República Portuguesa</translation>
     </message>
 </context>
 <context>

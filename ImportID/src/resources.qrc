@@ -25,5 +25,11 @@
         <file>images/titleBar/minimize_hover.svg</file>
         <file>images/titleBar/quit.svg</file>
         <file>images/titleBar/quit_hover.svg</file>
+        <file>contentPages/card/EntitiesModel.qml</file>
+        <file>contentPages/card/EntitiesDelegate.qml</file>
+        <file>contentPages/card/AsdasForm.ui.qml</file>
+        <file>contentPages/card/LanguageDelegate.qml</file>
+        <file>contentPages/card/LanguageModel.qml</file>
+        <file>images/arrow-down.png</file>
     </qresource>
 </RCC>

@@ -236,16 +236,6 @@ AppForm {
         }
     }
 
-    propertyComboBoxEntity.onCurrentIndexChanged: {
-        console.log("propertyComboBoxEntity onCurrentIndexChanged index = "
-                    + propertyComboBoxEntity.currentIndex)
-        if(propertyComboBoxEntity.currentIndex > 0){
-            propertyImageEntity.source = "qrc:/images/logo_icon_CC.png"
-        }else{
-            propertyImageEntity.source = ""
-        }
-    }
-
     propertyComboBoxLanguage.onCurrentIndexChanged: {
         console.log("propertyComboBoxLanguage onCurrentIndexChanged index = "
                     + propertyComboBoxLanguage.currentIndex)
@@ -256,6 +246,18 @@ AppForm {
             }else{
                 propertyImageLang.source = "qrc:/images/flag/PT.png"
                 controler.setGuiLanguageString("pt")
+            }
+            propertyComboBoxEntity.model.clear();
+            propertyIndicatorText = qsTr("STR_CHOOSE_ID_TYPE")  + controler.autoTr
+            propertyIndicatorImage = ""
+            propertStartButton.checkable = false
+            for(var i = 0; i < propertyListViewTemp.model.count; ++i) {
+                console.log("Sub Menu indice " + i + " - " + propertyListViewTemp.model.get(i).name)
+                propertyComboBoxEntity.model.
+                append({
+                           "name": qsTranslate("EntitiesModel", propertyListViewTemp.model.get(i).name),
+                           "icon": propertyListViewTemp.model.get(i).icon
+                       })
             }
         }
     }
@@ -269,12 +271,13 @@ AppForm {
     propertStartButton {
         onClicked: {
             console.log("Start Button clicked")
-            mainWindow.title = qsTr("STR_APP_TITLE_TEXT") + controler.autoTr
-            propertyintroPage.visible = false
-            propertyGeneratePage.visible = true
-
-            gapi.setEventCallbacks()
-            propertyComboBoxReader.model = gapi.getRetReaderList()
+            if(propertStartButton.checkable){
+                mainWindow.title = qsTr("STR_APP_TITLE_TEXT") + controler.autoTr
+                propertyintroPage.visible = false
+                propertyGeneratePage.visible = true
+                gapi.setEventCallbacks()
+                propertyComboBoxReader.model = gapi.getRetReaderList()
+            }
         }
     }
     propertHelpTextMenuMouseArea {
@@ -293,16 +296,16 @@ AppForm {
                          Font.Bold :
                          Font.Normal
         color: propertHelpTextMenuMouseArea.containsMouse ?
-                         Constants.COLOR_MAIN :
-                         Constants.COLOR_MAIN_SOFT_GRAY
+                   Constants.COLOR_MAIN :
+                   Constants.COLOR_MAIN_SOFT_GRAY
     }
     propertAboutTextBlockId{
         font.weight: propertyAboutTextBlockIdMenuMouseArea.containsMouse ?
                          Font.Bold :
                          Font.Normal
         color: propertyAboutTextBlockIdMenuMouseArea.containsMouse ?
-                         Constants.COLOR_MAIN :
-                         Constants.COLOR_MAIN_SOFT_GRAY
+                   Constants.COLOR_MAIN :
+                   Constants.COLOR_MAIN_SOFT_GRAY
     }
 
     propertyGenerateButton {
@@ -368,6 +371,16 @@ AppForm {
         }else{
             propertyComboBoxLanguage.currentIndex = 1
             propertyImageLang.source = "qrc:/images/flag/PT.png"
+        }
+        propertyComboBoxEntity.model.clear();
+        for(var i = 0; i < propertyListViewTemp.model.count; ++i) {
+            console.log("Sub Menu indice " + i + " - " + propertyListViewTemp.model.get(i).name)
+            propertyComboBoxEntity.model.
+            append({
+                       "name": qsTranslate("EntitiesModel", propertyListViewTemp.model.get(i).name),
+                       "icon": propertyListViewTemp.model.get(i).icon
+                   })
+            console.log(propertyListViewTemp.model.get(i).icon)
         }
         appFormLoaded = true
     }
