@@ -8,7 +8,7 @@ Item {
     property alias propertyTextAnswer: textAnswer
     property alias propertyTitleMouseArea: titleMouseArea
 
-    height: rectTitle.height + Constants.HEIGHT_LINE_COMPONENT + 2 * Constants.SPACE_V_TEXT_FAQS
+    height: rectTitle.height + Constants.HEIGHT_LINE_FAQS + 2 * Constants.SPACE_V_TEXT_FAQS
             + (textAnswer.visible ?  textAnswer.paintedHeight : 0)
 
     Rectangle{
