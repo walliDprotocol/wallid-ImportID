@@ -62,7 +62,7 @@
 <context>
     <name>AppForm.ui</name>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="102"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="101"/>
         <source>STR_HOW_TO_USE</source>
         <translation>Como usar</translation>
     </message>
@@ -83,12 +83,12 @@
         <translation type="vanished">ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="204"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="202"/>
         <source>STR_TEXT_SUB_TITLE</source>
         <translation>Importar atributos de ID de documentos de identificação certificados</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="274"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="272"/>
         <source>STR_CHOOSE_ID_TYPE</source>
         <translation>Escolha o tipo de ID</translation>
     </message>
@@ -97,32 +97,32 @@
         <translation type="vanished">Cartão de Cidadão - República Portuguesa</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="326"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="324"/>
         <source>STR_IMPORT_BUTTON</source>
         <translation>ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="361"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="359"/>
         <source>STR_SELECT_CARD_READER</source>
         <translation>Selecione o leitor de cartão</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="381"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="379"/>
         <source>STR_CHOOSE_DATA_TO_IMPORT</source>
         <translation>Escolher dados para importar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="392"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="390"/>
         <source>STR_CHECKBOX_IDENTITY</source>
         <translation>Identidade</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="399"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="397"/>
         <source>STR_CHECKBOX_ADDRESS</source>
         <translation>Endereço</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="405"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="403"/>
         <source>STR_ENTER_WALLET</source>
         <translation>Seu endereço de carteira eletrônica</translation>
     </message>
@@ -131,22 +131,22 @@
         <translation type="vanished">Voltar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="445"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="446"/>
         <source>STR_GENERATE</source>
         <translation>Gerar dados de ID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="82"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="81"/>
         <source>STR_ABOUT_US</source>
         <translation>Sobre nós</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="478"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="479"/>
         <source>STR_DATA_CREATED</source>
         <translation>ID Data Criado com sucesso!</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="574"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="575"/>
         <source>STR_GOTO_MYETHERID_IO</source>
         <translation>Ir para MyEtherWallet.io</translation>
     </message>
@@ -202,20 +202,178 @@
 <context>
     <name>HowToUseForm.ui</name>
     <message>
-        <location filename="contentPages/card/HowToUseForm.ui.qml" line="23"/>
-        <location filename="contentPages/card/HowToUseForm.ui.qml" line="43"/>
-        <location filename="contentPages/card/HowToUseForm.ui.qml" line="63"/>
-        <location filename="contentPages/card/HowToUseForm.ui.qml" line="83"/>
         <source>STR_WHAT_IS_BLOCKID</source>
+        <translation type="vanished">O que é o BlockID?</translation>
+    </message>
+    <message>
+        <source>STR_WHAT_IS_BLOCKID_TEXT</source>
+        <translation type="vanished">O que é o BlockID Text</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="48"/>
+        <source>STR_FAQ_L1</source>
         <translation>O que é o BlockID?</translation>
     </message>
     <message>
-        <location filename="contentPages/card/HowToUseForm.ui.qml" line="30"/>
-        <location filename="contentPages/card/HowToUseForm.ui.qml" line="50"/>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="49"/>
+        <source>STR_FAQ_L1_TEXT</source>
+        <translation>BlockID é um protocolo blockchain ethereum projetado com o propósito de armazenar atributos de id criptografados de cartões Citizen certificados em contratos inteligentes em blockchain Ethereum e fornecer serviços de certificação de identidade. Atualmente, há três aplicativos distintos em execução no protocolo do BlockID: ImportID, MyEtherID, VerifyID. </translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="55"/>
+        <source>STR_FAQ_L2</source>
+        <translation>O que é o ImportID?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="56"/>
+        <source>STR_FAQ_L2_TEXT</source>
+        <translation>ImportID é um aplicativo de desktop de código-fonte aberto disponível para Windows e Linux que permite extrair seus atributos de ID do seu Cartão de Cidadão ou outro documento certificado com Identidade compatível.
+O algoritmo incorporado do ImportID executa um processo de validação para garantir que todos os dados de ID criados no aplicativo sejam provenientes de um documento de identificação autêntico e certificado e gera um bloco de texto codificado (ID Data) com seus atributos em um formato suportado pela função de armazenamento Blockchain do MyetherID.</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="62"/>
+        <source>STR_FAQ_L3</source>
+        <translation>O que é o MyEtherID?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="63"/>
+        <source>STR_FAQ_L3_TEXT</source>
+        <translation>MyEtherID é uma interface do lado do cliente livre, de código aberto, em execução no protocolo do BlockID. Ele permite que você criptografe e armazene seus atributos de identidade, extraídos de seu Cartão de Cidadão no blockchain Ethereum, criando um contrato inteligente de ID e associando-o à sua Carteira Ethereum. Ele também permite que você verifique suas transações e informações de contrato inteligente de identificação.</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="69"/>
+        <source>STR_FAQ_L4</source>
+        <translation>Quais são as vantagens de armazenar minha identidade no Blockchain?</translation>
+    </message>
+    <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="70"/>
+        <source>STR_FAQ_L4_TEXT</source>
+        <translation>Criptografar seus certificados de identidade no blockchain é a maneira mais segura de armazenar sua identidade por si só. Ao mesclar seus atributos em um contrato inteligente associado à sua carteira Ether, você poderá acessá-los, negociá-los e auditá-los.
+Ao mesmo tempo, é uma maneira segura de armazenar sua identidade. É também a maneira mais eficiente de trocar seus atributos on-line. Ao participar do KYC e dos processos de registro em sites e aplicativos, você pode compartilhar instantaneamente seus atributos criptografados e eles poderão verificar instantaneamente a validade desses dados e aprovar sua inscrição.</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="76"/>
+        <source>STR_FAQ_L5</source>
+        <translation>O que posso fazer com o BlockID?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="77"/>
+        <source>STR_FAQ_L5_TEXT</source>
+        <translation>O protocolo BlockID permite que você extraia atributos de ID de seus Cartões de Cidadão ou documentos de identidade, criptografe, armazene e gerencie-os no blockchain da Ethereum e negocie de maneira segura e instantânea esses atributos com entidades nas quais você confia.
+BlockID é o protocolo Ethereum onde ImportID e MyetherID operam para executar estas funcionalidades.
+O terceiro e último componente desses protocolos é o VerifyID, um aplicativo do lado do servidor que armazena a prova de identidade de seu contrato inteligente criptografado e é enviado como uma validação para as entidades com as quais você concordou em compartilhar seus dados.</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="83"/>
+        <source>STR_FAQ_L6</source>
+        <translation>O que é uma prova de identidade (POI)?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="84"/>
+        <source>STR_FAQ_L6_TEXT</source>
+        <translation>POI é o certificado obtido pelo MyetherID quando você armazena seus dados de identidade no blockchain. Enquanto ele criptografa os dados fornecidos, ele também executa uma validação no certificado que é os atributos armazenados. Essas validações são armazenadas e podem ser acessadas por carteiras de serviços para as quais, se você tiver concedido permissões de acesso ao pagamento de uma taxa de token BLID</translation>
+    </message>
+    <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="90"/>
-        <source>STR_WHAT_IS_BLOCKID_TEXT</source>
-        <translation>O que é o BlockID Text</translation>
+        <source>STR_FAQ_L7</source>
+        <translation>Por que o BlockID é um protocolo para o Ethereum?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="91"/>
+        <source>STR_FAQ_L7_TEXT</source>
+        <translation>A Ethereum Blockchain é atualmente a única solução viável para criar, armazenar e negociar contratos inteligentes. O protocolo do BlockID é focado em um uso potencial específico que vem de contratos inteligentes, armazenando e criptografando atributos de ID certificados em um e associando-o à carteira Ethereum do usuário. A Ethereum fornece a base sólida para qualquer tipo de contrato inteligente para usar seu protocolo e os usuários da Internet o usarão como um gateway para desbloquear uma série de transações on-line privadas, seguras e eficientes. O BlockID permite que você associe seu ID autenticado na sua carteira sempre que precisar provar sua identidade no blockchain.</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="97"/>
+        <source>STR_FAQ_L8</source>
+        <translation>Por que preciso de uma carteira Ethereum?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="98"/>
+        <source>STR_FAQ_L8_TEXT</source>
+        <translation>A carteira Ethereum permite que você acesse qualquer característica de contrato inteligente no blockchain. É a sua identidade Blockchain Ethereum com a capacidade de enviar e receber qualquer token Ethereum, como BLID. Sua carteira Ethereum só é acessível e gerenciável com a chave privada correspondente gerada na criação de sua carteira. Você pode criar uma carteira Ethereum com segurança e gratuitamente em</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="114"/>
+        <source>STR_FAQ_R1</source>
+        <translation>Como eu uso o ImportID?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="115"/>
+        <source>STR_FAQ_R1_TEXT</source>
+        <translation>Confira nosso tutorial passo-a-passo aqui</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="122"/>
+        <source>STR_FAQ_R2</source>
+        <translation>Minha identidade pode ser adulterada ou corrompida se eu usar o ImportID?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="123"/>
+        <source>STR_FAQ_R2_TEXT</source>
+        <translation>Não. O aplicativo é executado localmente em seu computador e todo o seu código é de código aberto, o que significa que ele pode ser verificado. A menos que você tenha algum software de malware rastreando seu computador, é impossível acessar qualquer informação cuidada pelo ImportID</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="129"/>
+        <source>STR_FAQ_R3</source>
+        <translation>Quais tipos de identidade e documentos são aceitos pelo ImportID?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="130"/>
+        <source>STR_FAQ_R3_TEXT</source>
+        <translation>Atualmente, apenas os certificados do Cartão do Cidadão Português são compatíveis com o MyEtherID. A equipe do BlockID está trabalhando na expansão do recurso de reconhecimento de certificado de atributos do ImportID para outros tipos de identidade com base no certificado X509. Significa, num futuro próximo, que todos os dados dos Cartões de Cidadania da União Europeia serão apoiados. Outros certificados de identidade serão adicionados posteriormente.</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="136"/>
+        <source>STR_FAQ_R4</source>
+        <translation>O que é um leitor de cartão inteligente?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="137"/>
+        <source>STR_FAQ_R4_TEXT</source>
+        <translation>Os leitores de cartão inteligente são dispositivos de hardware, projetados para ler dados de cartões inteligentes com chips integrados. Requer o contato físico entre as duas partes (exceto para leitores de cartão inteligente sem contato).</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="143"/>
+        <source>STR_FAQ_R5</source>
+        <translation>Quais leitores de cartão inteligente são compatíveis com o ImportID?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="144"/>
+        <source>STR_FAQ_R5_TEXT</source>
+        <translation>Todos os leitores de cartão inteligente compatíveis com o padrão PC / SC devem funcionar com o ImportID</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="150"/>
+        <source>STR_FAQ_R6</source>
+        <translation>O que são PINs de cartão de cidadão?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="151"/>
+        <source>STR_FAQ_R6_TEXT</source>
+        <translation>Pinos de Cartão de Cidadão são automaticamente gerados e entregues a você no momento em que seu Cartão de Cidadão é emitido pela autoridade nacional correspondente. São suas chaves para autorizar qualquer ação que exija a confirmação de sua identidade. Você tem dois pinos diferentes:
+&lt;b&gt;PIN de autenticação&lt;/b&gt; - para todos os seus atributos de identidade
+&lt;b&gt;PIN do endereço&lt;/b&gt; - para esse atributo específico.</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="157"/>
+        <source>STR_FAQ_R7</source>
+        <translation>O que são atributos de identidade?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="158"/>
+        <source>STR_FAQ_R7_TEXT</source>
+        <translation>Atributos de identidade são as informações que determinam quem você é. Eles são todos os campos de dados no seu cartão de cidadão, como seu nome completo, número de identificação, altura, número fiscal e assim por diante.</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="164"/>
+        <source>STR_FAQ_R8</source>
+        <translation>O que são dados de identificação?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/HowToUseForm.ui.qml" line="165"/>
+        <source>STR_FAQ_R8_TEXT</source>
+        <translation>Dados de ID que o ImportID de saída produz após a leitura dos atributos no seu Cartão do Cidadão. É um bloco de texto gerado dentro do aplicativo de desktop em um formato legível por MyEtherID para armazenar sua identidade no blockchain. Deve ser copiado de ImportID e colado em MyEtherID na página de identidade da loja em</translation>
     </message>
 </context>
 <context>
@@ -310,20 +468,12 @@
 <context>
     <name>howtoUse</name>
     <message>
-        <location filename="howtoUse.qml" line="13"/>
-        <location filename="howtoUse.qml" line="33"/>
-        <location filename="howtoUse.qml" line="53"/>
-        <location filename="howtoUse.qml" line="73"/>
         <source>STR_WHAT_IS_BLOCKID</source>
-        <translation>O que é o BlockID?</translation>
+        <translation type="vanished">O que é o BlockID?</translation>
     </message>
     <message>
-        <location filename="howtoUse.qml" line="20"/>
-        <location filename="howtoUse.qml" line="40"/>
-        <location filename="howtoUse.qml" line="60"/>
-        <location filename="howtoUse.qml" line="80"/>
         <source>STR_WHAT_IS_BLOCKID_TEXT</source>
-        <translation>O que é o BlockID Text</translation>
+        <translation type="vanished">O que é o BlockID Text</translation>
     </message>
 </context>
 </TS>

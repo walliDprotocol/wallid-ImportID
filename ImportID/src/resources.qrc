@@ -34,5 +34,7 @@
         <file>contentPages/card/HowToUseForm.ui.qml</file>
         <file>contentPages/card/AboutUs.qml</file>
         <file>contentPages/card/AboutUsForm.ui.qml</file>
+        <file>components/FAQBox.qml</file>
+        <file>components/FAQBoxForm.ui.qml</file>
     </qresource>
 </RCC>
