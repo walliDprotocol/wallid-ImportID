@@ -363,7 +363,7 @@ AppForm {
     propertyGotoButton {
         onClicked: {
             console.log("Goto Button clicked")
-            Qt.openUrlExternally("http://blockid.herokuapp.com//");
+            Qt.openUrlExternally("https://www.myetherid.io/");
         }
     }
 
