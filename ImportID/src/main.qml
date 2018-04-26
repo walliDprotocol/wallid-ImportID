@@ -201,7 +201,7 @@ Load language error. Please reinstall the application"
 
         Component.onCompleted: {
                 mainFormID.propertyContentPagesView.width = mainWindow.width
-                mainFormID.propertyPageLoader.source = "contentPages/card/App.qml"
+                mainFormID.propertyPageLoader.source = "contentPages/card/Tutorial.qml"
         }
     }
     Component.onCompleted: {

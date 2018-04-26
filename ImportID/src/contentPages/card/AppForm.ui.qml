@@ -29,7 +29,9 @@ Item {
     property alias propertStartButton: startButton
     property alias propertHelpTextMenuMouseArea: helpTextMenuMouseArea
     property alias propertAboutUsTextMenuMouseArea: aboutUsTextMenuMouseArea
+    property alias propertyTutorialMouseArea: tutorialMouseArea
     property alias propertHelpTextMenu: helpTextMenu
+    property alias propertyTutorialTextMenu: tutorialTextMenu
     property alias propertAboutTextBlockId: aboutTextBlockId
 
     property alias propertyGenerateButton: generateButton
@@ -99,6 +101,25 @@ Item {
             Text {
                 id: helpTextMenu
                 text: qsTr("STR_HOW_TO_USE") + controler.autoTr
+                font.capitalization: Font.MixedCase
+                enabled: true
+            }
+        }
+        Rectangle {
+            id: rectTutorial
+            width: 100
+            anchors.bottom: parent.bottom
+            anchors.right: rectHowTouse.left
+            height: parent.height
+            enabled: true
+            MouseArea {
+                id: tutorialMouseArea
+                hoverEnabled: true
+                anchors.fill: parent
+            }
+            Text {
+                id: tutorialTextMenu
+                text: qsTr("STR_TUTORIAL") + controler.autoTr
                 font.capitalization: Font.MixedCase
                 enabled: true
             }

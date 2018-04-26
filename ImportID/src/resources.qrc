@@ -36,5 +36,10 @@
         <file>contentPages/card/AboutUsForm.ui.qml</file>
         <file>components/FAQBox.qml</file>
         <file>components/FAQBoxForm.ui.qml</file>
+        <file>contentPages/card/Tutorial.qml</file>
+        <file>contentPages/card/TutorialForm.ui.qml</file>
+        <file>images/tutorial/page1.png</file>
+        <file>images/tutorial/page2.png</file>
+        <file>images/tutorial/page3.png</file>
     </qresource>
 </RCC>

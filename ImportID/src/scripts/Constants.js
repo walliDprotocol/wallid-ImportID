@@ -68,6 +68,8 @@ var COLOR_MAIN_DARK = "#FF971A"
 var COLOR_MAIN_BLACK = "#000000"
 // Gray
 var COLOR_MAIN_SOFT_GRAY = "#878787"
+// White
+var COLOR_MAIN_WHITE = "#FFFFFF"
 
 // Color Buttons
 var COLOR_BUTTONS = "#FFFFFF"

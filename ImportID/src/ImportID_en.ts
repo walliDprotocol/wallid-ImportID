@@ -44,17 +44,17 @@
         <translation>ImportID - Off-Chain to On-Chain Identity Service</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="324"/>
+        <location filename="contentPages/card/App.qml" line="337"/>
         <source>STR_ERROR</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="326"/>
+        <location filename="contentPages/card/App.qml" line="339"/>
         <source>STR_ERROR_FILL_WALLET</source>
         <translation>Please Fill the Ethereum Wallet Address</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="346"/>
+        <location filename="contentPages/card/App.qml" line="359"/>
         <source>STR_APP_TITLE</source>
         <translation>ImportID</translation>
     </message>
@@ -62,7 +62,7 @@
 <context>
     <name>AppForm.ui</name>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="101"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="103"/>
         <source>STR_HOW_TO_USE</source>
         <translation>How to Use</translation>
     </message>
@@ -83,12 +83,12 @@
         <translation type="vanished">ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="202"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="223"/>
         <source>STR_TEXT_SUB_TITLE</source>
         <translation>Import ID attributes from certified ID documents</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="272"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="293"/>
         <source>STR_CHOOSE_ID_TYPE</source>
         <translation>Choose the ID Type</translation>
     </message>
@@ -97,32 +97,32 @@
         <translation type="vanished">Citizen Card - Portuguese Republic</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="324"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="345"/>
         <source>STR_IMPORT_BUTTON</source>
         <translation>ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="359"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="380"/>
         <source>STR_SELECT_CARD_READER</source>
         <translation>Select the Card Reader</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="379"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="400"/>
         <source>STR_CHOOSE_DATA_TO_IMPORT</source>
         <translation>Choose data to import</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="390"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="411"/>
         <source>STR_CHECKBOX_IDENTITY</source>
         <translation>Identity</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="397"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="418"/>
         <source>STR_CHECKBOX_ADDRESS</source>
         <translation>Address</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="403"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="424"/>
         <source>STR_ENTER_WALLET</source>
         <translation>Your ether wallet address</translation>
     </message>
@@ -131,22 +131,27 @@
         <translation type="vanished">Back</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="446"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="467"/>
         <source>STR_GENERATE</source>
         <translation>Generate ID Data</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="81"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="83"/>
         <source>STR_ABOUT_US</source>
         <translation>About us</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="479"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="122"/>
+        <source>STR_TUTORIAL</source>
+        <translation>Tutorial</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/AppForm.ui.qml" line="500"/>
         <source>STR_DATA_CREATED</source>
         <translation>ID Data Successfully created!</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="575"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="596"/>
         <source>STR_GOTO_MYETHERID_IO</source>
         <translation>Go to MyEtherWallet.io</translation>
     </message>
@@ -463,6 +468,117 @@ The third and last component from these protocol is VerifyID a server side app t
         <location filename="main.qml" line="69"/>
         <source>STR_CERTIFICATES_REMOVE_ERROR_MSG</source>
         <translation>Error removing certificates</translation>
+    </message>
+</context>
+<context>
+    <name>Tutorial</name>
+    <message>
+        <source>STR_CHOOSE_ID_TYPE</source>
+        <translation type="obsolete">Choose the ID Type</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/Tutorial.qml" line="43"/>
+        <source>STR_APP_TITLE_TEXT</source>
+        <translation>ImportID - Off-Chain to On-Chain Identity Service</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/Tutorial.qml" line="84"/>
+        <location filename="contentPages/card/Tutorial.qml" line="96"/>
+        <location filename="contentPages/card/Tutorial.qml" line="107"/>
+        <source>STR_APP_TITLE</source>
+        <translation>ImportID</translation>
+    </message>
+</context>
+<context>
+    <name>TutorialForm.ui</name>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="165"/>
+        <source>STR_TEXT_SUB_TITLE</source>
+        <translation>Import ID attributes from certified ID documents</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="183"/>
+        <source>STR_TUTORIAL_BUTTON</source>
+        <translation>Start Tutorial</translation>
+    </message>
+    <message>
+        <source>STR_IMPORT_BUTTON</source>
+        <translation type="vanished">ImportID</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="206"/>
+        <source>STR_START</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="269"/>
+        <source>STR_TUTORIAL_STEP1_TITLE</source>
+        <translation>Connect a Smart Card Reader</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="280"/>
+        <source>STR_TUTORIAL_STEP1_TEXT</source>
+        <translation>Smart Card Readers are certified devices conceived to interact and read data from Citizen Cards or other documents with a chip under x509 certificate standard.
+
+Where can I get one?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="310"/>
+        <source>STR_TUTORIAL_STEP2_TITLE</source>
+        <translation>Insert Your Citizen Card</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="321"/>
+        <source>STR_TUTORIAL_STEP2_TEXT</source>
+        <translation>Once Smart Card is connected, make sure your Citizen Card is well placed in the device. A pop-up window will tell you when it is. Not all identity cards and identity types are com-patible with ImportID.
+
+See compatible ID cards.</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="416"/>
+        <source>STR_TUTORIAL_STEP3_TITLE</source>
+        <translation>Choose attributes to extract</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="427"/>
+        <source>STR_TUTORIAL_STEP3_TEXT</source>
+        <translation>You can extract your ID attributes separately from your address attributes, or just one of these two categories. A different PIN for ID and address attributes is required in order to make sure you are the owner of the Citizen Card.
+
+What are these PINs?
+
+What exactly are these attributes?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="457"/>
+        <source>STR_TUTORIAL_STEP4_TITLE</source>
+        <translation>Associate your ether wallet</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="468"/>
+        <source>STR_TUTORIAL_STEP4_TEXT</source>
+        <translation>Insert your ether wallet address on the proper field. ImportID will generate your ID data based on your address. You can create a n ether wallet for free here.
+
+Why do I need an ether wallet?</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="560"/>
+        <source>STR_TUTORIAL_STEP5_TITLE</source>
+        <translation>Generate ID Data</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="571"/>
+        <source>STR_TUTORIAL_STEP5_TEXT</source>
+        <translation>After reading your ID document, ImportID compiles your attributes in text format readable by the blockchain encpryter service (myetherid.io). This text block will be necessary to validate and store your ID on the blockchain through BlockID protocol.</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="601"/>
+        <source>STR_TUTORIAL_STEP6_TITLE</source>
+        <translation>Import your ID to the Blockchain</translation>
+    </message>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="612"/>
+        <source>STR_TUTORIAL_STEP6_TEXT</source>
+        <translation>Select all the text in ID Data box and copy it. Go to myetherid.io to encrypt your data and store it on the blockchain through your ether wallet association. Your ID Data will be required by this website during the process of creating your ID smart contract address.</translation>
     </message>
 </context>
 <context>

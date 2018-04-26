@@ -290,12 +290,25 @@ AppForm {
             mainFormID.propertyPageLoader.source = "AboutUs.qml"
         }
     }
+    propertyTutorialMouseArea {
+        onClicked: {
+            mainFormID.propertyPageLoader.source = "Tutorial.qml"
+        }
+    }
 
     propertHelpTextMenu{
         font.weight: propertHelpTextMenuMouseArea.containsMouse ?
                          Font.Bold :
                          Font.Normal
         color: propertHelpTextMenuMouseArea.containsMouse ?
+                   Constants.COLOR_MAIN :
+                   Constants.COLOR_MAIN_SOFT_GRAY
+    }
+    propertyTutorialTextMenu{
+        font.weight: propertyTutorialMouseArea.containsMouse ?
+                         Font.Bold :
+                         Font.Normal
+        color: propertyTutorialMouseArea.containsMouse ?
                    Constants.COLOR_MAIN :
                    Constants.COLOR_MAIN_SOFT_GRAY
     }
