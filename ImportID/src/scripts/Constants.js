@@ -65,6 +65,9 @@ var ARROW_HEIGHT = 40
 var ARROW_DOWN_WIDTH = 25
 var ARROW_DOWN_HEIGHT = 25
 
+// Tutorial margin
+var SIZE_TUTORIAL_MARGIN = 25
+
 // Defined Colors
 // Main Green
 var COLOR_MAIN = "#0FA3B1"

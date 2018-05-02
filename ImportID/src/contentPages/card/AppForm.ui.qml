@@ -82,8 +82,8 @@ Item {
                 id: aboutTextBlockId
                 text: qsTr("STR_ABOUT_US") + controler.autoTr
                 font.capitalization: Font.MixedCase
-                anchors.right: parent.right
                 enabled: true
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
         Rectangle {
@@ -103,6 +103,7 @@ Item {
                 text: qsTr("STR_HOW_TO_USE") + controler.autoTr
                 font.capitalization: Font.MixedCase
                 enabled: true
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
         Rectangle {
@@ -122,6 +123,7 @@ Item {
                 text: qsTr("STR_TUTORIAL") + controler.autoTr
                 font.capitalization: Font.MixedCase
                 enabled: true
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
     }
@@ -231,7 +233,7 @@ Item {
 
         Rectangle {
             id: rectSelectEntity
-            width: parent.width * 0.5
+            width: parent.width * 0.6
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: rowIntroTitle.bottom
             anchors.topMargin: 80
