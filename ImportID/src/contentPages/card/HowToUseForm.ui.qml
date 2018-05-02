@@ -170,23 +170,17 @@ Item {
             id: backHowToUseButton
             x: 30
             y: Constants.BUTTONS_BACK_Y_POS
-            text: "<-"
             font.capitalization: Font.MixedCase
-            width: 40
-            height: 40
+            width: Constants.ARROW_WIDTH
+            height: Constants.ARROW_HEIGHT
             enabled: true
-            contentItem: Text {
-                text: backHowToUseButton.text
-                font: backHowToUseButton.font
-                color: backHowToUseButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
             background: Rectangle {
-                color: Constants.COLOR_MAIN_DARK
                 radius : 10
+                Image {
+                    antialiasing: true
+                    anchors.fill: parent
+                    source: "qrc:/images/arrow-back.svg"
+                }
             }
         }
     }

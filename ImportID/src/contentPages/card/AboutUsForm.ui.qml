@@ -23,7 +23,7 @@ Item {
             y: Constants.HEIGHT_LANGUAGE_COMPONENT + 5
             anchors.horizontalCenter: parent.horizontalCenter
             fillMode: Image.PreserveAspectFit
-            source : "qrc:/images/icon.png"
+            source : "qrc:/images/logo.svg"
         }
 
         Text {
@@ -70,23 +70,17 @@ Item {
             id: backAboutUsButton
             x: 30
             y: Constants.BUTTONS_BACK_Y_POS
-            text: "<-"
             font.capitalization: Font.MixedCase
-            width: 40
-            height: 40
+            width: Constants.ARROW_WIDTH
+            height: Constants.ARROW_HEIGHT
             enabled: true
-            contentItem: Text {
-                text: backAboutUsButton.text
-                font: backAboutUsButton.font
-                color: backAboutUsButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
             background: Rectangle {
-                color: Constants.COLOR_MAIN_DARK
                 radius : 10
+                Image {
+                    antialiasing: true
+                    anchors.fill: parent
+                    source: "qrc:/images/arrow-back.svg"
+                }
             }
         }
     }

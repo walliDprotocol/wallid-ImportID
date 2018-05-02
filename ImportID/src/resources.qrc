@@ -20,7 +20,6 @@
         <file>appicon.ico</file>
         <file>images/flag/GB.png</file>
         <file>images/flag/PT.png</file>
-        <file>images/icon.png</file>
         <file>images/titleBar/minimize.svg</file>
         <file>images/titleBar/minimize_hover.svg</file>
         <file>images/titleBar/quit.svg</file>
@@ -29,7 +28,6 @@
         <file>contentPages/card/EntitiesDelegate.qml</file>
         <file>contentPages/card/LanguageDelegate.qml</file>
         <file>contentPages/card/LanguageModel.qml</file>
-        <file>images/arrow-down.png</file>
         <file>contentPages/card/HowToUse.qml</file>
         <file>contentPages/card/HowToUseForm.ui.qml</file>
         <file>contentPages/card/AboutUs.qml</file>
@@ -38,8 +36,11 @@
         <file>components/FAQBoxForm.ui.qml</file>
         <file>contentPages/card/Tutorial.qml</file>
         <file>contentPages/card/TutorialForm.ui.qml</file>
-        <file>images/tutorial/page1.png</file>
-        <file>images/tutorial/page2.png</file>
-        <file>images/tutorial/page3.png</file>
+        <file>images/tutorial/page1.svg</file>
+        <file>images/tutorial/page2.svg</file>
+        <file>images/tutorial/page3.svg</file>
+        <file>images/arrow-down.svg</file>
+        <file>images/logo.svg</file>
+        <file>images/arrow-back.svg</file>
     </qresource>
 </RCC>

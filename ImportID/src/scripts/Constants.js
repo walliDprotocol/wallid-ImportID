@@ -59,6 +59,12 @@ var HEIGHT_SWITCH_COMPONENT = 30
 // RadioButton Size
 var HEIGHT_RADIO_BOTTOM_COMPONENT = 30
 
+// Arraw Button Size
+var ARROW_WIDTH = 40
+var ARROW_HEIGHT = 40
+var ARROW_DOWN_WIDTH = 25
+var ARROW_DOWN_HEIGHT = 25
+
 // Defined Colors
 // Main Green
 var COLOR_MAIN = "#0FA3B1"

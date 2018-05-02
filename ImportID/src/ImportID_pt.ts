@@ -31,7 +31,7 @@
         <location filename="contentPages/card/App.qml" line="80"/>
         <location filename="contentPages/card/App.qml" line="133"/>
         <source>STR_COPY_DATAID</source>
-        <translation>Selecione o texto na caixa abaixo e copie e cole esses dados no MyEtherID (Import Section)</translation>
+        <translation>Selecione o texto na caixa abaixo e copie e cole esses dados no MyEtherID ( Página Store Identity )</translation>
     </message>
     <message>
         <location filename="contentPages/card/App.qml" line="251"/>
@@ -153,7 +153,7 @@
     <message>
         <location filename="contentPages/card/AppForm.ui.qml" line="596"/>
         <source>STR_GOTO_MYETHERID_IO</source>
-        <translation>Ir para MyEtherWallet.io</translation>
+        <translation>Ir para MyEtherID.io</translation>
     </message>
     <message>
         <source>STR_WHAT_IS_BLOCKID</source>
@@ -499,7 +499,7 @@ O terceiro e último componente desses protocolos é o VerifyID, um aplicativo d
     <message>
         <location filename="contentPages/card/TutorialForm.ui.qml" line="183"/>
         <source>STR_TUTORIAL_BUTTON</source>
-        <translation>Iniciar tutorial</translation>
+        <translation>Tutorial</translation>
     </message>
     <message>
         <source>STR_IMPORT_BUTTON</source>

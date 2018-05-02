@@ -33,10 +33,12 @@ Item {
         Image {
             id: indicatorIconArrow1
             antialiasing: true
+            width: Constants.ARROW_DOWN_WIDTH
+            height: Constants.ARROW_DOWN_HEIGHT
             anchors.right: rectLine.right
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.bottom: parent.bottom
             fillMode: Image.PreserveAspectFit
-            source: "qrc:/images/arrow-down.png"
+            source: "qrc:/images/arrow-down.svg"
             rotation: textAnswer.visible ? 180 : 0
         }
         MouseArea {

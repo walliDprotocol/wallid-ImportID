@@ -112,11 +112,12 @@ Item {
                     Image {
                         id: indicatorIconLanguageArrow
                         antialiasing: true
-                        width: Constants.HEIGHT_LANGUAGE_COMPONENT
+                        width: Constants.ARROW_DOWN_WIDTH
+                        height: Constants.ARROW_DOWN_HEIGHT
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: indicatorIconLanguage.right
                         fillMode: Image.PreserveAspectFit
-                        source: "qrc:/images/arrow-down.png"
+                        source: "qrc:/images/arrow-down.svg"
                     }
                 }
                 //the list of elements and their style when the combobox is open
@@ -157,7 +158,7 @@ Item {
                 height: 160
                 anchors.horizontalCenter: parent.horizontalCenter
                 fillMode: Image.PreserveAspectFit
-                source : "qrc:/images/icon.png"
+                source : "qrc:/images/logo.svg"
             }
             Text {
                 id: textAppSlogan
@@ -238,7 +239,7 @@ Item {
             height: 100
             fillMode: Image.PreserveAspectFit
             anchors.horizontalCenter: parent.horizontalCenter
-            source: "qrc:/images/tutorial/page1.png"
+            source: "qrc:/images/tutorial/page1.svg"
         }
         Rectangle {
             id: rectStep1
@@ -326,23 +327,17 @@ Item {
             id: backFirstPageButton
             x: 30
             y: Constants.BUTTONS_BACK_Y_POS
-            text: "<-"
             font.capitalization: Font.MixedCase
-            width: 40
-            height: 40
+            width: Constants.ARROW_WIDTH
+            height: Constants.ARROW_HEIGHT
             enabled: true
-            contentItem: Text {
-                text: backFirstPageButton.text
-                font: backFirstPageButton.font
-                color: backFirstPageButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
             background: Rectangle {
-                color: backFirstPageButton.enabled ? Constants.COLOR_MAIN_DARK : Constants.COLOR_MAIN_SOFT_GRAY
                 radius : 10
+                Image {
+                    antialiasing: true
+                    anchors.fill: parent
+                    source: "qrc:/images/arrow-back.svg"
+                }
             }
         }
 
@@ -351,23 +346,18 @@ Item {
             id: firstPageButton
             x: parent.width - 30 - 40
             y: Constants.BUTTONS_BACK_Y_POS
-            text: "->"
             font.capitalization: Font.MixedCase
             font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
-            contentItem: Text {
-                text: firstPageButton.text
-                font: firstPageButton.font
-                color: firstPageButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
-            width: 40
-            height: 40
+            width: Constants.ARROW_WIDTH
+            height: Constants.ARROW_HEIGHT
             background: Rectangle {
-                color: firstPageButton.enabled ? Constants.COLOR_MAIN_DARK : Constants.COLOR_MAIN_SOFT_GRAY
                 radius : 10
+                Image {
+                    antialiasing: true
+                    anchors.fill: parent
+                    rotation: 180
+                    source: "qrc:/images/arrow-back.svg"
+                }
             }
         }
     }
@@ -384,7 +374,7 @@ Item {
             height: 100
             fillMode: Image.PreserveAspectFit
             anchors.horizontalCenter: parent.horizontalCenter
-            source: "qrc:/images/tutorial/page2.png"
+            source: "qrc:/images/tutorial/page2.svg"
         }
         Rectangle {
             id: rectStep3
@@ -473,45 +463,34 @@ Item {
             id: backSecondPageButton
             x: 30
             y: Constants.BUTTONS_BACK_Y_POS
-            text: "<-"
             font.capitalization: Font.MixedCase
-            width: 40
-            height: 40
-            contentItem: Text {
-                text: backSecondPageButton.text
-                font: backSecondPageButton.font
-                color: backSecondPageButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
+            width: Constants.ARROW_WIDTH
+            height: Constants.ARROW_HEIGHT
             background: Rectangle {
-                color: Constants.COLOR_MAIN_DARK
                 radius : 10
+                Image {
+                    antialiasing: true
+                    anchors.fill: parent
+                    source: "qrc:/images/arrow-back.svg"
+                }
             }
         }
         Button {
             id: secondPageButton
             x: parent.width - 30 - 40
             y: Constants.BUTTONS_BACK_Y_POS
-            text: "->"
             font.capitalization: Font.MixedCase
             font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
-            contentItem: Text {
-                text: secondPageButton.text
-                font: secondPageButton.font
-                color: secondPageButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
-            width: 40
-            height: 40
+            width: Constants.ARROW_WIDTH
+            height: Constants.ARROW_HEIGHT
             background: Rectangle {
-                color: Constants.COLOR_MAIN_DARK
                 radius : 10
+                Image {
+                    antialiasing: true
+                    anchors.fill: parent
+                    rotation: 180
+                    source: "qrc:/images/arrow-back.svg"
+                }
             }
         }
     }
@@ -527,7 +506,7 @@ Item {
             height: 100
             fillMode: Image.PreserveAspectFit
             anchors.horizontalCenter: parent.horizontalCenter
-            source: "qrc:/images/tutorial/page3.png"
+            source: "qrc:/images/tutorial/page3.svg"
         }
 
         Rectangle {
@@ -617,45 +596,34 @@ Item {
             id: backThirdPageButton
             x: 30
             y: Constants.BUTTONS_BACK_Y_POS
-            text: "<-"
             font.capitalization: Font.MixedCase
-            width: 40
-            height: 40
-            contentItem: Text {
-                text: backThirdPageButton.text
-                font: backThirdPageButton.font
-                color: backThirdPageButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
+            width: Constants.ARROW_WIDTH
+            height: Constants.ARROW_HEIGHT
             background: Rectangle {
-                color: Constants.COLOR_MAIN_DARK
                 radius : 10
+                Image {
+                    antialiasing: true
+                    anchors.fill: parent
+                    source: "qrc:/images/arrow-back.svg"
+                }
             }
         }
         Button {
             id: thirdPageButton
             x: parent.width - 30 - 40
             y: Constants.BUTTONS_BACK_Y_POS
-            text: "->"
             font.capitalization: Font.MixedCase
             font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
-            contentItem: Text {
-                text: thirdPageButton.text
-                font: thirdPageButton.font
-                color: thirdPageButton.down ? Constants.COLOR_BUTTONS_DOWN : Constants.COLOR_BUTTONS
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
-            width: 40
-            height: 40
+            width: Constants.ARROW_WIDTH
+            height: Constants.ARROW_HEIGHT
             background: Rectangle {
-                color: Constants.COLOR_MAIN_DARK
                 radius : 10
+                Image {
+                    antialiasing: true
+                    anchors.fill: parent
+                    rotation: 180
+                    source: "qrc:/images/arrow-back.svg"
+                }
             }
         }
     }
