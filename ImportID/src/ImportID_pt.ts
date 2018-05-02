@@ -83,12 +83,12 @@
         <translation type="vanished">ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="223"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="226"/>
         <source>STR_TEXT_SUB_TITLE</source>
         <translation>Importar atributos de ID de documentos de identificação certificados</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="293"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="296"/>
         <source>STR_CHOOSE_ID_TYPE</source>
         <translation>Escolha o tipo de ID</translation>
     </message>
@@ -97,32 +97,32 @@
         <translation type="vanished">Cartão de Cidadão - República Portuguesa</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="345"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="349"/>
         <source>STR_IMPORT_BUTTON</source>
         <translation>ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="380"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="384"/>
         <source>STR_SELECT_CARD_READER</source>
         <translation>Selecione o leitor de cartão</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="400"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="404"/>
         <source>STR_CHOOSE_DATA_TO_IMPORT</source>
         <translation>Escolher dados para importar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="411"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="415"/>
         <source>STR_CHECKBOX_IDENTITY</source>
         <translation>Identidade</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="418"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="422"/>
         <source>STR_CHECKBOX_ADDRESS</source>
         <translation>Endereço</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="424"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="428"/>
         <source>STR_ENTER_WALLET</source>
         <translation>Seu endereço de carteira eletrônica</translation>
     </message>
@@ -131,7 +131,7 @@
         <translation type="vanished">Voltar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="467"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="465"/>
         <source>STR_GENERATE</source>
         <translation>Gerar dados de ID</translation>
     </message>
@@ -141,17 +141,17 @@
         <translation>Sobre nós</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="122"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="123"/>
         <source>STR_TUTORIAL</source>
         <translation>Tutorial</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="500"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="498"/>
         <source>STR_DATA_CREATED</source>
         <translation>ID Data Criado com sucesso!</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="596"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="588"/>
         <source>STR_GOTO_MYETHERID_IO</source>
         <translation>Ir para MyEtherID.io</translation>
     </message>
@@ -382,6 +382,14 @@ O terceiro e último componente desses protocolos é o VerifyID, um aplicativo d
     </message>
 </context>
 <context>
+    <name>PageHelpDocOnline</name>
+    <message>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="246"/>
+        <source>STR_HOME_REMINDER</source>
+        <translation>Não voltar a mostrar este tutorial no arranque</translation>
+    </message>
+</context>
+<context>
     <name>Popup</name>
     <message>
         <location filename="contentPages/card/App.qml" line="222"/>
@@ -492,12 +500,12 @@ O terceiro e último componente desses protocolos é o VerifyID, um aplicativo d
 <context>
     <name>TutorialForm.ui</name>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="165"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="181"/>
         <source>STR_TEXT_SUB_TITLE</source>
         <translation>Importar atributos de ID de documentos de identificação certificados</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="183"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="199"/>
         <source>STR_TUTORIAL_BUTTON</source>
         <translation>Tutorial</translation>
     </message>
@@ -506,41 +514,41 @@ O terceiro e último componente desses protocolos é o VerifyID, um aplicativo d
         <translation type="vanished">ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="206"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="222"/>
         <source>STR_START</source>
         <translation>Começar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="269"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="292"/>
         <source>STR_TUTORIAL_STEP1_TITLE</source>
         <translation>Conecte um leitor de cartão inteligente</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="280"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="304"/>
         <source>STR_TUTORIAL_STEP1_TEXT</source>
         <translation>Os Leitores de Cartão Inteligente são dispositivos certificados concebidos para interagir e ler dados de cartões Citizen ou outros documentos com um chip de acordo com o padrão de certificado x509.
 
 Onde posso arranjar um?</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="310"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="333"/>
         <source>STR_TUTORIAL_STEP2_TITLE</source>
         <translation>Insira seu cartão de cidadão</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="321"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="345"/>
         <source>STR_TUTORIAL_STEP2_TEXT</source>
         <translation>Quando o cartão inteligente estiver conectado, verifique se o Cartão do cidadão está bem posicionado no dispositivo. Uma janela pop-up informará quando é. Nem todas as carteiras de identidade e tipos de identidade são compatíveis com o ImportID.
 
 Veja cartões de identificação compatíveis.</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="416"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="426"/>
         <source>STR_TUTORIAL_STEP3_TITLE</source>
         <translation>Escolha os atributos para extrair</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="427"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="438"/>
         <source>STR_TUTORIAL_STEP3_TEXT</source>
         <translation>Você pode extrair seus atributos de ID separadamente de seus atributos de endereço ou apenas uma dessas duas categorias. É necessário um PIN diferente para os atributos ID e endereço, para garantir que você seja o proprietário do Cartão do cidadão.
 
@@ -549,19 +557,19 @@ Quais são esses PINs?
 O que exatamente são esses atributos?</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="457"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="467"/>
         <source>STR_TUTORIAL_STEP4_TITLE</source>
         <translation>Associe sua carteira de éter</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="468"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="479"/>
         <source>STR_TUTORIAL_STEP4_TEXT</source>
         <translation>Insira o seu endereço de carteira de éter no campo adequado. O ImportID gerará seus dados de ID com base no seu endereço. Você pode criar uma carteira n ether de graça aqui.
 
 Por que preciso de uma carteira de éter?</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="560"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="559"/>
         <source>STR_TUTORIAL_STEP5_TITLE</source>
         <translation>Gerar dados de ID</translation>
     </message>
@@ -571,7 +579,7 @@ Por que preciso de uma carteira de éter?</translation>
         <translation>Depois de ler seu documento de identificação, o ImportID compila seus atributos em formato de texto legível pelo serviço de encadeamento blockchain (myetherid.io). Este bloco de texto será necessário para validar e armazenar seu ID no blockchain através do protocolo BlockID.</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="601"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="600"/>
         <source>STR_TUTORIAL_STEP6_TITLE</source>
         <translation>Importe seu ID para o Blockchain</translation>
     </message>

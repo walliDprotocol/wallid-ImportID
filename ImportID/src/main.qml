@@ -89,7 +89,7 @@ Load language error. Please reinstall the application"
             //console.log("Reader List Count: " + gapi.getRetReaderList().length)
 
             for ( var i = 0; i < gapi.getRetReaderList().length; ++i ) {
-              //  console.log("Reader List " + "i = " + i +" : "+ gapi.getRetReaderList()[i])
+                //  console.log("Reader List " + "i = " + i +" : "+ gapi.getRetReaderList()[i])
                 comboBoxReader.model = gapi.getRetReaderList()
             }
             mainFormID.opacity = 0.5
@@ -200,8 +200,12 @@ Load language error. Please reinstall the application"
         id: mainFormID
 
         Component.onCompleted: {
-                mainFormID.propertyContentPagesView.width = mainWindow.width
+            mainFormID.propertyContentPagesView.width = mainWindow.width
+            if(controler.getNotShowHelpStartUp()){
+                mainFormID.propertyPageLoader.source = "contentPages/card/App.qml"
+            }else{
                 mainFormID.propertyPageLoader.source = "contentPages/card/Tutorial.qml"
+            }
         }
     }
     Component.onCompleted: {

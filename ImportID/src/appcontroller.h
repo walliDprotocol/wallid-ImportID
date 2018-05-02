@@ -29,6 +29,8 @@ public:
 public slots:
     Q_INVOKABLE QVariant getCursorPos();
     QString getAppVersion(void);
+    bool getNotShowHelpStartUp(void);
+    void setNotShowHelpStartUp(bool notshowhelpStartUp);
     void initTranslation(void);
 
     bool getRegCertValue(void);

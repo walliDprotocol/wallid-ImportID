@@ -107,6 +107,13 @@ TutorialForm {
             mainWindow.title = qsTr("STR_APP_TITLE") + controler.autoTr
         }
     }
+    propertyReminderCheckBox{
+        onCheckedChanged: if(propertyReminderCheckBox.checked){
+                              controler.setNotShowHelpStartUp(true)
+                          }else{
+                                controler.setNotShowHelpStartUp(false)
+                          }
+    }
     Component.onCompleted: {
         console.log("Page mainWindow Completed")
         if(controler.getGuiLanguageString()==="en"){
@@ -116,6 +123,7 @@ TutorialForm {
             propertyComboBoxLanguage.currentIndex = 1
             propertyImageLang.source = "qrc:/images/flag/PT.png"
         }
+        propertyReminderCheckBox.checked = controler.getNotShowHelpStartUp()
         appFormLoaded = true
     }
 

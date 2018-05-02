@@ -38,6 +38,15 @@ QString AppController::getAppVersion(void){
     return m_Settings.getGuiVersion() + " - " + "r0000";
 }
 
+bool AppController::getNotShowHelpStartUp(void){
+
+    return m_Settings.getNotShowHelpStartUp();
+}
+void AppController::setNotShowHelpStartUp(bool notshowhelpStartUp){
+
+    m_Settings.setNotShowHelpStartUp(notshowhelpStartUp);
+}
+
 void AppController::initTranslation(){
 
     QString     appPath = QCoreApplication::applicationDirPath();

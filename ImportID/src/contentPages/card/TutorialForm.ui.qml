@@ -29,12 +29,14 @@ Item {
     property alias propertyBackSecondPageButton: backSecondPageButton
     property alias propertyBackThirdPageButton: backThirdPageButton
 
-    Rectangle{
+    property alias propertyReminderCheckBox: reminderCheckBox
+
+    Rectangle {
         id: main
         color: "gray"
         anchors.fill: parent
 
-        Rectangle{
+        Rectangle {
             id: tutorial
             width: parent.width - Constants.SIZE_TUTORIAL_MARGIN
             height: parent.height - Constants.SIZE_TUTORIAL_MARGIN
@@ -55,7 +57,7 @@ Item {
                     id: tutorialStatusCicle1
                     width: 15
                     height: 15
-                    radius: width/2
+                    radius: width / 2
                     color: Constants.COLOR_MAIN
                     anchors.right: tutorialStatusCicle2.left
                     anchors.margins: 15
@@ -64,7 +66,7 @@ Item {
                     id: tutorialStatusCicle2
                     width: 15
                     height: 15
-                    radius: width/2
+                    radius: width / 2
                     color: Constants.COLOR_MAIN
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.margins: 15
@@ -73,7 +75,7 @@ Item {
                     id: tutorialStatusCicle3
                     width: 15
                     height: 15
-                    radius: width/2
+                    radius: width / 2
                     color: Constants.COLOR_MAIN
                     anchors.left: tutorialStatusCicle2.right
                     anchors.margins: 15
@@ -82,7 +84,7 @@ Item {
             Item {
                 id: introBox
                 width: parent.width
-                height: parent.height - rectTutorialStatus.height
+                height: parent.height
                 anchors.topMargin: 0
                 visible: true
 
@@ -104,12 +106,14 @@ Item {
                             border.color: Constants.COLOR_MAIN
                             radius: 5
                         }
-                        model: LanguageModel{}
-                        delegate: LanguageDelegate{}
+                        model: LanguageModel {
+                        }
+                        delegate: LanguageDelegate {
+                        }
                         //the arrow on the right in the combobox
-                        indicator:Item{
+                        indicator: Item {
 
-                            width: parent.width;
+                            width: parent.width
                             height: 40
                             anchors.verticalCenter: parent.verticalCenter
                             id: itemDlgtLanguage
@@ -134,18 +138,18 @@ Item {
                         }
                         //the list of elements and their style when the combobox is open
                         popup: Popup {
-                            id:comboPopupLanguage
+                            id: comboPopupLanguage
                             y: comboBoxLanguage.height - 1
                             width: comboBoxLanguage.width
-                            height:contentItem.implicitHeigh
+                            height: contentItem.implicitHeigh
                             padding: 1
 
-                            contentItem:
-                                ListView {
-                                id:listViewLanguage
+                            contentItem: ListView {
+                                id: listViewLanguage
                                 implicitHeight: contentHeight
                                 model: comboBoxLanguage.popup.visible ? comboBoxLanguage.delegateModel : null
-                                ScrollIndicator.vertical: ScrollIndicator { }
+                                ScrollIndicator.vertical: ScrollIndicator {
+                                }
                             }
 
                             background: Rectangle {
@@ -170,7 +174,7 @@ Item {
                         height: 160
                         anchors.horizontalCenter: parent.horizontalCenter
                         fillMode: Image.PreserveAspectFit
-                        source : "qrc:/images/logo.svg"
+                        source: "qrc:/images/logo.svg"
                     }
                     Text {
                         id: textAppSlogan
@@ -209,7 +213,7 @@ Item {
                         anchors.left: parent.left
                         background: Rectangle {
                             color: tutorialButton.enabled ? Constants.COLOR_MAIN_DARK : Constants.COLOR_MAIN_SOFT_GRAY
-                            radius : 10
+                            radius: 10
                         }
                     }
 
@@ -232,9 +236,19 @@ Item {
                         anchors.right: parent.right
                         background: Rectangle {
                             color: startButton.enabled ? Constants.COLOR_MAIN_DARK : Constants.COLOR_MAIN_SOFT_GRAY
-                            radius : 10
+                            radius: 10
                         }
                     }
+                }
+
+                CheckBox {
+                    id: reminderCheckBox
+                    text: qsTranslate("PageHelpDocOnline", "STR_HOME_REMINDER")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.bottom: parent.bottom
+                    font.pixelSize: Constants.SIZE_TEXT_FIELD
+                    font.family: lato.name
+                    enabled: true
                 }
             }
             Item {
@@ -262,7 +276,7 @@ Item {
                         id: cicleStep1
                         width: 30
                         height: 30
-                        radius: width/2
+                        radius: width / 2
                         color: Constants.COLOR_MAIN
                         anchors.horizontalCenter: parent.horizontalCenter
                         Text {
@@ -274,8 +288,9 @@ Item {
                         }
                     }
                     Text {
-                        id:textStep1Title
-                        text: qsTr("STR_TUTORIAL_STEP1_TITLE") + controler.autoTr
+                        id: textStep1Title
+                        text: qsTr(
+                                  "STR_TUTORIAL_STEP1_TITLE") + controler.autoTr
                         font.pixelSize: Constants.SIZE_TEXT_BODY
                         color: Constants.COLOR_MAIN
                         anchors.top: cicleStep1.bottom
@@ -302,7 +317,7 @@ Item {
                         id: cicleStep2
                         width: 30
                         height: 30
-                        radius: width/2
+                        radius: width / 2
                         color: Constants.COLOR_MAIN
                         anchors.horizontalCenter: parent.horizontalCenter
                         Text {
@@ -315,7 +330,8 @@ Item {
                     }
                     Text {
                         id: textStep2Title
-                        text: qsTr("STR_TUTORIAL_STEP2_TITLE") + controler.autoTr
+                        text: qsTr(
+                                  "STR_TUTORIAL_STEP2_TITLE") + controler.autoTr
                         font.pixelSize: Constants.SIZE_TEXT_BODY
                         color: Constants.COLOR_MAIN
                         anchors.top: cicleStep2.bottom
@@ -342,7 +358,7 @@ Item {
                     height: Constants.ARROW_HEIGHT
                     enabled: true
                     background: Rectangle {
-                        radius : 10
+                        radius: 10
                         Image {
                             antialiasing: true
                             anchors.fill: parent
@@ -350,7 +366,6 @@ Item {
                         }
                     }
                 }
-
 
                 Button {
                     id: firstPageButton
@@ -361,7 +376,7 @@ Item {
                     width: Constants.ARROW_WIDTH
                     height: Constants.ARROW_HEIGHT
                     background: Rectangle {
-                        radius : 10
+                        radius: 10
                         Image {
                             antialiasing: true
                             anchors.fill: parent
@@ -395,7 +410,7 @@ Item {
                         id: cicleStep3
                         width: 30
                         height: 30
-                        radius: width/2
+                        radius: width / 2
                         color: Constants.COLOR_MAIN
                         anchors.horizontalCenter: parent.horizontalCenter
                         Text {
@@ -404,12 +419,12 @@ Item {
                             color: Constants.COLOR_MAIN_WHITE
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.verticalCenter: parent.verticalCenter
-
                         }
                     }
                     Text {
-                        id:textStep3Title
-                        text: qsTr("STR_TUTORIAL_STEP3_TITLE") + controler.autoTr
+                        id: textStep3Title
+                        text: qsTr(
+                                  "STR_TUTORIAL_STEP3_TITLE") + controler.autoTr
                         font.pixelSize: Constants.SIZE_TEXT_BODY
                         color: Constants.COLOR_MAIN
                         anchors.top: cicleStep3.bottom
@@ -436,7 +451,7 @@ Item {
                         id: cicleStep4
                         width: 30
                         height: 30
-                        radius: width/2
+                        radius: width / 2
                         color: Constants.COLOR_MAIN
                         anchors.horizontalCenter: parent.horizontalCenter
                         Text {
@@ -449,7 +464,8 @@ Item {
                     }
                     Text {
                         id: textStep4Title
-                        text: qsTr("STR_TUTORIAL_STEP4_TITLE") + controler.autoTr
+                        text: qsTr(
+                                  "STR_TUTORIAL_STEP4_TITLE") + controler.autoTr
                         font.pixelSize: Constants.SIZE_TEXT_BODY
                         color: Constants.COLOR_MAIN
                         anchors.top: cicleStep4.bottom
@@ -475,7 +491,7 @@ Item {
                     width: Constants.ARROW_WIDTH
                     height: Constants.ARROW_HEIGHT
                     background: Rectangle {
-                        radius : 10
+                        radius: 10
                         Image {
                             antialiasing: true
                             anchors.fill: parent
@@ -492,7 +508,7 @@ Item {
                     width: Constants.ARROW_WIDTH
                     height: Constants.ARROW_HEIGHT
                     background: Rectangle {
-                        radius : 10
+                        radius: 10
                         Image {
                             antialiasing: true
                             anchors.fill: parent
@@ -527,7 +543,7 @@ Item {
                         id: cicleStep5
                         width: 30
                         height: 30
-                        radius: width/2
+                        radius: width / 2
                         color: Constants.COLOR_MAIN
                         anchors.horizontalCenter: parent.horizontalCenter
                         Text {
@@ -536,12 +552,12 @@ Item {
                             color: Constants.COLOR_MAIN_WHITE
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.verticalCenter: parent.verticalCenter
-
                         }
                     }
                     Text {
-                        id:textStep5Title
-                        text: qsTr("STR_TUTORIAL_STEP5_TITLE") + controler.autoTr
+                        id: textStep5Title
+                        text: qsTr(
+                                  "STR_TUTORIAL_STEP5_TITLE") + controler.autoTr
                         font.pixelSize: Constants.SIZE_TEXT_BODY
                         color: Constants.COLOR_MAIN
                         anchors.top: cicleStep5.bottom
@@ -568,7 +584,7 @@ Item {
                         id: cicleStep6
                         width: 30
                         height: 30
-                        radius: width/2
+                        radius: width / 2
                         color: Constants.COLOR_MAIN
                         anchors.horizontalCenter: parent.horizontalCenter
                         Text {
@@ -581,7 +597,8 @@ Item {
                     }
                     Text {
                         id: textStep6Title
-                        text: qsTr("STR_TUTORIAL_STEP6_TITLE") + controler.autoTr
+                        text: qsTr(
+                                  "STR_TUTORIAL_STEP6_TITLE") + controler.autoTr
                         font.pixelSize: Constants.SIZE_TEXT_BODY
                         color: Constants.COLOR_MAIN
                         anchors.top: cicleStep6.bottom
@@ -607,7 +624,7 @@ Item {
                     width: Constants.ARROW_WIDTH
                     height: Constants.ARROW_HEIGHT
                     background: Rectangle {
-                        radius : 10
+                        radius: 10
                         Image {
                             antialiasing: true
                             anchors.fill: parent
@@ -624,7 +641,7 @@ Item {
                     width: Constants.ARROW_WIDTH
                     height: Constants.ARROW_HEIGHT
                     background: Rectangle {
-                        radius : 10
+                        radius: 10
                         Image {
                             antialiasing: true
                             anchors.fill: parent
