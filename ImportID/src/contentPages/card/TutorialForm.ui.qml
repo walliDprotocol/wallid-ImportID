@@ -47,7 +47,7 @@ Item {
                 id: rectTutorialStatus
                 x: 30
                 width: 100
-                height: 100
+                height: Constants.ARROW_HEIGHT
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
                 visible: false
@@ -84,7 +84,6 @@ Item {
                 id: introBox
                 width: parent.width
                 height: parent.height
-                anchors.topMargin: 0
                 visible: true
 
                 Rectangle {
@@ -350,8 +349,8 @@ Item {
 
                 Button {
                     id: backFirstPageButton
-                    x: 30
-                    y: Constants.BUTTONS_BACK_Y_POS - Constants.SIZE_TUTORIAL_MARGIN
+                    x: Constants.BUTTONS_BACK_X_POS
+                    y: parent.height
                     font.capitalization: Font.MixedCase
                     width: Constants.ARROW_WIDTH
                     height: Constants.ARROW_HEIGHT
@@ -368,8 +367,8 @@ Item {
 
                 Button {
                     id: firstPageButton
-                    x: parent.width - 30 - 40
-                    y: Constants.BUTTONS_BACK_Y_POS - Constants.SIZE_TUTORIAL_MARGIN
+                    x: parent.width - Constants.BUTTONS_BACK_X_POS - firstPageButton.width
+                    y: parent.height
                     font.capitalization: Font.MixedCase
                     font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
                     width: Constants.ARROW_WIDTH
@@ -484,8 +483,8 @@ Item {
 
                 Button {
                     id: backSecondPageButton
-                    x: 30
-                    y: Constants.BUTTONS_BACK_Y_POS - Constants.SIZE_TUTORIAL_MARGIN
+                    x: Constants.BUTTONS_BACK_X_POS
+                    anchors.bottom: parent.bottom
                     font.capitalization: Font.MixedCase
                     width: Constants.ARROW_WIDTH
                     height: Constants.ARROW_HEIGHT
@@ -500,8 +499,8 @@ Item {
                 }
                 Button {
                     id: secondPageButton
-                    x: parent.width - 30 - 40
-                    y: Constants.BUTTONS_BACK_Y_POS - Constants.SIZE_TUTORIAL_MARGIN
+                    x: parent.width - Constants.BUTTONS_BACK_X_POS - secondPageButton.width
+                    anchors.bottom: parent.bottom
                     font.capitalization: Font.MixedCase
                     font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
                     width: Constants.ARROW_WIDTH
@@ -617,8 +616,8 @@ Item {
 
                 Button {
                     id: backThirdPageButton
-                    x: 30
-                    y: Constants.BUTTONS_BACK_Y_POS - Constants.SIZE_TUTORIAL_MARGIN
+                    x: Constants.BUTTONS_BACK_X_POS
+                    anchors.bottom: parent.bottom
                     font.capitalization: Font.MixedCase
                     width: Constants.ARROW_WIDTH
                     height: Constants.ARROW_HEIGHT
@@ -633,8 +632,8 @@ Item {
                 }
                 Button {
                     id: thirdPageButton
-                    x: parent.width - 30 - 40
-                    y: Constants.BUTTONS_BACK_Y_POS - Constants.SIZE_TUTORIAL_MARGIN
+                    x: parent.width - Constants.BUTTONS_BACK_X_POS - thirdPageButton.width
+                    anchors.bottom: parent.bottom
                     font.capitalization: Font.MixedCase
                     font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
                     width: Constants.ARROW_WIDTH

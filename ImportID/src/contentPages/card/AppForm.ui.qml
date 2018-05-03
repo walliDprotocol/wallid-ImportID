@@ -62,54 +62,12 @@ Item {
         width: parent.width - 60
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        height: 30
+        height: Constants.ARROW_HEIGHT
         enabled: true
 
-        Rectangle {
-            id: rectAboutUs
-            width: 100
-            anchors.bottom: parent.bottom
-            height: parent.height
-            enabled: true
-            anchors.right: rectBotton.right
-            MouseArea {
-                id: aboutUsTextMenuMouseArea
-                hoverEnabled: true
-                anchors.fill: parent
-            }
-            Text {
-                id: aboutTextBlockId
-                text: qsTr("STR_ABOUT_US") + controler.autoTr
-                font.capitalization: Font.MixedCase
-                enabled: true
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-        }
-        Rectangle {
-            id: rectHowTouse
-            width: 100
-            anchors.bottom: parent.bottom
-            anchors.right: rectAboutUs.left
-            height: parent.height
-            enabled: true
-            MouseArea {
-                id: helpTextMenuMouseArea
-                hoverEnabled: true
-                anchors.fill: parent
-            }
-            Text {
-                id: helpTextMenu
-                text: qsTr("STR_HOW_TO_USE") + controler.autoTr
-                font.capitalization: Font.MixedCase
-                enabled: true
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-        }
-        Rectangle {
+        Item {
             id: rectTutorial
-            width: 100
-            anchors.bottom: parent.bottom
-            anchors.right: rectHowTouse.left
+            width: parent.width / 3
             height: parent.height
             enabled: true
             MouseArea {
@@ -121,8 +79,52 @@ Item {
                 id: tutorialTextMenu
                 text: qsTr("STR_TUTORIAL") + controler.autoTr
                 font.capitalization: Font.MixedCase
+                font.pixelSize: Constants.SIZE_TEXT_BOTTON
                 enabled: true
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
+            }
+        }
+        Item {
+            id: rectAboutUs
+            width: parent.width / 3
+            anchors.left: rectTutorial.right
+            height: parent.height
+            enabled: true
+            MouseArea {
+                id: aboutUsTextMenuMouseArea
+                hoverEnabled: true
+                anchors.fill: parent
+            }
+            Text {
+                id: aboutTextBlockId
+                text: qsTr("STR_ABOUT_US") + controler.autoTr
+                font.capitalization: Font.MixedCase
+                font.pixelSize: Constants.SIZE_TEXT_BOTTON
+                enabled: true
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
+            }
+        }
+        Item {
+            id: rectHowTouse
+            width: parent.width / 3
+            anchors.left: rectAboutUs.right
+            height: parent.height
+            enabled: true
+            MouseArea {
+                id: helpTextMenuMouseArea
+                hoverEnabled: true
+                anchors.fill: parent
+            }
+            Text {
+                id: helpTextMenu
+                text: qsTr("STR_HOW_TO_USE") + controler.autoTr
+                font.capitalization: Font.MixedCase
+                font.pixelSize: Constants.SIZE_TEXT_BOTTON
+                enabled: true
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
             }
         }
     }
@@ -440,8 +442,8 @@ Item {
         }
         Button {
             id: backGenerateButton
-            x: 30
-            y: Constants.BUTTONS_BACK_Y_POS
+            x: Constants.BUTTONS_BACK_X_POS
+            y: parent.height
             font.capitalization: Font.MixedCase
             width: Constants.ARROW_WIDTH
             height: Constants.ARROW_HEIGHT
@@ -566,8 +568,8 @@ Item {
         }
         Button {
             id: backButton
-            x: 30
-            y: Constants.BUTTONS_BACK_Y_POS
+            x: Constants.BUTTONS_BACK_X_POS
+            y: parent.height
             font.capitalization: Font.MixedCase
             width: Constants.ARROW_WIDTH
             height: Constants.ARROW_HEIGHT

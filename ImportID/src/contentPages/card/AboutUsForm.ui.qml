@@ -67,8 +67,8 @@ Item {
 
         Button {
             id: backAboutUsButton
-            x: 30
-            y: Constants.BUTTONS_BACK_Y_POS
+            x: Constants.BUTTONS_BACK_X_POS
+            y: parent.height - backAboutUsButton.height
             font.capitalization: Font.MixedCase
             width: Constants.ARROW_WIDTH
             height: Constants.ARROW_HEIGHT
