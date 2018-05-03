@@ -28,14 +28,14 @@ AppController::AppController(GUISettings& settings,QObject *parent) :
     QObject(parent)
   , m_Settings(settings)
 {
-    QString strVersion ("0.0.0");
+    QString strVersion ("0.0.1");
     m_Settings.setGuiVersion(strVersion);
-    qDebug() << "C++: AppController started. App version: " << m_Settings.getGuiVersion() +" - " + "r0000";
+    qDebug() << "C++: AppController started. App version: " << m_Settings.getGuiVersion();
 }
 
 QString AppController::getAppVersion(void){
 
-    return m_Settings.getGuiVersion() + " - " + "r0000";
+    return m_Settings.getGuiVersion();
 }
 
 bool AppController::getNotShowHelpStartUp(void){

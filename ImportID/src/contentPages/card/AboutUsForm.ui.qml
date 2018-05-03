@@ -8,6 +8,7 @@ Item {
     anchors.fill: parent
 
     property alias propertyBackAboutUsButton: backAboutUsButton
+    property alias propertySubTextVersion: subTextVersion
 
     Rectangle {
         id: helpPage
@@ -26,7 +27,7 @@ Item {
         }
 
         Text {
-            id: textTop1
+            id: textAboutUs
             x: 30
             y: Constants.HEIGHT_LANGUAGE_COMPONENT + 5 + imageIcon.height
             text: qsTr("STR_ABOUT_US") + controler.autoTr
@@ -34,32 +35,31 @@ Item {
             color: Constants.COLOR_MAIN
         }
         Text {
-            id: subTextTop1
+            id: subTextAboutUs
             x: 30
             text: qsTr("STR_ABOUT_US_TEXT") + controler.autoTr
             width: parent.width - 60
             wrapMode: Text.WordWrap
-            anchors.top: textTop1.bottom
+            anchors.top: textAboutUs.bottom
             anchors.topMargin: 10
             font.pixelSize: Constants.SIZE_TEXT_LABEL
             color: Constants.COLOR_MAIN_BLACK
         }
         Text {
-            id: textTop2
+            id: textVersion
             x: 30
-            anchors.top: subTextTop1.bottom
+            anchors.top: subTextAboutUs.bottom
             anchors.topMargin: 30
             text: qsTr("STR_VERSION") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
             color: Constants.COLOR_MAIN
         }
         Text {
-            id: subTextTop2
+            id: subTextVersion
             x: 30
-            text: "0.0.1"
             width: parent.width - 60
             wrapMode: Text.WordWrap
-            anchors.top: textTop2.bottom
+            anchors.top: textVersion.bottom
             anchors.topMargin: 10
             font.pixelSize: Constants.SIZE_TEXT_LABEL
             color: Constants.COLOR_MAIN_BLACK

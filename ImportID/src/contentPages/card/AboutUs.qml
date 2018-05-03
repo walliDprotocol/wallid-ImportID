@@ -12,5 +12,6 @@ AboutUsForm {
         }
     }
     Component.onCompleted: {
+        propertySubTextVersion.text = controler.getAppVersion()
     }
 }
