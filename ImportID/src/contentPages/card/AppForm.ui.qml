@@ -415,7 +415,8 @@ Item {
         }
         CheckBox {
             id: checkBoxAddress
-            x: 150
+            anchors.left: checkBoxIdentity.right
+            anchors.leftMargin: 10
             anchors.top: textStep2.bottom
             anchors.topMargin: 10
             text: qsTr("STR_CHECKBOX_ADDRESS") + controler.autoTr
