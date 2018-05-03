@@ -5,7 +5,7 @@ import QtQuick.Controls.Universal 2.1
 import QtQuick.Window 2.2
 
 //Import C++ defined enums
-import eidguiV2 1.0
+import gapi 1.0
 
 /* Constants imports */
 import "scripts/Constants.js" as Constants
@@ -51,22 +51,6 @@ Load language error. Please reinstall the application"
             mainFormID.propertyPageLoader.propertyGeneralPopUpLabelText.text =
                     qsTranslate("Popup Card","STR_GENERIC_ERROR_MSG") + "\n\n" +
                     qsTranslate("Popup Card","STR_ERROR_CODE") + error_code
-            mainFormID.propertyPageLoader.propertyGeneralPopUp.visible = true;
-        }
-        onSignalImportCertificatesFail: {
-            console.log("Signal onSignalImportCertificatesFail")
-            mainFormID.propertyPageLoader.propertyGeneralTitleText.text =
-                    qsTranslate("Popup Card","STR_POPUP_ERROR")
-            mainFormID.propertyPageLoader.propertyGeneralPopUpLabelText.text =
-                    qsTranslate("Popup Card","STR_CERTIFICATES_IMPORT_ERROR_MSG")
-            mainFormID.propertyPageLoader.propertyGeneralPopUp.visible = true;
-        }
-        onSignalRemoveCertificatesFail: {
-            console.log("Signal onSignalRemoveCertificatesFail")
-            mainFormID.propertyPageLoader.propertyGeneralTitleText.text =
-                    qsTranslate("Popup Card","STR_POPUP_ERROR")
-            mainFormID.propertyPageLoader.propertyGeneralPopUpLabelText.text =
-                    qsTranslate("Popup Card","STR_CERTIFICATES_REMOVE_ERROR_MSG")
             mainFormID.propertyPageLoader.propertyGeneralPopUp.visible = true;
         }
         onSignalLanguageChangedError: {
@@ -131,7 +115,7 @@ Load language error. Please reinstall the application"
                     text: "Múltiplos cartões detectados"
                     font.pixelSize: Constants.SIZE_TEXT_LABEL
                     font.family: lato.name
-                    color: Constants.COLOR_TEXT_LABEL
+                    color: Constants.COLOR_MAIN_DARK
                     height: parent.height
                     width: parent.width
                     anchors.bottom: parent.bottom
@@ -169,7 +153,7 @@ Load language error. Please reinstall the application"
                     text:  "Para alterar essa opção mais tarde, vá para o menu de configuração"
                     font.pixelSize: Constants.SIZE_TEXT_LABEL
                     font.family: lato.name
-                    color: Constants.COLOR_TEXT_LABEL
+                    color: Constants.COLOR_MAIN_DARK
                     height: parent.height
                     width: parent.width
                     anchors.bottom: parent.bottom
@@ -208,6 +192,7 @@ Load language error. Please reinstall the application"
             }
         }
     }
+
     Component.onCompleted: {
         console.log("Window mainWindow Completed")
         controler.initTranslation()

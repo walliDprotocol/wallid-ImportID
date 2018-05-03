@@ -26,7 +26,6 @@ Rectangle {
 
     /* Main View */
     Item {
-
         id: mainView
         width: parent.width - 2 * Constants.APP_BORDER
         height: parent.height - Constants.TITLE_BAR_SIZE - Constants.APP_BORDER

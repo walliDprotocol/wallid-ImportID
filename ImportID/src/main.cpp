@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
 {
     int retValue = 0;
     bool test_mode = false;
-    const char * default_sam_server = NULL;
 
     QApplication app(argc, argv);
 
@@ -32,21 +31,13 @@ int main(int argc, char *argv[])
     AppController controller(settings);
 
     PTEID_InitSDK();
-    PTEID_Config sam_server(PTEID_PARAM_GENERAL_SAM_SERVER);
 
     if (argc == 2 && strcmp(argv[1], "-test") == 0)
     {
         test_mode = true;
-        default_sam_server = strdup(sam_server.getString());
-        sam_server.setString("pki.teste.cartaodecidadao.pt:443");
         settings.setTestMode( test_mode );
         if(test_mode)
             qDebug() << "Starting App in test mode";
-    }
-    else
-    {
-        //Force production mode
-        sam_server.setString("pki.cartaodecidadao.pt:443");
     }
 
     // GAPI init

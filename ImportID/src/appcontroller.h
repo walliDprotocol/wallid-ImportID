@@ -33,12 +33,6 @@ public slots:
     void setNotShowHelpStartUp(bool notshowhelpStartUp);
     void initTranslation(void);
 
-    bool getRegCertValue(void);
-    bool getRemoveCertValue(void);
-
-    void setRegCertValue(bool bRegCert);
-    void setRemoveCertValue(bool bRemoveCert);
-
     QString getGuiLanguageString(void);
     void setGuiLanguageString (QString language);
 

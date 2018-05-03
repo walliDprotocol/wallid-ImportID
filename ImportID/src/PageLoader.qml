@@ -13,26 +13,6 @@ Loader{
     property alias propertyGeneralTitleText: titleText
     property alias propertyGeneralPopUpLabelText: labelText
 
-    // Backup data about unfinished advance signature
-    property alias propertyBackupfilesModel: backupfilesModel
-    property bool propertyAnimationExtendedFinished: false
-    property bool propertyBackupFormatPades: true
-    property bool propertyBackupTempSign: false
-    property bool propertyBackupSignAdd: false
-    property variant attributeListBackup: []
-    property bool propertyBackupSignShow: true
-    property double propertyBackupCoordX: 0
-    property double propertyBackupCoordY: 0
-    property bool propertyBackupSignReduced: false
-    property int propertyBackupPage: 1
-    property bool propertyBackupLastPage: false
-    property string propertyBackupLocal: ""
-    property string propertyBackupReason: ""
-
-    ListModel {
-        id: backupfilesModel
-    }
-
     Dialog {
         id: generalPopUp
         width: 400
@@ -52,7 +32,7 @@ Loader{
             bottomPadding: 0
             font.bold: true
             font.pixelSize: 16
-            color: Constants.COLOR_TEXT_TITLE
+            color: Constants.COLOR_MAIN_DARK
         }
         Item {
             width: generalPopUp.availableWidth
@@ -69,7 +49,7 @@ Loader{
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: Constants.SIZE_TEXT_LABEL
                     font.family: lato.name
-                    color: Constants.COLOR_TEXT_LABEL
+                    color: Constants.COLOR_MAIN_DARK
                     height: parent.height
                     width: parent.width - 48
                     anchors.bottom: parent.bottom

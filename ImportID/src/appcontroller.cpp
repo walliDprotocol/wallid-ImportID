@@ -42,6 +42,7 @@ bool AppController::getNotShowHelpStartUp(void){
 
     return m_Settings.getNotShowHelpStartUp();
 }
+
 void AppController::setNotShowHelpStartUp(bool notshowhelpStartUp){
 
     m_Settings.setNotShowHelpStartUp(notshowhelpStartUp);
@@ -94,6 +95,7 @@ QString AppController::getGuiLanguageString (void){
 
     return m_Settings.getGuiLanguageString();
 }
+
 void AppController::setGuiLanguageString (QString language){
 
     if (LoadTranslationFile(language)){
@@ -107,22 +109,4 @@ void AppController::setGuiLanguageString (QString language){
 QVariant AppController::getCursorPos()
 {
     return QVariant(QCursor::pos());
-}
-
-bool AppController::getRegCertValue (void){
-
-    return m_Settings.getRegCert();
-}
-bool AppController::getRemoveCertValue (void){
-
-    return m_Settings.getRemoveCert();
-}
-
-void AppController::setRegCertValue (bool bRegCert){
-
-    m_Settings.setRegCert(bRegCert);
-}
-void AppController::setRemoveCertValue (bool bRemoveCert){
-
-    m_Settings.setRemoveCert(bRemoveCert);
 }

@@ -3,7 +3,7 @@ import QtQuick.Controls 2.1
 import "../../scripts/Constants.js" as Constants
 
 //Import C++ defined enums
-import eidguiV2 1.0
+import gapi 1.0
 
 AppForm {
 
@@ -55,16 +55,12 @@ AppForm {
                     propertyBusyIndicator.running = true
                     gapi.startReadingAddress()
                 }else{
-                    if(Constants.USE_SDK_PIN_UI_POPUP){
-                        var triesLeft = gapi.verifyAddressPin("")
-                        if (triesLeft === 3) {
-                            propertyBusyIndicator.running = true
-                            gapi.startReadingAddress()
-                        }
-                    }else{
-                        dialogTestPin.open()
-                        textFieldPin.text = ""
+                    var triesLeft = gapi.verifyAddressPin("")
+                    if (triesLeft === 3) {
+                        propertyBusyIndicator.running = true
+                        gapi.startReadingAddress()
                     }
+
                 }
             }else{
                 propertyImportText.text =
@@ -137,8 +133,6 @@ AppForm {
             propertyBusyIndicator.running = false
 
             gapi.setAddressLoaded(true)
-            if(!Constants.USE_SDK_PIN_UI_POPUP)
-                dialogTestPin.visible = false
         }
         onSignalCardAccessError: {
             console.log("Card Identify Page onSignalCardAccessError")

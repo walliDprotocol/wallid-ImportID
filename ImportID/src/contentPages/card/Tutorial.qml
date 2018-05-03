@@ -3,7 +3,7 @@ import QtQuick.Controls 2.1
 import "../../scripts/Constants.js" as Constants
 
 //Import C++ defined enums
-import eidguiV2 1.0
+import gapi 1.0
 
 TutorialForm {
 
@@ -125,39 +125,5 @@ TutorialForm {
         }
         propertyReminderCheckBox.checked = controler.getNotShowHelpStartUp()
         appFormLoaded = true
-    }
-
-    function initImportText(){
-        var importString =
-                "{\n"
-                + "\"id_attributes\": {"
-
-        return importString
-    }
-    function middleImportText(){
-        var importString =
-                "},\n"
-
-        return importString
-    }
-    function closeImportText(){
-        var importString =
-                "\n"
-                + "}"
-
-        return importString
-    }
-    function clearData(){
-        tempImportText = ""
-        tempWalletSigned = ""
-        tempSod = ""
-    }
-    function ensureVisible(r)
-    {
-        if (propertyFlickImportText.contentY >= r.y){
-            propertyFlickImportText.contentY = r.y
-        }else if (propertyFlickImportText.contentY+propertyFlickImportText.height <= r.y+r.height){
-            propertyFlickImportText.contentY = r.y+r.height-propertyFlickImportText.height;
-        }
     }
 }

@@ -1,6 +1,5 @@
 import QtQuick 2.6
 import QtQuick.Controls 2.1
-import QtGraphicalEffects 1.0
 
 import "../../scripts/Constants.js" as Constants
 
@@ -282,8 +281,8 @@ Item {
                         Image {
                             id: indicatorIcon
                             antialiasing: true
-                            width: Constants.SIZE_IMAGE_LOGO_CC_WIDTH
-                            height: Constants.SIZE_IMAGE_LOGO_CC_HEIGHT
+                            width: Constants.SIZE_IMAGE_ENTITY_WIDTH
+                            height: Constants.SIZE_IMAGE_ENTITY_HEIGHT
                             x: 10
                             anchors.verticalCenter: parent.verticalCenter
                             fillMode: Image.PreserveAspectFit

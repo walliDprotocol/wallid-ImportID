@@ -3,7 +3,7 @@ import QtQuick.Controls 2.1
 import "../../scripts/Constants.js" as Constants
 
 //Import C++ defined enums
-import eidguiV2 1.0
+import gapi 1.0
 
 AboutUsForm {
     propertyBackAboutUsButton {

@@ -24,7 +24,6 @@ GAPI::GAPI(QObject *parent) :
     QObject(parent) {
     image_provider = new PhotoImageProvider();
     m_addressLoaded = false;
-    m_shortcutFlag = 0;
 
     //----------------------------------
     // set a timer to check if the number of card readers is changed
@@ -203,95 +202,6 @@ void GAPI::getPersoDataFile() {
     emit signalPersoDataLoaded(QString(card->readPersonalNotes()));
 
     END_TRY_CATCH
-
-}
-
-unsigned int GAPI::verifyAuthPin(QString pin_value) {
-    unsigned long tries_left = TRIES_LEFT_ERROR;
-
-    BEGIN_TRY_CATCH
-
-    PTEID_EIDCard * card = NULL;
-    getCardInstance(card);
-    if (card == NULL) return TRIES_LEFT_ERROR;
-
-    PTEID_Pin & auth_pin = card->getPins().getPinByPinRef(PTEID_Pin::AUTH_PIN);
-    auth_pin.verifyPin(pin_value.toLatin1().data(), tries_left);
-
-    if (tries_left == 0) {
-        qDebug() << "WARNING: Auth PIN blocked!" + tries_left;
-    }
-
-    END_TRY_CATCH
-
-            //QML default types don't include long
-            return (unsigned int)tries_left;
-}
-
-unsigned int GAPI::getTriesLeftAuthPin() {
-    unsigned long tries_left = TRIES_LEFT_ERROR;
-
-    BEGIN_TRY_CATCH
-
-    PTEID_EIDCard * card = NULL;
-    getCardInstance(card);
-    if (card == NULL) return TRIES_LEFT_ERROR;
-
-    PTEID_Pin & auth_pin = card->getPins().getPinByPinRef(PTEID_Pin::AUTH_PIN);
-    tries_left = auth_pin.getTriesLeft();
-
-    if (tries_left == 0) {
-        qDebug() << "WARNING: Auth PIN blocked!" + tries_left;
-    }
-
-    END_TRY_CATCH
-
-            //QML default types don't include long
-            return (unsigned int)tries_left;
-}
-
-unsigned int GAPI::verifySignPin(QString pin_value) {
-    unsigned long tries_left = TRIES_LEFT_ERROR;
-
-    BEGIN_TRY_CATCH
-
-    PTEID_EIDCard * card = NULL;
-    getCardInstance(card);
-    if (card == NULL) return TRIES_LEFT_ERROR;
-
-    PTEID_Pin & sign_pin = card->getPins().getPinByPinRef(PTEID_Pin::SIGN_PIN);
-    sign_pin.verifyPin(pin_value.toLatin1().data(), tries_left);
-
-    if (tries_left == 0) {
-        qDebug() << "WARNING: Sign PIN blocked!" + tries_left;
-    }
-
-    END_TRY_CATCH
-
-            //QML default types don't include long
-            return (unsigned int)tries_left;
-}
-
-unsigned int GAPI::getTriesLeftSignPin() {
-    unsigned long tries_left = TRIES_LEFT_ERROR;
-
-    BEGIN_TRY_CATCH
-
-    PTEID_EIDCard * card = NULL;
-    getCardInstance(card);
-    if (card == NULL) return TRIES_LEFT_ERROR;
-
-    PTEID_Pin & sign_pin = card->getPins().getPinByPinRef(PTEID_Pin::SIGN_PIN);
-    tries_left = sign_pin.getTriesLeft();
-
-    if (tries_left == 0) {
-        qDebug() << "WARNING: Sign PIN blocked!" + tries_left;
-    }
-
-    END_TRY_CATCH
-
-            //QML default types don't include long
-            return (unsigned int)tries_left;
 }
 
 unsigned int GAPI::verifyAddressPin(QString pin_value) {
@@ -305,28 +215,6 @@ unsigned int GAPI::verifyAddressPin(QString pin_value) {
 
     PTEID_Pin & address_pin = card->getPins().getPinByPinRef(PTEID_Pin::ADDR_PIN);
     address_pin.verifyPin(pin_value.toLatin1().data(), tries_left);
-
-    if (tries_left == 0) {
-        qDebug() << "WARNING: Address PIN blocked!" + tries_left;
-    }
-
-    END_TRY_CATCH
-
-            //QML default types don't include long
-            return (unsigned int)tries_left;
-}
-
-unsigned int GAPI::getTriesLeftAddressPin() {
-    unsigned long tries_left = TRIES_LEFT_ERROR;
-
-    BEGIN_TRY_CATCH
-
-    PTEID_EIDCard * card = NULL;
-    getCardInstance(card);
-    if (card == NULL) return TRIES_LEFT_ERROR;
-
-    PTEID_Pin & address_pin = card->getPins().getPinByPinRef(PTEID_Pin::ADDR_PIN);
-    tries_left = address_pin.getTriesLeft();
 
     if (tries_left == 0) {
         qDebug() << "WARNING: Address PIN blocked!" + tries_left;
@@ -385,31 +273,8 @@ QString GAPI::getCardActivation() {
     END_TRY_CATCH
 }
 
-QPixmap PhotoImageProvider::requestPixmap(const QString &id, QSize *size, const QSize &requestedSize)
-{
-    if (id != "photo.png") {
-        qDebug() << "PhotoImageProvider: wrong id requested - " << id;
-        return QPixmap();
-    }
-
-    if (!requestedSize.isValid())
-    {
-        if (requestedSize.height() > p.height() || requestedSize.width() > p.width())
-        {
-            qDebug() << "PhotoImageProvider: Invalid requestedSize - " << requestedSize;
-            return QPixmap();
-        }
-    }
-
-    size->setWidth(p.width());
-    size->setHeight(p.height());
-
-    return p;
-}
-
 void GAPI::startCardReading() {
     QFuture<void> future = QtConcurrent::run(this, &GAPI::connectToCard);
-
 }
 
 void GAPI::startReadingAddress() {
@@ -718,6 +583,7 @@ void GAPI::updateReaderList( void )
         ReaderSet.releaseReaders();
     }
 }
+
 void GAPI::setEventCallbacks( void )
 {
     //----------------------------------------
