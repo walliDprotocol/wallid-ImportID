@@ -222,7 +222,10 @@
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="47"/>
         <source>STR_FAQ_L1_TEXT</source>
-        <translation>BlockID é um protocolo blockchain ethereum projetado com o propósito de armazenar atributos de id criptografados de cartões Citizen certificados em contratos inteligentes em blockchain Ethereum e fornecer serviços de certificação de identidade. Atualmente, há três aplicativos distintos em execução no protocolo do BlockID: ImportID, MyEtherID, VerifyID. </translation>
+        <translation>BlockID é um protocolo blockchain ethereum projetado com o propósito de armazenar atributos de id criptografados de cartões Citizen certificados em contratos inteligentes em blockchain Ethereum e fornecer serviços de certificação de identidade. Atualmente, há três aplicativos distintos em execução no protocolo do BlockID: 
+- ImportID;
+- MyEtherID;
+- VerifyID. </translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="53"/>
@@ -316,7 +319,7 @@ O terceiro e último componente desses protocolos é o VerifyID, um aplicativo d
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="121"/>
         <source>STR_FAQ_R2_TEXT</source>
-        <translation>Não. O aplicativo é executado localmente em seu computador e todo o seu código é de código aberto, o que significa que ele pode ser verificado. A menos que você tenha algum software de malware rastreando seu computador, é impossível acessar qualquer informação cuidada pelo ImportID</translation>
+        <translation>Não. O aplicativo é executado localmente em seu computador e todo o seu código é de código aberto, o que significa que ele pode ser verificado. A menos que você tenha algum software de malware rastreando seu computador, é impossível acessar qualquer informação cuidada pelo ImportID.</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="127"/>
@@ -346,7 +349,7 @@ O terceiro e último componente desses protocolos é o VerifyID, um aplicativo d
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="142"/>
         <source>STR_FAQ_R5_TEXT</source>
-        <translation>Todos os leitores de cartão inteligente compatíveis com o padrão PC / SC devem funcionar com o ImportID</translation>
+        <translation>Todos os leitores de cartão inteligente compatíveis com o padrão PC / SC devem funcionar com o ImportID.</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="148"/>
@@ -357,8 +360,9 @@ O terceiro e último componente desses protocolos é o VerifyID, um aplicativo d
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="149"/>
         <source>STR_FAQ_R6_TEXT</source>
         <translation>Pinos de Cartão de Cidadão são automaticamente gerados e entregues a você no momento em que seu Cartão de Cidadão é emitido pela autoridade nacional correspondente. São suas chaves para autorizar qualquer ação que exija a confirmação de sua identidade. Você tem dois pinos diferentes:
-&lt;b&gt;PIN de autenticação&lt;/b&gt; - para todos os seus atributos de identidade
-&lt;b&gt;PIN do endereço&lt;/b&gt; - para esse atributo específico.</translation>
+
+- PIN de autenticação - para todos os seus atributos de identidade
+- PIN do endereço - para esse atributo específico.</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="155"/>

@@ -222,7 +222,10 @@
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="47"/>
         <source>STR_FAQ_L1_TEXT</source>
-        <translation>BlockID is an ethereum blockchain protocol designed with the purpose to store encrypted id attributes from certified Citizen Cards in smart contracts in Ethereum blockchain and to provide identity certifying services. At the present time there are three distinct applications running on BlockID’s protocol: ImportID, MyEtherID, VerifyID.</translation>
+        <translation>BlockID is an ethereum blockchain protocol designed with the purpose to store encrypted id attributes from certified Citizen Cards in smart contracts in Ethereum blockchain and to provide identity certifying services. At the present time there are three distinct applications running on BlockID’s protocol:
+- ImportID;
+- MyEtherID;
+- VerifyID. </translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="53"/>
@@ -316,7 +319,7 @@ The third and last component from these protocol is VerifyID a server side app t
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="121"/>
         <source>STR_FAQ_R2_TEXT</source>
-        <translation>No. The application runs locally on your computer, and all its code is open source which means it can be checked. Unless you have some malware software crawling your computer, it’s impossible to access any information taken care by ImportID</translation>
+        <translation>No. The application runs locally on your computer, and all its code is open source which means it can be checked. Unless you have some malware software crawling your computer, it’s impossible to access any information taken care by ImportID.</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="127"/>
@@ -346,7 +349,7 @@ The third and last component from these protocol is VerifyID a server side app t
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="142"/>
         <source>STR_FAQ_R5_TEXT</source>
-        <translation>All smart card readers compatible with the PC/SC standard should work with ImportID</translation>
+        <translation>All smart card readers compatible with the PC/SC standard should work with ImportID.</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="148"/>
@@ -357,8 +360,9 @@ The third and last component from these protocol is VerifyID a server side app t
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="149"/>
         <source>STR_FAQ_R6_TEXT</source>
         <translation>Citizen Card Pins are automatically generated and delivered to you at the moment your Citizen Card is issued by the correspondent national authority. They are your keys to authorize any action that requires the confirmation of your identity. You have two different pins:
-&lt;b&gt;authentication PIN&lt;/b&gt; - for all your identity attributes
-&lt;b&gt;address PIN&lt;/b&gt; - for that specific attribute.</translation>
+
+- Authentication PIN - for all your identity attributes
+- Address PIN - for that specific attribute.</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="155"/>
