@@ -35,11 +35,15 @@ AppForm {
                     + ", \"Height\":\"" + gapi.getDataCardIdentifyValue(GAPI.Height) + "\""
                     + ", \"Country\":\"" + gapi.getDataCardIdentifyValue(GAPI.Country) + "\""
                     + ", \"Birthdate\":\"" + gapi.getDataCardIdentifyValue(GAPI.Birthdate) + "\""
-                    + ", \"Father\":\"" + gapi.getDataCardIdentifyValue(GAPI.Father) + "\""
-                    + ", \"Mother\":\"" + gapi.getDataCardIdentifyValue(GAPI.Mother) + "\""
+                    + ", \"GivenNameFather\":\"" + gapi.getDataCardIdentifyValue(GAPI.GivenNameFather) + "\""
+                    + ", \"SurnameFather\":\"" + gapi.getDataCardIdentifyValue(GAPI.SurnameFather) + "\""
+                    + ", \"GivenNameMother\":\"" + gapi.getDataCardIdentifyValue(GAPI.GivenNameMother) + "\""
+                    + ", \"SurnameMother\":\"" + gapi.getDataCardIdentifyValue(GAPI.SurnameMother) + "\""
                     + ", \"Documenttype\":\"" + gapi.getDataCardIdentifyValue(GAPI.Documenttype) + "\""
                     + ", \"Documentnum\":\"" + gapi.getDataCardIdentifyValue(GAPI.Documentnum) + "\""
+                    + ", \"CivilianIdNumber\":\"" + gapi.getDataCardIdentifyValue(GAPI.CivilianIdNumber) + "\""
                     + ", \"Documentversion\":\"" + gapi.getDataCardIdentifyValue(GAPI.Documentversion) + "\""
+                    + ", \"DocumentPAN\":\"" + gapi.getDataCardIdentifyValue(GAPI.DocumentPAN) + "\""
                     + ", \"Nationality\":\"" + gapi.getDataCardIdentifyValue(GAPI.Nationality) + "\""
                     + ", \"Validityenddate\":\"" + gapi.getDataCardIdentifyValue(GAPI.Validityenddate) + "\""
                     + ", \"Validitybegindate\":\"" + gapi.getDataCardIdentifyValue(GAPI.Validitybegindate) + "\""
@@ -48,6 +52,11 @@ AppForm {
                     + ", \"NISS\":\"" + gapi.getDataCardIdentifyValue(GAPI.NISS) + "\""
                     + ", \"NSNS\":\"" + gapi.getDataCardIdentifyValue(GAPI.NSNS) + "\""
                     + ", \"NIF\":\"" + gapi.getDataCardIdentifyValue(GAPI.NIF) + "\""
+                    + ", \"Validation\":\"" + gapi.getDataCardIdentifyValue(GAPI.Validation) + "\""
+                    + ", \"MRZ1\":\"" + gapi.getDataCardIdentifyValue(GAPI.MRZ1) + "\""
+                    + ", \"MRZ2\":\"" + gapi.getDataCardIdentifyValue(GAPI.MRZ2) + "\""
+                    + ", \"MRZ3\":\"" + gapi.getDataCardIdentifyValue(GAPI.MRZ3) + "\""
+                    + ", \"AccidentalIndications\":\"" + gapi.getDataCardIdentifyValue(GAPI.AccidentalIndications) + "\""
 
             if(propertyCheckBoxAddress.checked){
                 if (gapi.isAddressLoaded) {
@@ -59,6 +68,9 @@ AppForm {
                     if (triesLeft === 3) {
                         propertyBusyIndicator.running = true
                         gapi.startReadingAddress()
+                    }
+                    else if (triesLeft === 0) {
+                        propertyBusyIndicator.running = false
                     }
 
                 }
@@ -106,10 +118,16 @@ AppForm {
                         + middleImportText()
                         + "\"address_attributes\":{"
                         + " \"District\":\"" + gapi.getAddressField(GAPI.District) + "\""
+                        + ", \"DistrictCode\":\"" + gapi.getAddressField(GAPI.DistrictCode) + "\""
                         + ", \"Municipality\":\"" + gapi.getAddressField(GAPI.Municipality) + "\""
+                        + ", \"MunicipalityCode\":\"" + gapi.getAddressField(GAPI.MunicipalityCode) + "\""
                         + ", \"Parish\":\"" + gapi.getAddressField(GAPI.Parish) + "\""
+                        + ", \"ParishCode\":\"" + gapi.getAddressField(GAPI.ParishCode) + "\""
                         + ", \"Streettype\":\""    + gapi.getAddressField(GAPI.Streettype) + "\""
+                        + ", \"AbbrStreetType\":\""    + gapi.getAddressField(GAPI.AbbrStreetType) + "\""
                         + ", \"Streetname\":\""    + gapi.getAddressField(GAPI.Streetname) + "\""
+                        + ", \"Buildingtype\":\""    + gapi.getAddressField(GAPI.Buildingtype) + "\""
+                        + ", \"AbbrBuildingType\":\""    + gapi.getAddressField(GAPI.AbbrBuildingType) + "\""
                         + ", \"Doorno\":\""    + gapi.getAddressField(GAPI.Doorno) + "\""
                         + ", \"Floor\":\""    + gapi.getAddressField(GAPI.Floor) + "\""
                         + ", \"Place\":\""    + gapi.getAddressField(GAPI.Place) + "\""
@@ -118,6 +136,7 @@ AppForm {
                         + ", \"Zip4\":\""    + gapi.getAddressField(GAPI.Zip4) + "\""
                         + ", \"Zip3\":\""    + gapi.getAddressField(GAPI.Zip3) + "\""
                         + ", \"PostalLocality\":\""    + gapi.getAddressField(GAPI.PostalLocality) + "\""
+                        + ", \"GeneratedAddressCode\":\""    + gapi.getAddressField(GAPI.GeneratedAddressCode) + "\""
                         + "},\n\"wallet_signature\":\"" + tempWalletSigned + "\""
                         + ",\n\"sod\":\"" + tempSod + "\""
                         + ",\n\"certificate\":\"" + tempCertificate + "\""

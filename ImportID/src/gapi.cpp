@@ -170,11 +170,16 @@ void GAPI::getAddressFile() {
         qDebug() << "Is national citizen";
         m_foreign = false;
         m_addressData[District] = QString::fromUtf8(addressFile.getDistrict());
+        m_addressData[DistrictCode] = QString::fromUtf8(addressFile.getDistrictCode());
         m_addressData[Municipality] = QString::fromUtf8(addressFile.getMunicipality());
+        m_addressData[MunicipalityCode] = QString::fromUtf8(addressFile.getMunicipalityCode());
         m_addressData[Parish] = QString::fromUtf8(addressFile.getCivilParish());
+        m_addressData[ParishCode] = QString::fromUtf8(addressFile.getCivilParishCode());
         m_addressData[Streettype] = QString::fromUtf8(addressFile.getStreetType());
+        m_addressData[AbbrStreetType] = QString::fromUtf8(addressFile.getAbbrStreetType());
         m_addressData[Streetname] = QString::fromUtf8(addressFile.getStreetName());
         m_addressData[Buildingtype] = QString::fromUtf8(addressFile.getBuildingType());
+        m_addressData[AbbrBuildingType] = QString::fromUtf8(addressFile.getAbbrBuildingType());
         m_addressData[Doorno] = QString::fromUtf8(addressFile.getDoorNo());
         m_addressData[Floor] = QString::fromUtf8(addressFile.getFloor());
         m_addressData[Side] = QString::fromUtf8(addressFile.getSide());
@@ -183,6 +188,7 @@ void GAPI::getAddressFile() {
         m_addressData[Zip4] = QString::fromUtf8(addressFile.getZip4());
         m_addressData[Zip3] = QString::fromUtf8(addressFile.getZip3());
         m_addressData[PostalLocality] = QString::fromUtf8(addressFile.getPostalLocality());
+        m_addressData[GeneratedAddressCode] = QString::fromUtf8(addressFile.getGeneratedAddressCode());
     }
     emit signalAddressLoaded(m_foreign);
 
@@ -464,13 +470,17 @@ void GAPI::connectToCard() {
     cardData[Height] = QString::fromUtf8(eid_file.getHeight());
     cardData[Country] = QString::fromUtf8(eid_file.getCountry());
     cardData[Birthdate] = QString::fromUtf8(eid_file.getDateOfBirth());
-    cardData[Father] = QString::fromUtf8(eid_file.getGivenNameFather()) + " " +
-            QString::fromUtf8(eid_file.getSurnameFather());
-    cardData[Mother] = QString::fromUtf8(eid_file.getGivenNameMother()) + " " +
-            QString::fromUtf8(eid_file.getSurnameMother());
+
+    cardData[GivenNameFather] = QString::fromUtf8(eid_file.getGivenNameFather());
+    cardData[SurnameFather] = QString::fromUtf8(eid_file.getSurnameFather());
+    cardData[GivenNameMother] = QString::fromUtf8(eid_file.getGivenNameMother());
+    cardData[SurnameMother] = QString::fromUtf8(eid_file.getSurnameMother());
+
     cardData[Documenttype] = QString::fromUtf8(eid_file.getDocumentType());
     cardData[Documentnum] = QString::fromUtf8(eid_file.getDocumentNumber());
+    cardData[CivilianIdNumber] = QString::fromUtf8(eid_file.getCivilianIdNumber());
     cardData[Documentversion] = QString::fromUtf8(eid_file.getDocumentVersion());
+    cardData[DocumentPAN] = QString::fromUtf8(eid_file.getDocumentPAN());
     cardData[Nationality] = QString::fromUtf8(eid_file.getNationality());
     cardData[Validityenddate] = QString::fromUtf8(eid_file.getValidityEndDate());
     cardData[Validitybegindate] = QString::fromUtf8(eid_file.getValidityBeginDate());
@@ -479,6 +489,12 @@ void GAPI::connectToCard() {
     cardData[NISS] = QString::fromUtf8(eid_file.getSocialSecurityNumber());
     cardData[NSNS] = QString::fromUtf8(eid_file.getHealthNumber());
     cardData[NIF]  = QString::fromUtf8(eid_file.getTaxNo());
+
+    cardData[Validation] = QString::fromUtf8(eid_file.getValidation());
+    cardData[MRZ1] = QString::fromUtf8(eid_file.getMRZ1());
+    cardData[MRZ2] = QString::fromUtf8(eid_file.getMRZ2());
+    cardData[MRZ3] = QString::fromUtf8(eid_file.getMRZ3());
+    cardData[AccidentalIndications] = QString::fromUtf8(eid_file.getAccidentalIndications());
 
     //Load photo into a QPixmap
     PTEID_ByteArray& photo = eid_file.getPhotoObj().getphoto();

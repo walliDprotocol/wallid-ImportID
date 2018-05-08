@@ -92,13 +92,18 @@ class GAPI : public QObject
 public:
     explicit GAPI(QObject *parent = 0);
 
-    enum IDInfoKey { Documenttype, Documentversion, Surname, Givenname, Sex, Height, Nationality, Birthdate, Documentnum, Validitybegindate, Validityenddate,
-                     NIC, NIF, NISS, NSNS, IssuingEntity, PlaceOfRequest, Country, Father, Mother, AccidentalIndications };
+    enum IDInfoKey { Documenttype, Documentversion, DocumentPAN, Surname, Givenname, Sex, Height, Nationality,
+                     Birthdate, Documentnum, CivilianIdNumber , Validitybegindate, Validityenddate,
+                     NIC, NIF, NISS, NSNS, IssuingEntity, PlaceOfRequest, Country, SurnameFather, SurnameMother,
+                     GivenNameFather, GivenNameMother,Validation, MRZ1, MRZ2, MRZ3,AccidentalIndications };
 
-    enum AddressInfoKey { District, Municipality, Parish, Streettype, Streetname, Buildingtype, Doorno, Floor, Side, Locality, Place, Zip4, Zip3, PostalLocality,
-                          Foreigncountry, Foreignaddress, Foreigncity, Foreignregion, Foreignlocality, Foreignpostalcode};
+    enum AddressInfoKey { District, DistrictCode, Municipality, MunicipalityCode, Parish, ParishCode, Streettype,
+                          AbbrStreetType, Streetname, Buildingtype, AbbrBuildingType, Doorno, Floor, Side,
+                          Locality, Place, Zip4, Zip3, PostalLocality, GeneratedAddressCode, Foreigncountry, Foreignaddress, Foreigncity,
+                          Foreignregion, Foreignlocality, Foreignpostalcode};
 
-    enum CardAccessError { NoReaderFound, NoCardFound, CardReadError, SodCardReadError, CardUserPinCancel, CardUnknownError };
+    enum CardAccessError { NoReaderFound, NoCardFound, CardReadError, SodCardReadError, CardUserPinCancel,
+                           CardUnknownError };
 
     enum eCustomEventType { ET_UNKNOWN, ET_CARD_CHANGED, ET_CARD_REMOVED };
 
