@@ -97,10 +97,10 @@ public:
                      NIC, NIF, NISS, NSNS, IssuingEntity, PlaceOfRequest, Country, SurnameFather, SurnameMother,
                      GivenNameFather, GivenNameMother,Validation, MRZ1, MRZ2, MRZ3,AccidentalIndications };
 
-    enum AddressInfoKey { District, DistrictCode, Municipality, MunicipalityCode, Parish, ParishCode, Streettype,
-                          AbbrStreetType, Streetname, Buildingtype, AbbrBuildingType, Doorno, Floor, Side,
-                          Locality, Place, Zip4, Zip3, PostalLocality, GeneratedAddressCode, Foreigncountry, Foreignaddress, Foreigncity,
-                          Foreignregion, Foreignlocality, Foreignpostalcode};
+    enum AddressInfoKey { CountryCode, District, DistrictCode, Municipality, MunicipalityCode, Parish, ParishCode,
+                          Streettype, AbbrStreetType, Streetname, Buildingtype, AbbrBuildingType, Doorno, Floor, Side,
+                          Locality, Place, Zip4, Zip3, PostalLocality, GeneratedAddressCode, Foreigncountry,
+                          Foreignaddress, Foreigncity, Foreignregion, Foreignlocality, Foreignpostalcode};
 
     enum CardAccessError { NoReaderFound, NoCardFound, CardReadError, SodCardReadError, CardUserPinCancel,
                            CardUnknownError };

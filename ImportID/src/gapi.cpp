@@ -158,6 +158,8 @@ void GAPI::getAddressFile() {
     {
         qDebug() << "Is foreign citizen";
         m_foreign = true;
+        m_addressData[CountryCode] = QString::fromUtf8(addressFile.getCountryCode());
+        m_addressData[GeneratedAddressCode] = QString::fromUtf8(addressFile.getGeneratedAddressCode());
         m_addressData[Foreigncountry] = QString::fromUtf8(addressFile.getForeignCountry());
         m_addressData[Foreignaddress] = QString::fromUtf8(addressFile.getForeignAddress());
         m_addressData[Foreigncity] = QString::fromUtf8(addressFile.getForeignCity());
@@ -169,6 +171,7 @@ void GAPI::getAddressFile() {
     {
         qDebug() << "Is national citizen";
         m_foreign = false;
+        m_addressData[CountryCode] = QString::fromUtf8(addressFile.getCountryCode());
         m_addressData[District] = QString::fromUtf8(addressFile.getDistrict());
         m_addressData[DistrictCode] = QString::fromUtf8(addressFile.getDistrictCode());
         m_addressData[Municipality] = QString::fromUtf8(addressFile.getMunicipality());

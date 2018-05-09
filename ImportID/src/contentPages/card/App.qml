@@ -99,15 +99,17 @@ AppForm {
                         + tempImportText
                         + middleImportText()
                         + "\"address_attributes\":{"
-                        + " \"Foreigncountry\":\"" + gapi.getAddressField(GAPI.Foreigncountry) + "\""
+                        + " \"CountryCode\":\""    + gapi.getAddressField(GAPI.CountryCode) + "\""
+                        + ", \"GeneratedAddressCode\":\""    + gapi.getAddressField(GAPI.GeneratedAddressCode) + "\""
+                        + ", \"Foreigncountry\":\"" + gapi.getAddressField(GAPI.Foreigncountry) + "\""
                         + ", \"Foreignaddress\":\"" + gapi.getAddressField(GAPI.Foreignaddress) + "\""
                         + ", \"Foreigncity\":\"" + gapi.getAddressField(GAPI.Foreigncity) + "\""
                         + ", \"Foreignregion\":\""    + gapi.getAddressField(GAPI.Foreignregion) + "\""
                         + ", \"Foreignlocality\":\""    + gapi.getAddressField(GAPI.Foreignlocality) + "\""
                         + ", \"Foreignpostalcode\":\""    + gapi.getAddressField(GAPI.Foreignpostalcode) + "\""
-                        + "},\nwallet_signature\":\"" + tempWalletSigned + "\""
-                        + ",\nsod\":\"" + tempSod + "\""
-                        + ",\ncertificate\":\"" + tempCertificate + "\""
+                        + "},\n\"wallet_signature\":\"" + tempWalletSigned + "\""
+                        + ",\n\"sod\":\"" + tempSod + "\""
+                        + ",\n\"certificate\":\"" + tempCertificate + "\""
                         + ",\n\"wallet_address\":\"" + propertyTextFieldWallet.text + "\""
                         + closeImportText()
             }
@@ -117,7 +119,8 @@ AppForm {
                         + tempImportText
                         + middleImportText()
                         + "\"address_attributes\":{"
-                        + " \"District\":\"" + gapi.getAddressField(GAPI.District) + "\""
+                        + " \"CountryCode\":\""    + gapi.getAddressField(GAPI.CountryCode) + "\""
+                        + ", \"District\":\"" + gapi.getAddressField(GAPI.District) + "\""
                         + ", \"DistrictCode\":\"" + gapi.getAddressField(GAPI.DistrictCode) + "\""
                         + ", \"Municipality\":\"" + gapi.getAddressField(GAPI.Municipality) + "\""
                         + ", \"MunicipalityCode\":\"" + gapi.getAddressField(GAPI.MunicipalityCode) + "\""
