@@ -1,9 +1,0 @@
-# Ignore everything at build folder
-build/*
-
-$ Ignore QTCreator user profile
-src/ImportID.pro.user
-
-# But not these files...
-!build/*.qm
-!build/*.ts
