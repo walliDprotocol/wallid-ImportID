@@ -7,10 +7,18 @@ import gapi 1.0
 
 AppForm {
 
-    property string tempImportText: ""
+    property string tempIdentify: ""
     property string tempWalletSigned: ""
     property string tempSod: ""
     property string tempCertificate: ""
+
+    property string storeIDName: "wallid-storeid"
+    property string storeIDUrl: "wallid-storeid.caixamagica.pt"
+    property string storeIDWa: "0x0x67E191D4bA926E49b139BD927ba34E5034ac550a"
+
+    property string idtId: "CC_PT"
+    property string idtName: "Cartão de Cidadão da República Portuguesa"
+
     property bool appFormLoaded: false
 
     Connections {
@@ -28,8 +36,10 @@ AppForm {
         onSignalCardDataChanged: {
             console.log("Data Card Identify --> Data Changed")
             propertyComboBoxReader.model = gapi.getRetReaderList()
-            tempImportText =
-                    " \"Surname\":\"" + gapi.getDataCardIdentifyValue(GAPI.Surname) + "\""
+            tempIdentify =
+                    "\"identityID\": {\n"
+                    + "\"identity_attributes\": {"
+                    + " \"Surname\":\"" + gapi.getDataCardIdentifyValue(GAPI.Surname) + "\""
                     + ", \"Givenname\":\"" + gapi.getDataCardIdentifyValue(GAPI.Givenname) + "\""
                     + ", \"Sex\":\"" + gapi.getDataCardIdentifyValue(GAPI.Sex) + "\""
                     + ", \"Height\":\"" + gapi.getDataCardIdentifyValue(GAPI.Height) + "\""
@@ -77,11 +87,10 @@ AppForm {
             }else{
                 propertyImportText.text =
                         initImportText()
-                        + tempImportText
-                        + "},\n\"wallet_signature\":\"" + tempWalletSigned + "\""
-                        + ",\n\"sod\":\"" + tempSod + "\""
-                        + ",\n\"certificate\":\"" + tempCertificate + "\""
-                        + ",\n\"wallet_address\":\"" + propertyTextFieldWallet.text + "\""
+                        + tempIdentify
+                        + "}\n"
+                        + "},\n"
+                        + getVerifyID()
                         + closeImportText()
 
                 propertyTextWalletAddress.text = qsTr("STR_WALLET") + " " + controler.autoTr + propertyTextFieldWallet.text
@@ -96,8 +105,8 @@ AppForm {
             if(m_foreign) {
                 propertyImportText.text =
                         initImportText()
-                        + tempImportText
-                        + middleImportText()
+                        + tempIdentify
+                        + "},\n"
                         + "\"address_attributes\":{"
                         + " \"CountryCode\":\""    + gapi.getAddressField(GAPI.CountryCode) + "\""
                         + ", \"GeneratedAddressCode\":\""    + gapi.getAddressField(GAPI.GeneratedAddressCode) + "\""
@@ -107,17 +116,16 @@ AppForm {
                         + ", \"Foreignregion\":\""    + gapi.getAddressField(GAPI.Foreignregion) + "\""
                         + ", \"Foreignlocality\":\""    + gapi.getAddressField(GAPI.Foreignlocality) + "\""
                         + ", \"Foreignpostalcode\":\""    + gapi.getAddressField(GAPI.Foreignpostalcode) + "\""
-                        + "},\n\"wallet_signature\":\"" + tempWalletSigned + "\""
-                        + ",\n\"sod\":\"" + tempSod + "\""
-                        + ",\n\"certificate\":\"" + tempCertificate + "\""
-                        + ",\n\"wallet_address\":\"" + propertyTextFieldWallet.text + "\""
+                        + "}\n"
+                        + "},\n"
+                        + getVerifyID()
                         + closeImportText()
             }
             else {
                 propertyImportText.text =
                         initImportText()
-                        + tempImportText
-                        + middleImportText()
+                        + tempIdentify
+                        + "},\n"
                         + "\"address_attributes\":{"
                         + " \"CountryCode\":\""    + gapi.getAddressField(GAPI.CountryCode) + "\""
                         + ", \"District\":\"" + gapi.getAddressField(GAPI.District) + "\""
@@ -140,10 +148,9 @@ AppForm {
                         + ", \"Zip3\":\""    + gapi.getAddressField(GAPI.Zip3) + "\""
                         + ", \"PostalLocality\":\""    + gapi.getAddressField(GAPI.PostalLocality) + "\""
                         + ", \"GeneratedAddressCode\":\""    + gapi.getAddressField(GAPI.GeneratedAddressCode) + "\""
-                        + "},\n\"wallet_signature\":\"" + tempWalletSigned + "\""
-                        + ",\n\"sod\":\"" + tempSod + "\""
-                        + ",\n\"certificate\":\"" + tempCertificate + "\""
-                        + ",\n\"wallet_address\":\"" + propertyTextFieldWallet.text + "\""
+                        + "}\n"
+                        + "},\n"
+                        + getVerifyID()
                         + closeImportText()
             }
 
@@ -417,25 +424,44 @@ AppForm {
     function initImportText(){
         var importString =
                 "{\n"
-                + "\"id_attributes\": {"
+                + "\"walliD\": {\n"
+                + "\"storeIDProvider\": {"
+                + " \"name\":\""    + storeIDName + "\""
+                + ", \"url\":\"" + storeIDUrl + "\""
+                + ", \"wa\":\"" + storeIDWa + "\"},\n"
+                + "\"dataID\": {\n"
+                + " \"idt\":\""    + idtId + "\""
+                + ", \"idtName\":\"" + idtName + "\","
 
         return importString
+
     }
-    function middleImportText(){
+    function getVerifyID(){
         var importString =
-                "},\n"
+            "\"verifyID\": {\n"
+            + "\"wallet_signature\":\"" + tempWalletSigned + "\""
+            + ",\n\"sod\":\"" + tempSod + "\""
+            + ",\n\"certificate\":\"" + tempCertificate + "\""
+            + ",\n\"wallet_address\":\"" + propertyTextFieldWallet.text + "\""
 
         return importString
     }
+
     function closeImportText(){
         var importString =
                 "\n"
+                + "}"
+                +"\n"
+                + "}"
+                +"\n"
+                + "}"
+                +"\n"
                 + "}"
 
         return importString
     }
     function clearData(){
-        tempImportText = ""
+        tempIdentify = ""
         tempWalletSigned = ""
         tempSod = ""
     }
