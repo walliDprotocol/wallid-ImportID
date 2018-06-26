@@ -3,7 +3,7 @@
 # DataID Structure Sample
 
 {
-	"DataID": {
+	"dataID": {
 		"storeIDProvider": {
 			"name": "wallid-storeid",
 			"url": "wallid-storeid.caixamagica.pt",

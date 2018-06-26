@@ -38,7 +38,7 @@ AppForm {
             propertyComboBoxReader.model = gapi.getRetReaderList()
             tempIdentify =
                     "\"identityID\": {\n"
-                    + "\"identity_attributes\": {"
+                    + "\"identityAttributes\": {"
                     + "\"Surname\":\"" + gapi.getDataCardIdentifyValue(GAPI.Surname) + "\""
                     + ",\"Givenname\":\"" + gapi.getDataCardIdentifyValue(GAPI.Givenname) + "\""
                     + ",\"Sex\":\"" + gapi.getDataCardIdentifyValue(GAPI.Sex) + "\""
@@ -107,7 +107,7 @@ AppForm {
                         initImportText()
                         + tempIdentify
                         + "},\n"
-                        + "\"address_attributes\":{"
+                        + "\"addressAttributes\":{"
                         + "\"CountryCode\":\""    + gapi.getAddressField(GAPI.CountryCode) + "\""
                         + ",\"GeneratedAddressCode\":\""    + gapi.getAddressField(GAPI.GeneratedAddressCode) + "\""
                         + ",\"Foreigncountry\":\"" + gapi.getAddressField(GAPI.Foreigncountry) + "\""
@@ -439,10 +439,10 @@ AppForm {
     function getVerifyID(){
         var importString =
             "\"verifyID\": {\n"
-            + "\"wallet_signature\":\"" + tempWalletSigned + "\""
+            + "\"walletSignature\":\"" + tempWalletSigned + "\""
             + ",\n\"sod\":\"" + tempSod + "\""
             + ",\n\"certificate\":\"" + tempCertificate + "\""
-            + ",\n\"wallet_address\":\"" + propertyTextFieldWallet.text + "\""
+            + ",\n\"walletAddress\":\"" + propertyTextFieldWallet.text + "\""
 
         return importString
     }
