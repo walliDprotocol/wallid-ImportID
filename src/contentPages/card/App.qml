@@ -17,7 +17,7 @@ AppForm {
     property string storeIDWa: "0x0x67E191D4bA926E49b139BD927ba34E5034ac550a"
 
     property string idtId: "CC_PT"
-    property string idtName: "Cartão de Cidadão da República Portuguesa"
+    property string idtName: "Citizen Card - Portuguese Republic"
 
     property bool appFormLoaded: false
 
@@ -424,12 +424,12 @@ AppForm {
     function initImportText(){
         var importString =
                 "{\n"
-                + "\"walliD\": {\n"
+                + "\"dataID\": {\n"
                 + "\"storeIDProvider\": {"
                 + "\"name\":\""    + storeIDName + "\""
                 + ",\"url\":\"" + storeIDUrl + "\""
                 + ",\"wa\":\"" + storeIDWa + "\"},\n"
-                + "\"dataID\": {\n"
+                + "\"data\": {\n"
                 + "\"idt\":\""    + idtId + "\",\n"
                 + "\"idtName\":\"" + idtName + "\",\n"
 
