@@ -126,7 +126,7 @@ AppForm {
                         initImportText()
                         + tempIdentify
                         + "},\n"
-                        + "\"address_attributes\":{"
+                        + "\"addressAttributes\":{"
                         + "\"CountryCode\":\""    + gapi.getAddressField(GAPI.CountryCode) + "\""
                         + ",\"District\":\"" + gapi.getAddressField(GAPI.District) + "\""
                         + ",\"DistrictCode\":\"" + gapi.getAddressField(GAPI.DistrictCode) + "\""
