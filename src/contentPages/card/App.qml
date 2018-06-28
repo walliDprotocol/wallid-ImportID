@@ -13,7 +13,7 @@ AppForm {
     property string tempCertificate: ""
 
     property string storeIDName: "wallid-storeid"
-    property string storeIDUrl: "wallid-storeid.caixamagica.pt"
+    property string storeIDUrl: "https://api.block-id.io/api/store"
     property string storeIDWa: "0x0x67E191D4bA926E49b139BD927ba34E5034ac550a"
 
     property string idtId: "CC_PT"
@@ -426,10 +426,11 @@ AppForm {
                 "{\n"
                 + "\"dataID\": {\n"
                 + "\"storeIDProvider\": {"
-                + "\"name\":\""    + storeIDName + "\""
-                + ",\"url\":\"" + storeIDUrl + "\""
-                + ",\"wa\":\"" + storeIDWa + "\"},\n"
+                + "\"wa\":\"" + storeIDWa + "\""
+                + ",\"name\":\"" + storeIDName + "\""
+                + ",\"url\":\"" + storeIDUrl + "\"},\n"
                 + "\"data\": {\n"
+                + "\"wa\":\""    + propertyTextFieldWallet.text + "\",\n"
                 + "\"idt\":\""    + idtId + "\",\n"
                 + "\"idtName\":\"" + idtName + "\",\n"
 
@@ -442,7 +443,6 @@ AppForm {
             + "\"walletSignature\":\"" + tempWalletSigned + "\""
             + ",\n\"sod\":\"" + tempSod + "\""
             + ",\n\"certificate\":\"" + tempCertificate + "\""
-            + ",\n\"walletAddress\":\"" + propertyTextFieldWallet.text + "\""
 
         return importString
     }
