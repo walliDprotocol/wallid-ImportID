@@ -31,7 +31,7 @@ Item {
     property alias propertyTutorialMouseArea: tutorialMouseArea
     property alias propertHelpTextMenu: helpTextMenu
     property alias propertyTutorialTextMenu: tutorialTextMenu
-    property alias propertAboutTextBlockId: aboutTextBlockId
+    property alias propertAboutText: aboutText
 
     property alias propertyGenerateButton: generateButton
     property alias propertyBackButton: backButton
@@ -97,7 +97,7 @@ Item {
                 anchors.fill: parent
             }
             Text {
-                id: aboutTextBlockId
+                id: aboutText
                 text: qsTr("STR_ABOUT_US") + controler.autoTr
                 font.capitalization: Font.MixedCase
                 font.pixelSize: Constants.SIZE_TEXT_BOTTON

@@ -12,9 +12,9 @@ AppForm {
     property string tempSod: ""
     property string tempCertificate: ""
 
-    property string storeIDName: "wallid-storeid"
-    property string storeIDUrl: "https://api.block-id.io/api/store"
-    property string storeIDWa: "0x0x67E191D4bA926E49b139BD927ba34E5034ac550a"
+    property string storeIDName: "storeid.caixamagica.pt"
+    property string storeIDUrl: "https://storeid.caixamagica.pt/api/v1/data"
+    property string storeIDWa: "0x67E191D4bA926E49b139BD927ba34E5034ac550a"
 
     property string idtId: "CC_PT"
     property string idtName: "Citizen Card - Portuguese Republic"
@@ -335,7 +335,7 @@ AppForm {
                    Constants.COLOR_MAIN :
                    Constants.COLOR_MAIN_SOFT_GRAY
     }
-    propertAboutTextBlockId{
+    propertAboutText{
         font.weight: propertAboutUsTextMenuMouseArea.containsMouse ?
                          Font.Bold :
                          Font.Normal

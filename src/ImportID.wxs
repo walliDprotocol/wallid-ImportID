@@ -10,7 +10,7 @@
 	
         <Package Id="$(var.PackageCode)"
 				 InstallerVersion="405"
-				 Keywords="BlockID ImportID"
+				 Keywords="WalliD ImportID"
 				 Platform="x64"
 			     Comments="ImportID application version $(var.OfficialProductVersion)"
 				 Manufacturer="Caixa Mágica Software"
@@ -22,7 +22,7 @@
 		<Icon Id="ImportID.ico" SourceFile="appicon.ico"/>
 		<Property Id="ARPPRODUCTICON" Value="ImportID.ico"/>
 		
-		<Property Id="ARPURLINFOABOUT" Value="https://block-id.io"/>
+                <Property Id="ARPURLINFOABOUT" Value="https://wallid.io"/>
 
 		<Property Id="ALLUSERS" Value="1" />
 

@@ -22,39 +22,39 @@
 <context>
     <name>App</name>
     <message>
-        <location filename="contentPages/card/App.qml" line="75"/>
-        <location filename="contentPages/card/App.qml" line="128"/>
+        <location filename="contentPages/card/App.qml" line="96"/>
+        <location filename="contentPages/card/App.qml" line="157"/>
         <source>STR_WALLET</source>
         <translation>Wallet:</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="76"/>
-        <location filename="contentPages/card/App.qml" line="129"/>
+        <location filename="contentPages/card/App.qml" line="97"/>
+        <location filename="contentPages/card/App.qml" line="158"/>
         <source>STR_COPY_DATAID</source>
         <translation>Select the text in the box below and copy and then paste this data into MyEtherID ( Store Identity Page )</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="245"/>
+        <location filename="contentPages/card/App.qml" line="274"/>
         <source>STR_CHOOSE_ID_TYPE</source>
         <translation>Choose the ID Type</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="269"/>
+        <location filename="contentPages/card/App.qml" line="298"/>
         <source>STR_APP_TITLE_TEXT</source>
         <translation>ImportID - Off-Chain to On-Chain Identity Service</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="331"/>
+        <location filename="contentPages/card/App.qml" line="360"/>
         <source>STR_ERROR</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="333"/>
+        <location filename="contentPages/card/App.qml" line="362"/>
         <source>STR_ERROR_FILL_WALLET</source>
         <translation>Please Fill the Ethereum Wallet Address</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="353"/>
+        <location filename="contentPages/card/App.qml" line="382"/>
         <source>STR_APP_TITLE</source>
         <translation>ImportID</translation>
     </message>
@@ -68,7 +68,7 @@
     </message>
     <message>
         <source>STR_POWER_BY</source>
-        <translation type="vanished">Powered by BlockID @2018</translation>
+        <translation type="vanished">Powered by WalliD @2018</translation>
     </message>
     <message>
         <source>STR_LANG_EN</source>
@@ -155,14 +155,6 @@
         <source>STR_GOTO_MYETHERID_IO</source>
         <translation>Go to MyEtherID.io</translation>
     </message>
-    <message>
-        <source>STR_WHAT_IS_BLOCKID</source>
-        <translation type="vanished">What is BlockID?</translation>
-    </message>
-    <message>
-        <source>STR_WHAT_IS_BLOCKID_TEXT</source>
-        <translation type="vanished">What is BlockID  Text</translation>
-    </message>
 </context>
 <context>
     <name>EntitiesModel</name>
@@ -179,27 +171,27 @@
 <context>
     <name>GAPI</name>
     <message>
-        <location filename="gapi.cpp" line="248"/>
+        <location filename="gapi.cpp" line="257"/>
         <source>STR_CARD_ACTIVE_AND_VALID</source>
         <translation>Citizen card active and valid.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="255"/>
+        <location filename="gapi.cpp" line="264"/>
         <source>STR_CARD_CONNECTION_ERROR</source>
         <translation>Citizen Card status could not be verified. Please check your Internet connection.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="261"/>
+        <location filename="gapi.cpp" line="270"/>
         <source>STR_CARD_CANCELED</source>
         <translation>Citizen card canceled. Please contact a competent Citizen Card issuing service.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="266"/>
+        <location filename="gapi.cpp" line="275"/>
         <source>STR_CARD_EXPIRED</source>
         <translation>Expired Citizen Card. Please contact a competent Citizen Card issuing service.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="271"/>
+        <location filename="gapi.cpp" line="280"/>
         <source>STR_CARD_NOT_ACTIVE</source>
         <translation>The Citizen Card was not activated.</translation>
     </message>
@@ -207,22 +199,14 @@
 <context>
     <name>HowToUseForm.ui</name>
     <message>
-        <source>STR_WHAT_IS_BLOCKID</source>
-        <translation type="vanished">What is BlockID?</translation>
-    </message>
-    <message>
-        <source>STR_WHAT_IS_BLOCKID_TEXT</source>
-        <translation type="vanished">What is BlockID  Text</translation>
-    </message>
-    <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="46"/>
         <source>STR_FAQ_L1</source>
-        <translation>What is BlockID?</translation>
+        <translation>What is WalliD?</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="47"/>
         <source>STR_FAQ_L1_TEXT</source>
-        <translation>BlockID is an ethereum blockchain protocol designed with the purpose to store encrypted id attributes from certified Citizen Cards in smart contracts in Ethereum blockchain and to provide identity certifying services. At the present time there are three distinct applications running on BlockID’s protocol:
+        <translation>WalliD is an ethereum blockchain protocol designed with the purpose to store encrypted id attributes from certified Citizen Cards in smart contracts in Ethereum blockchain and to provide identity certifying services. At the present time there are three distinct applications running on WalliD’s protocol:
 - ImportID;
 - MyEtherID;
 - VerifyID. </translation>
@@ -246,7 +230,7 @@ ImportID’s embedded algorithm runs a validation process to make sure all ID da
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="61"/>
         <source>STR_FAQ_L3_TEXT</source>
-        <translation>MyEtherID is a free, open-source, client side interface running on BlockID’s protocol. It allows you to encrypt and store your identity attributes, extracted from you Citizen Card in the Ethereum blockchain by creating an ID smart contract and associating it with your Ethereum Wallet. It also allows you to check your ID smart contract transactions and information.</translation>
+        <translation>MyEtherID is a free, open-source, client side interface running on WalliD’s protocol. It allows you to encrypt and store your identity attributes, extracted from you Citizen Card in the Ethereum blockchain by creating an ID smart contract and associating it with your Ethereum Wallet. It also allows you to check your ID smart contract transactions and information.</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="67"/>
@@ -262,13 +246,13 @@ At the same time it is a safe way to store your identity it is also the most eff
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="74"/>
         <source>STR_FAQ_L5</source>
-        <translation>What can I do with BlockID?</translation>
+        <translation>What can I do with WalliD?</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="75"/>
         <source>STR_FAQ_L5_TEXT</source>
-        <translation>BlockID protocol allows you to extract ID attributes from your Citizen Cards or identity documents, encrypt, store and manage them on the Ethereum blockchain and safely and instantaneously trade those attributes with entities you trust.
-BlockID is the Ethereum protocol where ImportID and MyetherID operate to perform these functionalities.
+        <translation>WalliD protocol allows you to extract ID attributes from your Citizen Cards or identity documents, encrypt, store and manage them on the Ethereum blockchain and safely and instantaneously trade those attributes with entities you trust.
+WalliD is the Ethereum protocol where ImportID and MyetherID operate to perform these functionalities.
 The third and last component from these protocol is VerifyID a server side app that stores the proof-of-identity from your encrypted smart contract and is sent as a validation for the entities you agreed to share your data with.</translation>
     </message>
     <message>
@@ -284,12 +268,12 @@ The third and last component from these protocol is VerifyID a server side app t
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="88"/>
         <source>STR_FAQ_L7</source>
-        <translation>Why is BlockID a protocol for Ethereum?</translation>
+        <translation>Why is WalliD a protocol for Ethereum?</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="89"/>
         <source>STR_FAQ_L7_TEXT</source>
-        <translation>The Ethereum Blockchain is currently the only viable solution to create, store and trade smart contracts. BlockID’s protocol is focused on one specific potential usage that comes from smart contracts, by storing and encrypting certified ID attributes in one and by associating it with it’s user’s Ethereum Wallet. Ethereum provides the solid base for any kind of smart contracts to use their protocol and internet users will use it as a gateway to unlock a series of different private, safe and efficient transactions online. BlockID allows you to associate your real life certified ID to your wallet whenever you need to prove your identity on the blockchain.</translation>
+        <translation>The Ethereum Blockchain is currently the only viable solution to create, store and trade smart contracts. WalliD’s protocol is focused on one specific potential usage that comes from smart contracts, by storing and encrypting certified ID attributes in one and by associating it with it’s user’s Ethereum Wallet. Ethereum provides the solid base for any kind of smart contracts to use their protocol and internet users will use it as a gateway to unlock a series of different private, safe and efficient transactions online. WalliD allows you to associate your real life certified ID to your wallet whenever you need to prove your identity on the blockchain.</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="95"/>
@@ -329,7 +313,7 @@ The third and last component from these protocol is VerifyID a server side app t
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="128"/>
         <source>STR_FAQ_R3_TEXT</source>
-        <translation>Currently only Portuguese Citizen Card certificates are compatible with MyEtherID. BlockID’s team is working on the expansion of ImportID’s attribute certificate recognition feature to other identity types based on certificate X509. It means in the near future all European Union Citizenship Cards data will be supported. Further identity certificates will be added later.</translation>
+        <translation>Currently only Portuguese Citizen Card certificates are compatible with MyEtherID. WalliD’s team is working on the expansion of ImportID’s attribute certificate recognition feature to other identity types based on certificate X509. It means in the near future all European Union Citizenship Cards data will be supported. Further identity certificates will be added later.</translation>
     </message>
     <message>
         <location filename="contentPages/card/HowToUseForm.ui.qml" line="134"/>
@@ -396,12 +380,12 @@ The third and last component from these protocol is VerifyID a server side app t
 <context>
     <name>Popup</name>
     <message>
-        <location filename="contentPages/card/App.qml" line="216"/>
+        <location filename="contentPages/card/App.qml" line="245"/>
         <source>STR_POPUP_ERROR</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="218"/>
+        <location filename="contentPages/card/App.qml" line="247"/>
         <source>STR_SIGN_WALLET_ERROR</source>
         <translation>Invalid wallet address</translation>
     </message>
@@ -409,53 +393,53 @@ The third and last component from these protocol is VerifyID a server side app t
 <context>
     <name>Popup Card</name>
     <message>
-        <location filename="contentPages/card/App.qml" line="143"/>
-        <location filename="contentPages/card/App.qml" line="149"/>
-        <location filename="contentPages/card/App.qml" line="155"/>
-        <location filename="contentPages/card/App.qml" line="161"/>
+        <location filename="contentPages/card/App.qml" line="172"/>
+        <location filename="contentPages/card/App.qml" line="178"/>
+        <location filename="contentPages/card/App.qml" line="184"/>
+        <location filename="contentPages/card/App.qml" line="190"/>
         <location filename="main.qml" line="50"/>
         <source>STR_POPUP_ERROR</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="145"/>
+        <location filename="contentPages/card/App.qml" line="174"/>
         <source>STR_POPUP_NO_CARD_READER</source>
         <translation>No card readers are detected.</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="151"/>
+        <location filename="contentPages/card/App.qml" line="180"/>
         <source>STR_POPUP_NO_CARD</source>
         <translation>No card present</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="157"/>
+        <location filename="contentPages/card/App.qml" line="186"/>
         <source>STR_SOD_VALIDATION_ERROR</source>
         <translation>SOD validation failed: card data consistency is compromised!</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="163"/>
+        <location filename="contentPages/card/App.qml" line="192"/>
         <source>STR_POPUP_CARD_ACCESS_ERROR</source>
         <translation>A problem has occurred while trying to read card. Please, try again.</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="179"/>
-        <location filename="contentPages/card/App.qml" line="191"/>
-        <location filename="contentPages/card/App.qml" line="201"/>
+        <location filename="contentPages/card/App.qml" line="208"/>
+        <location filename="contentPages/card/App.qml" line="220"/>
+        <location filename="contentPages/card/App.qml" line="230"/>
         <source>STR_POPUP_CARD_READ</source>
         <translation>Reading card data</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="181"/>
+        <location filename="contentPages/card/App.qml" line="210"/>
         <source>STR_POPUP_CARD_REMOVED</source>
         <translation>Citizen card removed</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="193"/>
+        <location filename="contentPages/card/App.qml" line="222"/>
         <source>STR_POPUP_CARD_CHANGED</source>
         <translation>Citizen card inserted</translation>
     </message>
     <message>
-        <location filename="contentPages/card/App.qml" line="203"/>
+        <location filename="contentPages/card/App.qml" line="232"/>
         <source>STR_POPUP_CARD_READ_UNKNOWN</source>
         <translation>Application error! Please reinstall the application</translation>
     </message>
@@ -576,7 +560,7 @@ Why do I need an ether wallet?</translation>
     <message>
         <location filename="contentPages/card/TutorialForm.ui.qml" line="569"/>
         <source>STR_TUTORIAL_STEP5_TEXT</source>
-        <translation>After reading your ID document, ImportID compiles your attributes in text format readable by the blockchain encpryter service (myetherid.io). This text block will be necessary to validate and store your ID on the blockchain through BlockID protocol.</translation>
+        <translation>After reading your ID document, ImportID compiles your attributes in text format readable by the blockchain encpryter service (myetherid.io). This text block will be necessary to validate and store your ID on the blockchain through WalliD protocol.</translation>
     </message>
     <message>
         <location filename="contentPages/card/TutorialForm.ui.qml" line="598"/>
@@ -587,17 +571,6 @@ Why do I need an ether wallet?</translation>
         <location filename="contentPages/card/TutorialForm.ui.qml" line="610"/>
         <source>STR_TUTORIAL_STEP6_TEXT</source>
         <translation>Select all the text in ID Data box and copy it. Go to myetherid.io to encrypt your data and store it on the blockchain through your ether wallet association. Your ID Data will be required by this website during the process of creating your ID smart contract address.</translation>
-    </message>
-</context>
-<context>
-    <name>howtoUse</name>
-    <message>
-        <source>STR_WHAT_IS_BLOCKID</source>
-        <translation type="vanished">What is BlockID?</translation>
-    </message>
-    <message>
-        <source>STR_WHAT_IS_BLOCKID_TEXT</source>
-        <translation type="vanished">What is BlockID  Text</translation>
     </message>
 </context>
 </TS>
