@@ -6,6 +6,7 @@
 #include <cstdio>
 #include <QQuickImageProvider>
 #include <QCryptographicHash>
+#include <QClipboard>
 #include "qpainter.h"
 #include "eidlib.h"
 
@@ -833,4 +834,12 @@ void GAPI::doGetCertificate() {
     emit signalGetCertificateSucess(ba.toHex(0));
 
     END_TRY_CATCH
+}
+
+void GAPI::setTextClipboard(QString text){
+
+    qDebug() << "C++: setTextClipboard";
+
+    QClipboard *p_Clipboard = NULL;
+    p_Clipboard->setText(text);
 }

@@ -150,6 +150,8 @@ public slots:
     void startGettingSod();
     void startGettingCertificate();
 
+    void setTextClipboard(QString text);
+
 signals:
     // Signal from GAPI to Gui
     // Notify about Card Identify changed

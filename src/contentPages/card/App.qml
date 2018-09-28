@@ -386,6 +386,7 @@ AppForm {
     propertyGotoButton {
         onClicked: {
             console.log("Goto Button clicked")
+            gapi.setTextClipboard(propertyImportText.text)
             Qt.openUrlExternally("https://www.myetherid.io/");
         }
     }

@@ -31,7 +31,7 @@
         <location filename="contentPages/card/App.qml" line="97"/>
         <location filename="contentPages/card/App.qml" line="158"/>
         <source>STR_COPY_DATAID</source>
-        <translation>Selecione o texto na caixa abaixo e copie e cole esses dados no MyEtherID ( Página Store Identity )</translation>
+        <translation>Pressione o botão em baixo, para copiar e ir para MyEtherID.io ( Página Store Identity )</translation>
     </message>
     <message>
         <location filename="contentPages/card/App.qml" line="274"/>
@@ -153,7 +153,7 @@
     <message>
         <location filename="contentPages/card/AppForm.ui.qml" line="590"/>
         <source>STR_GOTO_MYETHERID_IO</source>
-        <translation>Ir para MyEtherID.io</translation>
+        <translation>Copiar e ir para MyEtherID.io</translation>
     </message>
 </context>
 <context>
