@@ -49,8 +49,6 @@ int main(int argc, char *argv[])
     ctx->setContextProperty("gapi", &gapi);
     ctx->setContextProperty("controler", &controller);
 
-    engine.addImageProvider("myimageprovider", gapi.buildImageProvider());
-
     // Load main QML file
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 

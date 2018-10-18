@@ -72,16 +72,6 @@ public:
 typedef QMap<QString,unsigned long> tCallBackHandles;
 typedef QMap<QString,CallBackData*> tCallBackData;
 
-class PhotoImageProvider: public QQuickImageProvider 
-{
-public:
-    PhotoImageProvider() : QQuickImageProvider(QQuickImageProvider::Pixmap) {}
-    void setPixmap(QPixmap &pixmap) { p = pixmap; }
-
-private:
-    QPixmap p;
-};
-
 // IDType : CMD_PT
 struct CmdSignParams {
 public:
@@ -122,8 +112,6 @@ public:
 
     bool isAddressLoaded() {return m_addressLoaded; }
 
-    QQuickImageProvider * buildImageProvider() { return image_provider; }
-
     // Do not forget to declare your class to the QML system.
     static void declareQMLTypes() {
         qmlRegisterType<GAPI>("gapi", 1, 0, "GAPI");
@@ -132,6 +120,10 @@ public:
 
 public slots:
     // Slots to Gui request values
+    void initTranslation();
+    void setTextClipboard(QString text);
+
+    // IDType : CC_PT
     QVariantList getRetReaderList(void);
     void setReaderByUser(unsigned long setReaderIndex);
     void resetReaderSelected(void) {selectedReaderIndex =  -1; }
@@ -139,28 +131,15 @@ public slots:
     void setAddressLoaded(bool addressLoaded) {m_addressLoaded = addressLoaded; }
     void startCardReading();
     void startReadingAddress();
-
     unsigned int verifyAddressPin(QString pin);
-
-    QString getCardActivation();
     QString getDataCardIdentifyValue(GAPI::IDInfoKey key);
     QString getAddressField(GAPI::AddressInfoKey key);
-
     void setEventCallbacks( void );
-    void startGetCardActivation ( void );
-    void showCertificateAuthStatus(int certificateStatus);
-
-    void initTranslation();
-
     void setCardReadersCheck( bool status );
     void updateReaderList( void );
-
     void startSigningWalletAddress(QString walletAddress);
     void startGettingSod();
     void startGettingCertificate();
-
-    void setTextClipboard(QString text);
-
     // IDType : CMD_PT
     void signOpenCMD(QString mobileNumber, QString secret_code, QString wa);
     void signCloseCMD(QString sms_token);
@@ -169,6 +148,9 @@ public slots:
 signals:
     // Signal from GAPI to Gui
     // Notify about Card Identify changed
+    void signalLanguageChangedError();
+
+    // IDType : CC_PT
     void signalReaderContext();
     void signalSetReaderComboIndex(long selected_reader);
     void signalCardDataChanged();
@@ -179,16 +161,11 @@ signals:
     void signalAddressLoadedChanged();
     void signalCardChanged(const int error_code);
     void signalCertificatesChanged(const QVariantMap certificatesMap);
-    void getCertificateAuthStatusFinished(int certificateStatus);
     void signalShowCardActivation(QString statusMessage);
-
-    void signalLanguageChangedError();
-
     void signalWalletAddressSignSuccess(const QString walletAddressSigned);
     void signalWalletAddressSignFail();
     void signalGetSodSucess(const QString Sod);
     void signalGetCertificateSucess(const QString Certificate);
-
     // IDType : CMD_PT
     void signalUpdateProgressBar(int value);
     void signalUpdateProgressStatus(const QString statusMessage);
@@ -199,39 +176,32 @@ signals:
 private:
     bool LoadTranslationFile(QString NewLanguage);
 
+    // IDType : CC_PT
     void setDataCardIdentify(QMap<GAPI::IDInfoKey, QString> m_data);
     void connectToCard();
     void getPersoDataFile();
     void setPersoDataFile(QString text);
     void getAddressFile();
-    void getCertificateAuthStatus(void );
     void getCardInstance(eIDMW::PTEID_EIDCard *&new_card);
-
     void stopAllEventCallbacks(void);
     void cleanupCallbackData(void);
-
     void doSignWalletAddress(QString walletAddress);
     void doGetSod();
     void doGetCertificate();
-
-    // IDType : CMD_PT
-    void doOpenSignCMD(CmdSignParams &params);
-    void doCloseSignCMD(QString sms_token);
-
     // Data Card Identify map
     QMap<GAPI::IDInfoKey, QString> m_data;
     QMap<GAPI::AddressInfoKey, QString> m_addressData;
     //Don't free this!, we release ownership to the QMLEngine in buildImageProvider()
-    PhotoImageProvider *image_provider;
-
     QString m_persoData;
     bool m_addressLoaded;
     signed int selectedReaderIndex = -1;
-
     tCallBackHandles		m_callBackHandles;
     tCallBackData			m_callBackData;
-
     QTimer* m_timerReaderList;
+
+    // IDType : CMD_PT
+    void doOpenSignCMD(CmdSignParams &params);
+    void doCloseSignCMD(QString sms_token);
 
 protected:
     QTranslator m_translator;

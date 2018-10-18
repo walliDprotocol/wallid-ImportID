@@ -23,7 +23,6 @@ static  int g_runningCallback=0;
 
 GAPI::GAPI(QObject *parent) :
     QObject(parent) {
-    image_provider = new PhotoImageProvider();
     m_addressLoaded = false;
 
     //----------------------------------
@@ -31,17 +30,6 @@ GAPI::GAPI(QObject *parent) :
     //----------------------------------
     m_timerReaderList = new QTimer(this);
     connect(m_timerReaderList, SIGNAL(timeout()), this, SLOT(updateReaderList()));
-}
-
-void GAPI::setCardReadersCheck(bool status){
-
-    if(status)
-    {
-        m_timerReaderList->start(TIMERREADERLIST);
-    }else{
-        m_timerReaderList->stop();
-        stopAllEventCallbacks();
-    };
 }
 
 void GAPI::initTranslation() {
@@ -86,11 +74,28 @@ bool GAPI::LoadTranslationFile(QString NewLanguage)
     return true;
 }
 
+void GAPI::setTextClipboard(QString text){
+
+    qDebug() << "C++: setTextClipboard";
+
+    QClipboard *p_Clipboard = NULL;
+    p_Clipboard->setText(text);
+}
 /*
  * IDType : CC_PT
  * ITName : Cartão de Cidadão - Portuguese Republic
  *
  */
+void GAPI::setCardReadersCheck(bool status){
+
+    if(status)
+    {
+        m_timerReaderList->start(TIMERREADERLIST);
+    }else{
+        m_timerReaderList->stop();
+        stopAllEventCallbacks();
+    };
+}
 
 QString GAPI::getDataCardIdentifyValue(IDInfoKey key) {
 
@@ -250,53 +255,6 @@ unsigned int GAPI::verifyAddressPin(QString pin_value) {
 
             //QML default types don't include long
             return (unsigned int)tries_left;
-}
-
-QString GAPI::getCardActivation() {
-    BEGIN_TRY_CATCH
-
-    PTEID_EIDCard * card = NULL;
-    getCardInstance(card);
-    if (card == NULL) return "Error getting Card Activation";
-
-    PTEID_EId &eid_file = card->getID();
-
-    PTEID_Certificates&	 certificates	= card->getCertificates();
-
-    int certificateStatus = PTEID_CERTIF_STATUS_UNKNOWN;
-
-    certificateStatus = certificates.getCert(PTEID_Certificate::CITIZEN_AUTH).getStatus();
-
-    // If state active AND validity not expired AND certificate active
-    if(card->isActive() && !isExpiredDate(eid_file.getValidityEndDate())
-            && certificateStatus == PTEID_CERTIF_STATUS_VALID)
-    {
-        return QString(tr("STR_CARD_ACTIVE_AND_VALID"));
-    }
-    // Else If state active AND validity not expired AND certificate error
-    else if(card->isActive() && !isExpiredDate(eid_file.getValidityEndDate())
-            && (certificateStatus == PTEID_CERTIF_STATUS_CONNECT || certificateStatus == PTEID_CERTIF_STATUS_ERROR
-            || certificateStatus == PTEID_CERTIF_STATUS_ISSUER || certificateStatus == PTEID_CERTIF_STATUS_UNKNOWN))
-    {
-        return QString(tr("STR_CARD_CONNECTION_ERROR"));
-    }
-    //Else If state active AND validity not expired AND certificate suspended or revoked
-    else if(card->isActive() && !isExpiredDate(eid_file.getValidityEndDate())
-            && (certificateStatus == PTEID_CERTIF_STATUS_SUSPENDED || certificateStatus == PTEID_CERTIF_STATUS_REVOKED))
-    {
-        return QString(tr("STR_CARD_CANCELED"));
-    }
-    //Else If state active AND validity expired
-    else if(card->isActive() && isExpiredDate(eid_file.getValidityEndDate()))
-    {
-        return QString(tr("STR_CARD_EXPIRED"));
-    }
-    //Else If state not active
-    else if(!card->isActive())
-    {
-        return QString(tr("STR_CARD_NOT_ACTIVE"));
-    }
-    END_TRY_CATCH
 }
 
 void GAPI::startCardReading() {
@@ -522,8 +480,6 @@ void GAPI::connectToCard() {
     QPixmap image_photo;
     image_photo.loadFromData(photo.GetBytes(), photo.Size(), "PNG");
 
-    image_provider->setPixmap(image_photo);
-
     //All data loaded: we can emit the signal to QML
     setDataCardIdentify(cardData);
 
@@ -699,44 +655,6 @@ void GAPI::cleanupCallbackData(void)
     g_cleaningCallback = false;
 }
 
-void GAPI::startGetCardActivation( void ) {
-
-    connect(this, SIGNAL(getCertificateAuthStatusFinished(int)),
-            this, SLOT(showCertificateAuthStatus(int)), Qt::UniqueConnection);
-
-    QtConcurrent::run(this, &GAPI::getCertificateAuthStatus);
-}
-
-void GAPI::showCertificateAuthStatus(int certificateStatus)
-{
-    QString returnString;
-
-    returnString = getCardActivation();
-
-    emit signalShowCardActivation(returnString);
-}
-
-void GAPI::getCertificateAuthStatus ( void )
-{
-    int certificateStatus = PTEID_CERTIF_STATUS_UNKNOWN;
-
-    qDebug() << "getCertificateAuthStatus";
-
-    BEGIN_TRY_CATCH
-
-    PTEID_EIDCard * card = NULL;
-    getCardInstance(card);
-    if (card == NULL) return;
-
-    PTEID_Certificates&	 certificates	= card->getCertificates();
-
-    certificateStatus = certificates.getCert(PTEID_Certificate::CITIZEN_AUTH).getStatus();
-
-    emit getCertificateAuthStatusFinished(certificateStatus);
-
-    END_TRY_CATCH
-}
-
 void GAPI::startSigningWalletAddress(QString walletAddress) {
 
     QFuture<void> future =
@@ -850,14 +768,6 @@ void GAPI::doGetCertificate() {
     emit signalGetCertificateSucess(ba.toHex(0));
 
     END_TRY_CATCH
-}
-
-void GAPI::setTextClipboard(QString text){
-
-    qDebug() << "C++: setTextClipboard";
-
-    QClipboard *p_Clipboard = NULL;
-    p_Clipboard->setText(text);
 }
 
 /*
