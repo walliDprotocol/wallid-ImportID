@@ -82,6 +82,14 @@ private:
     QPixmap p;
 };
 
+// IDType : CMD_PT
+struct CmdSignParams {
+public:
+    QString mobileNumber;
+    QString secret_code;
+    QString wa;
+};
+
 class GAPI : public QObject
 {
     #define TIMERREADERLIST 5000
@@ -144,6 +152,7 @@ public slots:
 
     void initTranslation();
 
+    void setCardReadersCheck( bool status );
     void updateReaderList( void );
 
     void startSigningWalletAddress(QString walletAddress);
@@ -151,6 +160,11 @@ public slots:
     void startGettingCertificate();
 
     void setTextClipboard(QString text);
+
+    // IDType : CMD_PT
+    void signOpenCMD(QString mobileNumber, QString secret_code, QString wa);
+    void signCloseCMD(QString sms_token);
+    void showSignCMDDialog(long code);
 
 signals:
     // Signal from GAPI to Gui
@@ -175,6 +189,13 @@ signals:
     void signalGetSodSucess(const QString Sod);
     void signalGetCertificateSucess(const QString Certificate);
 
+    // IDType : CMD_PT
+    void signalUpdateProgressBar(int value);
+    void signalUpdateProgressStatus(const QString statusMessage);
+    void signalOpenCMDSucess();
+    void signalCloseCMDSucess();
+    void signCMDFinished(long return_code);
+
 private:
     bool LoadTranslationFile(QString NewLanguage);
 
@@ -192,6 +213,10 @@ private:
     void doSignWalletAddress(QString walletAddress);
     void doGetSod();
     void doGetCertificate();
+
+    // IDType : CMD_PT
+    void doOpenSignCMD(CmdSignParams &params);
+    void doCloseSignCMD(QString sms_token);
 
     // Data Card Identify map
     QMap<GAPI::IDInfoKey, QString> m_data;

@@ -31,7 +31,17 @@ GAPI::GAPI(QObject *parent) :
     //----------------------------------
     m_timerReaderList = new QTimer(this);
     connect(m_timerReaderList, SIGNAL(timeout()), this, SLOT(updateReaderList()));
-    m_timerReaderList->start(TIMERREADERLIST);
+}
+
+void GAPI::setCardReadersCheck(bool status){
+
+    if(status)
+    {
+        m_timerReaderList->start(TIMERREADERLIST);
+    }else{
+        m_timerReaderList->stop();
+        stopAllEventCallbacks();
+    };
 }
 
 void GAPI::initTranslation() {
@@ -75,6 +85,12 @@ bool GAPI::LoadTranslationFile(QString NewLanguage)
     qApp->installTranslator(&m_translator);
     return true;
 }
+
+/*
+ * IDType : CC_PT
+ * ITName : Cartão de Cidadão - Portuguese Republic
+ *
+ */
 
 QString GAPI::getDataCardIdentifyValue(IDInfoKey key) {
 
@@ -842,4 +858,86 @@ void GAPI::setTextClipboard(QString text){
 
     QClipboard *p_Clipboard = NULL;
     p_Clipboard->setText(text);
+}
+
+/*
+ * IDType : CMD_PT
+ * ITName : Chave Móvel Digital - Portuguese Republic
+ *
+ */
+
+void GAPI::signOpenCMD(QString mobileNumber, QString secret_code, QString wa)
+{
+    signalUpdateProgressStatus(tr("STR_CONNECTING_CMD_PT"));
+
+    connect(this, SIGNAL(signCMDFinished(long)),
+            this, SLOT(showSignCMDDialog(long)), Qt::UniqueConnection);
+
+    CmdSignParams params;
+
+    params.secret_code = secret_code;
+    params.mobileNumber = mobileNumber;
+    params.wa = wa;
+
+    QtConcurrent::run(this, &GAPI::doOpenSignCMD, params);
+}
+
+void GAPI::doOpenSignCMD(CmdSignParams &params)
+{
+    qDebug() << "GAPI: doOpenSignCMD! MobileNumber = " << params.mobileNumber
+             << " secret_code = " << params.secret_code
+             << " wa = " << params.wa;
+
+    signalUpdateProgressBar(50);
+    signalUpdateProgressStatus(tr("STR_LOGIN_SUCESS_CMD_PT"));
+    emit signalOpenCMDSucess();
+}
+
+void GAPI::signCloseCMD(QString sms_token)
+{
+    qDebug() << "GAPI: signCloseCMD! sms_token = " + sms_token;
+
+    signalUpdateProgressStatus(tr("STR_SENDING_CODE_CMD_PT"));
+
+    QtConcurrent::run(this, &GAPI::doCloseSignCMD, sms_token);
+}
+
+void GAPI::doCloseSignCMD(QString sms_token)
+{
+    qDebug() << "doCloseSignCMD! " << "sms_token = " << sms_token;
+
+    int ret = 0;
+    std::string local_sms_token = sms_token.toUtf8().data();
+
+    signCMDFinished(ret);
+    signalUpdateProgressBar(100);
+    emit signalCloseCMDSucess();
+}
+
+void GAPI::showSignCMDDialog(long code)
+{
+    QString error_msg;
+    QString support_string = tr("STR_ERROR_MSG_CMD_PT");
+
+    PTEID_LOG(PTEID_LOG_LEVEL_ERROR, "eidgui", "CMD signature op finished with error code 0x%08x", code);
+
+    // TODO: Add messages to network errors
+    switch(code)
+    {
+        case 0:
+            error_msg = tr("STR_SUCESS_CMD_PT");
+            break;
+        case -1:
+            error_msg = tr("STR_TIMEOUT_ERROR_CMD_PT");
+            break;
+        default:
+            error_msg = tr("STR_LOGIN_ERROR_CMD_PT");
+            break;
+    }
+
+    if (code != 0)
+        error_msg += "\n\n" + support_string;
+
+    qDebug() << error_msg;
+    signalUpdateProgressStatus(error_msg);
 }

@@ -10,7 +10,6 @@
         <file>components/TitleBar.qml</file>
         <file>contentPages/card/App.qml</file>
         <file>contentPages/card/AppForm.ui.qml</file>
-        <file>images/logo_icon_CC.png</file>
         <file>appicon.icns</file>
         <file>appicon.ico</file>
         <file>images/flag/GB.png</file>
@@ -37,5 +36,7 @@
         <file>images/arrow-down.svg</file>
         <file>images/logo.svg</file>
         <file>images/arrow-back.svg</file>
+        <file>images/idt/logo_icon_CC_PT.png</file>
+        <file>images/idt/logo_icon_CMD_PT.png</file>
     </qresource>
 </RCC>
