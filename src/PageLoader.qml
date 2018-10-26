@@ -32,7 +32,7 @@ Loader{
             bottomPadding: 0
             font.bold: true
             font.pixelSize: 16
-            color: Constants.COLOR_MAIN_DARK
+            color: Constants.COLOR_TEXT_TITLE
         }
         Item {
             width: generalPopUp.availableWidth
@@ -49,7 +49,7 @@ Loader{
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: Constants.SIZE_TEXT_LABEL
                     font.family: lato.name
-                    color: Constants.COLOR_MAIN_DARK
+                    color: Constants.COLOR_TEXT_MAIN
                     height: parent.height
                     width: parent.width - 48
                     anchors.bottom: parent.bottom

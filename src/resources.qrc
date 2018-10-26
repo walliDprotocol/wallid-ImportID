@@ -14,10 +14,6 @@
         <file>appicon.ico</file>
         <file>images/flag/GB.png</file>
         <file>images/flag/PT.png</file>
-        <file>images/titleBar/minimize.svg</file>
-        <file>images/titleBar/minimize_hover.svg</file>
-        <file>images/titleBar/quit.svg</file>
-        <file>images/titleBar/quit_hover.svg</file>
         <file>contentPages/card/EntitiesModel.qml</file>
         <file>contentPages/card/EntitiesDelegate.qml</file>
         <file>contentPages/card/LanguageDelegate.qml</file>
@@ -30,13 +26,18 @@
         <file>components/FAQBoxForm.ui.qml</file>
         <file>contentPages/card/Tutorial.qml</file>
         <file>contentPages/card/TutorialForm.ui.qml</file>
-        <file>images/tutorial/page1.svg</file>
-        <file>images/tutorial/page2.svg</file>
-        <file>images/tutorial/page3.svg</file>
-        <file>images/arrow-down.svg</file>
-        <file>images/logo.svg</file>
-        <file>images/arrow-back.svg</file>
         <file>images/idt/logo_icon_CC_PT.png</file>
         <file>images/idt/logo_icon_CMD_PT.png</file>
+        <file>images/titleBar/quit.svg</file>
+        <file>images/titleBar/quit_hover.svg</file>
+        <file>images/titleBar/minimize.svg</file>
+        <file>images/titleBar/minimize_hover.svg</file>
+        <file>images/logo.png</file>
+        <file>images/arrow-back.png</file>
+        <file>images/arrow-down.png</file>
+        <file>images/arrow-down-white.png</file>
+        <file>images/tutorial/page1.png</file>
+        <file>images/tutorial/page2.png</file>
+        <file>images/tutorial/page3.png</file>
     </qresource>
 </RCC>

@@ -50,7 +50,7 @@ Item {
     Rectangle {
         id: container
         width: parent.width ; height: parent.height
-        color: Constants.COLOR_MAIN
+        color: Constants.COLOR_TOP_BAR
         Item{
             width:  mainFormID.width
             height: parent.height

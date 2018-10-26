@@ -20,7 +20,7 @@ Window {
     minimumWidth: Constants.SCREEN_MINIMUM_WIDTH
     minimumHeight: Constants.SCREEN_MINIMUM_HEIGHT
 
-    title: "ImportID"
+    title: qsTr("STR_APP_TITLE_MAIN_TEXT") + controler.autoTr
 
     FontLoader { id: lato; source: "qrc:/fonts/lato/Lato-Regular.ttf" }
 
@@ -182,7 +182,7 @@ Load language error. Please reinstall the application"
 
     MainForm {
         id: mainFormID
-
+        color: Constants.COLOR_BACKGROUND;
         Component.onCompleted: {
             mainFormID.propertyContentPagesView.width = mainWindow.width
             if(controler.getNotShowHelpStartUp()){

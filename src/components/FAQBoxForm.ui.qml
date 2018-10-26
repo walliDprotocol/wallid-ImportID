@@ -11,7 +11,7 @@ Item {
     height: rectTitle.height + Constants.HEIGHT_LINE_FAQS + 2 * Constants.SPACE_V_TEXT_FAQS
             + (textAnswer.visible ?  textAnswer.paintedHeight : 0)
 
-    Rectangle{
+    Item{
         id: rectTitle
         width: parent.width
         height: textTitle.paintedHeight
@@ -21,7 +21,7 @@ Item {
             wrapMode: Text.WordWrap
             anchors.verticalCenter: parent.verticalCenter
             font.pixelSize: Constants.SIZE_TEXT_TITLE_FAQS
-            color: Constants.COLOR_MAIN
+            color: Constants.COLOR_TEXT_MAIN
         }
         Rectangle {
             id: rectLine
@@ -33,12 +33,12 @@ Item {
         Image {
             id: indicatorIconArrow1
             antialiasing: true
-            width: Constants.ARROW_DOWN_WIDTH
-            height: Constants.ARROW_DOWN_HEIGHT
+            width: Constants.ARROW_DOWN_COMBO_WIDTH
+            height: Constants.ARROW_DOWN_COMBO_HEIGHT
             anchors.right: rectLine.right
             anchors.bottom: parent.bottom
             fillMode: Image.PreserveAspectFit
-            source: "qrc:/images/arrow-down.svg"
+            source: "qrc:/images/arrow-down-white.png"
             rotation: textAnswer.visible ? 180 : 0
         }
         MouseArea {
@@ -54,7 +54,7 @@ Item {
         anchors.top: rectTitle.bottom
         anchors.topMargin: Constants.SPACE_V_TEXT_FAQS
         font.pixelSize: Constants.SIZE_TEXT_FAQS
-        color: Constants.COLOR_MAIN_SOFT_GRAY
+        color: Constants.COLOR_TEXT_MAIN
         visible: false
     }
 }

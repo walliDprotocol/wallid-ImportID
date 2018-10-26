@@ -173,11 +173,17 @@ Item {
             height: Constants.ARROW_HEIGHT
             enabled: true
             background: Rectangle {
-                radius : 10
+                width: parent.width
+                height: parent.height
+                radius: 0
+                color: Constants.COLOR_BUTTONS
                 Image {
                     antialiasing: true
-                    anchors.fill: parent
-                    source: "qrc:/images/arrow-back.svg"
+                    width: parent.width * 0.5
+                    height: parent.height * 0.5
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    source: "qrc:/images/arrow-back.png"
                 }
             }
         }

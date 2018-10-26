@@ -4,17 +4,17 @@
 <context>
     <name>AboutUsForm.ui</name>
     <message>
-        <location filename="contentPages/card/AboutUsForm.ui.qml" line="33"/>
+        <location filename="contentPages/card/AboutUsForm.ui.qml" line="35"/>
         <source>STR_ABOUT_US</source>
         <translation>Sobre nós</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AboutUsForm.ui.qml" line="40"/>
+        <location filename="contentPages/card/AboutUsForm.ui.qml" line="42"/>
         <source>STR_ABOUT_US_TEXT</source>
         <translation>ImportID é um aplicativo de área de trabalho de código aberto disponível para Windows e Linux que permite extrair seus IDs identificados do seu Cartão de cidadão ou outro documento certificado com identidade.</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AboutUsForm.ui.qml" line="53"/>
+        <location filename="contentPages/card/AboutUsForm.ui.qml" line="55"/>
         <source>STR_VERSION</source>
         <translation>Versão:</translation>
     </message>
@@ -39,7 +39,7 @@
     <message>
         <location filename="contentPages/card/App.qml" line="475"/>
         <source>STR_APP_TITLE_TEXT</source>
-        <translation>ImportID - Off-Chain to On-Chain Identity Service</translation>
+        <translation>ImportID - &lt;b&gt;Extrair ID&lt;/b&gt; atributos para a blockchain</translation>
     </message>
     <message>
         <location filename="contentPages/card/App.qml" line="563"/>
@@ -55,73 +55,73 @@
     <message>
         <location filename="contentPages/card/App.qml" line="603"/>
         <source>STR_APP_TITLE</source>
-        <translation>ImportID</translation>
+        <translation>ImportID - &lt;b&gt;Extrair ID&lt;/b&gt; atributos para a blockchain</translation>
     </message>
 </context>
 <context>
     <name>AppForm.ui</name>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="131"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="132"/>
         <source>STR_HOW_TO_USE</source>
         <translation>Como usar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="236"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="242"/>
         <source>STR_TEXT_SUB_TITLE</source>
         <translation>Importar atributos de ID de documentos de identificação certificados</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="306"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="314"/>
         <source>STR_CHOOSE_ID_TYPE</source>
         <translation>Escolha o tipo de ID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="359"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="369"/>
         <source>STR_IMPORT_BUTTON</source>
         <translation>ImportID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="556"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="524"/>
         <source>STR_CHOOSE_DATA_TO_IMPORT</source>
         <translation>Escolher dados para importar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="565"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="534"/>
         <source>STR_CHECKBOX_IDENTITY</source>
         <translation>Identidade</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="573"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="542"/>
         <source>STR_CHECKBOX_ADDRESS</source>
         <translation>Endereço</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="580"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="549"/>
         <source>STR_ENTER_WALLET</source>
         <translation>Seu endereço de carteira eletrônica</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="614"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="589"/>
         <source>STR_GENERATE</source>
         <translation>Gerar dados de ID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="110"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="111"/>
         <source>STR_ABOUT_US</source>
         <translation>Sobre nós</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="89"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="90"/>
         <source>STR_TUTORIAL</source>
         <translation>Tutorial</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="647"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="622"/>
         <source>STR_DATA_CREATED</source>
         <translation>ID Data Criado com sucesso!</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="737"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="719"/>
         <source>STR_GOTO_MYETHERID_IO</source>
         <translation>Copiar e ir para MyEtherID.io</translation>
     </message>
@@ -129,12 +129,12 @@
 <context>
     <name>CC_PT</name>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="400"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="410"/>
         <source>STR_SELECT_CARD_READER</source>
         <translation>Selecione o leitor de cartão</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="426"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="437"/>
         <source>STR_SELECT_CMD_LOGIN</source>
         <translation>Introduzir dados de CMD Login</translation>
     </message>
@@ -146,22 +146,22 @@
         <translation type="obsolete">Selecione o leitor de cartão</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="439"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="451"/>
         <source>STR_SIGN_CMD_MOVEL_NUM</source>
         <translation>Número de Telemóvel</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="513"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="474"/>
         <source>STR_SIGN_CMD_MOVEL_NUM_OP</source>
         <translation>Número</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="528"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="493"/>
         <source>STR_SIGN_CMD_PIN</source>
         <translation>PIN de Assinatura</translation>
     </message>
     <message>
-        <location filename="contentPages/card/AppForm.ui.qml" line="540"/>
+        <location filename="contentPages/card/AppForm.ui.qml" line="506"/>
         <source>STR_SIGN_CMD_PIN_OP</source>
         <translation>PIN</translation>
     </message>
@@ -245,68 +245,63 @@
 <context>
     <name>GAPI</name>
     <message>
-        <location filename="gapi.cpp" line="274"/>
         <source>STR_CARD_ACTIVE_AND_VALID</source>
-        <translation>Cartão de Cidadão ativo e válido.</translation>
+        <translation type="vanished">Cartão de Cidadão ativo e válido.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="281"/>
         <source>STR_CARD_CONNECTION_ERROR</source>
-        <translation>Não foi possível confirmar o estado do Cartão de Cidadão. Verifique a ligação à internet</translation>
+        <translation type="vanished">Não foi possível confirmar o estado do Cartão de Cidadão. Verifique a ligação à internet</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="287"/>
         <source>STR_CARD_CANCELED</source>
-        <translation>Cartão de Cidadão cancelado. Por favor, dirija-se a um serviço competente para a emissão de cartões de Cidadão.</translation>
+        <translation type="vanished">Cartão de Cidadão cancelado. Por favor, dirija-se a um serviço competente para a emissão de cartões de Cidadão.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="292"/>
         <source>STR_CARD_EXPIRED</source>
-        <translation>Cartão de Cidadão expirado. Por favor, dirija-se a um serviço competente para a emissão de cartões de Cidadão.</translation>
+        <translation type="vanished">Cartão de Cidadão expirado. Por favor, dirija-se a um serviço competente para a emissão de cartões de Cidadão.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="297"/>
         <source>STR_CARD_NOT_ACTIVE</source>
-        <translation>O Cartão de Cidadão não foi ativado.</translation>
+        <translation type="vanished">O Cartão de Cidadão não foi ativado.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="871"/>
+        <location filename="gapi.cpp" line="781"/>
         <source>STR_CONNECTING_CMD_PT</source>
         <oldsource>STR_CMD_CONNECTING</oldsource>
         <translation>Conectando com o servidor</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="892"/>
+        <location filename="gapi.cpp" line="802"/>
         <source>STR_LOGIN_SUCESS_CMD_PT</source>
         <oldsource>STR_CMD_LOGIN_SUCESS</oldsource>
         <translation>Login com sucesso. Aguarde a recepção do código enviado por SMS!</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="900"/>
+        <location filename="gapi.cpp" line="810"/>
         <source>STR_SENDING_CODE_CMD_PT</source>
         <oldsource>STR_CMD_SENDING_CODE</oldsource>
         <translation>Enviando código de confirmação para o servidor</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="920"/>
+        <location filename="gapi.cpp" line="830"/>
         <source>STR_ERROR_MSG_CMD_PT</source>
         <oldsource>STR_CMD_ERROR_MSG</oldsource>
         <translation>Por favor tente novamente e, caso o erro persista, contacte-nos por email</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="928"/>
+        <location filename="gapi.cpp" line="838"/>
         <source>STR_SUCESS_CMD_PT</source>
         <oldsource>STR_CMD_SUCESS</oldsource>
         <translation>Dados gerados com Chave Móvel Digital com sucesso.</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="931"/>
+        <location filename="gapi.cpp" line="841"/>
         <source>STR_TIMEOUT_ERROR_CMD_PT</source>
         <oldsource>STR_CMD_TIMEOUT_ERROR</oldsource>
         <translation>O serviço está indisponível neste momento</translation>
     </message>
     <message>
-        <location filename="gapi.cpp" line="934"/>
+        <location filename="gapi.cpp" line="844"/>
         <source>STR_LOGIN_ERROR_CMD_PT</source>
         <oldsource>STR_CMD_LOGIN_ERROR</oldsource>
         <translation>Erro na operação de Login na Chave Móvel Digital!</translation>
@@ -488,7 +483,7 @@ O terceiro e último componente desses protocolos é o VerifyID, um aplicativo d
 <context>
     <name>PageHelpDocOnline</name>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="244"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="238"/>
         <source>STR_HOME_REMINDER</source>
         <translation>Não voltar a mostrar este tutorial no arranque</translation>
     </message>
@@ -579,59 +574,59 @@ O terceiro e último componente desses protocolos é o VerifyID, um aplicativo d
     <message>
         <location filename="contentPages/card/Tutorial.qml" line="43"/>
         <source>STR_APP_TITLE_TEXT</source>
-        <translation>ImportID - Off-Chain to On-Chain Identity Service</translation>
+        <translation>ImportID - &lt;b&gt;Extrair ID&lt;/b&gt; atributos para a blockchain</translation>
     </message>
     <message>
         <location filename="contentPages/card/Tutorial.qml" line="84"/>
         <location filename="contentPages/card/Tutorial.qml" line="96"/>
         <location filename="contentPages/card/Tutorial.qml" line="107"/>
         <source>STR_APP_TITLE</source>
-        <translation>ImportID</translation>
+        <translation>ImportID - &lt;b&gt;Extrair ID&lt;/b&gt; atributos para a blockchain</translation>
     </message>
 </context>
 <context>
     <name>TutorialForm.ui</name>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="179"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="173"/>
         <source>STR_TEXT_SUB_TITLE</source>
         <translation>Importar atributos de ID de documentos de identificação certificados</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="197"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="191"/>
         <source>STR_TUTORIAL_BUTTON</source>
         <translation>Tutorial</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="220"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="214"/>
         <source>STR_START</source>
         <translation>Começar</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="290"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="283"/>
         <source>STR_TUTORIAL_STEP1_TITLE</source>
         <translation>Conecte um leitor de cartão inteligente</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="302"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="294"/>
         <source>STR_TUTORIAL_STEP1_TEXT</source>
         <translation>Os Leitores de Cartão Inteligente são dispositivos certificados concebidos para interagir e ler dados de cartões Citizen ou outros documentos com um chip de acordo com o padrão de certificado x509.
 
 Onde posso arranjar um?</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="331"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="322"/>
         <source>STR_TUTORIAL_STEP2_TITLE</source>
         <translation>Insira seu cartão de cidadão</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="343"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="333"/>
         <source>STR_TUTORIAL_STEP2_TEXT</source>
         <translation>Quando o cartão inteligente estiver conectado, verifique se o Cartão do cidadão está bem posicionado no dispositivo. Uma janela pop-up informará quando é. Nem todas as carteiras de identidade e tipos de identidade são compatíveis com o ImportID.
 
 Veja cartões de identificação compatíveis.</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="424"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="425"/>
         <source>STR_TUTORIAL_STEP3_TITLE</source>
         <translation>Escolha os atributos para extrair</translation>
     </message>
@@ -645,36 +640,44 @@ Quais são esses PINs?
 O que exatamente são esses atributos?</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="465"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="464"/>
         <source>STR_TUTORIAL_STEP4_TITLE</source>
         <translation>Associe sua carteira de éter</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="477"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="475"/>
         <source>STR_TUTORIAL_STEP4_TEXT</source>
         <translation>Insira o seu endereço de carteira de éter no campo adequado. O ImportID gerará seus dados de ID com base no seu endereço. Você pode criar uma carteira n ether de graça aqui.
 
 Por que preciso de uma carteira de éter?</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="557"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="566"/>
         <source>STR_TUTORIAL_STEP5_TITLE</source>
         <translation>Gerar dados de ID</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="569"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="577"/>
         <source>STR_TUTORIAL_STEP5_TEXT</source>
         <translation>Depois de ler seu documento de identificação, o ImportID compila seus atributos em formato de texto legível pelo serviço de encadeamento blockchain (myetherid.io). Este bloco de texto será necessário para validar e armazenar seu ID no blockchain através do protocolo WalliD.</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="598"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="605"/>
         <source>STR_TUTORIAL_STEP6_TITLE</source>
         <translation>Importe seu ID para o Blockchain</translation>
     </message>
     <message>
-        <location filename="contentPages/card/TutorialForm.ui.qml" line="610"/>
+        <location filename="contentPages/card/TutorialForm.ui.qml" line="616"/>
         <source>STR_TUTORIAL_STEP6_TEXT</source>
         <translation>Selecione todo o texto na caixa Dados da ID e copie-o. Ir para myetherid.io para criptografar seus dados e armazená-lo no blockchain através de sua associação de carteira de éter. Seus dados de identificação serão solicitados por este website durante o processo de criação do seu endereço de contrato inteligente de identificação.</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="main.qml" line="23"/>
+        <source>STR_APP_TITLE_MAIN_TEXT</source>
+        <translation>ImportID - &lt;b&gt;Extrair ID&lt;/b&gt; atributos para a blockchain</translation>
     </message>
 </context>
 </TS>

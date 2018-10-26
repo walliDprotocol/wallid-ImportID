@@ -25,7 +25,7 @@ var SCREEN_MINIMUM_HEIGHT = 576;
 // Title bar
 var TITLE_BAR_SIZE = 40
 var TITLE_BAR_H_ICON_SPACE = 30
-var SIZE_IMAGE_ICON_TITLE_BAR= 20
+var SIZE_IMAGE_ICON_TITLE_BAR= 10
 
 // Opacity Main vs Popups Focus
 var OPACITY_POPUP_FOCUS = 0.2
@@ -45,6 +45,8 @@ var SIZE_TEXT_BOTTON = 12
 var SPACE_V_TITLE_FAQS = 10
 var SPACE_V_TEXT_FAQS = 10
 var HEIGHT_LINE_FAQS = 1
+
+var HEIGHT_IMG_TUTORIAL = 130
 
 // Buttons Size
 var WIDTH_BUTTON = 150
@@ -66,27 +68,37 @@ var HEIGHT_RADIO_BOTTOM_COMPONENT = 30
 // Arraw Button Size
 var ARROW_WIDTH = 40
 var ARROW_HEIGHT = 40
-var ARROW_DOWN_WIDTH = 25
-var ARROW_DOWN_HEIGHT = 25
+var ARROW_DOWN_WIDTH = 20
+var ARROW_DOWN_HEIGHT = 20
+var ARROW_DOWN_COMBO_WIDTH = 15
+var ARROW_DOWN_COMBO_HEIGHT = 15
 
 // Tutorial margin
 var SIZE_TUTORIAL_MARGIN = 25
 
 // Defined Colors
+// Background colors
+var COLOR_BACKGROUND = "#03303a"
 // Main Green
-var COLOR_MAIN = "#0FA3B1"
+var COLOR_MAIN = "#17a4b1"
+// Top Bar
+var COLOR_TOP_BAR = "#03303a"
 // Main Orange
 var COLOR_MAIN_DARK = "#FF971A"
 // Black
 var COLOR_MAIN_BLACK = "#000000"
 // Gray
-var COLOR_MAIN_SOFT_GRAY = "#878787"
+var COLOR_MAIN_SOFT_GRAY = "#dddddd"
 // White
 var COLOR_MAIN_WHITE = "#FFFFFF"
 
 // Color Buttons
-var COLOR_BUTTONS = "#FFFFFF"
-var COLOR_BUTTONS_DOWN = "#878787"
+var COLOR_BUTTONS = "#f89722"
+var COLOR_BUTTONS_DOWN = "#bb6c0d"
+
+// Color Text
+var COLOR_TEXT_MAIN = "#ffffff"
+var COLOR_TEXT_TITLE = "#f89722"
 
 // Image Constants
 var SIZE_IMAGE_ENTITY_WIDTH = 120

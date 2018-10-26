@@ -14,7 +14,7 @@ Rectangle {
     property alias propertyPageLoader: pageLoaderID
 
     border.width: Constants.APP_BORDER
-    border.color : Constants.COLOR_MAIN
+    border.color : Constants.COLOR_TOP_BAR
 
     /* Title bar */
     Components.TitleBar {

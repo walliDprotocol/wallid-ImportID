@@ -4,13 +4,15 @@ import QtQuick.Controls 2.1
 import "../../scripts/Constants.js" as Constants
 import "../../components" as Components
 
-Item {
+Rectangle {
     anchors.fill: parent
 
     property alias propertyBackAboutUsButton: backAboutUsButton
     property alias propertySubTextVersion: subTextVersion
 
-    Rectangle {
+    color: Constants.COLOR_BACKGROUND
+
+    Item {
         id: helpPage
         width: parent.width
         height: parent.height
@@ -19,11 +21,11 @@ Item {
         Image {
             id: imageIcon
             antialiasing: true
-            height: 160
+            height: 80
             y: Constants.HEIGHT_LANGUAGE_COMPONENT + 5
             anchors.horizontalCenter: parent.horizontalCenter
             fillMode: Image.PreserveAspectFit
-            source : "qrc:/images/logo.svg"
+            source: "qrc:/images/logo.png"
         }
 
         Text {
@@ -32,7 +34,7 @@ Item {
             y: Constants.HEIGHT_LANGUAGE_COMPONENT + 5 + imageIcon.height
             text: qsTr("STR_ABOUT_US") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
-            color: Constants.COLOR_MAIN
+            color: Constants.COLOR_TEXT_TITLE
         }
         Text {
             id: subTextAboutUs
@@ -43,7 +45,7 @@ Item {
             anchors.top: textAboutUs.bottom
             anchors.topMargin: 10
             font.pixelSize: Constants.SIZE_TEXT_LABEL
-            color: Constants.COLOR_MAIN_BLACK
+            color: Constants.COLOR_TEXT_MAIN
         }
         Text {
             id: textVersion
@@ -52,7 +54,7 @@ Item {
             anchors.topMargin: 30
             text: qsTr("STR_VERSION") + controler.autoTr
             font.pixelSize: Constants.SIZE_TEXT_BODY
-            color: Constants.COLOR_MAIN
+            color: Constants.COLOR_TEXT_TITLE
         }
         Text {
             id: subTextVersion
@@ -62,7 +64,7 @@ Item {
             anchors.top: textVersion.bottom
             anchors.topMargin: 10
             font.pixelSize: Constants.SIZE_TEXT_LABEL
-            color: Constants.COLOR_MAIN_BLACK
+            color: Constants.COLOR_TEXT_MAIN
         }
 
         Button {
@@ -73,12 +75,19 @@ Item {
             width: Constants.ARROW_WIDTH
             height: Constants.ARROW_HEIGHT
             enabled: true
+
             background: Rectangle {
-                radius : 10
+                width: parent.width
+                height: parent.height
+                radius: 0
+                color: Constants.COLOR_BUTTONS
                 Image {
                     antialiasing: true
-                    anchors.fill: parent
-                    source: "qrc:/images/arrow-back.svg"
+                    width: parent.width * 0.5
+                    height: parent.height * 0.5
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    source: "qrc:/images/arrow-back.png"
                 }
             }
         }
