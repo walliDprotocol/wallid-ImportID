@@ -372,7 +372,7 @@ Rectangle {
                     contentItem: Text {
                         text: startButton.text
                         font: startButton.font
-                        color: Constants.COLOR_TEXT_MAIN
+                        color: Constants.COLOR_TEXT_MAIN_WHITE
                         opacity: enabled ? 1.0 : 0.3
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -453,7 +453,7 @@ Rectangle {
                               "STR_SIGN_CMD_MOVEL_NUM") + controler.autoTr
                     verticalAlignment: Text.AlignVCenter
                     anchors.verticalCenter: parent.verticalCenter
-                    color: Constants.COLOR_TEXT_MAIN
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
                     height: parent.height
                     width: parent.width * 0.3
                 }
@@ -494,7 +494,7 @@ Rectangle {
                                       "STR_SIGN_CMD_PIN") + controler.autoTr
                     verticalAlignment: Text.AlignVCenter
                     anchors.verticalCenter: parent.verticalCenter
-                    color: Constants.COLOR_TEXT_MAIN
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
                     height: parent.height
                     width: parent.width * 0.3
                 }
@@ -592,7 +592,7 @@ Rectangle {
                 contentItem: Text {
                     text: generateButton.text
                     font: generateButton.font
-                    color: Constants.COLOR_TEXT_MAIN
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
                     opacity: enabled ? 1.0 : 0.3
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
@@ -632,7 +632,7 @@ Rectangle {
             anchors.top: textStep4.bottom
             anchors.topMargin: 10
             font.pixelSize: Constants.SIZE_TEXT_LABEL
-            color: Constants.COLOR_TEXT_MAIN
+            color: Constants.COLOR_TEXT_MAIN_WHITE
         }
         Text {
             id: textStepDescription
@@ -674,7 +674,7 @@ Rectangle {
                     focus: true
                     font.pixelSize: Constants.SIZE_TEXT_LABEL
                     selectByMouse: true
-                    color: Constants.COLOR_TEXT_MAIN
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
                 }
                 ScrollBar.vertical: ScrollBar {
                     active: true
@@ -722,7 +722,7 @@ Rectangle {
             contentItem: Text {
                 text: gotoButton.text
                 font: gotoButton.font
-                color:Constants.COLOR_TEXT_MAIN
+                color:Constants.COLOR_TEXT_MAIN_WHITE
                 opacity: enabled ? 1.0 : 0.3
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter

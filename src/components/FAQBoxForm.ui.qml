@@ -21,7 +21,7 @@ Item {
             wrapMode: Text.WordWrap
             anchors.verticalCenter: parent.verticalCenter
             font.pixelSize: Constants.SIZE_TEXT_TITLE_FAQS
-            color: Constants.COLOR_TEXT_MAIN
+            color: Constants.COLOR_TEXT_MAIN_WHITE
         }
         Rectangle {
             id: rectLine
@@ -54,7 +54,7 @@ Item {
         anchors.top: rectTitle.bottom
         anchors.topMargin: Constants.SPACE_V_TEXT_FAQS
         font.pixelSize: Constants.SIZE_TEXT_FAQS
-        color: Constants.COLOR_TEXT_MAIN
+        color: Constants.COLOR_TEXT_MAIN_WHITE
         visible: false
     }
 }

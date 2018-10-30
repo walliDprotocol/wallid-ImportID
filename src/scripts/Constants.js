@@ -97,7 +97,8 @@ var COLOR_BUTTONS = "#f89722"
 var COLOR_BUTTONS_DOWN = "#bb6c0d"
 
 // Color Text
-var COLOR_TEXT_MAIN = "#ffffff"
+var COLOR_TEXT_MAIN = "#03303a"
+var COLOR_TEXT_MAIN_WHITE = "#ffffff"
 var COLOR_TEXT_TITLE = "#f89722"
 
 // Image Constants

@@ -336,7 +336,7 @@ AppForm {
                     text: ""
                     font.pixelSize: Constants.SIZE_TEXT_LABEL
                     font.family: lato.name
-                    color: Constants.COLOR_TEXT_MAIN
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
                     height: parent.height
                     width: parent.width
                     anchors.bottom: parent.bottom
@@ -353,7 +353,7 @@ AppForm {
                 Text {
                     id: labelCMDText
                     text: qsTranslate("CMD_PT","STR_SIGN_LABEL_FINISH")
-                    color: Constants.COLOR_TEXT_MAIN
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
                     height: parent.height
                     width: parent.width
                     wrapMode: Text.Wrap
@@ -371,7 +371,7 @@ AppForm {
                     text: qsTranslate("CMD_PT","STR_SIGN_CMD_CODE") + ":"
                     verticalAlignment: Text.AlignVCenter
                     anchors.verticalCenter: parent.verticalCenter
-                    color: Constants.COLOR_TEXT_MAIN
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
                     height: parent.height
                     width: parent.width * 0.5
                     anchors.bottom: parent.bottom
@@ -527,7 +527,7 @@ AppForm {
                          Font.Normal
         color: propertHelpTextMenuMouseArea.containsMouse ?
                    Constants.COLOR_TEXT_TITLE :
-                   Constants.COLOR_TEXT_MAIN
+                   Constants.COLOR_TEXT_MAIN_WHITE
     }
     propertyTutorialTextMenu{
         font.weight: propertyTutorialMouseArea.containsMouse ?
@@ -535,7 +535,7 @@ AppForm {
                          Font.Normal
         color: propertyTutorialMouseArea.containsMouse ?
                    Constants.COLOR_TEXT_TITLE :
-                   Constants.COLOR_TEXT_MAIN
+                   Constants.COLOR_TEXT_MAIN_WHITE
     }
     propertAboutText{
         font.weight: propertAboutUsTextMenuMouseArea.containsMouse ?
@@ -543,7 +543,7 @@ AppForm {
                          Font.Normal
         color: propertAboutUsTextMenuMouseArea.containsMouse ?
                    Constants.COLOR_TEXT_TITLE :
-                   Constants.COLOR_TEXT_MAIN
+                   Constants.COLOR_TEXT_MAIN_WHITE
     }
 
     propertyGenerateButton {

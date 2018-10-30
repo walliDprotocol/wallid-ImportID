@@ -194,7 +194,7 @@ Item {
                     contentItem: Text {
                         text: tutorialButton.text
                         font: tutorialButton.font
-                        color: Constants.COLOR_TEXT_MAIN
+                        color: Constants.COLOR_TEXT_MAIN_WHITE
                         opacity: enabled ? 1.0 : 0.3
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -217,7 +217,7 @@ Item {
                     contentItem: Text {
                         text: startButton.text
                         font: startButton.font
-                        color: Constants.COLOR_TEXT_MAIN
+                        color: Constants.COLOR_TEXT_MAIN_WHITE
                         opacity: enabled ? 1.0 : 0.3
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter

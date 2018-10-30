@@ -45,7 +45,7 @@ Rectangle {
             anchors.top: textAboutUs.bottom
             anchors.topMargin: 10
             font.pixelSize: Constants.SIZE_TEXT_LABEL
-            color: Constants.COLOR_TEXT_MAIN
+            color: Constants.COLOR_TEXT_MAIN_WHITE
         }
         Text {
             id: textVersion
@@ -64,7 +64,7 @@ Rectangle {
             anchors.top: textVersion.bottom
             anchors.topMargin: 10
             font.pixelSize: Constants.SIZE_TEXT_LABEL
-            color: Constants.COLOR_TEXT_MAIN
+            color: Constants.COLOR_TEXT_MAIN_WHITE
         }
 
         Button {
