@@ -4,7 +4,7 @@ SET WIX_PATH="C:\Program Files (x86)\WiX Toolset v3.10\bin"
 
 :: VS Project generated with qmake -tp vc ImportID.pro
 
-::msbuild /p:Configuration:Release 
+msbuild /p:Configuration=Release /p:Platform=x64
 
 %WIX_PATH%\candle -nologo -arch x64 ImportID.wxs
 
