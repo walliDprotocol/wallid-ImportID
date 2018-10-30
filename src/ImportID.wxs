@@ -22,7 +22,7 @@
 		<Icon Id="ImportID.ico" SourceFile="appicon.ico"/>
 		<Property Id="ARPPRODUCTICON" Value="ImportID.ico"/>
 		
-                <Property Id="ARPURLINFOABOUT" Value="https://wallid.io"/>
+         <Property Id="ARPURLINFOABOUT" Value="http://wallid.io"/>
 
 		<Property Id="ALLUSERS" Value="1" />
 
@@ -1969,6 +1969,11 @@
         <Feature Id="ProductFeature" Level="1" Title="ImportID-App">
 		   <ComponentGroupRef Id="CG01" />
 		</Feature>
+		
+		<UI>
+			<UIRef Id="WixUI_FeatureTree" />
+			<UIRef Id="WixUI_ErrorProgressText" />
+		</UI>
         
     </Product>
 </Wix>
