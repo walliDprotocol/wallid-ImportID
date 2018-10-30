@@ -482,7 +482,7 @@ Item {
             Button {
                 id: backSecondPageButton
                 x: Constants.BUTTONS_BACK_X_POS
-                anchors.bottom: parent.bottom
+                y: parent.height
                 font.capitalization: Font.MixedCase
                 width: Constants.ARROW_WIDTH
                 height: Constants.ARROW_HEIGHT
@@ -504,7 +504,7 @@ Item {
             Button {
                 id: secondPageButton
                 x: parent.width - Constants.BUTTONS_BACK_X_POS - secondPageButton.width
-                anchors.bottom: parent.bottom
+                y: parent.height
                 font.capitalization: Font.MixedCase
                 font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
                 width: Constants.ARROW_WIDTH
@@ -623,7 +623,7 @@ Item {
             Button {
                 id: backThirdPageButton
                 x: Constants.BUTTONS_BACK_X_POS
-                anchors.bottom: parent.bottom
+                y: parent.height
                 font.capitalization: Font.MixedCase
                 width: Constants.ARROW_WIDTH
                 height: Constants.ARROW_HEIGHT
@@ -645,7 +645,7 @@ Item {
             Button {
                 id: thirdPageButton
                 x: parent.width - Constants.BUTTONS_BACK_X_POS - thirdPageButton.width
-                anchors.bottom: parent.bottom
+                y: parent.height
                 font.capitalization: Font.MixedCase
                 font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
                 width: Constants.ARROW_WIDTH

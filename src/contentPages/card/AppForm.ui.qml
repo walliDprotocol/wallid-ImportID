@@ -142,8 +142,7 @@ Rectangle {
     Item {
         id: introBox
         width: parent.width
-        height: parent.height - rectBotton.height
-        anchors.topMargin: 0
+        height: parent.height
         visible: true
 
         Item {
