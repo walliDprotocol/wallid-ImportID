@@ -233,14 +233,31 @@ Item {
                 }
             }
 
-            CheckBox {
-                id: reminderCheckBox
-                text: qsTranslate("PageHelpDocOnline", "STR_HOME_REMINDER")
+            Item {
+                id: rectReminderCheckBox
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
-                font.pixelSize: Constants.SIZE_TEXT_FIELD
-                font.family: lato.name
                 enabled: true
+                width: textReminder.width
+                height: Constants.HEIGHT_BOTTOM_COMPONENT
+
+                Text {
+                    id: textReminder
+                    text: qsTranslate("PageHelpDocOnline", "STR_HOME_REMINDER")
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
+                    y: 6
+                }
+                CheckBox {
+                    id: reminderCheckBox
+                    anchors.right: textReminder.left
+                    Rectangle{
+                        color: Constants.COLOR_TEXT_MAIN_WHITE
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: Constants.SIZE_CHECKBOX_COMPONENT
+                        height: Constants.SIZE_CHECKBOX_COMPONENT
+                    }
+                }
             }
         }
         Item {

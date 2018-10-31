@@ -525,25 +525,59 @@ Rectangle {
                 font.pixelSize: Constants.SIZE_TEXT_BODY
                 color: Constants.COLOR_TEXT_TITLE
             }
-            CheckBox {
-                id: checkBoxIdentity
-                x: 60
+            Item{
+                id: rectCheckBoxIdentity
+                width: 200
+                height: Constants.HEIGHT_BOTTOM_COMPONENT
                 anchors.top: textStep2.bottom
                 anchors.topMargin: 10
-                text: qsTr("STR_CHECKBOX_IDENTITY") + controler.autoTr
+                CheckBox {
+                    id: checkBoxIdentity
+                    x: 60
+                    Rectangle{
+                        color: Constants.COLOR_TEXT_MAIN_WHITE
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: Constants.SIZE_CHECKBOX_COMPONENT
+                        height: Constants.SIZE_CHECKBOX_COMPONENT
+                    }
+                }
+                Text {
+                    text: qsTr("STR_CHECKBOX_IDENTITY") + controler.autoTr
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
+                    anchors.left: checkBoxIdentity.right
+                    y: 6
+                }
             }
-            CheckBox {
-                id: checkBoxAddress
-                anchors.left: checkBoxIdentity.right
-                anchors.leftMargin: 10
+
+            Item{
+                id: rectCheckBoxAddress
+                width: 200
+                height: Constants.HEIGHT_BOTTOM_COMPONENT
                 anchors.top: textStep2.bottom
                 anchors.topMargin: 10
-                text: qsTr("STR_CHECKBOX_ADDRESS") + controler.autoTr
+                anchors.left: rectCheckBoxIdentity.right
+                CheckBox {
+                    id: checkBoxAddress
+                    Rectangle{
+                        color: Constants.COLOR_TEXT_MAIN_WHITE
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: Constants.SIZE_CHECKBOX_COMPONENT
+                        height: Constants.SIZE_CHECKBOX_COMPONENT
+                    }
+                }
+                Text {
+                    text: qsTr("STR_CHECKBOX_ADDRESS") + controler.autoTr
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
+                    anchors.left: checkBoxAddress.right
+                    y: 6
+                }
             }
             Text {
                 id: textStep3
                 x: 30
-                anchors.top: checkBoxAddress.bottom
+                anchors.top: rectCheckBoxAddress.bottom
                 anchors.topMargin: 50
                 text: "3  " + qsTr("STR_ENTER_WALLET") + controler.autoTr
                 font.pixelSize: Constants.SIZE_TEXT_BODY
