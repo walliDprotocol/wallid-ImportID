@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
-    <?define var.OfficialProductVersion="1.0.0"?>
+    <?define var.OfficialProductVersion="0.0.1"?>
 	<?define var.PackageCode="*"?>
 	
     <Product Id="{8BE10A53-2438-44C3-9E08-10AF4BC2C754}"
 	Language="1033" Codepage="1252"
-	Manufacturer="Caixa Magica Software" Name="ImportID" UpgradeCode="{56492230-A339-4A71-91A4-8161792FC50C}" Version="$(var.OfficialProductVersion)">
+	Manufacturer="WalliD" Name="ImportID" UpgradeCode="{56492230-A339-4A71-91A4-8161792FC50C}" Version="$(var.OfficialProductVersion)">
 	
         <Package Id="$(var.PackageCode)"
 				 InstallerVersion="405"
@@ -19,7 +19,7 @@
 				 
 		<Media Id="1" Cabinet="product.cab" EmbedCab="yes" CompressionLevel="high"/>
 		
-		<Icon Id="ImportID.ico" SourceFile="appicon.ico"/>
+		<Icon Id="ImportID.ico" SourceFile="appicon.ico"/> 
 		<Property Id="ARPPRODUCTICON" Value="ImportID.ico"/>
 		
          <Property Id="ARPURLINFOABOUT" Value="http://wallid.io"/>
