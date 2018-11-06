@@ -13,7 +13,7 @@
 				 Keywords="WalliD ImportID"
 				 Platform="x64"
 			     Comments="ImportID application version $(var.OfficialProductVersion)"
-				 Manufacturer="Caixa Mágica Software"
+				 Manufacturer="WalliD"
 				 Compressed="yes"
 				 InstallPrivileges="elevated" />
 				 
