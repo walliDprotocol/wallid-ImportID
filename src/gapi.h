@@ -16,6 +16,10 @@
 #include "eidErrors.h"
 #include "eidlibException.h"
 
+// IDType : CMD_PT
+#include "CMDSignature.h"
+#include "cmdErrors.h"
+
 /*
     GAPI - Graphic Application Programming Interface
 
@@ -78,7 +82,16 @@ public:
     QString mobileNumber;
     QString secret_code;
     QString wa;
+    int page;
+    double coord_x;
+    double coord_y;
+    QString reason;
+    QString location;
+    double isTimestamp;
+    double isSmallSignature;
 };
+
+
 
 class GAPI : public QObject
 {
@@ -117,6 +130,9 @@ public:
         qmlRegisterType<GAPI>("gapi", 1, 0, "GAPI");
     }
     GUISettings    m_Settings;
+
+    // IDType : CMD_PT
+    const int ETH_WALLET_ADDR_SIZE = 40;
 
 public slots:
     // Slots to Gui request values
@@ -170,7 +186,7 @@ signals:
     void signalUpdateProgressBar(int value);
     void signalUpdateProgressStatus(const QString statusMessage);
     void signalOpenCMDSucess();
-    void signalCloseCMDSucess();
+    void signalCloseCMDSucess(QString citizenName, QString citizenId, QString citizenBirthDate);
     void signCMDFinished(long return_code);
 
 private:
@@ -200,8 +216,15 @@ private:
     QTimer* m_timerReaderList;
 
     // IDType : CMD_PT
-    void doOpenSignCMD(CmdSignParams &params);
-    void doCloseSignCMD(QString sms_token);
+    void doOpenSignCMD(CMDSignature *cmd_signature, CmdSignParams &params);
+    void doCloseSignCMD(CMDSignature *cmd_signature, QString sms_token);
+    void parseCitizenDataFromCert(QByteArray &certData);
+    CMDSignature *cmd_signature;
+    PTEID_PDFSignature *cmd_pdfSignature;
+    CMDProxyInfo buildProxyInfo();
+    QString m_civil_number;
+    QString m_citizen_fullname;
+    QString citizenBirthDate;
 
 protected:
     QTranslator m_translator;

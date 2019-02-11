@@ -223,9 +223,18 @@ AppForm {
             mainFormID.propertyPageLoader.propertyGeneralPopUp.visible = true;
         }
         onSignalWalletAddressSignSuccess: {
-            console.log("Signal Wallet Address Sign Success = " + walletAddressSigned)
+            console.log("Signal Wallet Address Sign Success")
             tempWalletSigned = walletAddressSigned
-            gapi.startCardReading()
+
+            switch (propertyComboBoxEntity.currentIndex){
+            case 0:
+                gapi.startCardReading()
+                break;
+            case 1:
+                break;
+            default:
+            }
+
         }
         onSignalWalletAddressSignFail: {
             console.log("Signal Wallet Address Sign Fail")
@@ -242,9 +251,17 @@ AppForm {
             gapi.startSigningWalletAddress(propertyTextFieldWallet.text)
         }
         onSignalGetCertificateSucess: {
-            console.log("Signal Get Certificate Sucess = " + Certificate)
+            console.log("Signal Get Certificate Sucess")
             tempCertificate = Certificate
-            gapi.startGettingSod()
+
+            switch (propertyComboBoxEntity.currentIndex){
+            case 0:
+                gapi.startGettingSod()
+                break;
+            case 1:
+                break;
+            default:
+            }
         }
         // IDType : CMD_PT
         onSignalUpdateProgressStatus: {
@@ -271,9 +288,9 @@ AppForm {
             tempIdentify =
                     "\"identityID\": {\n"
                     + "\"identityAttributes\": {"
-                    + "\"Surname\":\"" + "Ribeiro Campos" + "\""
-                    + ",\"Givenname\":\"" + "Adriano José" + "\""
-                    + ",\"NIF\":\"" + "123456789" + "\""
+                    + "\"Name\":\"" + citizenName + "\""
+                    + ",\"CivilianIdNumber\":\"" + citizenId + "\""
+                    + ",\"BirthDate\":\"" + citizenBirthDate + "\""
             propertyImportText.text =
                     initImportText()
                     + tempIdentify
@@ -336,7 +353,7 @@ AppForm {
                     text: ""
                     font.pixelSize: Constants.SIZE_TEXT_LABEL
                     font.family: lato.name
-                    color: Constants.COLOR_TEXT_MAIN_WHITE
+                    color: Constants.COLOR_MAIN_DARK
                     height: parent.height
                     width: parent.width
                     anchors.bottom: parent.bottom
@@ -371,7 +388,7 @@ AppForm {
                     text: qsTranslate("CMD_PT","STR_SIGN_CMD_CODE") + ":"
                     verticalAlignment: Text.AlignVCenter
                     anchors.verticalCenter: parent.verticalCenter
-                    color: Constants.COLOR_TEXT_MAIN_WHITE
+                    color: Constants.COLOR_MAIN_DARK
                     height: parent.height
                     width: parent.width * 0.5
                     anchors.bottom: parent.bottom
@@ -381,6 +398,7 @@ AppForm {
                     width: parent.width * 0.5
                     anchors.verticalCenter: parent.verticalCenter
                     font.italic: textFieldReturnCode.text === "" ? true: false
+                    color: Constants.COLOR_MAIN_WHITE
                     placeholderText: qsTranslate("CMD_PT","STR_SIGN_CMD_CODE_OP") + "?"
                     validator: RegExpValidator { regExp: /[0-9]+/ }
                     clip: false
@@ -761,9 +779,8 @@ AppForm {
         textFieldReturnCode.focus = true
     }
     function signCMDConfirm(){
-        console.log("Send sms_token : " + textFieldReturnCode.text)
         if( progressBar.value < 100) {
-            //Empty attributes list, in simple signature view it's not SCAP signature
+            console.log("Send sms_token : " + textFieldReturnCode.text)
             gapi.signCloseCMD(textFieldReturnCode.text, [])
             progressBarIndeterminate.visible = true
             rectReturnCode.visible = false
@@ -773,6 +790,7 @@ AppForm {
         }
         else
         {
+            console.log("Move To Finish Page")
             removePopupFocus()
             moveToFinishPage()
             dialogCMDProgress.close()

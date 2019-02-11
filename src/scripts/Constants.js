@@ -87,7 +87,7 @@ var COLOR_TOP_BAR = "#03303a"
 // Main Orange
 var COLOR_MAIN_DARK = "#FF971A"
 // Black
-var COLOR_MAIN_BLACK = "#000000"
+var COLOR_MAIN_BLACK = "#00FF00"
 // Gray
 var COLOR_MAIN_SOFT_GRAY = "#dddddd"
 // White

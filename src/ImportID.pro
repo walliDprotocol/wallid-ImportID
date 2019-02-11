@@ -15,8 +15,11 @@ SOURCES += main.cpp \
     gapi.cpp \
     appcontroller.cpp
 
+# IDType: CMD_PT
+INCLUDEPATH += ../../../svn/repo/middleware-offline/trunk/pteid-mw-pt/_src/eidmw/CMD/services
+
 unix:!macx: LIBS += -Wl,-rpath-link,../lib
-LIBS += -L../lib -lpteidlib -lssl -lcrypto
+LIBS += -L../lib -lpteidlib -lssl -lCMDServices -lcrypto
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

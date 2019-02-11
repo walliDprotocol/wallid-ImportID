@@ -470,6 +470,7 @@ Rectangle {
                     width: parent.width * 0.25
                     anchors.verticalCenter: parent.verticalCenter
                     font.italic: textFieldMobileNumber.text === "" ? true : false
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
                     placeholderText: qsTranslate(
                                          "CMD_PT",
                                          "STR_SIGN_CMD_MOVEL_NUM_OP") + "?" + controler.autoTr
@@ -502,6 +503,7 @@ Rectangle {
                     width: parent.width * 0.7
                     anchors.verticalCenter: parent.verticalCenter
                     font.italic: textFieldPin.text === "" ? true : false
+                    color: Constants.COLOR_TEXT_MAIN_WHITE
                     placeholderText: qsTranslate(
                                          "CMD_PT",
                                          "STR_SIGN_CMD_PIN_OP") + "?" + controler.autoTr
@@ -590,7 +592,6 @@ Rectangle {
                 anchors.topMargin: 10
                 width: parent.width - 120
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: ""
             }
             Button {
                 id: backGenerateButton

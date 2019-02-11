@@ -7,8 +7,12 @@
 #include <QQuickImageProvider>
 #include <QCryptographicHash>
 #include <QClipboard>
+#include <QByteArray>
 #include "qpainter.h"
 #include "eidlib.h"
+
+#include <openssl/bio.h>
+#include <openssl/x509.h>
 
 using namespace eIDMW;
 
@@ -24,6 +28,8 @@ static  int g_runningCallback=0;
 GAPI::GAPI(QObject *parent) :
     QObject(parent) {
     m_addressLoaded = false;
+
+    cmd_signature = new eIDMW::CMDSignature( );
 
     //----------------------------------
     // set a timer to check if the number of card readers is changed
@@ -308,7 +314,7 @@ void GAPI::getCardInstance(PTEID_EIDCard * &new_card) {
                     Card.doSODCheck(false);
                     break;
                 }
-                    
+
                 case PTEID_CARDTYPE_UNKNOWN:
                 default:
                     break;
@@ -329,7 +335,7 @@ void GAPI::getCardInstance(PTEID_EIDCard * &new_card) {
                             Card.doSODCheck(false);
                             break;
                         }
-                            
+
                         case PTEID_CARDTYPE_UNKNOWN:
                         default:
                             break;
@@ -665,7 +671,6 @@ void GAPI::startSigningWalletAddress(QString walletAddress) {
 //TODO: walletAddress should be the plain version of the wallet address with 0x prefix
 //TODO: clarify if we need to sign the Ethereum public key instead
 void GAPI::doSignWalletAddress(QString walletAddress) {
-    const int ETH_WALLET_ADDR_SIZE = 40;
 
     qDebug() << "doSignWalletAddress = " << walletAddress;
 
@@ -676,14 +681,15 @@ void GAPI::doSignWalletAddress(QString walletAddress) {
 
     if (card == NULL) return;
 
-    if (walletAddress.size() != ETH_WALLET_ADDR_SIZE && 
+    if (walletAddress.size() != ETH_WALLET_ADDR_SIZE &&
         walletAddress.size() != ETH_WALLET_ADDR_SIZE+2) {
         qDebug() << "Invalid walletAddress!";
         emit signalWalletAddressSignFail();
         return;
     }
-    
+
     //Skip the 0x prefix if present.
+
     QByteArray signatureInput = walletAddress.size() == ETH_WALLET_ADDR_SIZE ? QByteArray::fromHex(walletAddress.toUtf8()) :
                                    QByteArray::fromHex(walletAddress.right(ETH_WALLET_ADDR_SIZE).toUtf8());
 
@@ -787,16 +793,60 @@ void GAPI::signOpenCMD(QString mobileNumber, QString secret_code, QString wa)
 
     params.secret_code = secret_code;
     params.mobileNumber = mobileNumber;
+    params.page = 1;
+    params.coord_x = 0;
+    params.coord_y = 0;
     params.wa = wa;
 
-    QtConcurrent::run(this, &GAPI::doOpenSignCMD, params);
+    QString walletAddress = params.wa;
+
+    if (walletAddress.size() != ETH_WALLET_ADDR_SIZE &&
+        walletAddress.size() != ETH_WALLET_ADDR_SIZE+2) {
+        qDebug() << "Invalid walletAddress!";
+        emit signalWalletAddressSignFail();
+        return;
+    }
+
+    QByteArray signatureInput = walletAddress.size() == ETH_WALLET_ADDR_SIZE
+            ? QByteArray::fromHex(walletAddress.toUtf8()) :
+              QByteArray::fromHex(walletAddress.right(ETH_WALLET_ADDR_SIZE).toUtf8());
+
+    cmd_signature->set_string_handler(params.wa.toStdString(), signatureInput);
+
+    QtConcurrent::run(this, &GAPI::doOpenSignCMD, cmd_signature, params);
 }
 
-void GAPI::doOpenSignCMD(CmdSignParams &params)
+void GAPI::doOpenSignCMD(CMDSignature *cmd_signature, CmdSignParams &params)
 {
     qDebug() << "GAPI: doOpenSignCMD! MobileNumber = " << params.mobileNumber
              << " secret_code = " << params.secret_code
              << " wa = " << params.wa;
+
+    int ret = 0;
+
+    try {
+        signalUpdateProgressBar(25);
+        CMDProxyInfo proxyInfo; // TODO: Implement proxyinfo
+        ret = cmd_signature->signOpen(proxyInfo,
+                                      params.mobileNumber.toStdString(),
+                                      params.secret_code.toStdString(),
+                                      params.page,
+                                      params.coord_x, params.coord_y,
+                                      params.location.toUtf8().data(), params.reason.toUtf8().data(),
+                                      "");
+         if ( ret != 0 ) {
+            qDebug() << "signOpen failed! - ret: " << ret << endl;
+
+            signCMDFinished(ret);
+            signalUpdateProgressBar(100);
+            return;
+        }
+
+
+    } catch (PTEID_Exception &e) {
+        qDebug() << "Caught exception in some SDK method. Error code: " << hex << e.GetError() << endl;
+        signalUpdateProgressBar(100);
+    }
 
     signalUpdateProgressBar(50);
     signalUpdateProgressStatus(tr("STR_LOGIN_SUCESS_CMD_PT"));
@@ -809,19 +859,93 @@ void GAPI::signCloseCMD(QString sms_token)
 
     signalUpdateProgressStatus(tr("STR_SENDING_CODE_CMD_PT"));
 
-    QtConcurrent::run(this, &GAPI::doCloseSignCMD, sms_token);
+    QtConcurrent::run(this, &GAPI::doCloseSignCMD, cmd_signature, sms_token);
 }
 
-void GAPI::doCloseSignCMD(QString sms_token)
+void GAPI::doCloseSignCMD(CMDSignature *cmd_signature, QString sms_token)
 {
     qDebug() << "doCloseSignCMD! " << "sms_token = " << sms_token;
 
     int ret = 0;
     std::string local_sms_token = sms_token.toUtf8().data();
 
+    try {
+        signalUpdateProgressBar(75);
+        ret = cmd_signature->signClose(local_sms_token);
+        if ( ret != 0 ) {
+            qDebug() << "signClose failed!" << endl;
+            signCMDFinished(ret);
+            signalUpdateProgressBar(100);
+            return;
+        }
+
+    } catch (PTEID_Exception &e) {
+        qDebug() << "Caught exception in some SDK method. Error code: " << hex << e.GetError() << endl;
+    }
+
+    QByteArray cert(cmd_signature->m_string_certificate.c_str(),
+                    cmd_signature->m_string_certificate.length());
+
+    QByteArray certHex = QByteArray::fromHex(cert);
+
+    parseCitizenDataFromCert(certHex);
+
     signCMDFinished(ret);
     signalUpdateProgressBar(100);
-    emit signalCloseCMDSucess();
+
+    emit signalWalletAddressSignSuccess(QString::fromStdString(cmd_signature->m_string_signature));
+    emit signalGetCertificateSucess(QString::fromStdString(cmd_signature->m_string_certificate));
+    emit signalCloseCMDSucess(m_citizen_fullname,m_civil_number,citizenBirthDate);
+
+    qDebug() << "signClose success!" << endl;
+}
+
+void GAPI::parseCitizenDataFromCert(QByteArray &certData) {
+    const int cert_field_size = 256;
+    const int dateOfBirth_offset = 18;
+    char myDate[15];
+
+    char * cert_data = certData.data();
+    char *data_serial = (char *)malloc(cert_field_size);
+    char *data_common_name = (char *)malloc(cert_field_size);
+
+    X509 *x509 = d2i_X509(NULL, (const unsigned char**)&cert_data, certData.size());
+
+    if (x509 == NULL) {
+        qDebug("parseCitizenDataFromCert() Error decoding certificate data!");
+        free(data_serial);
+        free(data_common_name);
+        return;
+    }
+
+    X509_NAME * subj = X509_get_subject_name(x509);
+    X509_NAME_get_text_by_NID(subj, NID_serialNumber, data_serial, cert_field_size);
+    X509_NAME_get_text_by_NID(subj, NID_commonName, data_common_name, cert_field_size);
+
+    m_civil_number = data_serial;
+    m_citizen_fullname = data_common_name;
+
+    int loc = X509_get_ext_by_NID(x509, NID_subject_directory_attributes, -1);
+    X509_EXTENSION *ex = X509_get_ext(x509, loc);
+    ASN1_OCTET_STRING* octet_str = X509_EXTENSION_get_data(ex);
+    const unsigned char* octet_str_data = octet_str->data;
+    const unsigned char * generalized_time_ptr = octet_str_data + dateOfBirth_offset;
+
+    memset(myDate, 0, sizeof(myDate));
+    memcpy(myDate, generalized_time_ptr, sizeof(myDate)-1);
+
+    QString formatIn = "yyyyMMddHHmmss";
+    QString date = QString::fromUtf8(myDate);
+    QDateTime time = QDateTime::fromString(date, formatIn);
+    QString formatOut = "yyyy-MM-dd";
+
+    citizenBirthDate = time.toString(formatOut);
+
+    qDebug() << "m_civil_number: " + m_civil_number;
+    qDebug() << "m_citizen_fullname: " + m_citizen_fullname;
+    qDebug() << "citizenBirthDate: " + citizenBirthDate;
+
+    X509_free(x509);
 }
 
 void GAPI::showSignCMDDialog(long code)
