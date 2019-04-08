@@ -19,6 +19,9 @@
 // IDType : CMD_PT
 #include "CMDSignature.h"
 #include "cmdErrors.h"
+#define CMD_BASIC_AUTH_APPID        ""
+#define CMD_BASIC_AUTH_USERID       ""
+#define CMD_BASIC_AUTH_PASSWORD     ""
 
 /*
     GAPI - Graphic Application Programming Interface

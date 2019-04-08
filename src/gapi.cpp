@@ -29,7 +29,7 @@ GAPI::GAPI(QObject *parent) :
     QObject(parent) {
     m_addressLoaded = false;
 
-    cmd_signature = new eIDMW::CMDSignature( );
+    cmd_signature = new eIDMW::CMDSignature(CMD_BASIC_AUTH_USERID, CMD_BASIC_AUTH_PASSWORD, CMD_BASIC_AUTH_APPID);
 
     //----------------------------------
     // set a timer to check if the number of card readers is changed
