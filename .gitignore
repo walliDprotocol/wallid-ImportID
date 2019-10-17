@@ -1,6 +1,7 @@
 # Ignore everything at build folder
 build/*
-
+build-ImportID-Unnamed-Debug
+src/release
 $ Ignore QTCreator user profile
 src/ImportID.pro.user
 
