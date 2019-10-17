@@ -9,8 +9,7 @@ Rectangle {
 
     property alias propertyBackAboutUsButton: backAboutUsButton
     property alias propertySubTextVersion: subTextVersion
-
-    color: Constants.COLOR_BACKGROUND
+    color: "#00000000"
 
     Item {
         id: helpPage
@@ -93,3 +92,10 @@ Rectangle {
         }
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/
+

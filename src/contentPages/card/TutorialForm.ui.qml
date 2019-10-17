@@ -41,7 +41,7 @@ Item {
             height: Constants.ARROW_HEIGHT
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
-            visible: false
+            visible: true
 
             Rectangle {
                 id: tutorialStatusCicle1
@@ -51,6 +51,7 @@ Item {
                 color: Constants.COLOR_MAIN
                 anchors.right: tutorialStatusCicle2.left
                 anchors.margins: 15
+				opacity: 1
             }
             Rectangle {
                 id: tutorialStatusCicle2
@@ -60,6 +61,7 @@ Item {
                 color: Constants.COLOR_MAIN
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.margins: 15
+				opacity: 0.5
             }
             Rectangle {
                 id: tutorialStatusCicle3
@@ -69,13 +71,14 @@ Item {
                 color: Constants.COLOR_MAIN
                 anchors.left: tutorialStatusCicle2.right
                 anchors.margins: 15
+				opacity: 0.5
             }
         }
         Item {
             id: introBox
             width: parent.width
             height: parent.height
-            visible: true
+            visible: false
 
             Item {
                 id: rectSelectLanguage
@@ -96,10 +99,8 @@ Item {
                         color: Constants.COLOR_MAIN_SOFT_GRAY
                         radius: 0
                     }
-                    model: LanguageModel {
-                    }
-                    delegate: LanguageDelegate {
-                    }
+                    model: LanguageModel {}
+                    delegate: LanguageDelegate {}
                     //the arrow on the right in the combobox
                     indicator: Item {
 
@@ -139,8 +140,7 @@ Item {
                             id: listViewLanguage
                             implicitHeight: contentHeight
                             model: comboBoxLanguage.popup.visible ? comboBoxLanguage.delegateModel : null
-                            ScrollIndicator.vertical: ScrollIndicator {
-                            }
+                            ScrollIndicator.vertical: ScrollIndicator {}
                         }
 
                         background: Rectangle {
@@ -250,8 +250,9 @@ Item {
                 CheckBox {
                     id: reminderCheckBox
                     anchors.right: textReminder.left
-                    Rectangle{
+                    Rectangle {
                         color: Constants.COLOR_TEXT_MAIN_WHITE
+                        transformOrigin: Item.Center
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.verticalCenter: parent.verticalCenter
                         width: Constants.SIZE_CHECKBOX_COMPONENT
@@ -265,7 +266,7 @@ Item {
             width: parent.width
             height: parent.height - rectTutorialStatus.height
 
-            visible: false
+            visible: true
 
             Image {
                 id: imageFirstPage
@@ -365,7 +366,7 @@ Item {
                 background: Rectangle {
                     width: parent.width
                     height: parent.height
-                    radius: 0
+                    radius: Constants.BUTTON_RADIUS
                     color: Constants.COLOR_BUTTONS
                     Image {
                         antialiasing: true
@@ -389,7 +390,7 @@ Item {
                 background: Rectangle {
                     width: parent.width
                     height: parent.height
-                    radius: 0
+                    radius: Constants.BUTTON_RADIUS
                     color: Constants.COLOR_BUTTONS
                     Image {
                         antialiasing: true
@@ -413,7 +414,7 @@ Item {
                 id: imageSecondPage
                 antialiasing: true
                 y: 30
-                 height: Constants.HEIGHT_IMG_TUTORIAL
+                height: Constants.HEIGHT_IMG_TUTORIAL
                 fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "qrc:/images/tutorial/page2.png"
@@ -506,7 +507,7 @@ Item {
                 background: Rectangle {
                     width: parent.width
                     height: parent.height
-                    radius: 0
+                    radius: Constants.BUTTON_RADIUS
                     color: Constants.COLOR_BUTTONS
                     Image {
                         antialiasing: true
@@ -529,7 +530,7 @@ Item {
                 background: Rectangle {
                     width: parent.width
                     height: parent.height
-                    radius: 0
+                    radius: Constants.BUTTON_RADIUS
                     color: Constants.COLOR_BUTTONS
                     Image {
                         antialiasing: true
@@ -553,7 +554,7 @@ Item {
                 id: imageThirdPage
                 antialiasing: true
                 y: 30
-                 height: Constants.HEIGHT_IMG_TUTORIAL
+                height: Constants.HEIGHT_IMG_TUTORIAL
                 fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "qrc:/images/tutorial/page3.png"
@@ -647,7 +648,7 @@ Item {
                 background: Rectangle {
                     width: parent.width
                     height: parent.height
-                    radius: 0
+                    radius: Constants.BUTTON_RADIUS
                     color: Constants.COLOR_BUTTONS
                     Image {
                         antialiasing: true
@@ -670,7 +671,7 @@ Item {
                 background: Rectangle {
                     width: parent.width
                     height: parent.height
-                    radius: 0
+                    radius: Constants.BUTTON_RADIUS
                     color: Constants.COLOR_BUTTONS
                     Image {
                         antialiasing: true
@@ -686,3 +687,10 @@ Item {
         }
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/
+

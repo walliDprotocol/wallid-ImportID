@@ -34,71 +34,73 @@ Item {
         visible: true
 
         Item {
-            id:leftFaqs
+            id: leftFaqs
             width: parent.width * 0.5 - 45
             height: parent.height
             y: Constants.PAGE_Y_POS
             x: 30
             visible: true
-                Components.FAQBox {
-                    id: faqBoxL1
-                    width: parent.width
-                    propertyTextTitle.text: qsTr("STR_FAQ_L1") + controler.autoTr
-                    propertyTextAnswer.text: qsTr("STR_FAQ_L1_TEXT") + controler.autoTr
-                }
-                Components.FAQBox {
-                    id: faqBoxL2
-                    width: parent.width
-                    anchors.top : faqBoxL1.bottom
-                    propertyTextTitle.text: qsTr("STR_FAQ_L2") + controler.autoTr
-                    propertyTextAnswer.text: qsTr("STR_FAQ_L2_TEXT") + controler.autoTr
-                }
-                Components.FAQBox {
-                    id: faqBoxL3
-                    width: parent.width
-                    anchors.top : faqBoxL2.bottom
-                    propertyTextTitle.text: qsTr("STR_FAQ_L3") + controler.autoTr
-                    propertyTextAnswer.text: qsTr("STR_FAQ_L3_TEXT") + controler.autoTr
-                }
-                Components.FAQBox {
-                    id: faqBoxL4
-                    width: parent.width
-                    anchors.top : faqBoxL3.bottom
-                    propertyTextTitle.text: qsTr("STR_FAQ_L4") + controler.autoTr
-                    propertyTextAnswer.text: qsTr("STR_FAQ_L4_TEXT") + controler.autoTr
-                }
-                Components.FAQBox {
-                    id: faqBoxL5
-                    width: parent.width
-                    anchors.top : faqBoxL4.bottom
-                    propertyTextTitle.text: qsTr("STR_FAQ_L5") + controler.autoTr
-                    propertyTextAnswer.text: qsTr("STR_FAQ_L5_TEXT") + controler.autoTr
-                }
-                Components.FAQBox {
-                    id: faqBoxL6
-                    width: parent.width
-                    anchors.top : faqBoxL5.bottom
-                    propertyTextTitle.text: qsTr("STR_FAQ_L6") + controler.autoTr
-                    propertyTextAnswer.text: qsTr("STR_FAQ_L6_TEXT") + controler.autoTr
-                }
-                Components.FAQBox {
-                    id: faqBoxL7
-                    width: parent.width
-                    anchors.top : faqBoxL6.bottom
-                    propertyTextTitle.text: qsTr("STR_FAQ_L7") + controler.autoTr
-                    propertyTextAnswer.text: qsTr("STR_FAQ_L7_TEXT") + controler.autoTr
-                }
-                Components.FAQBox {
-                    id: faqBoxL8
-                    width: parent.width
-                    anchors.top : faqBoxL7.bottom
-                    propertyTextTitle.text: qsTr("STR_FAQ_L8") + controler.autoTr
-                    propertyTextAnswer.text:  qsTr("STR_FAQ_L8_TEXT") + "<a href=\"https://www.myetherwallet.com\"> www.myetherwallet.com"
-                }
+            Components.FAQBox {
+                id: faqBoxL1
+                width: parent.width
+                propertyTextTitle.text: qsTr("STR_FAQ_L1") + controler.autoTr
+                propertyTextAnswer.text: qsTr("STR_FAQ_L1_TEXT") + controler.autoTr
+            }
+            Components.FAQBox {
+                id: faqBoxL2
+                width: parent.width
+                anchors.top: faqBoxL1.bottom
+                propertyTextTitle.text: qsTr("STR_FAQ_L2") + controler.autoTr
+                propertyTextAnswer.text: qsTr("STR_FAQ_L2_TEXT") + controler.autoTr
+            }
+            Components.FAQBox {
+                id: faqBoxL3
+                width: parent.width
+                anchors.top: faqBoxL2.bottom
+                propertyTextTitle.text: qsTr("STR_FAQ_L3") + controler.autoTr
+                propertyTextAnswer.text: qsTr("STR_FAQ_L3_TEXT") + controler.autoTr
+            }
+            Components.FAQBox {
+                id: faqBoxL4
+                width: parent.width
+                anchors.top: faqBoxL3.bottom
+                propertyTextTitle.text: qsTr("STR_FAQ_L4") + controler.autoTr
+                propertyTextAnswer.text: qsTr("STR_FAQ_L4_TEXT") + controler.autoTr
+            }
+            Components.FAQBox {
+                id: faqBoxL5
+                width: parent.width
+                anchors.top: faqBoxL4.bottom
+                propertyTextTitle.text: qsTr("STR_FAQ_L5") + controler.autoTr
+                propertyTextAnswer.text: qsTr("STR_FAQ_L5_TEXT") + controler.autoTr
+            }
+            Components.FAQBox {
+                id: faqBoxL6
+                width: parent.width
+                anchors.top: faqBoxL5.bottom
+                propertyTextTitle.text: qsTr("STR_FAQ_L6") + controler.autoTr
+                propertyTextAnswer.text: qsTr("STR_FAQ_L6_TEXT") + controler.autoTr
+            }
+            Components.FAQBox {
+                id: faqBoxL7
+                width: parent.width
+                anchors.top: faqBoxL6.bottom
+                propertyTextTitle.text: qsTr("STR_FAQ_L7") + controler.autoTr
+                propertyTextAnswer.text: qsTr("STR_FAQ_L7_TEXT") + controler.autoTr
+            }
+            Components.FAQBox {
+                id: faqBoxL8
+                width: parent.width
+                anchors.top: faqBoxL7.bottom
+                propertyTextTitle.text: qsTr("STR_FAQ_L8") + controler.autoTr
+                propertyTextAnswer.text: qsTr("STR_FAQ_L8_TEXT") + "<style> a:link { color :"
+                                         + Constants.COLOR_LINKS + "; }</style>"
+                                         + "<a href=\"https://www.myetherwallet.com\"> www.myetherwallet.com"
+            }
         }
 
         Item {
-            id:rightFaqs
+            id: rightFaqs
             width: parent.width * 0.5 - 45
             height: parent.height
             y: Constants.PAGE_Y_POS
@@ -116,66 +118,68 @@ Item {
             Components.FAQBox {
                 id: faqBoxR2
                 width: parent.width
-                anchors.top : faqBoxR1.bottom
+                anchors.top: faqBoxR1.bottom
                 propertyTextTitle.text: qsTr("STR_FAQ_R2") + controler.autoTr
                 propertyTextAnswer.text: qsTr("STR_FAQ_R2_TEXT") + controler.autoTr
             }
             Components.FAQBox {
                 id: faqBoxR3
                 width: parent.width
-                anchors.top : faqBoxR2.bottom
+                anchors.top: faqBoxR2.bottom
                 propertyTextTitle.text: qsTr("STR_FAQ_R3") + controler.autoTr
                 propertyTextAnswer.text: qsTr("STR_FAQ_R3_TEXT") + controler.autoTr
             }
             Components.FAQBox {
                 id: faqBoxR4
                 width: parent.width
-                anchors.top : faqBoxR3.bottom
+                anchors.top: faqBoxR3.bottom
                 propertyTextTitle.text: qsTr("STR_FAQ_R4") + controler.autoTr
                 propertyTextAnswer.text: qsTr("STR_FAQ_R4_TEXT") + controler.autoTr
             }
             Components.FAQBox {
                 id: faqBoxR5
                 width: parent.width
-                anchors.top : faqBoxR4.bottom
+                anchors.top: faqBoxR4.bottom
                 propertyTextTitle.text: qsTr("STR_FAQ_R5") + controler.autoTr
                 propertyTextAnswer.text: qsTr("STR_FAQ_R5_TEXT") + controler.autoTr
             }
             Components.FAQBox {
                 id: faqBoxR6
                 width: parent.width
-                anchors.top : faqBoxR5.bottom
+                anchors.top: faqBoxR5.bottom
                 propertyTextTitle.text: qsTr("STR_FAQ_R6") + controler.autoTr
                 propertyTextAnswer.text: qsTr("STR_FAQ_R6_TEXT") + controler.autoTr
             }
             Components.FAQBox {
                 id: faqBoxR7
                 width: parent.width
-                anchors.top : faqBoxR6.bottom
+                anchors.top: faqBoxR6.bottom
                 propertyTextTitle.text: qsTr("STR_FAQ_R7") + controler.autoTr
                 propertyTextAnswer.text: qsTr("STR_FAQ_R7_TEXT") + controler.autoTr
             }
             Components.FAQBox {
                 id: faqBoxR8
                 width: parent.width
-                anchors.top : faqBoxR7.bottom
+                anchors.top: faqBoxR7.bottom
                 propertyTextTitle.text: qsTr("STR_FAQ_R8") + controler.autoTr
-                propertyTextAnswer.text:  qsTr("STR_FAQ_R8_TEXT") + "<a href=\"https://www.myetherid.io\"> www.myetherid.io"
+                propertyTextAnswer.text: qsTr("STR_FAQ_R8_TEXT") + "<style> a:link { color :"
+                                         + Constants.COLOR_LINKS + "; }</style>"
+                                         + "<a href=\"https://www.myetherid.io\"> www.myetherid.io"
             }
         }
 
         Button {
             id: backHowToUseButton
             x: Constants.BUTTONS_BACK_X_POS
-            y: parent.height - backHowToUseButton.height
-            font.capitalization: Font.MixedCase
+            y: parent.height - 30
             width: Constants.ARROW_WIDTH
             height: Constants.ARROW_HEIGHT
+            font.capitalization: Font.MixedCase
             enabled: true
             background: Rectangle {
                 width: parent.width
                 height: parent.height
-                radius: 0
+                radius: 5
                 color: Constants.COLOR_BUTTONS
                 Image {
                     antialiasing: true
@@ -189,3 +193,10 @@ Item {
         }
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/
+

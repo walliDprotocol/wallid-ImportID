@@ -52,7 +52,11 @@ Rectangle {
     property alias propertyIndicatorText: indicatorText.text
     property alias propertyIndicatorImage: indicatorIcon.source
 
-    color: Constants.COLOR_BACKGROUND
+    property alias itemDlgtLanguage: itemDlgtLanguage
+    property alias startButton: startButton
+    width: Constants.SCREEN_MINIMUM_WIDTH
+    height: Constants.SCREEN_MINIMUM_HEIGHT
+    color: "#00000000"
 
     BusyIndicator {
         id: busyIndication
@@ -68,9 +72,8 @@ Rectangle {
 
     Item {
         id: rectBotton
-        x: 30
-        width: parent.width - 60
-        anchors.horizontalCenter: parent.horizontalCenter
+        x: parent.width - 280
+        width: 280
         anchors.bottom: parent.bottom
         height: Constants.ARROW_HEIGHT
         enabled: true
@@ -96,31 +99,13 @@ Rectangle {
             }
         }
         Item {
-            id: rectAboutUs
-            width: parent.width / 3
-            anchors.left: rectTutorial.right
-            height: parent.height
-            enabled: true
-            MouseArea {
-                id: aboutUsTextMenuMouseArea
-                hoverEnabled: true
-                anchors.fill: parent
-            }
-            Text {
-                id: aboutText
-                text: qsTr("STR_ABOUT_US") + controler.autoTr
-                font.capitalization: Font.MixedCase
-                font.pixelSize: Constants.SIZE_TEXT_BOTTON
-                enabled: true
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
-            }
-        }
-        Item {
             id: rectHowTouse
+            x: 93
+            y: 0
             width: parent.width / 3
             anchors.left: rectAboutUs.right
             height: parent.height
+            anchors.leftMargin: -186
             enabled: true
             MouseArea {
                 id: helpTextMenuMouseArea
@@ -130,6 +115,31 @@ Rectangle {
             Text {
                 id: helpTextMenu
                 text: qsTr("STR_HOW_TO_USE") + controler.autoTr
+                font.capitalization: Font.MixedCase
+                font.pixelSize: Constants.SIZE_TEXT_BOTTON
+                enabled: true
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
+            }
+        }
+
+        Item {
+            id: rectAboutUs
+            x: 187
+            y: 0
+            width: parent.width / 3
+            anchors.left: rectTutorial.right
+            height: parent.height
+            anchors.leftMargin: 93
+            enabled: true
+            MouseArea {
+                id: aboutUsTextMenuMouseArea
+                hoverEnabled: true
+                anchors.fill: parent
+            }
+            Text {
+                id: aboutText
+                text: qsTr("STR_ABOUT_US") + controler.autoTr
                 font.capitalization: Font.MixedCase
                 font.pixelSize: Constants.SIZE_TEXT_BOTTON
                 enabled: true
@@ -147,15 +157,22 @@ Rectangle {
 
         Item {
             id: rectSelectLanguage
-            width: parent.width - 20
-            anchors.horizontalCenter: parent.horizontalCenter
+            x: 8
+            width: 280
             height: Constants.HEIGHT_LANGUAGE_COMPONENT
-            y: 5
+            y: 8
 
             ComboBox {
                 id: comboBoxLanguage
-                width: indicatorIconLanguage.width + indicatorIconLanguageArrow.width + 15
-                height: Constants.HEIGHT_LANGUAGE_COMPONENT
+                width: Constants.WIDTH_BUTTON
+                anchors.left: parent.left
+                anchors.leftMargin: 170
+                anchors.right: parent.right
+                anchors.rightMargin: 45
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 0
+                anchors.top: parent.top
+                anchors.topMargin: 0
                 visible: true
                 //the background of the combobox
                 background: Rectangle {
@@ -164,10 +181,8 @@ Rectangle {
                     color: Constants.COLOR_MAIN_SOFT_GRAY
                     radius: 0
                 }
-                model: LanguageModel {
-                }
-                delegate: LanguageDelegate {
-                }
+                model: LanguageModel {}
+                delegate: LanguageDelegate {}
                 //the arrow on the right in the combobox
                 indicator: Item {
 
@@ -175,6 +190,7 @@ Rectangle {
                     height: 40
                     anchors.verticalCenter: parent.verticalCenter
                     id: itemDlgtLanguage
+                    y: 0
                     Image {
                         id: indicatorIconLanguage
                         antialiasing: true
@@ -207,8 +223,7 @@ Rectangle {
                         id: listViewLanguage
                         implicitHeight: contentHeight
                         model: comboBoxLanguage.popup.visible ? comboBoxLanguage.delegateModel : null
-                        ScrollIndicator.vertical: ScrollIndicator {
-                        }
+                        ScrollIndicator.vertical: ScrollIndicator {}
                     }
 
                     background: Rectangle {
@@ -217,6 +232,21 @@ Rectangle {
                         border.color: Constants.COLOR_MAIN
                     }
                 }
+            }
+            Text {
+                id: textChooseCountry
+                width: 170
+                text: qsTr("STR_TEXT_CHOOSE_COUNTRY") + controler.autoTr
+                anchors.right: parent.right
+                anchors.rightMargin: 120
+                horizontalAlignment: Text.AlignRight
+                anchors.top: parent.top
+                anchors.topMargin: 4
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 0
+                font.pixelSize: 15
+                fontSizeMode: Text.HorizontalFit
+                color: Constants.COLOR_MAIN_SOFT_GRAY
             }
         }
 
@@ -231,6 +261,7 @@ Rectangle {
                 id: imageIcon
                 antialiasing: true
                 height: 80
+                anchors.bottomMargin: 80
                 anchors.bottom: textAppSlogan.top
                 anchors.horizontalCenter: parent.horizontalCenter
                 fillMode: Image.PreserveAspectFit
@@ -238,7 +269,13 @@ Rectangle {
             }
             Text {
                 id: textAppSlogan
+                x: parent.width / 2
+                y: 190
+                width: parent.width / 2.5
                 text: qsTr("STR_TEXT_SUB_TITLE") + controler.autoTr
+                horizontalAlignment: Text.AlignHCenter
+                anchors.bottomMargin: -60
+                fontSizeMode: Text.HorizontalFit
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
                 font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
@@ -248,7 +285,8 @@ Rectangle {
 
         Item {
             id: rectSelectEntity
-            width: parent.width * 0.7
+            y: 80
+            width: 380
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: rowIntroTitle.bottom
             anchors.topMargin: 80
@@ -263,8 +301,9 @@ Rectangle {
                 Image {
                     id: imageEntity
                     antialiasing: true
-                    width: 80
-                    height: Constants.HEIGHT_BOTTOM_COMPONENT
+                    height: Constants.HEIGHT_BOTTOM_COMPONENT - 10
+                    anchors.left: parent.left
+                    anchors.leftMargin: -20
                     fillMode: Image.PreserveAspectFit
                     anchors.right: comboBoxEntity.left
                 }
@@ -285,10 +324,8 @@ Rectangle {
                         radius: 0
                         color: Constants.COLOR_MAIN_SOFT_GRAY
                     }
-                    model: EntitiesModel {
-                    }
-                    delegate: EntitiesDelegate {
-                    }
+                    model: EntitiesModel {}
+                    delegate: EntitiesDelegate {}
                     //the arrow on the right in the combobox
                     indicator: Item {
 
@@ -298,19 +335,20 @@ Rectangle {
                         id: itemDlgt
                         Image {
                             id: indicatorIcon
+                            x: 0
                             antialiasing: true
                             width: Constants.SIZE_IMAGE_ENTITY_WIDTH
                             height: Constants.SIZE_IMAGE_ENTITY_HEIGHT
-                            x: 10
+                            anchors.verticalCenterOffset: -1
                             anchors.verticalCenter: parent.verticalCenter
                             fillMode: Image.PreserveAspectFit
                         }
                         Text {
                             id: indicatorText
-                            anchors.left: indicatorIcon.right
-                            anchors.leftMargin: 20
                             anchors.verticalCenter: parent.verticalCenter
                             text: qsTr("STR_CHOOSE_ID_TYPE") + controler.autoTr
+                            anchors.leftMargin: Constants.SIZE_IMAGE_ENTITY_WIDTH
+                            anchors.left: parent.left
                         }
                         Image {
                             id: indicatorIconArrow
@@ -336,8 +374,7 @@ Rectangle {
                             id: listView
                             implicitHeight: contentHeight
                             model: comboBoxEntity.popup.visible ? comboBoxEntity.delegateModel : null
-                            ScrollIndicator.vertical: ScrollIndicator {
-                            }
+                            ScrollIndicator.vertical: ScrollIndicator {}
                         }
 
                         background: Rectangle {
@@ -351,14 +388,14 @@ Rectangle {
                     // Temp model used to update comboBoxEntity model
                     // After change language
                     id: listViewTemp
-                    model: EntitiesModel {
-                    }
+                    model: EntitiesModel {}
                 }
             }
             Item {
                 id: rectSelectEntityBottom
                 width: Constants.WIDTH_BUTTON
-                height: parent.height
+                height: parent.height * 1.2
+                anchors.topMargin: 35
                 anchors.top: rectSelectEntityTop.bottom
                 anchors.margins: 10
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -366,10 +403,13 @@ Rectangle {
                 Button {
                     id: startButton
                     text: qsTr("STR_IMPORT_BUTTON") + controler.autoTr
+                    topPadding: 4
                     font.capitalization: Font.MixedCase
                     font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
                     contentItem: Text {
                         text: startButton.text
+                        anchors.top: parent.top
+                        anchors.topMargin: 4
                         font: startButton.font
                         color: Constants.COLOR_TEXT_MAIN_WHITE
                         opacity: enabled ? 1.0 : 0.3
@@ -378,12 +418,12 @@ Rectangle {
                         elide: Text.ElideRight
                     }
                     width: Constants.WIDTH_BUTTON
-                    height: Constants.HEIGHT_BOTTOM_COMPONENT
+                    height: Constants.HEIGHT_BOTTOM_COMPONENT * 1.3
                     enabled: false
                     anchors.horizontalCenter: parent.horizontalCenter
                     background: Rectangle {
                         color: startButton.enabled ? Constants.COLOR_BUTTONS : Constants.COLOR_BUTTONS_DOWN
-                        radius: 10
+                        radius: Constants.BUTTON_RADIUS
                     }
                 }
             }
@@ -527,7 +567,7 @@ Rectangle {
                 font.pixelSize: Constants.SIZE_TEXT_BODY
                 color: Constants.COLOR_TEXT_TITLE
             }
-            Item{
+            Item {
                 id: rectCheckBoxIdentity
                 width: 200
                 height: Constants.HEIGHT_BOTTOM_COMPONENT
@@ -536,7 +576,7 @@ Rectangle {
                 CheckBox {
                     id: checkBoxIdentity
                     x: 60
-                    Rectangle{
+                    Rectangle {
                         color: Constants.COLOR_TEXT_MAIN_WHITE
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.verticalCenter: parent.verticalCenter
@@ -552,7 +592,7 @@ Rectangle {
                 }
             }
 
-            Item{
+            Item {
                 id: rectCheckBoxAddress
                 width: 200
                 height: Constants.HEIGHT_BOTTOM_COMPONENT
@@ -561,7 +601,8 @@ Rectangle {
                 anchors.left: rectCheckBoxIdentity.right
                 CheckBox {
                     id: checkBoxAddress
-                    Rectangle{
+                    checkable: true
+                    Rectangle {
                         color: Constants.COLOR_TEXT_MAIN_WHITE
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.verticalCenter: parent.verticalCenter
@@ -621,8 +662,8 @@ Rectangle {
                 x: parent.width - 30 - generateButton.width
                 y: Constants.BUTTONS_Y_POS - rectGenPage_CC_PT.height
                 text: qsTr("STR_GENERATE") + controler.autoTr
+                font.pixelSize: 15
                 font.capitalization: Font.MixedCase
-                font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
                 contentItem: Text {
                     text: generateButton.text
                     font: generateButton.font
@@ -638,7 +679,7 @@ Rectangle {
                 anchors.horizontalCenter: parent.horizontalCenter
                 background: Rectangle {
                     color: generateButton.enabled ? Constants.COLOR_BUTTONS : Constants.COLOR_BUTTONS_DOWN
-                    radius: 10
+                    radius: Constants.BUTTON_RADIUS
                 }
             }
         }
@@ -716,10 +757,10 @@ Rectangle {
                     policy: ScrollBar.AlwaysOn
                     width: 10
 
-                    onActiveChanged: {
-                        if (!active)
-                            active = true
-                    }
+                    // onActiveChanged: {
+                    //   if (!active)
+                    //     active = true
+                    //}
                 }
             }
         }
@@ -751,12 +792,12 @@ Rectangle {
             x: parent.width - 30 - generateButton.width
             y: Constants.BUTTONS_Y_POS
             text: qsTr("STR_GOTO_MYETHERID_IO") + controler.autoTr
+            font.pixelSize: 15
             font.capitalization: Font.MixedCase
-            font.pixelSize: Constants.SIZE_TEXT_SUB_TITLE
             contentItem: Text {
                 text: gotoButton.text
                 font: gotoButton.font
-                color:Constants.COLOR_TEXT_MAIN_WHITE
+                color: Constants.COLOR_TEXT_MAIN_WHITE
                 opacity: enabled ? 1.0 : 0.3
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -773,3 +814,10 @@ Rectangle {
         }
     }
 }
+
+/*##^##
+Designer {
+    D{i:28;anchors_x:192}D{i:31;anchors_width:80}D{i:38;anchors_x:0}
+}
+##^##*/
+

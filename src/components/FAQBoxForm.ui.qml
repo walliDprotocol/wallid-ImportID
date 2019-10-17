@@ -9,9 +9,9 @@ Item {
     property alias propertyTitleMouseArea: titleMouseArea
 
     height: rectTitle.height + Constants.HEIGHT_LINE_FAQS + 2 * Constants.SPACE_V_TEXT_FAQS
-            + (textAnswer.visible ?  textAnswer.paintedHeight : 0)
+            + (textAnswer.visible ? textAnswer.paintedHeight : 0)
 
-    Item{
+    Item {
         id: rectTitle
         width: parent.width
         height: textTitle.paintedHeight
@@ -52,6 +52,7 @@ Item {
         width: parent.width
         wrapMode: Text.WordWrap
         anchors.top: rectTitle.bottom
+        textFormat: Text.RichText
         anchors.topMargin: Constants.SPACE_V_TEXT_FAQS
         font.pixelSize: Constants.SIZE_TEXT_FAQS
         color: Constants.COLOR_TEXT_MAIN_WHITE

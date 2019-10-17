@@ -79,10 +79,12 @@ TutorialForm {
     propertyBackFirstPageButton {
         onClicked: {
             console.log("Back First Page Button clicked")
-            propertyTutorialFirstPage.visible = false
-            propertyintroPage.visible = true
-            mainWindow.title = qsTr("STR_APP_TITLE") + controler.autoTr
-            propertyRectTutorialStatus.visible = false
+            mainFormID.propertyPageLoader.source = "App.qml"
+
+           // propertyTutorialFirstPage.visible = false
+            //propertyintroPage.visible = true
+            //mainWindow.title = qsTr("STR_APP_TITLE") + controler.autoTr
+        //    propertyRectTutorialStatus.visible = false
         }
     }
     propertyBackSecondPageButton {
