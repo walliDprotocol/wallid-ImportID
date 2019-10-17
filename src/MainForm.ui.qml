@@ -12,25 +12,21 @@ Rectangle {
     property alias propertyContentPagesView: contentPagesView
 
     property alias propertyPageLoader: pageLoaderID
+    width: Constants.SCREEN_MINIMUM_WIDTH
+    height: Constants.SCREEN_MINIMUM_HEIGHT
 
     border.width: Constants.APP_BORDER
-    border.color : Constants.COLOR_TOP_BAR
+    border.color: Constants.COLOR_TOP_BAR
 
     /* Title bar */
-    Components.TitleBar {
-        id: titleBar;
-        width: parent.width;
-        height: Constants.TITLE_BAR_SIZE;
-        opacity: 1
-    }
 
     /* Main View */
     Item {
         id: mainView
         width: parent.width - 2 * Constants.APP_BORDER
-        height: parent.height - Constants.TITLE_BAR_SIZE - Constants.APP_BORDER
+        height: 570
         x: Constants.APP_BORDER
-        y: Constants.TITLE_BAR_SIZE
+        y: 2
 
         /* Content Pages View */
         Item {
@@ -39,7 +35,7 @@ Rectangle {
             z: 1
             Item {
                 anchors.fill: parent
-                PageLoader{
+                PageLoader {
                     id: pageLoaderID
                     anchors.fill: parent
                     propertyGeneralPopUp.visible: false

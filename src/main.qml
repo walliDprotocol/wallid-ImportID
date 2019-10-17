@@ -13,12 +13,16 @@ import "scripts/Constants.js" as Constants
 Window {
     id: mainWindow
     visible: true
-    flags: Qt.Window | Qt.CustomizeWindowHint | Qt.FramelessWindowHint
+    flags: Qt.Window //| Qt.CustomizeWindowHint | Qt.FramelessWindowHint
+	//setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
 
     width: Constants.SCREEN_MINIMUM_WIDTH
     height: Constants.SCREEN_MINIMUM_HEIGHT
     minimumWidth: Constants.SCREEN_MINIMUM_WIDTH
     minimumHeight: Constants.SCREEN_MINIMUM_HEIGHT
+	maximumWidth: Constants.SCREEN_MINIMUM_WIDTH
+	maximumHeight: Constants.SCREEN_MINIMUM_HEIGHT
+
 
     title: qsTr("STR_APP_TITLE_MAIN_TEXT") + controler.autoTr
 
@@ -182,14 +186,26 @@ Load language error. Please reinstall the application"
 
     MainForm {
         id: mainFormID
+		 gradient: Gradient {
+        GradientStop {
+            position: 0
+            color: "#03303a"
+        }
+
+        GradientStop {
+            position: 1
+            color: "#000000"
+        }
+    }
+
         color: Constants.COLOR_BACKGROUND;
         Component.onCompleted: {
             mainFormID.propertyContentPagesView.width = mainWindow.width
-            if(controler.getNotShowHelpStartUp()){
-                mainFormID.propertyPageLoader.source = "contentPages/card/App.qml"
-            }else{
-                mainFormID.propertyPageLoader.source = "contentPages/card/Tutorial.qml"
-            }
+            //if(controler.getNotShowHelpStartUp()){
+               mainFormID.propertyPageLoader.source = "contentPages/card/App.qml"
+           // }else{
+                //mainFormID.propertyPageLoader.source = "contentPages/card/Tutorial.qml"
+           // }
         }
     }
 

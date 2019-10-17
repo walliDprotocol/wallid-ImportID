@@ -32,7 +32,7 @@ Loader{
             bottomPadding: 0
             font.bold: true
             font.pixelSize: 16
-            color: Constants.COLOR_TEXT_TITLE
+            color: Constants.COLOR_TEXT_INFO
         }
         Item {
             width: generalPopUp.availableWidth

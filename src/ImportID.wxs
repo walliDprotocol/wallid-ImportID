@@ -48,9 +48,6 @@
                 <Component Id="cmp823651B2CB11A4246C3C1F675444DD3A" Guid="{7776A373-5AB6-4FC5-8F71-84D38C647311}">
                     <File Id="filECE2B9005ECC92C79308E9507EA4D44C" KeyPath="yes" Source="release\D3Dcompiler_47.dll" />
                 </Component>
-                <Component Id="cmp1D4D7D80A21F76406FF0F2CF3746F9E4" Guid="{42B8BA22-71CF-47A6-8767-4C177217018A}">
-                    <File Id="fil4E324E41A619E44FC19C22FBF7DFB280" KeyPath="yes" Source="release\FreeImage.dll" />
-                </Component>
                 <Component Id="cmpBD4C4DE6AAF9AF3994B9AC161965F816" Guid="{6FC23559-D7AB-4186-B82C-21CFD3B6E6A4}">
                     <File Id="filB2463B2AE00D0296042246CBA1878878" KeyPath="yes" Source="release\ImportID.exe" />
                 </Component>
@@ -1499,7 +1496,6 @@
 			<ComponentRef Id="cmp823651B2CB11A42477" />
 			<ComponentRef Id="cmpdcc9d657cfb1" />
             <ComponentRef Id="cmp823651B2CB11A4246C3C1F675444DD3A" />
-            <ComponentRef Id="cmp1D4D7D80A21F76406FF0F2CF3746F9E4" />
             <ComponentRef Id="cmpBD4C4DE6AAF9AF3994B9AC161965F816" />
             <ComponentRef Id="cmp2CAA052760806D2F708F90D0B171D29B" />
             <ComponentRef Id="cmpA77304AE76FFC6CF58BC6BD095BB8F2D" />
