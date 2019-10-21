@@ -347,8 +347,7 @@ Rectangle {
                             id: indicatorText
                             anchors.verticalCenter: parent.verticalCenter
                             text: qsTr("STR_CHOOSE_ID_TYPE") + controler.autoTr
-                            anchors.leftMargin: Constants.SIZE_IMAGE_ENTITY_WIDTH
-                            anchors.left: parent.left
+                            anchors.horizontalCenter: parent.horizontalCenter
                         }
                         Image {
                             id: indicatorIconArrow
@@ -462,8 +461,61 @@ Rectangle {
                 anchors.top: textStep1.bottom
                 anchors.topMargin: 10
                 x: 60
+
+                delegate: ItemDelegate {
+                    width: comboBoxReader.width
+                    contentItem: Text {
+                        text: modelData
+                        color: "#000000"
+                        font: comboBoxReader.font
+                        elide: Text.ElideRight
+                        verticalAlignment: Text.AlignVCenter
+                    }
+                    highlighted: comboBoxReader.highlightedIndex === index
+                }
+
+                contentItem: Text {
+                    leftPadding: 10
+                    rightPadding: comboBoxReader.indicator.width + comboBoxReader.spacing
+                    text: comboBoxReader.displayText
+                    font: comboBoxReader.font
+                    color: "#000000"
+                    verticalAlignment: Text.AlignVCenter
+                    elide: Text.ElideRight
+                }
+
+                background: Rectangle {
+                    implicitWidth: 120
+                    implicitHeight: 40
+                    color: "#dddddd"
+                    border.color: "#dddddd"
+                    border.width: comboBoxReader.visualFocus ? 2 : 1
+                    radius: 2
+                }
+
+                popup: Popup {
+                    y: comboBoxReader.height - 1
+                    width: comboBoxReader.width
+                    implicitHeight: contentItem.implicitHeight
+                    padding: 1
+
+                    contentItem: ListView {
+                        clip: true
+                        implicitHeight: contentHeight
+                        model: comboBoxReader.popup.visible ? comboBoxReader.delegateModel : null
+                        currentIndex: comboBoxReader.highlightedIndex
+
+                        ScrollIndicator.vertical: ScrollIndicator {}
+                    }
+
+                    background: Rectangle {
+                        border.color: "#dddddd"
+                        radius: 2
+                    }
+                }
             }
         }
+
         Item {
             id: rectGenPage_CMD_PT
             width: parent.width
@@ -576,19 +628,35 @@ Rectangle {
                 CheckBox {
                     id: checkBoxIdentity
                     x: 60
-                    Rectangle {
-                        color: Constants.COLOR_TEXT_MAIN_WHITE
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        anchors.verticalCenter: parent.verticalCenter
-                        width: Constants.SIZE_CHECKBOX_COMPONENT
-                        height: Constants.SIZE_CHECKBOX_COMPONENT
-                    }
-                }
-                Text {
                     text: qsTr("STR_CHECKBOX_IDENTITY") + controler.autoTr
-                    color: Constants.COLOR_TEXT_MAIN_WHITE
-                    anchors.left: checkBoxIdentity.right
-                    y: 6
+                    indicator: Rectangle {
+                        implicitWidth: 26
+                        implicitHeight: 26
+                        x: checkBoxIdentity.leftPadding
+                        y: parent.height / 2 - height / 2
+                        radius: 1
+                        border.color: checkBoxIdentity.down ? "#03303a" : "#dddddd"
+
+                        Rectangle {
+                            width: 18
+                            height: 18
+                            x: 4
+                            y: 4
+                            radius: 2
+                            color: checkBoxIdentity.down ? "#17a81a" : "#dddddd"
+                            visible: checkBoxIdentity.checked
+                            opacity: checkBoxAddress.enabled ? 1.0 : 0.3
+                        }
+                    }
+
+                    contentItem: Text {
+                        text: checkBoxIdentity.text
+                        font: checkBoxIdentity.font
+                        opacity: checkBoxIdentity.enabled ? 1.0 : 0.3
+                        color: "#dddddd"
+                        verticalAlignment: Text.AlignVCenter
+                        leftPadding: checkBoxIdentity.indicator.width + checkBoxIdentity.spacing
+                    }
                 }
             }
 
@@ -602,19 +670,34 @@ Rectangle {
                 CheckBox {
                     id: checkBoxAddress
                     checkable: true
-                    Rectangle {
-                        color: Constants.COLOR_TEXT_MAIN_WHITE
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        anchors.verticalCenter: parent.verticalCenter
-                        width: Constants.SIZE_CHECKBOX_COMPONENT
-                        height: Constants.SIZE_CHECKBOX_COMPONENT
-                    }
-                }
-                Text {
                     text: qsTr("STR_CHECKBOX_ADDRESS") + controler.autoTr
-                    color: Constants.COLOR_TEXT_MAIN_WHITE
-                    anchors.left: checkBoxAddress.right
-                    y: 6
+                    indicator: Rectangle {
+                        implicitWidth: 26
+                        implicitHeight: 26
+                        x: checkBoxAddress.leftPadding
+                        y: parent.height / 2 - height / 2
+                        radius: 1
+                        border.color: checkBoxAddress.down ? "#f89722" : "#dddddd"
+
+                        Rectangle {
+                            width: 18
+                            height: 18
+                            x: 4
+                            y: 4
+                            radius: 2
+                            color: "#f89722"
+                            visible: checkBoxAddress.checked
+                        }
+                    }
+
+                    contentItem: Text {
+                        text: checkBoxAddress.text
+                        font: checkBoxAddress.font
+                        opacity: checkBoxAddress.enabled ? 1.0 : 0.3
+                        color: "#dddddd"
+                        verticalAlignment: Text.AlignVCenter
+                        leftPadding: checkBoxAddress.indicator.width + checkBoxAddress.spacing
+                    }
                 }
             }
             Text {
@@ -633,6 +716,24 @@ Rectangle {
                 anchors.topMargin: 10
                 width: parent.width - 120
                 anchors.horizontalCenter: parent.horizontalCenter
+                Text {
+                    text: textFieldWallet.text
+                    anchors.left: parent.left
+                    anchors.leftMargin: 12
+                    font: textFieldWallet.font
+                    color: "#000000"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    anchors.topMargin: 6
+                    anchors.top: parent.top
+                }
+
+                background: Rectangle {
+                    radius: 2
+                    implicitWidth: textFieldWallet.width
+                    implicitHeight: textFieldWallet.height
+                    color: "#dddddd"
+                }
             }
             Button {
                 id: backGenerateButton
@@ -673,8 +774,8 @@ Rectangle {
                     verticalAlignment: Text.AlignVCenter
                     elide: Text.ElideRight
                 }
-                width: 2 * Constants.WIDTH_BUTTON
-                height: Constants.HEIGHT_BOTTOM_COMPONENT
+                width: 1.2 * Constants.WIDTH_BUTTON
+                height: Constants.HEIGHT_BOTTOM_COMPONENT * 1.2
                 enabled: false
                 anchors.horizontalCenter: parent.horizontalCenter
                 background: Rectangle {
@@ -817,7 +918,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:28;anchors_x:192}D{i:31;anchors_width:80}D{i:38;anchors_x:0}
+    D{i:86;anchors_x:60}
 }
 ##^##*/
 
