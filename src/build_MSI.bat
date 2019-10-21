@@ -1,4 +1,4 @@
-SET VERSION=1.0
+SET VERSION=1.1
 SET WIX_PATH="C:\Program Files (x86)\WiX Toolset v3.10\bin"
 
 

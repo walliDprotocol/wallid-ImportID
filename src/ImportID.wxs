@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
-    <?define var.OfficialProductVersion="0.0.1"?>
+    <?define var.OfficialProductVersion="0.0.2"?>
 	<?define var.PackageCode="*"?>
 	
 	<?include release_data.wxs ?>
