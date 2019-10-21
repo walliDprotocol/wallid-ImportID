@@ -4,7 +4,11 @@
     <?define var.OfficialProductVersion="0.0.1"?>
 	<?define var.PackageCode="*"?>
 	
-    <Product Id="{8BE10A53-2438-44C3-9E08-10AF4BC2C754}"
+	<?include release_data.wxs ?>
+	
+	 <?define var.ProductGuid ={D822D572-3EF9-4D22-AA21-F8ED7136$(var.importidRevisionNumber)}?>
+	
+    <Product Id="$(var.ProductGuid)"
 	Language="1033" Codepage="1252"
 	Manufacturer="WalliD" Name="ImportID" UpgradeCode="{56492230-A339-4A71-91A4-8161792FC50C}" Version="$(var.OfficialProductVersion)">
 	
@@ -48,6 +52,23 @@
                 <Component Id="cmp823651B2CB11A4246C3C1F675444DD3A" Guid="{7776A373-5AB6-4FC5-8F71-84D38C647311}">
                     <File Id="filECE2B9005ECC92C79308E9507EA4D44C" KeyPath="yes" Source="release\D3Dcompiler_47.dll" />
                 </Component>
+				
+				<Component Id="cmp2074380823b8448f83fd098bd0a614d8" Guid="{02e968b1-f7be-4736-b185-ffb65f16688e}">
+                    <File Id="fil35b93388b81b4c13b607f58cec1a5791" KeyPath="yes" Source="release\libpng16.dll" />
+                </Component>				
+				<Component Id="cmp53f44dc2aca6491c9ed44c0caf65e709" Guid="{9c39b1af-ad77-4da6-bf33-d80161db5454}">
+                    <File Id="filff1b3cc06726485fb2fb52160266164e" KeyPath="yes" Source="release\openjp2.dll" />
+                </Component>				
+				<Component Id="cmp23659f0c5d724a83bd3212f3833efa4b" Guid="{eebb5d75-af5a-44c4-8abb-4a6917051b49}">
+                    <File Id="fild3bf0486c36e4c8ab278c0fecf776bc6" KeyPath="yes" Source="release\libzip.dll" />
+                </Component>
+				<Component Id="cmp951945e3624b46e1848add10fd008bbc" Guid="{d60d6289-aa33-419d-b99d-6716b0164abc}">
+                    <File Id="fil4da93712b36e4a6bb07ee750eddc11a2" KeyPath="yes" Source="release\cmdServices.dll" />
+                </Component>
+				
+				
+				
+				
                 <Component Id="cmpBD4C4DE6AAF9AF3994B9AC161965F816" Guid="{6FC23559-D7AB-4186-B82C-21CFD3B6E6A4}">
                     <File Id="filB2463B2AE00D0296042246CBA1878878" KeyPath="yes" Source="release\ImportID.exe" />
                 </Component>
@@ -1495,6 +1516,12 @@
 			<ComponentRef Id="ImportIDShortcut" />
 			<ComponentRef Id="cmp823651B2CB11A42477" />
 			<ComponentRef Id="cmpdcc9d657cfb1" />
+			
+			<ComponentRef Id="cmp2074380823b8448f83fd098bd0a614d8" />      
+			<ComponentRef Id="cmp53f44dc2aca6491c9ed44c0caf65e709" />      
+			<ComponentRef Id="cmp23659f0c5d724a83bd3212f3833efa4b" />
+			<ComponentRef Id="cmp951945e3624b46e1848add10fd008bbc" />
+			
             <ComponentRef Id="cmp823651B2CB11A4246C3C1F675444DD3A" />
             <ComponentRef Id="cmpBD4C4DE6AAF9AF3994B9AC161965F816" />
             <ComponentRef Id="cmp2CAA052760806D2F708F90D0B171D29B" />

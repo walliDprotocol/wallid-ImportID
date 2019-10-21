@@ -56,7 +56,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;C:\Program Files\Portugal Identity Card\sdk;C:\Qt-5.9\5.9.1\msvc2013_64\include;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtQuickControls2;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtQuick;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtGui\5.9.1;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtGui\5.9.1\QtGui;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtWidgets;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtGui;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtANGLE;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtQml;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtNetwork;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtConcurrent;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtCore\5.9.1;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtCore\5.9.1\QtCore;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtCore;release;C:\Qt-5.9\5.9.1\msvc2013_64\mkspecs\win32-msvc;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\common;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\CMD\services;C:\external-libs\openssl-1.0.2p-win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;C:\Qt-5.9\5.9.1\msvc2013_64\include;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtQuickControls2;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtQuick;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtGui\5.9.1;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtGui\5.9.1\QtGui;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtWidgets;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtGui;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtANGLE;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtQml;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtNetwork;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtConcurrent;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtCore\5.9.1;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtCore\5.9.1\QtCore;C:\Qt-5.9\5.9.1\msvc2013_64\include\QtCore;release;C:\Qt-5.9\5.9.1\msvc2013_64\mkspecs\win32-msvc;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\eidlib;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\common;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\CMD\services;C:\external-libs\openssl-1.0.2p-win64\include;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\_Binaries35\x64\VC9\Release\qml-app;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -w34100 -w34189 -w44996 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -74,8 +74,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>C:\Qt-5.9\5.9.1\msvc2013_64\lib\qtmain.lib;shell32.lib;"C:\Program Files\Portugal Identity Card\sdk\pteidlib.lib";C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5QuickControls2.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Quick.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Widgets.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Gui.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Qml.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Network.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Concurrent.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Core.lib;ssleay32.lib;libeay32.lib;cmdServices.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Qt-5.9\5.9.1\msvc2013_64\lib;C:\utils\my_sql\my_sql\lib;C:\utils\postgresql\pgsql\lib;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\_Binaries35\x64\VC9\Release;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\_Binaries35\x64\VC9\Release\qml-app;C:\external-libs\openssl-1.0.2p-win64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>C:\Qt-5.9\5.9.1\msvc2013_64\lib\qtmain.lib;shell32.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5QuickControls2.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Quick.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Widgets.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Gui.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Qml.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Network.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Concurrent.lib;C:\Qt-5.9\5.9.1\msvc2013_64\lib\Qt5Core.lib;ssleay32.lib;libeay32.lib;cmdServices.lib;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\_Binaries35\x64\VC9\Release\pteidlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt-5.9\5.9.1\msvc2013_64\lib;C:\utils\my_sql\my_sql\lib;C:\utils\postgresql\pgsql\lib;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\_Binaries35\x64\VC9\Release;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\_Binaries35\x64\VC9\Release\qml-app;C:\external-libs\openssl-1.0.2p-win64\lib;C:\autenticacao.gov\pteid-mw-pt\_src\eidmw\eidlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -139,6 +139,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Settings.h" />
     <CustomBuild Include="appcontroller.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">appcontroller.h;release\moc_predefs.h;C:\Qt-5.9\5.9.1\msvc2013_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
@@ -241,6 +242,7 @@
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RCC release/qmake_qmake_immediate.qrc</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\qrc_qmake_qmake_immediate.cpp;%(Outputs)</Outputs>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <SubType>Designer</SubType>
     </CustomBuild>
     <None Include="qtquickcontrols2.conf" />
     <None Include="images\titleBar\quit.png" />

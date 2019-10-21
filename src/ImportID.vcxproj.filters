@@ -67,6 +67,9 @@
     <CustomBuild Include="gapi.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <ClInclude Include="resource.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="debug\moc_appcontroller.cpp">
